@@ -1,0 +1,10 @@
+[build]
+  publish = "."
+  command = "echo 'Static site - no build needed'"
+
+[build.environment]
+  GIT_LFS_ENABLED = "false"
+
+# Skip submodule checkout
+[context.production]
+  environment = { GIT_SUBMODULE_FETCH_RETRY = "false" }

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Busana Muslim Nusantara</title>
+    <meta name="description" content="Selesaikan pembelian Anda dengan mengisi data pengiriman dan pembayaran.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5C6E4E',
+                        'primary-dark': '#4A5A3E',
+                        'primary-light': '#7A8F6A',
+                        secondary: '#F5F0E6',
+                        accent: '#8B7355',
+                        'accent-dark': '#6B5A45',
+                        background: '#FAFAF7',
+                        'custom-text': '#3D3D3D',
+                        'text-light': '#6B6B6B',
+                        'custom-border': '#E5E0D5',
+                        gold: '#C4A962',
+                    },
+                    fontFamily: {
+                        'playfair': ['Playfair Display', 'serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter bg-background">
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-overlay" class="mobile-overlay"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-8">
+                <a href="index.html" class="font-playfair text-xl font-bold text-primary">Busana Muslim</a>
+                <button id="close-menu" class="text-custom-text">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav class="space-y-4">
+                <a href="index.html" class="block py-2 text-custom-text hover:text-primary transition">Beranda</a>
+                <a href="products.html" class="block py-2 text-custom-text hover:text-primary transition">Produk</a>
+                <a href="about.html" class="block py-2 text-custom-text hover:text-primary transition">Tentang Kami</a>
+                <a href="cart.html" class="block py-2 text-custom-text hover:text-primary transition">Keranjang</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <header class="navbar fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-14 lg:h-16">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-2">
+                    <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                        <span class="text-white font-playfair font-bold text-lg">B</span>
+                    </div>
+                    <span class="font-playfair text-xl font-bold text-custom-text hidden sm:block">Busana Muslim</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="index.html" class="nav-link">Beranda</a>
+                    <a href="products.html" class="nav-link">Produk</a>
+                    <a href="about.html" class="nav-link">Tentang Kami</a>
+                </nav>
+
+                <!-- Right Actions -->
+                <div class="flex items-center gap-4">
+                    <!-- Cart -->
+                    <a href="cart.html" class="relative text-custom-text hover:text-primary transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                        </svg>
+                        <span class="cart-badge">3</span>
+                    </a>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button id="menu-toggle" class="lg:hidden text-custom-text">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="pt-24 lg:pt-28 pb-8 bg-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb mb-4">
+                <a href="index.html">Beranda</a>
+                <span>/</span>
+                <a href="cart.html">Keranjang</a>
+                <span>/</span>
+                <span class="text-custom-text">Checkout</span>
+            </nav>
+            
+            <h1 class="font-playfair text-3xl lg:text-4xl font-bold text-custom-text">Checkout</h1>
+        </div>
+    </section>
+
+    <!-- Checkout Content -->
+    <section class="py-8 lg:py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <form onsubmit="handleCheckoutSubmit(event)" class="grid lg:grid-cols-3 gap-8">
+                
+                <!-- Checkout Form -->
+                <div class="lg:col-span-2 space-y-6">
+                    
+                    <!-- Personal Information -->
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <h2 class="font-playfair text-xl font-bold text-custom-text mb-6 flex items-center gap-3">
+                            <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm">1</span>
+                            Data Pribadi
+                        </h2>
+                        
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="form-label">Nama Lengkap *</label>
+                                <input type="text" class="form-input" placeholder="Masukkan nama lengkap" required>
+                            </div>
+                            <div>
+                                <label class="form-label">No. Telepon *</label>
+                                <input type="tel" class="form-input" placeholder="08xx xxxx xxxx" required>
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="form-label">Email *</label>
+                                <input type="email" class="form-input" placeholder="email@example.com" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shipping Address -->
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <h2 class="font-playfair text-xl font-bold text-custom-text mb-6 flex items-center gap-3">
+                            <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm">2</span>
+                            Alamat Pengiriman
+                        </h2>
+                        
+                        <div class="space-y-4">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="form-label">Provinsi *</label>
+                                    <select class="form-input" required>
+                                        <option value="">Pilih Provinsi</option>
+                                        <option>DKI Jakarta</option>
+                                        <option>Jawa Barat</option>
+                                        <option>Jawa Tengah</option>
+                                        <option>Jawa Timur</option>
+                                        <option>Banten</option>
+                                        <option>DIY Yogyakarta</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="form-label">Kota/Kabupaten *</label>
+                                    <select class="form-input" required>
+                                        <option value="">Pilih Kota/Kabupaten</option>
+                                        <option>Jakarta Selatan</option>
+                                        <option>Jakarta Pusat</option>
+                                        <option>Jakarta Barat</option>
+                                        <option>Jakarta Timur</option>
+                                        <option>Jakarta Utara</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="form-label">Kecamatan *</label>
+                                    <input type="text" class="form-input" placeholder="Masukkan kecamatan" required>
+                                </div>
+                                <div>
+                                    <label class="form-label">Kode Pos *</label>
+                                    <input type="text" class="form-input" placeholder="12345" required>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="form-label">Alamat Lengkap *</label>
+                                <textarea class="form-input" rows="3" placeholder="Nama jalan, nomor rumah, RT/RW, kelurahan" required></textarea>
+                            </div>
+                            <div>
+                                <label class="form-label">Catatan untuk Kurir (opsional)</label>
+                                <input type="text" class="form-input" placeholder="Patokan, warna rumah, dll">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shipping Method -->
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <h2 class="font-playfair text-xl font-bold text-custom-text mb-6 flex items-center gap-3">
+                            <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm">3</span>
+                            Metode Pengiriman
+                        </h2>
+                        
+                        <div class="space-y-3">
+                            <label class="flex items-center justify-between p-4 border border-custom-border rounded-lg cursor-pointer hover:border-primary transition">
+                                <div class="flex items-center gap-4">
+                                    <input type="radio" name="shipping" value="regular" class="w-4 h-4 accent-primary" checked>
+                                    <div>
+                                        <p class="font-medium text-custom-text">Reguler (2-3 hari)</p>
+                                        <p class="text-sm text-text-light">JNE Reguler</p>
+                                    </div>
+                                </div>
+                                <span class="font-medium text-custom-text">Rp 15.000</span>
+                            </label>
+                            
+                            <label class="flex items-center justify-between p-4 border border-custom-border rounded-lg cursor-pointer hover:border-primary transition">
+                                <div class="flex items-center gap-4">
+                                    <input type="radio" name="shipping" value="express" class="w-4 h-4 accent-primary">
+                                    <div>
+                                        <p class="font-medium text-custom-text">Express (1-2 hari)</p>
+                                        <p class="text-sm text-text-light">JNE YES</p>
+                                    </div>
+                                </div>
+                                <span class="font-medium text-custom-text">Rp 25.000</span>
+                            </label>
+                            
+                            <label class="flex items-center justify-between p-4 border border-custom-border rounded-lg cursor-pointer hover:border-primary transition">
+                                <div class="flex items-center gap-4">
+                                    <input type="radio" name="shipping" value="sameday" class="w-4 h-4 accent-primary">
+                                    <div>
+                                        <p class="font-medium text-custom-text">Same Day</p>
+                                        <p class="text-sm text-text-light">GoSend / GrabExpress</p>
+                                    </div>
+                                </div>
+                                <span class="font-medium text-custom-text">Rp 35.000</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Payment Method -->
+                    <div class="bg-white rounded-xl p-6 shadow-sm">
+                        <h2 class="font-playfair text-xl font-bold text-custom-text mb-6 flex items-center gap-3">
+                            <span class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm">4</span>
+                            Metode Pembayaran
+                        </h2>
+                        
+                        <div class="space-y-3">
+                            <label class="flex items-center justify-between p-4 border border-custom-border rounded-lg cursor-pointer hover:border-primary transition">
+                                <div class="flex items-center gap-4">
+                                    <input type="radio" name="payment" value="transfer" class="w-4 h-4 accent-primary" checked>
+                                    <div>
+                                        <p class="font-medium text-custom-text">Transfer Bank</p>
+                                        <p class="text-sm text-text-light">BCA, Mandiri, BNI, BRI</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-1">
+                                    <div class="w-10 h-6 bg-gray-100 rounded flex items-center justify-center text-xs font-medium">BCA</div>
+                                    <div class="w-10 h-6 bg-gray-100 rounded flex items-center justify-center text-xs font-medium">BNI</div>
+                                </div>
+                            </label>
+                            
+                            <label class="flex items-center justify-between p-4 border border-custom-border rounded-lg cursor-pointer hover:border-primary transition">
+                                <div class="flex items-center gap-4">
+                                    <input type="radio" name="payment" value="ewallet" class="w-4 h-4 accent-primary">
+                                    <div>
+                                        <p class="font-medium text-custom-text">E-Wallet</p>
+                                        <p class="text-sm text-text-light">GoPay, OVO, DANA, ShopeePay</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-1">
+                                    <div class="w-10 h-6 bg-green-100 rounded flex items-center justify-center text-xs font-medium text-green-700">Go</div>
+                                    <div class="w-10 h-6 bg-purple-100 rounded flex items-center justify-center text-xs font-medium text-purple-700">OVO</div>
+                                </div>
+                            </label>
+                            
+                            <label class="flex items-center justify-between p-4 border border-custom-border rounded-lg cursor-pointer hover:border-primary transition">
+                                <div class="flex items-center gap-4">
+                                    <input type="radio" name="payment" value="cod" class="w-4 h-4 accent-primary">
+                                    <div>
+                                        <p class="font-medium text-custom-text">COD (Bayar di Tempat)</p>
+                                        <p class="text-sm text-text-light">Bayar saat barang sampai</p>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="lg:col-span-1">
+                    <div class="bg-white rounded-xl p-6 shadow-sm sticky top-24">
+                        <h2 class="font-playfair text-xl font-bold text-custom-text mb-6">Ringkasan Pesanan</h2>
+                        
+                        <!-- Order Items -->
+                        <div class="space-y-4 mb-6">
+                            <div class="flex gap-3">
+                                <div class="w-16 h-20 rounded-lg overflow-hidden bg-secondary shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=100&h=125&fit=crop" 
+                                         alt="Gamis Azalea" class="w-full h-full object-cover">
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-medium text-custom-text text-sm">Gamis Azalea Premium</p>
+                                    <p class="text-xs text-text-light">Coklat Muda, M</p>
+                                    <div class="flex justify-between mt-1">
+                                        <span class="text-xs text-text-light">x1</span>
+                                        <span class="text-sm font-medium text-primary">Rp 299.000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex gap-3">
+                                <div class="w-16 h-20 rounded-lg overflow-hidden bg-secondary shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=100&h=125&fit=crop" 
+                                         alt="Hijab Voal" class="w-full h-full object-cover">
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-medium text-custom-text text-sm">Hijab Voal Premium</p>
+                                    <p class="text-xs text-text-light">Cream</p>
+                                    <div class="flex justify-between mt-1">
+                                        <span class="text-xs text-text-light">x2</span>
+                                        <span class="text-sm font-medium text-primary">Rp 178.000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex gap-3">
+                                <div class="w-16 h-20 rounded-lg overflow-hidden bg-secondary shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1589465885857-44edb59bbff2?w=100&h=125&fit=crop" 
+                                         alt="Koko Al-Fatih" class="w-full h-full object-cover">
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-medium text-custom-text text-sm">Koko Al-Fatih Modern</p>
+                                    <p class="text-xs text-text-light">Putih, L</p>
+                                    <div class="flex justify-between mt-1">
+                                        <span class="text-xs text-text-light">x1</span>
+                                        <span class="text-sm font-medium text-primary">Rp 275.000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Summary -->
+                        <div class="border-t border-custom-border pt-4 space-y-3 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-text-light">Subtotal (4 item)</span>
+                                <span class="font-medium text-custom-text">Rp 752.000</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-text-light">Ongkos Kirim</span>
+                                <span class="font-medium text-custom-text">Rp 25.000</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-text-light">Diskon</span>
+                                <span class="font-medium text-green-600">- Rp 0</span>
+                            </div>
+                        </div>
+
+                        <!-- Total -->
+                        <div class="border-t border-custom-border mt-4 pt-4">
+                            <div class="flex justify-between items-center mb-6">
+                                <span class="font-medium text-custom-text">Total Pembayaran</span>
+                                <span class="text-2xl font-bold text-primary">Rp 777.000</span>
+                            </div>
+                            <button type="submit" class="btn-primary w-full text-center">
+                                Bayar Sekarang
+                            </button>
+                            <p class="text-xs text-text-light text-center mt-4">
+                                Dengan melanjutkan, Anda menyetujui 
+                                <a href="#" class="text-primary hover:underline">Syarat & Ketentuan</a> kami.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-12 lg:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+                <!-- About -->
+                <div class="col-span-2 lg:col-span-1">
+                    <a href="index.html" class="flex items-center gap-2 mb-6">
+                        <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                            <span class="text-white font-playfair font-bold text-lg">B</span>
+                        </div>
+                        <span class="font-playfair text-xl font-bold text-white">Busana Muslim</span>
+                    </a>
+                    <p class="text-white/70 text-sm mb-6">
+                        Menyediakan busana muslim berkualitas dengan desain modern dan elegan untuk keluarga Indonesia.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-medium text-white mb-4">Menu</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="products.html">Produk</a></li>
+                        <li><a href="about.html">Tentang Kami</a></li>
+                        <li><a href="cart.html">Keranjang</a></li>
+                    </ul>
+                </div>
+
+                <!-- Categories -->
+                <div>
+                    <h4 class="font-medium text-white mb-4">Kategori</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="products.html?category=gamis">Gamis</a></li>
+                        <li><a href="products.html?category=koko">Koko</a></li>
+                        <li><a href="products.html?category=hijab">Hijab</a></li>
+                        <li><a href="products.html?category=sarimbit">Sarimbit</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-medium text-white mb-4">Hubungi Kami</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <span>+62 812 3456 7890</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <span>info@busanamuslim.id</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-white/10 mt-12 pt-8 text-center text-sm text-white/60">
+                <p>&copy; 2025 Busana Muslim Nusantara. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

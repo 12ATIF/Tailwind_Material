@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keranjang Belanja - Busana Muslim Nusantara</title>
+    <meta name="description" content="Lihat dan kelola keranjang belanja Anda. Checkout untuk menyelesaikan pembelian busana muslim pilihan Anda.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5C6E4E',
+                        'primary-dark': '#4A5A3E',
+                        'primary-light': '#7A8F6A',
+                        secondary: '#F5F0E6',
+                        accent: '#8B7355',
+                        'accent-dark': '#6B5A45',
+                        background: '#FAFAF7',
+                        'custom-text': '#3D3D3D',
+                        'text-light': '#6B6B6B',
+                        'custom-border': '#E5E0D5',
+                        gold: '#C4A962',
+                    },
+                    fontFamily: {
+                        'playfair': ['Playfair Display', 'serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter bg-background">
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-overlay" class="mobile-overlay"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-8">
+                <a href="index.html" class="font-playfair text-xl font-bold text-primary">Busana Muslim</a>
+                <button id="close-menu" class="text-custom-text">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav class="space-y-4">
+                <a href="index.html" class="block py-2 text-custom-text hover:text-primary transition">Beranda</a>
+                <a href="products.html" class="block py-2 text-custom-text hover:text-primary transition">Produk</a>
+                <a href="about.html" class="block py-2 text-custom-text hover:text-primary transition">Tentang Kami</a>
+                <a href="cart.html" class="block py-2 text-primary font-medium border-b border-custom-border">Keranjang</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <header class="navbar fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-14 lg:h-16">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-2">
+                    <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                        <span class="text-white font-playfair font-bold text-lg">B</span>
+                    </div>
+                    <span class="font-playfair text-xl font-bold text-custom-text hidden sm:block">Busana Muslim</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="index.html" class="nav-link">Beranda</a>
+                    <a href="products.html" class="nav-link">Produk</a>
+                    <a href="about.html" class="nav-link">Tentang Kami</a>
+                </nav>
+
+                <!-- Right Actions -->
+                <div class="flex items-center gap-4">
+                    <!-- Cart -->
+                    <a href="cart.html" class="relative text-primary">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                        </svg>
+                        <span class="cart-badge">3</span>
+                    </a>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button id="menu-toggle" class="lg:hidden text-custom-text">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="pt-24 lg:pt-28 pb-8 bg-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb mb-4">
+                <a href="index.html">Beranda</a>
+                <span>/</span>
+                <span class="text-custom-text">Keranjang</span>
+            </nav>
+            
+            <h1 class="font-playfair text-3xl lg:text-4xl font-bold text-custom-text">Keranjang Belanja</h1>
+        </div>
+    </section>
+
+    <!-- Cart Content -->
+    <section class="py-8 lg:py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="cart-content" class="grid lg:grid-cols-3 gap-8">
+                
+                <!-- Cart Items -->
+                <div class="lg:col-span-2 space-y-4">
+                    <!-- Cart Item 1 -->
+                    <div class="cart-item bg-white rounded-xl p-4 lg:p-6 shadow-sm flex gap-4 transition-all">
+                        <div class="w-24 h-28 lg:w-32 lg:h-40 shrink-0 rounded-lg overflow-hidden bg-secondary">
+                            <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=200&h=250&fit=crop" 
+                                 alt="Gamis Azalea Premium" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1 flex flex-col">
+                            <div class="flex justify-between items-start mb-2">
+                                <div>
+                                    <h3 class="font-medium text-custom-text">Gamis Azalea Premium</h3>
+                                    <p class="text-sm text-text-light mt-1">Warna: Coklat Muda | Ukuran: M</p>
+                                </div>
+                                <button onclick="removeCartItem(this)" class="text-text-light hover:text-red-500 transition">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            
+                            <div class="mt-auto flex items-center justify-between">
+                                <div class="qty-container flex items-center">
+                                    <button class="qty-btn qty-minus rounded-l-lg text-sm">−</button>
+                                    <input type="number" value="1" min="1" max="99" class="qty-input text-sm w-10">
+                                    <button class="qty-btn qty-plus rounded-r-lg text-sm">+</button>
+                                </div>
+                                <p class="item-price font-bold text-primary text-lg" data-price="299000">Rp 299.000</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cart Item 2 -->
+                    <div class="cart-item bg-white rounded-xl p-4 lg:p-6 shadow-sm flex gap-4 transition-all">
+                        <div class="w-24 h-28 lg:w-32 lg:h-40 shrink-0 rounded-lg overflow-hidden bg-secondary">
+                            <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=200&h=250&fit=crop" 
+                                 alt="Hijab Voal Premium" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1 flex flex-col">
+                            <div class="flex justify-between items-start mb-2">
+                                <div>
+                                    <h3 class="font-medium text-custom-text">Hijab Voal Premium</h3>
+                                    <p class="text-sm text-text-light mt-1">Warna: Cream</p>
+                                </div>
+                                <button onclick="removeCartItem(this)" class="text-text-light hover:text-red-500 transition">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            
+                            <div class="mt-auto flex items-center justify-between">
+                                <div class="qty-container flex items-center">
+                                    <button class="qty-btn qty-minus rounded-l-lg text-sm">−</button>
+                                    <input type="number" value="2" min="1" max="99" class="qty-input text-sm w-10">
+                                    <button class="qty-btn qty-plus rounded-r-lg text-sm">+</button>
+                                </div>
+                                <p class="item-price font-bold text-primary text-lg" data-price="89000">Rp 178.000</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cart Item 3 -->
+                    <div class="cart-item bg-white rounded-xl p-4 lg:p-6 shadow-sm flex gap-4 transition-all">
+                        <div class="w-24 h-28 lg:w-32 lg:h-40 shrink-0 rounded-lg overflow-hidden bg-secondary">
+                            <img src="https://images.unsplash.com/photo-1589465885857-44edb59bbff2?w=200&h=250&fit=crop" 
+                                 alt="Koko Al-Fatih Modern" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1 flex flex-col">
+                            <div class="flex justify-between items-start mb-2">
+                                <div>
+                                    <h3 class="font-medium text-custom-text">Koko Al-Fatih Modern</h3>
+                                    <p class="text-sm text-text-light mt-1">Warna: Putih | Ukuran: L</p>
+                                </div>
+                                <button onclick="removeCartItem(this)" class="text-text-light hover:text-red-500 transition">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            
+                            <div class="mt-auto flex items-center justify-between">
+                                <div class="qty-container flex items-center">
+                                    <button class="qty-btn qty-minus rounded-l-lg text-sm">−</button>
+                                    <input type="number" value="1" min="1" max="99" class="qty-input text-sm w-10">
+                                    <button class="qty-btn qty-plus rounded-r-lg text-sm">+</button>
+                                </div>
+                                <p class="item-price font-bold text-primary text-lg" data-price="275000">Rp 275.000</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Continue Shopping -->
+                    <a href="products.html" class="inline-flex items-center gap-2 text-primary hover:underline mt-4">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                        </svg>
+                        Lanjutkan Belanja
+                    </a>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="lg:col-span-1">
+                    <div class="bg-white rounded-xl p-6 shadow-sm sticky top-24">
+                        <h2 class="font-playfair text-xl font-bold text-custom-text mb-6">Ringkasan Pesanan</h2>
+                        
+                        <div class="space-y-4 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-text-light">Subtotal (4 item)</span>
+                                <span id="cart-subtotal" class="font-medium text-custom-text">Rp 752.000</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-text-light">Ongkos Kirim</span>
+                                <span class="font-medium text-custom-text">Rp 25.000</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-text-light">Diskon</span>
+                                <span class="font-medium text-green-600">- Rp 0</span>
+                            </div>
+                        </div>
+
+                        <!-- Promo Code -->
+                        <div class="mt-6 pt-6 border-t border-custom-border">
+                            <label class="form-label text-sm">Kode Promo</label>
+                            <div class="flex gap-2">
+                                <input type="text" placeholder="Masukkan kode" class="form-input text-sm flex-1">
+                                <button class="btn-secondary text-sm px-4">Terapkan</button>
+                            </div>
+                        </div>
+
+                        <!-- Total -->
+                        <div class="mt-6 pt-6 border-t border-custom-border">
+                            <div class="flex justify-between items-center mb-6">
+                                <span class="font-medium text-custom-text">Total</span>
+                                <span id="cart-total" class="text-2xl font-bold text-primary">Rp 777.000</span>
+                            </div>
+                            <a href="checkout.html" class="btn-primary w-full text-center block">
+                                Lanjut ke Checkout
+                            </a>
+                        </div>
+
+                        <!-- Trust Badges -->
+                        <div class="mt-6 pt-6 border-t border-custom-border">
+                            <div class="flex items-center gap-3 text-sm text-text-light">
+                                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                </svg>
+                                <span>Pembayaran 100% aman</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-text-light mt-3">
+                                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path>
+                                </svg>
+                                <span>Gratis ongkir min. Rp 300.000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Empty Cart State -->
+            <div id="empty-cart" class="hidden text-center py-16">
+                <div class="w-24 h-24 mx-auto mb-6 bg-secondary rounded-full flex items-center justify-center">
+                    <svg class="w-12 h-12 text-text-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                    </svg>
+                </div>
+                <h2 class="font-playfair text-2xl font-bold text-custom-text mb-3">Keranjang Kosong</h2>
+                <p class="text-text-light mb-8">Anda belum menambahkan produk ke keranjang.</p>
+                <a href="products.html" class="btn-primary">
+                    Mulai Belanja
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-12 lg:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+                <!-- About -->
+                <div class="col-span-2 lg:col-span-1">
+                    <a href="index.html" class="flex items-center gap-2 mb-6">
+                        <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                            <span class="text-white font-playfair font-bold text-lg">B</span>
+                        </div>
+                        <span class="font-playfair text-xl font-bold text-white">Busana Muslim</span>
+                    </a>
+                    <p class="text-white/70 text-sm mb-6">
+                        Menyediakan busana muslim berkualitas dengan desain modern dan elegan untuk keluarga Indonesia.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-medium text-white mb-4">Menu</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="products.html">Produk</a></li>
+                        <li><a href="about.html">Tentang Kami</a></li>
+                        <li><a href="cart.html">Keranjang</a></li>
+                    </ul>
+                </div>
+
+                <!-- Categories -->
+                <div>
+                    <h4 class="font-medium text-white mb-4">Kategori</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="products.html?category=gamis">Gamis</a></li>
+                        <li><a href="products.html?category=koko">Koko</a></li>
+                        <li><a href="products.html?category=hijab">Hijab</a></li>
+                        <li><a href="products.html?category=sarimbit">Sarimbit</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-medium text-white mb-4">Hubungi Kami</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <span>+62 812 3456 7890</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <span>info@busanamuslim.id</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-white/10 mt-12 pt-8 text-center text-sm text-white/60">
+                <p>&copy; 2025 Busana Muslim Nusantara. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

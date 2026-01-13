@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk - Busana Muslim Nusantara</title>
+    <meta name="description" content="Temukan koleksi busana muslim terlengkap: gamis, koko, hijab, sarimbit, dan aksesoris dengan harga terbaik.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5C6E4E',
+                        'primary-dark': '#4A5A3E',
+                        'primary-light': '#7A8F6A',
+                        secondary: '#F5F0E6',
+                        accent: '#8B7355',
+                        'accent-dark': '#6B5A45',
+                        background: '#FAFAF7',
+                        'custom-text': '#3D3D3D',
+                        'text-light': '#6B6B6B',
+                        'custom-border': '#E5E0D5',
+                        gold: '#C4A962',
+                    },
+                    fontFamily: {
+                        'playfair': ['Playfair Display', 'serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Filter sidebar mobile */
+        @media (max-width: 1023px) {
+            #filter-sidebar {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 85%;
+                max-width: 320px;
+                height: 100vh;
+                z-index: 100;
+                transition: left 0.3s ease;
+                overflow-y: auto;
+            }
+            #filter-sidebar.active {
+                left: 0;
+            }
+        }
+    </style>
+</head>
+<body class="font-inter bg-background">
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-overlay" class="mobile-overlay"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-8">
+                <a href="index.html" class="font-playfair text-xl font-bold text-primary">Busana Muslim</a>
+                <button id="close-menu" class="text-custom-text">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav class="space-y-4">
+                <a href="index.html" class="block py-2 text-custom-text hover:text-primary transition">Beranda</a>
+                <a href="products.html" class="block py-2 text-primary font-medium border-b border-custom-border">Produk</a>
+                <a href="about.html" class="block py-2 text-custom-text hover:text-primary transition">Tentang Kami</a>
+                <a href="cart.html" class="block py-2 text-custom-text hover:text-primary transition">Keranjang</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <header class="navbar fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-14 lg:h-16">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-2">
+                    <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                        <span class="text-white font-playfair font-bold text-lg">B</span>
+                    </div>
+                    <span class="font-playfair text-xl font-bold text-custom-text hidden sm:block">Busana Muslim</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="index.html" class="nav-link">Beranda</a>
+                    <a href="products.html" class="nav-link active">Produk</a>
+                    <a href="about.html" class="nav-link">Tentang Kami</a>
+                </nav>
+
+                <!-- Right Actions -->
+                <div class="flex items-center gap-4">
+                    <!-- Search -->
+                    <button class="text-custom-text hover:text-primary transition hidden sm:block">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Cart -->
+                    <a href="cart.html" class="relative text-custom-text hover:text-primary transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                        </svg>
+                        <span class="cart-badge">3</span>
+                    </a>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button id="menu-toggle" class="lg:hidden text-custom-text">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="pt-20 lg:pt-24 pb-6 bg-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb mb-4">
+                <a href="index.html">Beranda</a>
+                <span>/</span>
+                <span class="text-custom-text">Produk</span>
+            </nav>
+            
+            <h1 class="font-playfair text-2xl lg:text-3xl font-bold text-custom-text">Koleksi Produk</h1>
+            <p class="text-text-light mt-2">Menampilkan 24 produk</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-8 lg:py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex gap-8">
+                
+                <!-- Filter Sidebar -->
+                <aside id="filter-sidebar" class="w-64 shrink-0 bg-white p-6 rounded-xl lg:block shadow-sm">
+                    <div class="flex items-center justify-between mb-6 lg:hidden">
+                        <h3 class="font-playfair text-lg font-bold">Filter</h3>
+                        <button id="close-filter" class="text-custom-text">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Category Filter -->
+                    <div class="mb-6">
+                        <h4 class="font-medium text-custom-text mb-4">Kategori</h4>
+                        <div class="space-y-2">
+                            <label class="filter-checkbox">
+                                <input type="checkbox" checked>
+                                <span>Semua Kategori</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox">
+                                <span>Gamis (120)</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox">
+                                <span>Koko (85)</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox">
+                                <span>Hijab (200)</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox">
+                                <span>Sarimbit (45)</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox">
+                                <span>Aksesoris (60)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Price Filter -->
+                    <div class="mb-6">
+                        <h4 class="font-medium text-custom-text mb-4">Harga</h4>
+                        <div class="space-y-2">
+                            <label class="filter-checkbox">
+                                <input type="checkbox" checked>
+                                <span>Semua Harga</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox">
+                                <span>Di bawah Rp 100.000</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox">
+                                <span>Rp 100.000 - 300.000</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox">
+                                <span>Rp 300.000 - 500.000</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox">
+                                <span>Di atas Rp 500.000</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Size Filter -->
+                    <div class="mb-6">
+                        <h4 class="font-medium text-custom-text mb-4">Ukuran</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <button class="size-option">S</button>
+                            <button class="size-option active">M</button>
+                            <button class="size-option">L</button>
+                            <button class="size-option">XL</button>
+                            <button class="size-option">XXL</button>
+                        </div>
+                    </div>
+
+                    <!-- Color Filter -->
+                    <div class="mb-6">
+                        <h4 class="font-medium text-custom-text mb-4">Warna</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <button class="w-8 h-8 rounded-full bg-white border-2 border-custom-border hover:border-primary"></button>
+                            <button class="w-8 h-8 rounded-full bg-black border-2 border-transparent hover:border-primary"></button>
+                            <button class="w-8 h-8 rounded-full bg-gray-400 border-2 border-transparent hover:border-primary"></button>
+                            <button class="w-8 h-8 rounded-full bg-amber-800 border-2 border-transparent hover:border-primary"></button>
+                            <button class="w-8 h-8 rounded-full bg-green-800 border-2 border-transparent hover:border-primary"></button>
+                            <button class="w-8 h-8 rounded-full bg-blue-900 border-2 border-transparent hover:border-primary"></button>
+                        </div>
+                    </div>
+
+                    <!-- Apply Button -->
+                    <button class="btn-primary w-full">Terapkan Filter</button>
+                </aside>
+
+                <!-- Products Grid -->
+                <div class="flex-1">
+                    <!-- Sort & Filter Toggle -->
+                    <div class="flex items-center justify-between mb-6">
+                        <button id="filter-toggle" class="lg:hidden flex items-center gap-2 px-4 py-2 border border-custom-border rounded-lg text-custom-text hover:border-primary transition">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path>
+                            </svg>
+                            Filter
+                        </button>
+                        
+                        <div class="flex items-center gap-4">
+                            <span class="text-sm text-text-light hidden sm:block">Urutkan:</span>
+                            <select class="form-input py-2 px-4 text-sm w-auto">
+                                <option>Terbaru</option>
+                                <option>Harga: Terendah</option>
+                                <option>Harga: Tertinggi</option>
+                                <option>Terpopuler</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Products -->
+                    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+                        <!-- Product 1 -->
+                        <div class="product-card">
+                            <div class="relative overflow-hidden">
+                                <span class="badge badge-bestseller absolute top-3 left-3 z-10">Best Seller</span>
+                                <a href="product-detail.html">
+                                    <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=400&h=500&fit=crop" 
+                                         alt="Gamis Azalea" 
+                                         class="w-full aspect-[3/4] object-cover">
+                                </a>
+                            </div>
+                            <div class="p-4">
+                                <a href="product-detail.html">
+                                    <h3 class="product-name font-medium text-custom-text mb-1 truncate hover:text-primary transition">Gamis Azalea Premium</h3>
+                                </a>
+                                <div class="star-rating mb-2">
+                                    <span>★★★★★</span>
+                                    <span class="text-text-light text-sm ml-1">(128)</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="font-bold text-primary">Rp 299.000</span>
+                                    <span class="text-sm text-text-light line-through">Rp 450.000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 2 -->
+                        <div class="product-card">
+                            <div class="relative overflow-hidden">
+                                <span class="badge badge-new absolute top-3 left-3 z-10">New</span>
+                                <a href="product-detail.html">
+                                    <img src="https://images.unsplash.com/photo-1589465885857-44edb59bbff2?w=400&h=500&fit=crop" 
+                                         alt="Koko Al-Fatih" 
+                                         class="w-full aspect-[3/4] object-cover">
+                                </a>
+                            </div>
+                            <div class="p-4">
+                                <a href="product-detail.html">
+                                    <h3 class="product-name font-medium text-custom-text mb-1 truncate hover:text-primary transition">Koko Al-Fatih Modern</h3>
+                                </a>
+                                <div class="star-rating mb-2">
+                                    <span>★★★★★</span>
+                                    <span class="text-text-light text-sm ml-1">(89)</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="font-bold text-primary">Rp 275.000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div class="product-card">
+                            <div class="relative overflow-hidden">
+                                <span class="badge badge-sale absolute top-3 left-3 z-10">Sale 30%</span>
+                                <a href="product-detail.html">
+                                    <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&h=500&fit=crop" 
+                                         alt="Hijab Voal Premium" 
+                                         class="w-full aspect-[3/4] object-cover">
+                                </a>
+                            </div>
+                            <div class="p-4">
+                                <a href="product-detail.html">
+                                    <h3 class="product-name font-medium text-custom-text mb-1 truncate hover:text-primary transition">Hijab Voal Premium</h3>
+                                </a>
+                                <div class="star-rating mb-2">
+                                    <span>★★★★★</span>
+                                    <span class="text-text-light text-sm ml-1">(256)</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="font-bold text-primary">Rp 89.000</span>
+                                    <span class="text-sm text-text-light line-through">Rp 127.000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 4 -->
+                        <div class="product-card">
+                            <div class="relative overflow-hidden">
+                                <a href="product-detail.html">
+                                    <img src="https://images.unsplash.com/photo-1590073242678-70ee3fc28f8e?w=400&h=500&fit=crop" 
+                                         alt="Gamis Syar'i Elegant" 
+                                         class="w-full aspect-[3/4] object-cover">
+                                </a>
+                            </div>
+                            <div class="p-4">
+                                <a href="product-detail.html">
+                                    <h3 class="product-name font-medium text-custom-text mb-1 truncate hover:text-primary transition">Gamis Syar'i Elegant</h3>
+                                </a>
+                                <div class="star-rating mb-2">
+                                    <span>★★★★☆</span>
+                                    <span class="text-text-light text-sm ml-1">(67)</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="font-bold text-primary">Rp 385.000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 5 -->
+                        <div class="product-card">
+                            <div class="relative overflow-hidden">
+                                <span class="badge badge-bestseller absolute top-3 left-3 z-10">Best Seller</span>
+                                <a href="product-detail.html">
+                                    <img src="https://images.unsplash.com/photo-1583391733981-8b530c8a5b70?w=400&h=500&fit=crop" 
+                                         alt="Sarimbit Keluarga" 
+                                         class="w-full aspect-[3/4] object-cover">
+                                </a>
+                            </div>
+                            <div class="p-4">
+                                <a href="product-detail.html">
+                                    <h3 class="product-name font-medium text-custom-text mb-1 truncate hover:text-primary transition">Sarimbit Keluarga</h3>
+                                </a>
+                                <div class="star-rating mb-2">
+                                    <span>★★★★★</span>
+                                    <span class="text-text-light text-sm ml-1">(94)</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="font-bold text-primary">Rp 899.000</span>
+                                    <span class="text-sm text-text-light line-through">Rp 1.200.000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 6 -->
+                        <div class="product-card">
+                            <div class="relative overflow-hidden">
+                                <a href="product-detail.html">
+                                    <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&h=500&fit=crop" 
+                                         alt="Gamis Casual Daily" 
+                                         class="w-full aspect-[3/4] object-cover">
+                                </a>
+                            </div>
+                            <div class="p-4">
+                                <a href="product-detail.html">
+                                    <h3 class="product-name font-medium text-custom-text mb-1 truncate hover:text-primary transition">Gamis Casual Daily</h3>
+                                </a>
+                                <div class="star-rating mb-2">
+                                    <span>★★★★★</span>
+                                    <span class="text-text-light text-sm ml-1">(178)</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="font-bold text-primary">Rp 245.000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 7 -->
+                        <div class="product-card">
+                            <div class="relative overflow-hidden">
+                                <span class="badge badge-new absolute top-3 left-3 z-10">New</span>
+                                <a href="product-detail.html">
+                                    <img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=400&h=500&fit=crop" 
+                                         alt="Koko Premium Set" 
+                                         class="w-full aspect-[3/4] object-cover">
+                                </a>
+                            </div>
+                            <div class="p-4">
+                                <a href="product-detail.html">
+                                    <h3 class="product-name font-medium text-custom-text mb-1 truncate hover:text-primary transition">Koko Premium Set</h3>
+                                </a>
+                                <div class="star-rating mb-2">
+                                    <span>★★★★★</span>
+                                    <span class="text-text-light text-sm ml-1">(45)</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="font-bold text-primary">Rp 350.000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 8 -->
+                        <div class="product-card">
+                            <div class="relative overflow-hidden">
+                                <span class="badge badge-sale absolute top-3 left-3 z-10">Sale 25%</span>
+                                <a href="product-detail.html">
+                                    <img src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&h=500&fit=crop" 
+                                         alt="Hijab Pashmina Set" 
+                                         class="w-full aspect-[3/4] object-cover">
+                                </a>
+                            </div>
+                            <div class="p-4">
+                                <a href="product-detail.html">
+                                    <h3 class="product-name font-medium text-custom-text mb-1 truncate hover:text-primary transition">Hijab Pashmina Set</h3>
+                                </a>
+                                <div class="star-rating mb-2">
+                                    <span>★★★★☆</span>
+                                    <span class="text-text-light text-sm ml-1">(112)</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="font-bold text-primary">Rp 125.000</span>
+                                    <span class="text-sm text-text-light line-through">Rp 167.000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 9 -->
+                        <div class="product-card">
+                            <div class="relative overflow-hidden">
+                                <a href="product-detail.html">
+                                    <img src="https://images.unsplash.com/photo-1583391733981-8b530c8a5b70?w=400&h=500&fit=crop" 
+                                         alt="Gamis Formal Elegan" 
+                                         class="w-full aspect-[3/4] object-cover">
+                                </a>
+                            </div>
+                            <div class="p-4">
+                                <a href="product-detail.html">
+                                    <h3 class="product-name font-medium text-custom-text mb-1 truncate hover:text-primary transition">Gamis Formal Elegan</h3>
+                                </a>
+                                <div class="star-rating mb-2">
+                                    <span>★★★★★</span>
+                                    <span class="text-text-light text-sm ml-1">(87)</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="font-bold text-primary">Rp 425.000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 10 -->
+                        <div class="product-card">
+                            <div class="relative overflow-hidden">
+                                <a href="product-detail.html">
+                                    <img src="https://images.unsplash.com/photo-1589465885857-44edb59bbff2?w=400&h=500&fit=crop" 
+                                         alt="Koko Lengan Panjang" 
+                                         class="w-full aspect-[3/4] object-cover">
+                                </a>
+                            </div>
+                            <div class="p-4">
+                                <a href="product-detail.html">
+                                    <h3 class="product-name font-medium text-custom-text mb-1 truncate hover:text-primary transition">Koko Lengan Panjang</h3>
+                                </a>
+                                <div class="star-rating mb-2">
+                                    <span>★★★★☆</span>
+                                    <span class="text-text-light text-sm ml-1">(56)</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="font-bold text-primary">Rp 195.000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 11 -->
+                        <div class="product-card">
+                            <div class="relative overflow-hidden">
+                                <span class="badge badge-sale absolute top-3 left-3 z-10">Sale 40%</span>
+                                <a href="product-detail.html">
+                                    <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&h=500&fit=crop" 
+                                         alt="Hijab Segiempat" 
+                                         class="w-full aspect-[3/4] object-cover">
+                                </a>
+                            </div>
+                            <div class="p-4">
+                                <a href="product-detail.html">
+                                    <h3 class="product-name font-medium text-custom-text mb-1 truncate hover:text-primary transition">Hijab Segiempat</h3>
+                                </a>
+                                <div class="star-rating mb-2">
+                                    <span>★★★★★</span>
+                                    <span class="text-text-light text-sm ml-1">(234)</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="font-bold text-primary">Rp 65.000</span>
+                                    <span class="text-sm text-text-light line-through">Rp 108.000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 12 -->
+                        <div class="product-card">
+                            <div class="relative overflow-hidden">
+                                <a href="product-detail.html">
+                                    <img src="https://images.unsplash.com/photo-1590073242678-70ee3fc28f8e?w=400&h=500&fit=crop" 
+                                         alt="Gamis Motif Batik" 
+                                         class="w-full aspect-[3/4] object-cover">
+                                </a>
+                            </div>
+                            <div class="p-4">
+                                <a href="product-detail.html">
+                                    <h3 class="product-name font-medium text-custom-text mb-1 truncate hover:text-primary transition">Gamis Motif Batik</h3>
+                                </a>
+                                <div class="star-rating mb-2">
+                                    <span>★★★★★</span>
+                                    <span class="text-text-light text-sm ml-1">(143)</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="font-bold text-primary">Rp 375.000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="flex justify-center mt-12">
+                        <nav class="flex items-center gap-2">
+                            <button class="w-10 h-10 flex items-center justify-center border border-custom-border rounded-lg text-text-light hover:border-primary hover:text-primary transition">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                </svg>
+                            </button>
+                            <button class="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-lg font-medium">1</button>
+                            <button class="w-10 h-10 flex items-center justify-center border border-custom-border rounded-lg text-custom-text hover:border-primary hover:text-primary transition">2</button>
+                            <button class="w-10 h-10 flex items-center justify-center border border-custom-border rounded-lg text-custom-text hover:border-primary hover:text-primary transition">3</button>
+                            <span class="px-2 text-text-light">...</span>
+                            <button class="w-10 h-10 flex items-center justify-center border border-custom-border rounded-lg text-custom-text hover:border-primary hover:text-primary transition">10</button>
+                            <button class="w-10 h-10 flex items-center justify-center border border-custom-border rounded-lg text-text-light hover:border-primary hover:text-primary transition">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-10 lg:py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+                <!-- About -->
+                <div class="col-span-2 lg:col-span-1">
+                    <a href="index.html" class="flex items-center gap-2 mb-6">
+                        <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                            <span class="text-white font-playfair font-bold text-lg">B</span>
+                        </div>
+                        <span class="font-playfair text-xl font-bold text-white">Busana Muslim</span>
+                    </a>
+                    <p class="text-white/70 text-sm mb-6">
+                        Menyediakan busana muslim berkualitas dengan desain modern dan elegan untuk keluarga Indonesia.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-medium text-white mb-4">Menu</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="products.html">Produk</a></li>
+                        <li><a href="about.html">Tentang Kami</a></li>
+                        <li><a href="cart.html">Keranjang</a></li>
+                    </ul>
+                </div>
+
+                <!-- Categories -->
+                <div>
+                    <h4 class="font-medium text-white mb-4">Kategori</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="products.html?category=gamis">Gamis</a></li>
+                        <li><a href="products.html?category=koko">Koko</a></li>
+                        <li><a href="products.html?category=hijab">Hijab</a></li>
+                        <li><a href="products.html?category=sarimbit">Sarimbit</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-medium text-white mb-4">Hubungi Kami</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <span>+62 812 3456 7890</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <span>info@busanamuslim.id</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-white/10 mt-12 pt-8 text-center text-sm text-white/60">
+                <p>&copy; 2025 Busana Muslim Nusantara. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
