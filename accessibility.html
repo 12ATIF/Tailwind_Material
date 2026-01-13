@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="id" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessibility | Belajar Tailwind CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:{500:'#667eea',600:'#5a67d8'}}}}}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+  <aside class="sidebar fixed left-0 top-0 bottom-0 w-72 bg-gray-900 border-r border-gray-800 z-50 overflow-y-auto hidden lg:block">
+    <div class="p-4 border-b border-gray-800"><a href="index.html" class="flex items-center gap-3"><div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-purple-600"></div><span class="font-bold">TailwindMaster</span></a></div>
+    <nav class="p-4">
+      <ul class="space-y-1 text-sm">
+        <li><a href="getting-started.html" class="block px-3 py-2 rounded text-gray-400">Getting Started</a></li>
+        <li><a href="core-concepts.html" class="block px-3 py-2 rounded text-gray-400">Core Concepts</a></li>
+        <li><a href="layout.html" class="block px-3 py-2 rounded text-gray-400">Layout</a></li>
+        <li><a href="flexbox-grid.html" class="block px-3 py-2 rounded text-gray-400">Flexbox & Grid</a></li>
+        <li><a href="spacing-sizing.html" class="block px-3 py-2 rounded text-gray-400">Spacing & Sizing</a></li>
+        <li><a href="typography.html" class="block px-3 py-2 rounded text-gray-400">Typography</a></li>
+        <li><a href="backgrounds-effects.html" class="block px-3 py-2 rounded text-gray-400">Backgrounds & Effects</a></li>
+        <li><a href="transitions-animation.html" class="block px-3 py-2 rounded text-gray-400">Transitions & Animation</a></li>
+        <li><a href="interactivity-svg.html" class="block px-3 py-2 rounded text-gray-400">Interactivity & SVG</a></li>
+        <li><a href="accessibility.html" class="block px-3 py-2 rounded bg-primary-500/20 text-white font-medium">Accessibility</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="lg:ml-72">
+    <header class="sticky top-0 z-30 bg-gray-900/90 backdrop-blur border-b border-gray-800 px-6 py-4">
+      <nav class="text-sm text-gray-400"><a href="index.html" class="hover:text-white">Home</a> / <span class="text-white">Accessibility</span></nav>
+    </header>
+
+    <div class="max-w-4xl mx-auto px-6 py-12">
+      <div class="mb-10">
+        <span class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm font-medium">Materi 10/10 - Final! 🎉</span>
+        <h1 class="text-4xl font-bold mt-4 mb-3">Accessibility</h1>
+        <p class="text-lg text-gray-400">Best practices accessibility untuk membuat website yang inklusif dan accessible untuk semua orang.</p>
+      </div>
+
+      <!-- Daftar Isi -->
+      <div class="mb-10 p-4 rounded-xl bg-gray-800/50 border border-gray-700">
+        <h3 class="font-semibold mb-3">📋 Daftar Isi</h3>
+        <div class="grid md:grid-cols-2 gap-2 text-sm text-gray-300">
+          <div>
+            <p class="font-semibold text-blue-400 mb-1">Tailwind Utilities</p>
+            <a href="#sr-only" class="block hover:text-primary-500">1. Screen Reader Only</a>
+            <a href="#not-sr-only" class="block hover:text-primary-500">2. Not Screen Reader Only</a>
+            <a href="#forced-color" class="block hover:text-primary-500">3. Forced Color Adjust</a>
+          </div>
+          <div>
+            <p class="font-semibold text-green-400 mb-1">Best Practices</p>
+            <a href="#focus-states" class="block hover:text-primary-500">4. Focus States</a>
+            <a href="#focus-visible" class="block hover:text-primary-500">5. Focus Visible</a>
+            <a href="#color-contrast" class="block hover:text-primary-500">6. Color Contrast</a>
+            <a href="#motion" class="block hover:text-primary-500">7. Motion Preferences</a>
+            <a href="#semantic" class="block hover:text-primary-500">8. Semantic HTML</a>
+            <a href="#forms" class="block hover:text-primary-500">9. Accessible Forms</a>
+            <a href="#checklist" class="block hover:text-primary-500">10. A11y Checklist</a>
+          </div>
+        </div>
+      </div>
+
+      <article class="space-y-14">
+        
+        <!-- TAILWIND UTILITIES SECTION -->
+        <div class="p-4 rounded-xl bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/30">
+          <h2 class="text-2xl font-bold text-center">🛠️ TAILWIND ACCESSIBILITY UTILITIES</h2>
+        </div>
+
+        <!-- 1. Screen Reader Only -->
+        <section id="sr-only">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-500 flex items-center justify-center text-sm">1</span>
+            Screen Reader Only (sr-only)
+          </h2>
+          <p class="text-gray-300 mb-4">Menyembunyikan elemen secara visual tapi tetap terbaca oleh screen reader.</p>
+          
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div class="p-4 rounded-lg bg-gray-800">
+              <p class="text-sm text-gray-400 mb-3">Contoh: Icon button dengan label</p>
+              <button class="p-3 bg-red-500 hover:bg-red-600 rounded-lg transition-colors focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-gray-900" aria-label="Delete">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                </svg>
+                <span class="sr-only">Hapus item</span>
+              </button>
+            </div>
+            <div class="p-4 rounded-lg bg-gray-800">
+              <p class="text-sm text-gray-400 mb-2">Kode:</p>
+              <pre class="text-xs overflow-x-auto"><code>&lt;button aria-label="Delete"&gt;
+  &lt;svg&gt;...&lt;/svg&gt;
+  &lt;span class="<span class="text-green-400">sr-only</span>"&gt;Hapus item&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-lg bg-blue-500/10 border border-blue-500/30">
+            <p class="text-blue-300 text-sm">💡 <strong>Use Case:</strong> Icon-only buttons, skip links, loading states, form instructions</p>
+          </div>
+        </section>
+
+        <!-- 2. Not Screen Reader Only -->
+        <section id="not-sr-only">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-500 flex items-center justify-center text-sm">2</span>
+            Not Screen Reader Only (not-sr-only)
+          </h2>
+          <p class="text-gray-300 mb-4">Membalik efek sr-only, membuat elemen terlihat kembali.</p>
+          
+          <div class="p-4 rounded-lg bg-gray-800 mb-4">
+            <p class="text-sm text-gray-400 mb-3">Contoh: Skip link yang muncul saat focus</p>
+            <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-gray-900 focus:rounded-lg focus:font-medium">
+              Skip to main content
+            </a>
+            <p class="text-xs text-gray-500">(Tab ke sini untuk melihat skip link)</p>
+          </div>
+
+          <div class="p-4 rounded-lg bg-gray-800">
+            <pre class="text-xs overflow-x-auto"><code>&lt;a href="#main" class="<span class="text-green-400">sr-only focus:not-sr-only</span>
+   focus:absolute focus:top-4 focus:left-4 
+   focus:px-4 focus:py-2 focus:bg-white focus:text-black"&gt;
+  Skip to main content
+&lt;/a&gt;</code></pre>
+          </div>
+        </section>
+
+        <!-- 3. Forced Color Adjust -->
+        <section id="forced-color">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-500 flex items-center justify-center text-sm">3</span>
+            Forced Color Adjust
+          </h2>
+          <p class="text-gray-300 mb-4">Mengontrol apakah elemen mengikuti forced colors mode (Windows High Contrast).</p>
+          
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div class="p-4 rounded-lg bg-gray-800">
+              <code class="text-primary-500">forced-color-adjust-auto</code>
+              <p class="text-sm text-gray-400 mt-2">Default - browser menyesuaikan warna otomatis di high contrast mode</p>
+            </div>
+            <div class="p-4 rounded-lg bg-gray-800">
+              <code class="text-primary-500">forced-color-adjust-none</code>
+              <p class="text-sm text-gray-400 mt-2">Preserve warna asli (gunakan dengan hati-hati!)</p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-lg bg-yellow-500/10 border border-yellow-500/30">
+            <p class="text-yellow-400 text-sm">⚠️ <strong>Perhatian:</strong> Hanya gunakan <code class="px-1 bg-gray-800 rounded">forced-color-adjust-none</code> jika benar-benar diperlukan, seperti untuk preserving brand colors atau syntax highlighting.</p>
+          </div>
+        </section>
+
+        <!-- BEST PRACTICES SECTION -->
+        <div class="p-4 rounded-xl bg-gradient-to-r from-green-500/10 to-teal-500/10 border border-green-500/30">
+          <h2 class="text-2xl font-bold text-center">✅ BEST PRACTICES</h2>
+        </div>
+
+        <!-- 4. Focus States -->
+        <section id="focus-states">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-green-500/20 text-green-500 flex items-center justify-center text-sm">4</span>
+            Focus States
+          </h2>
+          <p class="text-gray-300 mb-4">Pastikan semua elemen interaktif memiliki focus state yang jelas untuk keyboard navigation.</p>
+          
+          <div class="flex flex-wrap gap-4 mb-4">
+            <button class="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-900">
+              Focus Ring
+            </button>
+            <button class="px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-colors focus:outline-none focus:ring-4 focus:ring-green-300">
+              Ring Tebal
+            </button>
+            <button class="px-6 py-3 bg-purple-500 hover:bg-purple-600 text-white rounded-lg transition-colors focus:outline-2 focus:outline-offset-2 focus:outline-purple-400">
+              Outline
+            </button>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-3 text-sm">
+            <div class="p-3 rounded bg-gray-800"><code>focus:ring-2</code> - Ring width</div>
+            <div class="p-3 rounded bg-gray-800"><code>focus:ring-{color}</code> - Ring color</div>
+            <div class="p-3 rounded bg-gray-800"><code>focus:ring-offset-2</code> - Gap dari element</div>
+            <div class="p-3 rounded bg-gray-800"><code>focus:ring-offset-{color}</code> - Offset color</div>
+            <div class="p-3 rounded bg-gray-800"><code>focus:outline-none</code> - Remove default</div>
+            <div class="p-3 rounded bg-gray-800"><code>focus:outline-2</code> - Custom outline</div>
+          </div>
+        </section>
+
+        <!-- 5. Focus Visible -->
+        <section id="focus-visible">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-green-500/20 text-green-500 flex items-center justify-center text-sm">5</span>
+            Focus Visible
+          </h2>
+          <p class="text-gray-300 mb-4">Hanya tampilkan focus ring saat keyboard navigation, bukan mouse click.</p>
+          
+          <div class="flex gap-4 mb-4">
+            <button class="px-6 py-3 bg-indigo-500 hover:bg-indigo-600 text-white rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900">
+              Focus Visible Only
+            </button>
+          </div>
+
+          <div class="p-4 rounded-lg bg-gray-800">
+            <pre class="text-xs overflow-x-auto"><code>&lt;button class="<span class="text-green-400">focus-visible:ring-2 focus-visible:ring-blue-400</span>
+               focus-visible:ring-offset-2"&gt;
+  Click atau Tab
+&lt;/button&gt;</code></pre>
+          </div>
+
+          <div class="mt-4 p-4 rounded-lg bg-blue-500/10 border border-blue-500/30">
+            <p class="text-blue-300 text-sm">💡 <strong>Difference:</strong> <code class="px-1 bg-gray-800 rounded">focus:</code> muncul di klik & keyboard, sedangkan <code class="px-1 bg-gray-800 rounded">focus-visible:</code> hanya muncul di keyboard navigation.</p>
+          </div>
+        </section>
+
+        <!-- 6. Color Contrast -->
+        <section id="color-contrast">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-green-500/20 text-green-500 flex items-center justify-center text-sm">6</span>
+            Color Contrast
+          </h2>
+          <p class="text-gray-300 mb-4">WCAG AA membutuhkan contrast ratio minimal 4.5:1 untuk teks normal.</p>
+          
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div class="p-4 rounded-lg bg-gray-800 border-2 border-green-500">
+              <p class="text-white text-lg font-medium">✅ Baik: text-white + bg-gray-800</p>
+              <p class="text-gray-300 mt-2">Contrast ratio tinggi, mudah dibaca</p>
+            </div>
+            <div class="p-4 rounded-lg bg-gray-800 border-2 border-red-500">
+              <p class="text-gray-600 text-lg font-medium">❌ Buruk: text-gray-600</p>
+              <p class="text-gray-700 mt-2">Contrast terlalu rendah</p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-lg bg-gray-800">
+            <h4 class="font-semibold mb-2">Rekomendasi Colors untuk Dark Mode:</h4>
+            <div class="space-y-2 text-sm">
+              <div class="flex items-center gap-3">
+                <span class="w-4 h-4 rounded bg-white"></span>
+                <span class="text-white"><code>text-white</code> - Untuk heading utama</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="w-4 h-4 rounded bg-gray-100"></span>
+                <span class="text-gray-100"><code>text-gray-100</code> - Body text</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="w-4 h-4 rounded bg-gray-300"></span>
+                <span class="text-gray-300"><code>text-gray-300</code> - Secondary text ✅</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="w-4 h-4 rounded bg-gray-400"></span>
+                <span class="text-gray-400"><code>text-gray-400</code> - Muted text (minimal)</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="w-4 h-4 rounded bg-gray-500"></span>
+                <span class="text-gray-500"><code>text-gray-500</code> - ⚠️ Borderline!</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7. Motion Preferences -->
+        <section id="motion">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-green-500/20 text-green-500 flex items-center justify-center text-sm">7</span>
+            Motion Preferences
+          </h2>
+          <p class="text-gray-300 mb-4">Hormati preferensi user yang tidak ingin animasi (vestibular disorders).</p>
+          
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div class="p-4 rounded-lg bg-gray-800">
+              <code class="text-primary-500">motion-safe:animate-*</code>
+              <p class="text-sm text-gray-400 mt-2">Animasi hanya jika user mengizinkan motion</p>
+            </div>
+            <div class="p-4 rounded-lg bg-gray-800">
+              <code class="text-primary-500">motion-reduce:transition-none</code>
+              <p class="text-sm text-gray-400 mt-2">Matikan transisi untuk reduced motion</p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-lg bg-gray-800">
+            <pre class="text-xs overflow-x-auto"><code>&lt;!-- Bounce hanya jika motion allowed --&gt;
+&lt;div class="<span class="text-green-400">motion-safe:animate-bounce</span>"&gt;...&lt;/div&gt;
+
+&lt;!-- Disable transition untuk reduced motion --&gt;
+&lt;button class="transition-all <span class="text-green-400">motion-reduce:transition-none</span>"&gt;
+  Button
+&lt;/button&gt;</code></pre>
+          </div>
+        </section>
+
+        <!-- 8. Semantic HTML -->
+        <section id="semantic">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-green-500/20 text-green-500 flex items-center justify-center text-sm">8</span>
+            Semantic HTML
+          </h2>
+          
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div class="p-4 rounded-lg bg-green-500/10 border border-green-500/30">
+              <p class="text-green-400 font-semibold mb-3">✅ Gunakan:</p>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li><code>&lt;button&gt;</code> untuk clickable actions</li>
+                <li><code>&lt;a href&gt;</code> untuk navigation</li>
+                <li><code>&lt;nav&gt;</code> untuk navigation wrapper</li>
+                <li><code>&lt;main&gt;</code> untuk main content</li>
+                <li><code>&lt;header&gt;</code> / <code>&lt;footer&gt;</code></li>
+                <li><code>&lt;article&gt;</code> / <code>&lt;section&gt;</code></li>
+                <li><code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code> dengan urutan benar</li>
+              </ul>
+            </div>
+            <div class="p-4 rounded-lg bg-red-500/10 border border-red-500/30">
+              <p class="text-red-400 font-semibold mb-3">❌ Hindari:</p>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li><code>&lt;div onclick&gt;</code> sebagai button</li>
+                <li><code>&lt;span&gt;</code> sebagai heading</li>
+                <li><code>&lt;div role="link"&gt;</code> (pakai <code>&lt;a&gt;</code>)</li>
+                <li>Skip heading levels (h1 → h3)</li>
+                <li>Multiple <code>&lt;h1&gt;</code> per page</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- 9. Accessible Forms -->
+        <section id="forms">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-green-500/20 text-green-500 flex items-center justify-center text-sm">9</span>
+            Accessible Forms
+          </h2>
+          
+          <div class="p-4 rounded-lg bg-gray-800 mb-4">
+            <form class="space-y-4">
+              <!-- Good example -->
+              <div>
+                <label for="email-input" class="block text-sm font-medium mb-1">
+                  Email Address <span class="text-red-400">*</span>
+                </label>
+                <input 
+                  type="email" 
+                  id="email-input"
+                  required
+                  aria-required="true"
+                  placeholder="you@example.com"
+                  class="w-full px-4 py-2 bg-gray-700 rounded-lg border border-gray-600 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none"
+                >
+                <p class="text-xs text-gray-500 mt-1" id="email-help">We'll never share your email.</p>
+              </div>
+
+              <!-- Checkbox with label -->
+              <div class="flex items-center gap-2">
+                <input 
+                  type="checkbox" 
+                  id="terms"
+                  class="w-5 h-5 rounded accent-primary-500"
+                >
+                <label for="terms" class="text-sm">I agree to the terms and conditions</label>
+              </div>
+            </form>
+          </div>
+
+          <div class="p-4 rounded-lg bg-gray-800">
+            <h4 class="font-semibold mb-2">Checklist Form Accessible:</h4>
+            <ul class="space-y-1 text-sm text-gray-300">
+              <li>✓ Setiap input punya <code class="px-1 bg-gray-700 rounded">&lt;label for="..."&gt;</code></li>
+              <li>✓ Required fields marked dengan <code class="px-1 bg-gray-700 rounded">aria-required="true"</code></li>
+              <li>✓ Error messages terhubung dengan <code class="px-1 bg-gray-700 rounded">aria-describedby</code></li>
+              <li>✓ Form fields bisa diakses dengan Tab</li>
+              <li>✓ Visual indication untuk required (*)</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 10. A11y Checklist -->
+        <section id="checklist" class="p-6 rounded-xl bg-gradient-to-br from-primary-500/20 to-purple-600/20 border border-primary-500/30">
+          <h2 class="text-2xl font-bold mb-4">🎓 Complete Accessibility Checklist</h2>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-semibold text-blue-400 mb-2">Visual</h4>
+              <ul class="space-y-1 text-sm text-gray-300">
+                <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Color contrast ≥ 4.5:1</li>
+                <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Don't rely on color alone</li>
+                <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Text resizable to 200%</li>
+                <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Focus states visible</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold text-green-400 mb-2">Keyboard</h4>
+              <ul class="space-y-1 text-sm text-gray-300">
+                <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Tab order logical</li>
+                <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Skip links provided</li>
+                <li class="flex items-center gap-2"><span class="text-green-400">✓</span> No keyboard traps</li>
+                <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Escape closes modals</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold text-purple-400 mb-2">Content</h4>
+              <ul class="space-y-1 text-sm text-gray-300">
+                <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Images have alt text</li>
+                <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Headings in order</li>
+                <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Links descriptive</li>
+                <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Forms labeled</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold text-pink-400 mb-2">Technical</h4>
+              <ul class="space-y-1 text-sm text-gray-300">
+                <li class="flex items-center gap-2"><span class="text-green-400">✓</span> HTML lang attribute</li>
+                <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Semantic HTML used</li>
+                <li class="flex items-center gap-2"><span class="text-green-400">✓</span> ARIA used correctly</li>
+                <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Reduced motion respected</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+
+      <!-- Reading Checkbox -->
+      <div class="my-10 p-6 rounded-xl bg-gray-800/50 border border-gray-700">
+        <label class="flex items-center gap-4 cursor-pointer">
+          <input type="checkbox" id="reading-checkbox" class="w-5 h-5 rounded accent-primary-500">
+          <span class="font-semibold">Saya sudah membaca dan memahami materi Accessibility</span>
+        </label>
+      </div>
+
+      <!-- FINAL CHALLENGE -->
+      <section id="final-challenge" class="p-6 rounded-xl mb-10 bg-gradient-to-br from-green-500/10 to-emerald-500/10 border-2 border-green-500/50">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-4xl">🏆</span>
+          <div>
+            <h2 class="text-2xl font-bold">Final Challenge: Landing Page Full Tailwind</h2>
+            <p class="text-gray-400 text-sm">Build a complete, accessible & responsive landing page</p>
+          </div>
+        </div>
+        
+        <p class="text-gray-300 mb-6">Bangun landing page lengkap yang menggabungkan semua yang sudah dipelajari!</p>
+
+        <!-- Requirements -->
+        <div class="mb-6 p-4 rounded-lg bg-gray-800/50 border border-gray-700">
+          <h3 class="font-semibold mb-3">📋 Requirements:</h3>
+          <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <div>
+              <p class="text-blue-400 font-medium mb-2">Layout & Responsive:</p>
+              <ul class="space-y-1 text-gray-300">
+                <li>□ Mobile-first design</li>
+                <li>□ Breakpoints (sm, md, lg)</li>
+                <li>□ Flexbox & Grid layout</li>
+                <li>□ Container dengan max-width</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-green-400 font-medium mb-2">Accessibility:</p>
+              <ul class="space-y-1 text-gray-300">
+                <li>□ Semantic HTML (nav, main, footer)</li>
+                <li>□ Focus states visible</li>
+                <li>□ Color contrast OK</li>
+                <li>□ Alt text on images</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-purple-400 font-medium mb-2">Styling:</p>
+              <ul class="space-y-1 text-gray-300">
+                <li>□ Gradients & shadows</li>
+                <li>□ Hover effects</li>
+                <li>□ Smooth transitions</li>
+                <li>□ Dark mode ready</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-pink-400 font-medium mb-2">Sections:</p>
+              <ul class="space-y-1 text-gray-300">
+                <li>□ Navigation/Header</li>
+                <li>□ Hero section</li>
+                <li>□ Features (grid)</li>
+                <li>□ CTA & Footer</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Preview -->
+        <div class="mb-8">
+          <p class="text-sm text-gray-400 mb-3">📱 Mini Landing Page Preview:</p>
+          <div class="rounded-xl overflow-hidden border border-gray-700 bg-gray-950">
+            
+            <!-- Mini Navbar -->
+            <nav class="flex items-center justify-between px-6 py-4 border-b border-gray-800">
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600"></div>
+                <span class="font-bold">LaunchPad</span>
+              </div>
+              <div class="hidden sm:flex items-center gap-6 text-sm text-gray-400">
+                <a href="#" class="hover:text-white transition-colors">Features</a>
+                <a href="#" class="hover:text-white transition-colors">Pricing</a>
+                <a href="#" class="hover:text-white transition-colors">About</a>
+              </div>
+              <button class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white text-sm rounded-lg transition-colors focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950">
+                Get Started
+              </button>
+            </nav>
+
+            <!-- Mini Hero -->
+            <section class="px-6 py-12 text-center">
+              <span class="inline-block px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-xs font-medium mb-4">🚀 Version 2.0 is here</span>
+              <h1 class="text-2xl sm:text-3xl font-bold mb-4 leading-tight">Build amazing products<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">faster than ever</span></h1>
+              <p class="text-gray-400 mb-6 max-w-md mx-auto text-sm">The all-in-one platform to launch your next big idea. No coding required.</p>
+              <div class="flex items-center justify-center gap-3">
+                <button class="px-5 py-2 bg-gradient-to-r from-blue-500 to-purple-500 hover:opacity-90 text-white rounded-lg transition-all text-sm focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:ring-offset-gray-950">
+                  Start Free Trial
+                </button>
+                <button class="px-5 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition-colors text-sm border border-gray-700">
+                  Watch Demo
+                </button>
+              </div>
+            </section>
+
+            <!-- Mini Features Grid -->
+            <section class="px-6 py-8 border-t border-gray-800">
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="p-4 rounded-xl bg-gray-800/50 border border-gray-700 hover:border-blue-500/50 transition-colors">
+                  <div class="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center text-xl mb-3">⚡</div>
+                  <h3 class="font-semibold mb-1">Lightning Fast</h3>
+                  <p class="text-xs text-gray-400">Optimized for speed and performance.</p>
+                </div>
+                <div class="p-4 rounded-xl bg-gray-800/50 border border-gray-700 hover:border-green-500/50 transition-colors">
+                  <div class="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center text-xl mb-3">🔒</div>
+                  <h3 class="font-semibold mb-1">Secure</h3>
+                  <p class="text-xs text-gray-400">Enterprise-grade security built in.</p>
+                </div>
+                <div class="p-4 rounded-xl bg-gray-800/50 border border-gray-700 hover:border-purple-500/50 transition-colors">
+                  <div class="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center text-xl mb-3">🎨</div>
+                  <h3 class="font-semibold mb-1">Customizable</h3>
+                  <p class="text-xs text-gray-400">Make it truly yours.</p>
+                </div>
+              </div>
+            </section>
+
+            <!-- Mini Footer -->
+            <footer class="px-6 py-4 border-t border-gray-800 text-center text-xs text-gray-500">
+              © 2026 LaunchPad. Built with Tailwind CSS.
+            </footer>
+          </div>
+        </div>
+
+        <!-- Code Template -->
+        <div class="mb-6">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-semibold">💻 Template Starter</h3>
+            <button onclick="navigator.clipboard.writeText(document.getElementById('landing-code').textContent).then(()=>alert('Copied!'))" class="text-xs px-3 py-1 rounded bg-gray-700 hover:bg-gray-600 transition-colors">📋 Copy</button>
+          </div>
+          <div class="p-4 rounded-lg bg-gray-950 border border-gray-700 overflow-x-auto max-h-64">
+            <pre id="landing-code" class="text-xs text-gray-300"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en" class="scroll-smooth"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;My Landing Page&lt;/title&gt;
+  &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body class="bg-gray-900 text-gray-100"&gt;
+  
+  &lt;!-- Skip Link --&gt;
+  &lt;a href="#main" class="sr-only focus:not-sr-only focus:absolute 
+     focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 
+     focus:bg-white focus:text-black focus:rounded-lg"&gt;
+    Skip to content
+  &lt;/a&gt;
+
+  &lt;!-- Navigation --&gt;
+  &lt;nav class="sticky top-0 z-50 bg-gray-900/90 backdrop-blur 
+       border-b border-gray-800"&gt;
+    &lt;div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between"&gt;
+      &lt;!-- Logo --&gt;
+      &lt;a href="#" class="flex items-center gap-2"&gt;
+        &lt;div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600"&gt;&lt;/div&gt;
+        &lt;span class="font-bold"&gt;Brand&lt;/span&gt;
+      &lt;/a&gt;
+      &lt;!-- Nav Links --&gt;
+      &lt;div class="hidden md:flex items-center gap-6"&gt;
+        &lt;a href="#features" class="hover:text-white transition-colors"&gt;Features&lt;/a&gt;
+        &lt;a href="#pricing" class="hover:text-white transition-colors"&gt;Pricing&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;!-- CTA --&gt;
+      &lt;button class="px-4 py-2 bg-blue-500 hover:bg-blue-600 rounded-lg 
+              transition-colors focus-visible:ring-2 focus-visible:ring-blue-400"&gt;
+        Get Started
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/nav&gt;
+
+  &lt;main id="main"&gt;
+    &lt;!-- Hero Section --&gt;
+    &lt;section class="max-w-6xl mx-auto px-4 py-20 text-center"&gt;
+      &lt;h1 class="text-4xl md:text-5xl font-bold mb-6"&gt;
+        Your Amazing &lt;span class="text-transparent bg-clip-text 
+        bg-gradient-to-r from-blue-400 to-purple-500"&gt;Product&lt;/span&gt;
+      &lt;/h1&gt;
+      &lt;p class="text-gray-400 text-lg mb-8 max-w-2xl mx-auto"&gt;
+        Description of your product goes here.
+      &lt;/p&gt;
+      &lt;button class="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 
+              rounded-xl font-semibold hover:opacity-90 transition-all
+              hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/25"&gt;
+        Start Free Trial
+      &lt;/button&gt;
+    &lt;/section&gt;
+
+    &lt;!-- Features Grid --&gt;
+    &lt;section id="features" class="max-w-6xl mx-auto px-4 py-16"&gt;
+      &lt;h2 class="text-3xl font-bold text-center mb-12"&gt;Features&lt;/h2&gt;
+      &lt;div class="grid md:grid-cols-3 gap-6"&gt;
+        &lt;!-- Feature Card --&gt;
+        &lt;article class="p-6 rounded-2xl bg-gray-800/50 border border-gray-700
+                 hover:border-blue-500/50 transition-colors"&gt;
+          &lt;div class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center 
+               justify-center text-2xl mb-4"&gt;⚡&lt;/div&gt;
+          &lt;h3 class="font-semibold text-lg mb-2"&gt;Feature One&lt;/h3&gt;
+          &lt;p class="text-gray-400"&gt;Description of this feature.&lt;/p&gt;
+        &lt;/article&gt;
+        &lt;!-- Add more cards... --&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+
+  &lt;!-- Footer --&gt;
+  &lt;footer class="border-t border-gray-800 py-8 text-center text-gray-500"&gt;
+    &lt;p&gt;© 2026 Brand. All rights reserved.&lt;/p&gt;
+  &lt;/footer&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+        </div>
+
+        <!-- Bonus Challenges -->
+        <div class="mb-6 p-4 rounded-lg bg-yellow-500/10 border border-yellow-500/30">
+          <h3 class="font-semibold text-yellow-400 mb-3">✨ Bonus Challenges:</h3>
+          <ul class="text-sm text-gray-300 space-y-2">
+            <li>□ Add mobile hamburger menu dengan JavaScript</li>
+            <li>□ Implement dark/light mode toggle</li>
+            <li>□ Add scroll animations dengan <code class="px-1 rounded bg-gray-700">motion-safe:</code></li>
+            <li>□ Create pricing cards dengan hover effects</li>
+            <li>□ Add testimonial section dengan carousel (scroll-snap)</li>
+          </ul>
+        </div>
+
+        <button id="submit-challenge" class="w-full py-4 rounded-xl bg-gradient-to-r from-green-500 to-emerald-500 text-white font-bold text-lg hover:opacity-90 transition-all hover:shadow-lg hover:shadow-green-500/25 focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-gray-900">
+          🎉 Saya Sudah Menyelesaikan Final Challenge!
+        </button>
+      </section>
+
+      <!-- Completion Banner -->
+      <div class="p-8 rounded-2xl bg-gradient-to-r from-primary-500 to-purple-600 text-white text-center mb-10">
+        <span class="text-5xl mb-4 block">🎊</span>
+        <h2 class="text-3xl font-bold mb-3">Selamat!</h2>
+        <p class="text-lg opacity-90 mb-4">Kamu telah menyelesaikan semua 10 materi Tailwind CSS!</p>
+        <p class="text-sm opacity-75">Sekarang praktik terus dan bangun project nyata. The best way to learn is by building!</p>
+      </div>
+
+      <!-- Navigation -->
+      <div class="flex justify-between">
+        <a href="interactivity-svg.html" class="px-6 py-3 rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors">← Interactivity & SVG</a>
+        <a href="index.html" class="px-6 py-3 rounded-lg bg-primary-500 hover:bg-primary-600 text-white transition-colors">🏠 Kembali ke Home</a>
+      </div>
+    </div>
+  </main>
+  <script src="assets/js/progress.js"></script>
+</body>
+</html>

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Belajar Tailwind CSS dari Nol - Platform edukasi interaktif untuk pemula dengan materi terstruktur dan challenges">
+  <title>Belajar Tailwind CSS dari Nol | Platform Edukasi</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['Fira Code', 'monospace']
+          },
+          colors: {
+            primary: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              200: '#c7d2fe',
+              300: '#a5b4fc',
+              400: '#818cf8',
+              500: '#667eea',
+              600: '#5a67d8',
+              700: '#4c51bf',
+              800: '#434190',
+              900: '#3c366b'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans antialiased">
+  
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 backdrop-blur-md border-b border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-purple-600 flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <span class="text-xl font-bold gradient-text">TailwindMaster</span>
+        </a>
+        
+        <!-- Progress Bar (Desktop) -->
+        <div class="hidden md:flex items-center gap-4">
+          <span class="text-sm text-gray-400">Progress Belajar</span>
+          <div class="w-40 h-2 progress-container">
+            <div class="progress-bar h-full" style="width: 0%"></div>
+          </div>
+          <span class="text-sm font-semibold progress-text text-primary-400">0%</span>
+        </div>
+        
+        <!-- Right Actions -->
+        <div class="flex items-center gap-4">
+          <div class="dark-toggle" title="Toggle Dark Mode"></div>
+          <a href="#roadmap" class="hidden sm:block px-4 py-2 rounded-lg bg-primary-500/20 text-primary-400 hover:bg-primary-500/30 transition-colors">
+            Mulai Belajar
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+    <!-- Animated Background -->
+    <div class="absolute inset-0 animated-bg opacity-20"></div>
+    
+    <!-- Floating Elements -->
+    <div class="absolute top-20 left-10 w-20 h-20 rounded-full bg-primary-500/20 blur-xl float"></div>
+    <div class="absolute top-40 right-20 w-32 h-32 rounded-full bg-purple-500/20 blur-xl float" style="animation-delay: 2s;"></div>
+    <div class="absolute bottom-40 left-1/4 w-24 h-24 rounded-full bg-pink-500/20 blur-xl float" style="animation-delay: 4s;"></div>
+    
+    <!-- Content -->
+    <div class="relative z-10 max-w-5xl mx-auto px-4 text-center">
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/20 text-primary-400 text-sm font-medium mb-8">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-primary-500"></span>
+        </span>
+        Gratis & Open Source
+      </div>
+      
+      <!-- Heading -->
+      <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+        Belajar 
+        <span class="gradient-text">Tailwind CSS</span>
+        <br>dari Nol
+      </h1>
+      
+      <!-- Description -->
+      <p class="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto mb-10">
+        Platform belajar interaktif dengan materi terstruktur, challenges praktis, 
+        dan progress tracking. Cocok untuk pemula yang ingin menguasai Tailwind CSS.
+      </p>
+      
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#roadmap" class="group w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-primary-500 to-purple-600 text-white font-semibold shadow-lg shadow-primary-500/30 hover:shadow-xl hover:shadow-primary-500/40 transition-all hover:-translate-y-1">
+          <span class="flex items-center justify-center gap-2">
+            Mulai Belajar Sekarang
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+            </svg>
+          </span>
+        </a>
+        <a href="https://tailwindcss.com/docs" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl border border-gray-700 text-gray-300 hover:bg-gray-800 transition-all">
+          Dokumentasi Resmi →
+        </a>
+      </div>
+      
+      <!-- Stats -->
+      <div class="grid grid-cols-3 gap-8 mt-16 max-w-lg mx-auto">
+        <div class="text-center">
+          <div class="text-3xl font-bold text-white">10</div>
+          <div class="text-sm text-gray-500">Materi</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-bold text-white">10</div>
+          <div class="text-sm text-gray-500">Challenges</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl font-bold text-white">100%</div>
+          <div class="text-sm text-gray-500">Gratis</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-20 px-4 bg-gray-900/50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Kenapa TailwindMaster?</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">Platform ini dirancang khusus untuk pemula dengan pendekatan pembelajaran yang terstruktur dan interaktif.</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="card-hover p-8 rounded-2xl bg-gray-800/50 border border-gray-700/50">
+          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Materi Terstruktur</h3>
+          <p class="text-gray-400">Kurikulum disusun dari dasar hingga mahir. Belajar bertahap tanpa loncat-loncat materi.</p>
+        </div>
+        
+        <!-- Feature 2 -->
+        <div class="card-hover p-8 rounded-2xl bg-gray-800/50 border border-gray-700/50">
+          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-pink-400 flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Challenges Praktis</h3>
+          <p class="text-gray-400">Setiap materi dilengkapi challenge yang harus diselesaikan sebelum lanjut ke materi berikutnya.</p>
+        </div>
+        
+        <!-- Feature 3 -->
+        <div class="card-hover p-8 rounded-2xl bg-gray-800/50 border border-gray-700/50">
+          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-green-500 to-emerald-400 flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Progress Tracking</h3>
+          <p class="text-gray-400">Pantau progres belajarmu dengan sistem tracking yang tersimpan di browser.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roadmap Section -->
+  <section id="roadmap" class="py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">🗺️ Roadmap Pembelajaran</h2>
+        <p class="text-gray-400">Ikuti alur pembelajaran dari awal hingga akhir. Setiap materi harus diselesaikan sebelum melanjutkan.</p>
+      </div>
+      
+      <!-- Roadmap Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        
+        <!-- Lesson 1 -->
+        <div data-roadmap="getting-started" class="card-hover group relative rounded-2xl bg-gray-800/50 border border-gray-700/50 overflow-hidden">
+          <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary-500 to-purple-600"></div>
+          <div class="p-6 pl-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-primary-500/20 flex items-center justify-center text-2xl">
+                  1️⃣
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-1 group-hover:text-primary-400 transition-colors">Getting Started</h3>
+                  <p class="text-gray-400 text-sm">Pengenalan Tailwind CSS, instalasi, dan setup environment</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="status-badge px-3 py-1 rounded-full text-sm bg-blue-500/20 text-blue-400">📖 Mulai di sini</span>
+                <a href="getting-started.html" class="px-4 py-2 rounded-lg bg-primary-500 hover:bg-primary-600 text-white text-sm font-medium transition-colors">
+                  Buka →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Lesson 2 -->
+        <div data-roadmap="core-concepts" class="card-hover group relative rounded-2xl bg-gray-800/50 border border-gray-700/50 overflow-hidden opacity-50">
+          <div class="absolute left-0 top-0 bottom-0 w-1 bg-gray-700"></div>
+          <div class="p-6 pl-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-gray-700/50 flex items-center justify-center text-2xl">
+                  2️⃣
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-1">Core Concepts</h3>
+                  <p class="text-gray-400 text-sm">Utility-first CSS, responsive design, dark mode, dan states</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="status-badge px-3 py-1 rounded-full text-sm bg-gray-500/20 text-gray-400">🔒 Terkunci</span>
+                <a class="px-4 py-2 rounded-lg bg-gray-700 text-gray-400 text-sm font-medium cursor-not-allowed">
+                  Buka →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Lesson 3 -->
+        <div data-roadmap="layout" class="card-hover group relative rounded-2xl bg-gray-800/50 border border-gray-700/50 overflow-hidden opacity-50">
+          <div class="absolute left-0 top-0 bottom-0 w-1 bg-gray-700"></div>
+          <div class="p-6 pl-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-gray-700/50 flex items-center justify-center text-2xl">
+                  3️⃣
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-1">Layout</h3>
+                  <p class="text-gray-400 text-sm">Position, display, overflow, z-index, dan properti layout lainnya</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="status-badge px-3 py-1 rounded-full text-sm bg-gray-500/20 text-gray-400">🔒 Terkunci</span>
+                <a class="px-4 py-2 rounded-lg bg-gray-700 text-gray-400 text-sm font-medium cursor-not-allowed">
+                  Buka →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Lesson 4 -->
+        <div data-roadmap="flexbox-grid" class="card-hover group relative rounded-2xl bg-gray-800/50 border border-gray-700/50 overflow-hidden opacity-50">
+          <div class="absolute left-0 top-0 bottom-0 w-1 bg-gray-700"></div>
+          <div class="p-6 pl-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-gray-700/50 flex items-center justify-center text-2xl">
+                  4️⃣
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-1">Flexbox & Grid</h3>
+                  <p class="text-gray-400 text-sm">Sistem layout modern dengan Flexbox dan CSS Grid</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="status-badge px-3 py-1 rounded-full text-sm bg-gray-500/20 text-gray-400">🔒 Terkunci</span>
+                <a class="px-4 py-2 rounded-lg bg-gray-700 text-gray-400 text-sm font-medium cursor-not-allowed">
+                  Buka →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Lesson 5 -->
+        <div data-roadmap="spacing-sizing" class="card-hover group relative rounded-2xl bg-gray-800/50 border border-gray-700/50 overflow-hidden opacity-50">
+          <div class="absolute left-0 top-0 bottom-0 w-1 bg-gray-700"></div>
+          <div class="p-6 pl-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-gray-700/50 flex items-center justify-center text-2xl">
+                  5️⃣
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-1">Spacing & Sizing</h3>
+                  <p class="text-gray-400 text-sm">Padding, margin, width, height, dan spacing utilities</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="status-badge px-3 py-1 rounded-full text-sm bg-gray-500/20 text-gray-400">🔒 Terkunci</span>
+                <a class="px-4 py-2 rounded-lg bg-gray-700 text-gray-400 text-sm font-medium cursor-not-allowed">
+                  Buka →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Lesson 6 -->
+        <div data-roadmap="typography" class="card-hover group relative rounded-2xl bg-gray-800/50 border border-gray-700/50 overflow-hidden opacity-50">
+          <div class="absolute left-0 top-0 bottom-0 w-1 bg-gray-700"></div>
+          <div class="p-6 pl-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-gray-700/50 flex items-center justify-center text-2xl">
+                  6️⃣
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-1">Typography</h3>
+                  <p class="text-gray-400 text-sm">Font, text styling, line height, dan semua yang berkaitan dengan teks</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="status-badge px-3 py-1 rounded-full text-sm bg-gray-500/20 text-gray-400">🔒 Terkunci</span>
+                <a class="px-4 py-2 rounded-lg bg-gray-700 text-gray-400 text-sm font-medium cursor-not-allowed">
+                  Buka →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Lesson 7 -->
+        <div data-roadmap="backgrounds-effects" class="card-hover group relative rounded-2xl bg-gray-800/50 border border-gray-700/50 overflow-hidden opacity-50">
+          <div class="absolute left-0 top-0 bottom-0 w-1 bg-gray-700"></div>
+          <div class="p-6 pl-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-gray-700/50 flex items-center justify-center text-2xl">
+                  7️⃣
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-1">Backgrounds & Effects</h3>
+                  <p class="text-gray-400 text-sm">Background, border, shadow, dan efek visual lainnya</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="status-badge px-3 py-1 rounded-full text-sm bg-gray-500/20 text-gray-400">🔒 Terkunci</span>
+                <a class="px-4 py-2 rounded-lg bg-gray-700 text-gray-400 text-sm font-medium cursor-not-allowed">
+                  Buka →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Lesson 8 -->
+        <div data-roadmap="transitions-animation" class="card-hover group relative rounded-2xl bg-gray-800/50 border border-gray-700/50 overflow-hidden opacity-50">
+          <div class="absolute left-0 top-0 bottom-0 w-1 bg-gray-700"></div>
+          <div class="p-6 pl-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-gray-700/50 flex items-center justify-center text-2xl">
+                  8️⃣
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-1">Transitions & Animation</h3>
+                  <p class="text-gray-400 text-sm">Transition, animation, dan transform properties</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="status-badge px-3 py-1 rounded-full text-sm bg-gray-500/20 text-gray-400">🔒 Terkunci</span>
+                <a class="px-4 py-2 rounded-lg bg-gray-700 text-gray-400 text-sm font-medium cursor-not-allowed">
+                  Buka →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Lesson 9 -->
+        <div data-roadmap="interactivity-svg" class="card-hover group relative rounded-2xl bg-gray-800/50 border border-gray-700/50 overflow-hidden opacity-50">
+          <div class="absolute left-0 top-0 bottom-0 w-1 bg-gray-700"></div>
+          <div class="p-6 pl-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-gray-700/50 flex items-center justify-center text-2xl">
+                  9️⃣
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-1">Interactivity & SVG</h3>
+                  <p class="text-gray-400 text-sm">Cursor, scroll behavior, user select, dan SVG utilities</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="status-badge px-3 py-1 rounded-full text-sm bg-gray-500/20 text-gray-400">🔒 Terkunci</span>
+                <a class="px-4 py-2 rounded-lg bg-gray-700 text-gray-400 text-sm font-medium cursor-not-allowed">
+                  Buka →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Lesson 10 -->
+        <div data-roadmap="accessibility" class="card-hover group relative rounded-2xl bg-gray-800/50 border border-gray-700/50 overflow-hidden opacity-50">
+          <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-green-500 to-emerald-400 opacity-30"></div>
+          <div class="p-6 pl-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-gray-700/50 flex items-center justify-center text-2xl">
+                  🔟
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-1">Accessibility</h3>
+                  <p class="text-gray-400 text-sm">Best practices accessibility & Final Project</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="status-badge px-3 py-1 rounded-full text-sm bg-gray-500/20 text-gray-400">🔒 Terkunci</span>
+                <a class="px-4 py-2 rounded-lg bg-gray-700 text-gray-400 text-sm font-medium cursor-not-allowed">
+                  Buka →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="p-12 rounded-3xl bg-gradient-to-br from-primary-500/20 to-purple-600/20 border border-primary-500/30">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Siap Memulai? 🚀</h2>
+        <p class="text-gray-400 mb-8 max-w-xl mx-auto">
+          Mulai perjalanan belajar Tailwind CSS-mu sekarang. Gratis, terstruktur, dan seru!
+        </p>
+        <a href="getting-started.html" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-primary-500 to-purple-600 text-white font-semibold shadow-lg shadow-primary-500/30 hover:shadow-xl hover:shadow-primary-500/40 transition-all hover:-translate-y-1">
+          Mulai dari Getting Started
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 px-4 border-t border-gray-800">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-purple-600 flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <span class="text-lg font-bold">TailwindMaster</span>
+        </div>
+        
+        <div class="flex items-center gap-6 text-gray-400 text-sm">
+          <a href="https://tailwindcss.com" target="_blank" class="hover:text-white transition-colors">Tailwind CSS</a>
+          <a href="https://github.com" target="_blank" class="hover:text-white transition-colors">GitHub</a>
+          <span>Made with ❤️ for learning</span>
+        </div>
+      </div>
+      
+      <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+        <p>© 2024 TailwindMaster. Platform edukasi gratis dan open source.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/progress.js"></script>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step 5: Section Lainnya - Tutorial E-Commerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="tutorial-layout">
+        <aside class="sidebar" id="sidebar">
+            <a href="index.html" class="sidebar-logo">
+                <div class="icon">T</div>
+                <span>Tutorial</span>
+            </a>
+            <nav>
+                <div class="nav-section">
+                    <div class="nav-section-title">Pendahuluan</div>
+                    <ul class="nav-links">
+                        <li><a href="index.html"><span class="step-number">🏠</span> Overview</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">Step by Step</div>
+                    <ul class="nav-links">
+                        <li><a href="step-1-setup.html"><span class="step-number">1</span> Setup Project</a></li>
+                        <li><a href="step-2-navbar.html"><span class="step-number">2</span> Membuat Navbar</a></li>
+                        <li><a href="step-3-hero.html"><span class="step-number">3</span> Hero Section</a></li>
+                        <li><a href="step-4-products.html"><span class="step-number">4</span> Product Cards</a></li>
+                        <li><a href="step-5-sections.html" class="active"><span class="step-number">5</span> Section Lainnya</a></li>
+                        <li><a href="step-6-footer.html"><span class="step-number">6</span> Footer</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <h1>📦 Step 5: Section Lainnya</h1>
+            <p>Selain Hero dan Products, ada section lain yang melengkapi halaman utama: Kategori, Promo Banner, Benefits, dan Newsletter.</p>
+
+            <!-- Section 1: Categories -->
+            <h2>5.1 Categories Section</h2>
+            <p>Menampilkan kategori produk dalam grid yang responsif:</p>
+
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="filename"><span class="dot html"></span> categories.html</span>
+                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                </div>
+                <div class="code-content"><pre><span class="comment">&lt;!-- Categories Section --&gt;</span>
+<span class="tag">&lt;section</span> <span class="attr">class</span>=<span class="string">"py-12 lg:py-16 bg-white"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"</span><span class="tag">&gt;</span>
+        <span class="comment">&lt;!-- Header --&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"text-center mb-8"</span><span class="tag">&gt;</span>
+            <span class="tag">&lt;h2</span> <span class="attr">class</span>=<span class="string">"font-playfair text-2xl lg:text-3xl font-bold text-custom-text mb-3"</span><span class="tag">&gt;</span>
+                Kategori Produk
+            <span class="tag">&lt;/h2&gt;</span>
+            <span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="string">"text-text-light max-w-2xl mx-auto"</span><span class="tag">&gt;</span>
+                Temukan berbagai pilihan busana muslim untuk kebutuhan Anda
+            <span class="tag">&lt;/p&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+
+        <span class="comment">&lt;!-- Grid: 2 cols (mobile) → 5 cols (desktop) --&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6"</span><span class="tag">&gt;</span>
+            
+            <span class="comment">&lt;!-- Category Card --&gt;</span>
+            <span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"products.html?category=gamis"</span> <span class="attr">class</span>=<span class="string">"category-card group"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"w-12 h-12 mx-auto mb-3 bg-primary/10 rounded-full 
+                            flex items-center justify-center category-icon"</span><span class="tag">&gt;</span>
+                    <span class="tag">&lt;svg</span> <span class="attr">class</span>=<span class="string">"w-6 h-6 text-primary"</span><span class="tag">&gt;</span>...<span class="tag">&lt;/svg&gt;</span>
+                <span class="tag">&lt;/div&gt;</span>
+                <span class="tag">&lt;h3</span> <span class="attr">class</span>=<span class="string">"font-medium text-custom-text group-hover:text-primary transition"</span><span class="tag">&gt;</span>
+                    Gamis
+                <span class="tag">&lt;/h3&gt;</span>
+                <span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="string">"text-sm text-text-light mt-1"</span><span class="tag">&gt;</span>120+ Produk<span class="tag">&lt;/p&gt;</span>
+            <span class="tag">&lt;/a&gt;</span>
+            
+        <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/section&gt;</span></pre></div>
+            </div>
+
+            <div class="info-box tip">
+                <div class="info-box-title">💡 Group Hover</div>
+                <p><code>group</code> + <code>group-hover:</code> memungkinkan kita mengubah style child element saat parent di-hover. Contoh: saat card di-hover, teks berubah warna!</p>
+            </div>
+
+            <!-- Section 2: Promo Banner -->
+            <h2>5.2 Promo Banner Section</h2>
+            <p>Banner promosi dengan gradient background dan countdown timer:</p>
+
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="filename"><span class="dot html"></span> promo-banner.html</span>
+                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                </div>
+                <div class="code-content"><pre><span class="comment">&lt;!-- Promo Banner --&gt;</span>
+<span class="tag">&lt;section</span> <span class="attr">class</span>=<span class="string">"promo-gradient py-10 lg:py-12 relative overflow-hidden"</span><span class="tag">&gt;</span>
+    <span class="comment">&lt;!-- Pattern Overlay --&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"absolute inset-0 islamic-pattern opacity-30"</span><span class="tag">&gt;&lt;/div&gt;</span>
+    
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"grid lg:grid-cols-2 gap-8 items-center"</span><span class="tag">&gt;</span>
+            
+            <span class="comment">&lt;!-- Left: Content --&gt;</span>
+            <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"text-white text-center lg:text-left"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;span</span> <span class="attr">class</span>=<span class="string">"inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-medium mb-4"</span><span class="tag">&gt;</span>
+                    🎉 Promo Spesial
+                <span class="tag">&lt;/span&gt;</span>
+                <span class="tag">&lt;h2</span> <span class="attr">class</span>=<span class="string">"font-playfair text-2xl lg:text-3xl xl:text-4xl font-bold mb-3"</span><span class="tag">&gt;</span>
+                    Diskon Hingga 50% untuk Koleksi Lebaran
+                <span class="tag">&lt;/h2&gt;</span>
+                <span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="string">"text-white/80 text-base mb-6"</span><span class="tag">&gt;</span>
+                    Persiapkan penampilan terbaik Anda untuk momen spesial!
+                <span class="tag">&lt;/p&gt;</span>
+                <span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"products.html"</span> <span class="attr">class</span>=<span class="string">"bg-white text-primary px-8 py-3 rounded-lg font-medium 
+                          hover:bg-secondary transition inline-block"</span><span class="tag">&gt;</span>
+                    Belanja Sekarang
+                <span class="tag">&lt;/a&gt;</span>
+            <span class="tag">&lt;/div&gt;</span>
+
+            <span class="comment">&lt;!-- Right: Countdown --&gt;</span>
+            <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"flex justify-center lg:justify-end"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"grid grid-cols-3 gap-4 text-white text-center"</span><span class="tag">&gt;</span>
+                    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"bg-white/20 backdrop-blur-sm p-4 lg:p-6 rounded-2xl"</span><span class="tag">&gt;</span>
+                        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"text-2xl lg:text-3xl font-bold"</span><span class="tag">&gt;</span>07<span class="tag">&lt;/div&gt;</span>
+                        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"text-sm opacity-80"</span><span class="tag">&gt;</span>Hari<span class="tag">&lt;/div&gt;</span>
+                    <span class="tag">&lt;/div&gt;</span>
+                    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"bg-white/20 backdrop-blur-sm p-4 lg:p-6 rounded-2xl"</span><span class="tag">&gt;</span>
+                        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"text-2xl lg:text-3xl font-bold"</span><span class="tag">&gt;</span>14<span class="tag">&lt;/div&gt;</span>
+                        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"text-sm opacity-80"</span><span class="tag">&gt;</span>Jam<span class="tag">&lt;/div&gt;</span>
+                    <span class="tag">&lt;/div&gt;</span>
+                    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"bg-white/20 backdrop-blur-sm p-4 lg:p-6 rounded-2xl"</span><span class="tag">&gt;</span>
+                        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"text-2xl lg:text-3xl font-bold"</span><span class="tag">&gt;</span>32<span class="tag">&lt;/div&gt;</span>
+                        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"text-sm opacity-80"</span><span class="tag">&gt;</span>Menit<span class="tag">&lt;/div&gt;</span>
+                    <span class="tag">&lt;/div&gt;</span>
+                <span class="tag">&lt;/div&gt;</span>
+            <span class="tag">&lt;/div&gt;</span>
+            
+        <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/section&gt;</span></pre></div>
+            </div>
+
+            <h3>🎨 CSS Promo Gradient</h3>
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="filename"><span class="dot css"></span> style.css</span>
+                </div>
+                <div class="code-content"><pre><span class="property">.promo-gradient</span> {
+    background: linear-gradient(135deg, #5C6E4E 0%, #4A5A3E 100%);
+}</pre></div>
+            </div>
+
+            <!-- Section 3: Benefits -->
+            <h2>5.3 Benefits Section</h2>
+
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="filename"><span class="dot html"></span> benefits.html</span>
+                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                </div>
+                <div class="code-content"><pre><span class="comment">&lt;!-- Benefits Section --&gt;</span>
+<span class="tag">&lt;section</span> <span class="attr">class</span>=<span class="string">"py-10 bg-white"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"</span><span class="tag">&gt;</span>
+            
+            <span class="comment">&lt;!-- Benefit Item --&gt;</span>
+            <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"text-center p-4"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"w-12 h-12 mx-auto mb-3 bg-primary/10 rounded-full 
+                            flex items-center justify-center"</span><span class="tag">&gt;</span>
+                    <span class="tag">&lt;svg</span> <span class="attr">class</span>=<span class="string">"w-6 h-6 text-primary"</span><span class="tag">&gt;</span>...<span class="tag">&lt;/svg&gt;</span>
+                <span class="tag">&lt;/div&gt;</span>
+                <span class="tag">&lt;h3</span> <span class="attr">class</span>=<span class="string">"font-medium text-custom-text mb-2"</span><span class="tag">&gt;</span>Gratis Ongkir<span class="tag">&lt;/h3&gt;</span>
+                <span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="string">"text-sm text-text-light"</span><span class="tag">&gt;</span>
+                    Untuk pembelian di atas Rp 300.000
+                <span class="tag">&lt;/p&gt;</span>
+            <span class="tag">&lt;/div&gt;</span>
+            
+            <span class="comment">&lt;!-- Repeat for other benefits... --&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/section&gt;</span></pre></div>
+            </div>
+
+            <!-- Section 4: Newsletter -->
+            <h2>5.4 Newsletter Section</h2>
+
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="filename"><span class="dot html"></span> newsletter.html</span>
+                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                </div>
+                <div class="code-content"><pre><span class="comment">&lt;!-- Newsletter Section --&gt;</span>
+<span class="tag">&lt;section</span> <span class="attr">class</span>=<span class="string">"py-16 bg-secondary"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;h2</span> <span class="attr">class</span>=<span class="string">"font-playfair text-2xl lg:text-3xl font-bold text-custom-text mb-4"</span><span class="tag">&gt;</span>
+            Dapatkan Info & Promo Terbaru
+        <span class="tag">&lt;/h2&gt;</span>
+        <span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="string">"text-text-light mb-8"</span><span class="tag">&gt;</span>
+            Daftarkan email Anda untuk mendapatkan penawaran eksklusif.
+        <span class="tag">&lt;/p&gt;</span>
+        
+        <span class="comment">&lt;!-- Form --&gt;</span>
+        <span class="tag">&lt;form</span> <span class="attr">class</span>=<span class="string">"flex flex-col sm:flex-row gap-4 max-w-md mx-auto"</span><span class="tag">&gt;</span>
+            <span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="string">"email"</span> 
+                   <span class="attr">placeholder</span>=<span class="string">"Masukkan email Anda"</span> 
+                   <span class="attr">class</span>=<span class="string">"form-input flex-1"</span><span class="tag">&gt;</span>
+            <span class="tag">&lt;button</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">class</span>=<span class="string">"btn-primary whitespace-nowrap"</span><span class="tag">&gt;</span>
+                Berlangganan
+            <span class="tag">&lt;/button&gt;</span>
+        <span class="tag">&lt;/form&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/section&gt;</span></pre></div>
+            </div>
+
+            <h3>📋 Form Styling</h3>
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="filename"><span class="dot css"></span> style.css</span>
+                </div>
+                <div class="code-content"><pre><span class="property">.form-input</span> {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    background-color: white;
+}
+
+<span class="property">.form-input:focus</span> {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(92, 110, 78, 0.1);
+}</pre></div>
+            </div>
+
+            <div class="info-box info">
+                <div class="info-box-title">ℹ️ Class flex-1</div>
+                <p><code>flex-1</code> membuat input mengambil sisa space yang tersedia dalam flex container, sementara button tetap compact dengan <code>whitespace-nowrap</code>.</p>
+            </div>
+
+            <!-- Navigation -->
+            <div class="step-nav">
+                <a href="step-4-products.html">← Step 4: Products</a>
+                <a href="step-6-footer.html" class="next">Step 6: Footer →</a>
+            </div>
+        </main>
+    </div>
+
+    <button class="mobile-menu-btn" onclick="document.getElementById('sidebar').classList.toggle('active')">☰</button>
+    <script>
+        function copyCode(btn) {
+            const codeBlock = btn.closest('.code-block').querySelector('pre');
+            navigator.clipboard.writeText(codeBlock.innerText);
+            btn.textContent = 'Copied!';
+            setTimeout(() => btn.textContent = 'Copy', 2000);
+        }
+    </script>
+</body>
+</html>

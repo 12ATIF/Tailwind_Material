@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spacing & Sizing | Belajar Tailwind CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:{500:'#667eea',600:'#5a67d8'}}}}}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+  <aside class="sidebar fixed left-0 top-0 bottom-0 w-72 bg-gray-900 border-r border-gray-800 z-50 overflow-y-auto hidden lg:block">
+    <div class="p-4 border-b border-gray-800"><a href="index.html" class="flex items-center gap-3"><div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-purple-600"></div><span class="font-bold">TailwindMaster</span></a></div>
+    <nav class="p-4">
+      <ul class="space-y-1 text-sm">
+        <li><a href="getting-started.html" class="block px-3 py-2 rounded text-gray-400">Getting Started</a></li>
+        <li><a href="core-concepts.html" class="block px-3 py-2 rounded text-gray-400">Core Concepts</a></li>
+        <li><a href="layout.html" class="block px-3 py-2 rounded text-gray-400">Layout</a></li>
+        <li><a href="flexbox-grid.html" class="block px-3 py-2 rounded text-gray-400">Flexbox & Grid</a></li>
+        <li><a href="spacing-sizing.html" class="block px-3 py-2 rounded bg-primary-500/20 text-white font-medium">Spacing & Sizing</a></li>
+        <li><a href="typography.html" class="block px-3 py-2 rounded text-gray-400">Typography</a></li>
+        <li><a href="backgrounds-effects.html" class="block px-3 py-2 rounded text-gray-400">Backgrounds & Effects</a></li>
+        <li><a href="transitions-animation.html" class="block px-3 py-2 rounded text-gray-400">Transitions & Animation</a></li>
+        <li><a href="interactivity-svg.html" class="block px-3 py-2 rounded text-gray-400">Interactivity & SVG</a></li>
+        <li><a href="accessibility.html" class="block px-3 py-2 rounded text-gray-400">Accessibility</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="lg:ml-72">
+    <header class="sticky top-0 z-30 bg-gray-900/90 backdrop-blur border-b border-gray-800 px-6 py-4">
+      <nav class="text-sm text-gray-400"><a href="index.html" class="hover:text-white">Home</a> / <span class="text-white">Spacing & Sizing</span></nav>
+    </header>
+
+    <div class="max-w-4xl mx-auto px-6 py-12">
+      <div class="mb-10">
+        <span class="px-3 py-1 rounded-full bg-primary-500/20 text-primary-500 text-sm">Materi 5/10</span>
+        <h1 class="text-4xl font-bold mt-4 mb-3">Spacing & Sizing</h1>
+        <p class="text-lg text-gray-400">Mengatur padding, margin, width, dan height dengan Tailwind CSS.</p>
+      </div>
+
+      <!-- Spacing Scale Info -->
+      <div class="mb-10 p-4 rounded-xl bg-blue-500/10 border border-blue-500/30">
+        <h3 class="font-semibold text-blue-400 mb-3">📐 Tailwind Spacing Scale</h3>
+        <p class="text-gray-300 text-sm mb-3">Tailwind menggunakan skala spacing konsisten: <code class="px-1 rounded bg-gray-800">1 unit = 0.25rem = 4px</code></p>
+        <div class="flex flex-wrap gap-2 text-xs">
+          <span class="px-2 py-1 rounded bg-gray-800"><code>0</code> = 0px</span>
+          <span class="px-2 py-1 rounded bg-gray-800"><code>1</code> = 4px</span>
+          <span class="px-2 py-1 rounded bg-gray-800"><code>2</code> = 8px</span>
+          <span class="px-2 py-1 rounded bg-gray-800"><code>4</code> = 16px</span>
+          <span class="px-2 py-1 rounded bg-gray-800"><code>8</code> = 32px</span>
+          <span class="px-2 py-1 rounded bg-gray-800"><code>16</code> = 64px</span>
+          <span class="px-2 py-1 rounded bg-gray-800"><code>32</code> = 128px</span>
+        </div>
+      </div>
+
+      <!-- Daftar Isi -->
+      <div class="mb-10 p-4 rounded-xl bg-gray-800/50 border border-gray-700">
+        <h3 class="font-semibold mb-3">📋 Daftar Isi</h3>
+        <div class="grid md:grid-cols-2 gap-2 text-sm text-gray-300">
+          <a href="#padding" class="hover:text-primary-500">1. Padding</a>
+          <a href="#margin" class="hover:text-primary-500">2. Margin</a>
+          <a href="#width-height" class="hover:text-primary-500">3. Width & Height</a>
+          <a href="#min-max-width" class="hover:text-primary-500">4. Min/Max Width</a>
+          <a href="#min-max-height" class="hover:text-primary-500">5. Min/Max Height</a>
+          <a href="#space-between" class="hover:text-primary-500">6. Space Between</a>
+        </div>
+      </div>
+
+      <article class="space-y-14">
+        
+        <!-- 1. Padding -->
+        <section id="padding">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">1</span>
+            Padding
+          </h2>
+          <p class="text-gray-300 mb-4">Padding adalah jarak antara konten dengan border elemen. Format: <code class="px-1 rounded bg-gray-800">p-{size}</code></p>
+          
+          <!-- Padding Visual -->
+          <div class="mb-6 p-4 rounded-lg bg-gray-800/50">
+            <p class="text-sm text-gray-400 mb-3">Visual: Padding menambah ruang di dalam elemen</p>
+            <div class="flex items-center justify-center">
+              <div class="relative">
+                <div class="border-2 border-dashed border-blue-500 p-8 rounded-lg">
+                  <div class="bg-blue-500 text-white px-4 py-2 rounded text-sm">Konten</div>
+                </div>
+                <span class="absolute -top-6 left-1/2 -translate-x-1/2 text-xs text-blue-400">Border</span>
+                <span class="absolute top-1/2 -left-16 -translate-y-1/2 text-xs text-blue-400 rotate-0">← p-8 →</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- All Sides -->
+          <h4 class="font-semibold mb-2">Semua Sisi</h4>
+          <div class="grid grid-cols-4 md:grid-cols-8 gap-2 text-sm mb-4">
+            <div class="p-2 rounded bg-gray-800 text-center"><code>p-0</code><br><span class="text-xs text-gray-500">0</span></div>
+            <div class="p-2 rounded bg-gray-800 text-center"><code>p-1</code><br><span class="text-xs text-gray-500">4px</span></div>
+            <div class="p-2 rounded bg-gray-800 text-center"><code>p-2</code><br><span class="text-xs text-gray-500">8px</span></div>
+            <div class="p-2 rounded bg-gray-800 text-center"><code>p-3</code><br><span class="text-xs text-gray-500">12px</span></div>
+            <div class="p-2 rounded bg-gray-800 text-center"><code>p-4</code><br><span class="text-xs text-gray-500">16px</span></div>
+            <div class="p-2 rounded bg-gray-800 text-center"><code>p-6</code><br><span class="text-xs text-gray-500">24px</span></div>
+            <div class="p-2 rounded bg-gray-800 text-center"><code>p-8</code><br><span class="text-xs text-gray-500">32px</span></div>
+            <div class="p-2 rounded bg-gray-800 text-center"><code>p-12</code><br><span class="text-xs text-gray-500">48px</span></div>
+          </div>
+
+          <!-- Directional Padding -->
+          <h4 class="font-semibold mb-2">Directional Classes</h4>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mb-4">
+            <div class="p-3 rounded bg-gray-800">
+              <code class="text-primary-500">pt-{size}</code>
+              <p class="text-xs text-gray-400 mt-1">Padding Top</p>
+            </div>
+            <div class="p-3 rounded bg-gray-800">
+              <code class="text-primary-500">pr-{size}</code>
+              <p class="text-xs text-gray-400 mt-1">Padding Right</p>
+            </div>
+            <div class="p-3 rounded bg-gray-800">
+              <code class="text-primary-500">pb-{size}</code>
+              <p class="text-xs text-gray-400 mt-1">Padding Bottom</p>
+            </div>
+            <div class="p-3 rounded bg-gray-800">
+              <code class="text-primary-500">pl-{size}</code>
+              <p class="text-xs text-gray-400 mt-1">Padding Left</p>
+            </div>
+            <div class="p-3 rounded bg-gray-800">
+              <code class="text-primary-500">px-{size}</code>
+              <p class="text-xs text-gray-400 mt-1">Padding X (Left + Right)</p>
+            </div>
+            <div class="p-3 rounded bg-gray-800">
+              <code class="text-primary-500">py-{size}</code>
+              <p class="text-xs text-gray-400 mt-1">Padding Y (Top + Bottom)</p>
+            </div>
+          </div>
+
+          <!-- Padding Preview -->
+          <div class="p-4 rounded-lg bg-gray-800/50">
+            <p class="text-sm text-gray-400 mb-3">Preview perbandingan padding:</p>
+            <div class="flex flex-wrap gap-4">
+              <div class="p-2 bg-blue-500/30 border border-blue-500 rounded text-xs">p-2</div>
+              <div class="p-4 bg-blue-500/30 border border-blue-500 rounded text-xs">p-4</div>
+              <div class="p-6 bg-blue-500/30 border border-blue-500 rounded text-xs">p-6</div>
+              <div class="p-8 bg-blue-500/30 border border-blue-500 rounded text-xs">p-8</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. Margin -->
+        <section id="margin">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">2</span>
+            Margin
+          </h2>
+          <p class="text-gray-300 mb-4">Margin adalah jarak antara border elemen dengan elemen lain. Format: <code class="px-1 rounded bg-gray-800">m-{size}</code></p>
+          
+          <!-- Margin Visual -->
+          <div class="mb-6 p-4 rounded-lg bg-gray-800/50">
+            <p class="text-sm text-gray-400 mb-3">Visual: Margin menambah ruang di luar elemen</p>
+            <div class="flex items-center justify-center gap-4">
+              <div class="bg-green-500/20 border border-dashed border-green-500 p-4 rounded">
+                <div class="m-4 bg-green-500 text-white px-4 py-2 rounded text-sm">m-4</div>
+              </div>
+              <div class="bg-purple-500/20 border border-dashed border-purple-500 p-4 rounded">
+                <div class="m-8 bg-purple-500 text-white px-4 py-2 rounded text-sm">m-8</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Directional Margin -->
+          <h4 class="font-semibold mb-2">Directional Classes</h4>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mb-4">
+            <div class="p-3 rounded bg-gray-800">
+              <code class="text-green-500">mt-{size}</code>
+              <p class="text-xs text-gray-400 mt-1">Margin Top</p>
+            </div>
+            <div class="p-3 rounded bg-gray-800">
+              <code class="text-green-500">mr-{size}</code>
+              <p class="text-xs text-gray-400 mt-1">Margin Right</p>
+            </div>
+            <div class="p-3 rounded bg-gray-800">
+              <code class="text-green-500">mb-{size}</code>
+              <p class="text-xs text-gray-400 mt-1">Margin Bottom</p>
+            </div>
+            <div class="p-3 rounded bg-gray-800">
+              <code class="text-green-500">ml-{size}</code>
+              <p class="text-xs text-gray-400 mt-1">Margin Left</p>
+            </div>
+            <div class="p-3 rounded bg-gray-800">
+              <code class="text-green-500">mx-{size}</code>
+              <p class="text-xs text-gray-400 mt-1">Margin X (Left + Right)</p>
+            </div>
+            <div class="p-3 rounded bg-gray-800">
+              <code class="text-green-500">my-{size}</code>
+              <p class="text-xs text-gray-400 mt-1">Margin Y (Top + Bottom)</p>
+            </div>
+          </div>
+
+          <!-- Special Margin Values -->
+          <h4 class="font-semibold mb-2">Nilai Spesial</h4>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm mb-4">
+            <div class="p-3 rounded bg-gray-800">
+              <code class="text-green-500">m-auto</code>
+              <p class="text-xs text-gray-400 mt-1">Centering horizontal</p>
+            </div>
+            <div class="p-3 rounded bg-gray-800">
+              <code class="text-green-500">mx-auto</code>
+              <p class="text-xs text-gray-400 mt-1">Center container</p>
+            </div>
+            <div class="p-3 rounded bg-gray-800">
+              <code class="text-green-500">-m-4</code>
+              <p class="text-xs text-gray-400 mt-1">Negatif margin</p>
+            </div>
+            <div class="p-3 rounded bg-gray-800">
+              <code class="text-green-500">-mt-8</code>
+              <p class="text-xs text-gray-400 mt-1">Negatif top</p>
+            </div>
+          </div>
+
+          <!-- mx-auto example -->
+          <div class="p-4 rounded-lg bg-gray-800/50">
+            <p class="text-sm text-gray-400 mb-2">Contoh <code class="px-1 bg-gray-700 rounded">mx-auto</code> untuk center:</p>
+            <div class="bg-gray-700 p-4 rounded">
+              <div class="w-32 mx-auto bg-green-500 text-white text-center py-2 rounded text-sm">mx-auto</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. Width & Height -->
+        <section id="width-height">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">3</span>
+            Width & Height
+          </h2>
+          
+          <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <!-- Width -->
+            <div>
+              <h4 class="font-semibold mb-3">Width</h4>
+              
+              <p class="text-sm text-gray-400 mb-2">Fixed Sizes:</p>
+              <div class="space-y-1 text-sm mb-4">
+                <div class="p-2 rounded bg-gray-800"><code>w-0</code> = 0</div>
+                <div class="p-2 rounded bg-gray-800"><code>w-4</code> = 1rem (16px)</div>
+                <div class="p-2 rounded bg-gray-800"><code>w-16</code> = 4rem (64px)</div>
+                <div class="p-2 rounded bg-gray-800"><code>w-32</code> = 8rem (128px)</div>
+                <div class="p-2 rounded bg-gray-800"><code>w-64</code> = 16rem (256px)</div>
+                <div class="p-2 rounded bg-gray-800"><code>w-96</code> = 24rem (384px)</div>
+              </div>
+
+              <p class="text-sm text-gray-400 mb-2">Relative Sizes:</p>
+              <div class="space-y-1 text-sm">
+                <div class="p-2 rounded bg-gray-800"><code>w-1/2</code> = 50%</div>
+                <div class="p-2 rounded bg-gray-800"><code>w-1/3</code> = 33.33%</div>
+                <div class="p-2 rounded bg-gray-800"><code>w-2/3</code> = 66.66%</div>
+                <div class="p-2 rounded bg-gray-800"><code>w-full</code> = 100%</div>
+                <div class="p-2 rounded bg-gray-800"><code>w-screen</code> = 100vw</div>
+                <div class="p-2 rounded bg-gray-800"><code>w-auto</code> = auto</div>
+                <div class="p-2 rounded bg-gray-800"><code>w-fit</code> = fit-content</div>
+              </div>
+            </div>
+
+            <!-- Height -->
+            <div>
+              <h4 class="font-semibold mb-3">Height</h4>
+              
+              <p class="text-sm text-gray-400 mb-2">Fixed Sizes:</p>
+              <div class="space-y-1 text-sm mb-4">
+                <div class="p-2 rounded bg-gray-800"><code>h-0</code> = 0</div>
+                <div class="p-2 rounded bg-gray-800"><code>h-4</code> = 1rem (16px)</div>
+                <div class="p-2 rounded bg-gray-800"><code>h-16</code> = 4rem (64px)</div>
+                <div class="p-2 rounded bg-gray-800"><code>h-32</code> = 8rem (128px)</div>
+                <div class="p-2 rounded bg-gray-800"><code>h-64</code> = 16rem (256px)</div>
+                <div class="p-2 rounded bg-gray-800"><code>h-96</code> = 24rem (384px)</div>
+              </div>
+
+              <p class="text-sm text-gray-400 mb-2">Relative Sizes:</p>
+              <div class="space-y-1 text-sm">
+                <div class="p-2 rounded bg-gray-800"><code>h-1/2</code> = 50%</div>
+                <div class="p-2 rounded bg-gray-800"><code>h-full</code> = 100%</div>
+                <div class="p-2 rounded bg-gray-800"><code>h-screen</code> = 100vh</div>
+                <div class="p-2 rounded bg-gray-800"><code>h-dvh</code> = 100dvh (dynamic)</div>
+                <div class="p-2 rounded bg-gray-800"><code>h-auto</code> = auto</div>
+                <div class="p-2 rounded bg-gray-800"><code>h-fit</code> = fit-content</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Width Visual Preview -->
+          <div class="p-4 rounded-lg bg-gray-800/50">
+            <p class="text-sm text-gray-400 mb-3">Preview width:</p>
+            <div class="space-y-2">
+              <div class="w-1/4 h-8 bg-blue-500 rounded flex items-center justify-center text-xs">w-1/4</div>
+              <div class="w-1/2 h-8 bg-green-500 rounded flex items-center justify-center text-xs">w-1/2</div>
+              <div class="w-3/4 h-8 bg-purple-500 rounded flex items-center justify-center text-xs">w-3/4</div>
+              <div class="w-full h-8 bg-pink-500 rounded flex items-center justify-center text-xs">w-full</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. Min/Max Width -->
+        <section id="min-max-width">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">4</span>
+            Min/Max Width
+          </h2>
+          
+          <div class="grid md:grid-cols-2 gap-6 mb-4">
+            <div>
+              <h4 class="font-semibold mb-2">Min Width</h4>
+              <div class="space-y-1 text-sm">
+                <div class="p-2 rounded bg-gray-800"><code>min-w-0</code> = 0</div>
+                <div class="p-2 rounded bg-gray-800"><code>min-w-full</code> = 100%</div>
+                <div class="p-2 rounded bg-gray-800"><code>min-w-min</code> = min-content</div>
+                <div class="p-2 rounded bg-gray-800"><code>min-w-max</code> = max-content</div>
+                <div class="p-2 rounded bg-gray-800"><code>min-w-fit</code> = fit-content</div>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">Max Width</h4>
+              <div class="space-y-1 text-sm">
+                <div class="p-2 rounded bg-gray-800"><code>max-w-xs</code> = 20rem (320px)</div>
+                <div class="p-2 rounded bg-gray-800"><code>max-w-sm</code> = 24rem (384px)</div>
+                <div class="p-2 rounded bg-gray-800"><code>max-w-md</code> = 28rem (448px)</div>
+                <div class="p-2 rounded bg-gray-800"><code>max-w-lg</code> = 32rem (512px)</div>
+                <div class="p-2 rounded bg-gray-800"><code>max-w-xl</code> = 36rem (576px)</div>
+                <div class="p-2 rounded bg-gray-800"><code>max-w-2xl</code> = 42rem (672px)</div>
+                <div class="p-2 rounded bg-gray-800"><code>max-w-screen-md</code> = 768px</div>
+                <div class="p-2 rounded bg-gray-800"><code>max-w-none</code> = none</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Max-width use case -->
+          <div class="p-4 rounded-lg bg-yellow-500/10 border border-yellow-500/30">
+            <p class="text-yellow-400 text-sm">💡 <strong>Use Case:</strong> <code class="px-1 bg-gray-800 rounded">max-w-prose</code> (65ch) sangat bagus untuk teks yang mudah dibaca!</p>
+          </div>
+        </section>
+
+        <!-- 5. Min/Max Height -->
+        <section id="min-max-height">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">5</span>
+            Min/Max Height
+          </h2>
+          
+          <div class="grid md:grid-cols-2 gap-6 mb-4">
+            <div>
+              <h4 class="font-semibold mb-2">Min Height</h4>
+              <div class="space-y-1 text-sm">
+                <div class="p-2 rounded bg-gray-800"><code>min-h-0</code> = 0</div>
+                <div class="p-2 rounded bg-gray-800"><code>min-h-full</code> = 100%</div>
+                <div class="p-2 rounded bg-gray-800"><code>min-h-screen</code> = 100vh</div>
+                <div class="p-2 rounded bg-gray-800"><code>min-h-dvh</code> = 100dvh</div>
+                <div class="p-2 rounded bg-gray-800"><code>min-h-fit</code> = fit-content</div>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">Max Height</h4>
+              <div class="space-y-1 text-sm">
+                <div class="p-2 rounded bg-gray-800"><code>max-h-0</code> = 0</div>
+                <div class="p-2 rounded bg-gray-800"><code>max-h-full</code> = 100%</div>
+                <div class="p-2 rounded bg-gray-800"><code>max-h-screen</code> = 100vh</div>
+                <div class="p-2 rounded bg-gray-800"><code>max-h-96</code> = 24rem</div>
+                <div class="p-2 rounded bg-gray-800"><code>max-h-none</code> = none</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Common patterns -->
+          <div class="p-4 rounded-lg bg-gray-800">
+            <h4 class="font-semibold mb-2">📌 Pattern Umum</h4>
+            <pre class="text-xs text-gray-300 overflow-x-auto"><code>&lt;!-- Full height page --&gt;
+&lt;div class="min-h-screen"&gt;...&lt;/div&gt;
+
+&lt;!-- Scrollable container --&gt;
+&lt;div class="max-h-96 overflow-y-auto"&gt;...&lt;/div&gt;
+
+&lt;!-- Centered container --&gt;
+&lt;div class="max-w-4xl mx-auto px-4"&gt;...&lt;/div&gt;</code></pre>
+          </div>
+        </section>
+
+        <!-- 6. Space Between -->
+        <section id="space-between">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">6</span>
+            Space Between (Gap Alternative)
+          </h2>
+          <p class="text-gray-300 mb-4">Alternatif untuk <code class="px-1 rounded bg-gray-800">gap</code> pada elemen non-flex/grid.</p>
+          
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div class="p-4 rounded-lg bg-gray-800/50">
+              <p class="text-sm text-gray-400 mb-2"><code class="text-primary-500">space-x-4</code></p>
+              <div class="flex space-x-4">
+                <div class="w-12 h-12 bg-blue-500 rounded"></div>
+                <div class="w-12 h-12 bg-green-500 rounded"></div>
+                <div class="w-12 h-12 bg-purple-500 rounded"></div>
+              </div>
+            </div>
+            <div class="p-4 rounded-lg bg-gray-800/50">
+              <p class="text-sm text-gray-400 mb-2"><code class="text-primary-500">space-y-4</code></p>
+              <div class="space-y-4">
+                <div class="h-8 bg-blue-500 rounded"></div>
+                <div class="h-8 bg-green-500 rounded"></div>
+                <div class="h-8 bg-purple-500 rounded"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-lg bg-blue-500/10 border border-blue-500/30">
+            <p class="text-blue-300 text-sm">💡 <strong>Tip:</strong> Untuk Flexbox dan Grid, lebih baik gunakan <code class="px-1 bg-gray-800 rounded">gap-*</code> karena tidak menambahkan margin pada item pertama/terakhir.</p>
+          </div>
+        </section>
+
+        <!-- Common Mistakes -->
+        <section class="p-4 rounded-lg bg-red-500/10 border border-red-500/30">
+          <h3 class="font-bold text-red-400 mb-3">⚠️ Kesalahan Umum Pemula</h3>
+          <ul class="text-gray-300 space-y-2 text-sm">
+            <li>• Menggunakan margin untuk spacing antar item dalam flex/grid (gunakan <code class="px-1 rounded bg-gray-800">gap</code>)</li>
+            <li>• Lupa bahwa <code class="px-1 rounded bg-gray-800">h-full</code> butuh parent dengan height yang didefinisikan</li>
+            <li>• Menggunakan <code class="px-1 rounded bg-gray-800">w-screen</code> di dalam container bisa menyebabkan horizontal scroll</li>
+            <li>• Tidak menggunakan <code class="px-1 rounded bg-gray-800">max-w-*</code> pada container untuk readability</li>
+          </ul>
+        </section>
+
+      </article>
+
+      <!-- Reading Checkbox -->
+      <div class="my-10 p-6 rounded-xl bg-gray-800/50 border border-gray-700">
+        <label class="flex items-center gap-4 cursor-pointer">
+          <input type="checkbox" id="reading-checkbox" class="w-5 h-5 rounded">
+          <span class="font-semibold">Saya sudah membaca dan memahami Spacing & Sizing</span>
+        </label>
+      </div>
+
+      <!-- Challenge -->
+      <section class="challenge-section p-6 rounded-xl mb-10">
+        <h2 class="text-xl font-bold mb-4">🎯 Challenge: Rapikan Layout Berantakan</h2>
+        <p class="text-gray-300 mb-6">Perbaiki layout di bawah ini menggunakan spacing utilities. Lihat perbedaan sebelum dan sesudah!</p>
+        
+        <!-- Before/After Comparison -->
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+          <!-- Before -->
+          <div>
+            <p class="text-sm text-red-400 mb-2 font-medium">❌ Sebelum (Berantakan)</p>
+            <div class="p-2 rounded-lg bg-gray-950 border border-red-500/30">
+              <div class="bg-gray-800 rounded">
+                <div class="bg-gray-700 rounded text-xs">Header tanpa padding</div>
+                <div class="flex">
+                  <div class="bg-blue-500 text-xs">Sidebar</div>
+                  <div class="bg-gray-700">
+                    <div class="bg-purple-500 rounded text-xs">Card</div>
+                    <div class="bg-purple-500 rounded text-xs">Card</div>
+                    <div class="bg-purple-500 rounded text-xs">Card</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- After -->
+          <div>
+            <p class="text-sm text-green-400 mb-2 font-medium">✅ Sesudah (Rapi)</p>
+            <div class="p-2 rounded-lg bg-gray-950 border border-green-500/30">
+              <div class="bg-gray-800 rounded overflow-hidden">
+                <div class="bg-gray-700 p-3 text-xs font-medium">Header dengan p-3</div>
+                <div class="flex">
+                  <div class="w-16 bg-blue-500 p-2 text-xs">Sidebar</div>
+                  <div class="flex-1 p-4 bg-gray-700">
+                    <div class="grid grid-cols-1 gap-3">
+                      <div class="bg-purple-500 p-3 rounded text-xs">Card dengan p-3</div>
+                      <div class="bg-purple-500 p-3 rounded text-xs">Card dengan p-3</div>
+                      <div class="bg-purple-500 p-3 rounded text-xs">Card dengan p-3</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Classes Used -->
+        <div class="mb-6 p-4 rounded-lg bg-gray-800/50 border border-gray-700">
+          <h3 class="font-semibold mb-3">📝 Classes yang Digunakan:</h3>
+          <div class="flex flex-wrap gap-2 text-sm">
+            <span class="px-2 py-1 rounded bg-green-500/20 text-green-400"><code>p-3</code></span>
+            <span class="px-2 py-1 rounded bg-green-500/20 text-green-400"><code>p-4</code></span>
+            <span class="px-2 py-1 rounded bg-green-500/20 text-green-400"><code>gap-3</code></span>
+            <span class="px-2 py-1 rounded bg-green-500/20 text-green-400"><code>w-16</code></span>
+            <span class="px-2 py-1 rounded bg-green-500/20 text-green-400"><code>flex-1</code></span>
+          </div>
+        </div>
+
+        <!-- Code Example -->
+        <div class="mb-6">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-semibold">💻 Kode Sesudah Diperbaiki</h3>
+            <button onclick="navigator.clipboard.writeText(document.getElementById('spacing-code').textContent).then(()=>alert('Copied!'))" class="text-xs px-3 py-1 rounded bg-gray-700 hover:bg-gray-600 transition-colors">📋 Copy</button>
+          </div>
+          <div class="p-4 rounded-lg bg-gray-950 border border-gray-700 overflow-x-auto">
+            <pre id="spacing-code" class="text-xs text-gray-300"><code>&lt;div class="bg-gray-800 rounded overflow-hidden"&gt;
+  &lt;!-- Header --&gt;
+  &lt;header class="bg-gray-700 p-3"&gt;
+    Header
+  &lt;/header&gt;
+  
+  &lt;div class="flex"&gt;
+    &lt;!-- Sidebar --&gt;
+    &lt;aside class="w-16 bg-blue-500 p-2"&gt;
+      Sidebar
+    &lt;/aside&gt;
+    
+    &lt;!-- Main Content --&gt;
+    &lt;main class="flex-1 p-4"&gt;
+      &lt;div class="grid grid-cols-1 gap-3"&gt;
+        &lt;div class="bg-purple-500 p-3 rounded"&gt;Card 1&lt;/div&gt;
+        &lt;div class="bg-purple-500 p-3 rounded"&gt;Card 2&lt;/div&gt;
+        &lt;div class="bg-purple-500 p-3 rounded"&gt;Card 3&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/main&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <!-- Additional Tasks -->
+        <div class="mb-6 p-4 rounded-lg bg-yellow-500/10 border border-yellow-500/30">
+          <h3 class="font-semibold text-yellow-400 mb-3">✨ Tantangan Tambahan:</h3>
+          <ul class="text-sm text-gray-300 space-y-2">
+            <li>□ Tambahkan <code class="px-1 rounded bg-gray-700">mx-auto max-w-4xl</code> untuk center container</li>
+            <li>□ Gunakan <code class="px-1 rounded bg-gray-700">py-8</code> untuk vertical spacing section</li>
+            <li>□ Coba negatif margin <code class="px-1 rounded bg-gray-700">-mt-4</code> untuk overlap effect</li>
+            <li>□ Buat responsive dengan <code class="px-1 rounded bg-gray-700">p-4 md:p-6 lg:p-8</code></li>
+          </ul>
+        </div>
+
+        <button id="submit-challenge" class="w-full py-3 rounded-lg bg-green-500 text-white font-semibold hover:bg-green-600 transition-colors">✅ Challenge Selesai</button>
+      </section>
+
+      <!-- Navigation -->
+      <div class="flex justify-between">
+        <a href="flexbox-grid.html" class="px-6 py-3 rounded-lg bg-gray-800 hover:bg-gray-700">← Flexbox & Grid</a>
+        <a id="next-lesson" href="typography.html" class="px-6 py-3 rounded-lg bg-primary-500 text-white opacity-50 pointer-events-none">Typography →</a>
+      </div>
+    </div>
+  </main>
+  <script src="assets/js/progress.js"></script>
+</body>
+</html>

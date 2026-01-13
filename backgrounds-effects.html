@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Backgrounds & Effects | Belajar Tailwind CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:{500:'#667eea',600:'#5a67d8'}}}}}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+  <aside class="sidebar fixed left-0 top-0 bottom-0 w-72 bg-gray-900 border-r border-gray-800 z-50 overflow-y-auto hidden lg:block">
+    <div class="p-4 border-b border-gray-800"><a href="index.html" class="flex items-center gap-3"><div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-purple-600"></div><span class="font-bold">TailwindMaster</span></a></div>
+    <nav class="p-4">
+      <ul class="space-y-1 text-sm">
+        <li><a href="getting-started.html" class="block px-3 py-2 rounded text-gray-400">Getting Started</a></li>
+        <li><a href="core-concepts.html" class="block px-3 py-2 rounded text-gray-400">Core Concepts</a></li>
+        <li><a href="layout.html" class="block px-3 py-2 rounded text-gray-400">Layout</a></li>
+        <li><a href="flexbox-grid.html" class="block px-3 py-2 rounded text-gray-400">Flexbox & Grid</a></li>
+        <li><a href="spacing-sizing.html" class="block px-3 py-2 rounded text-gray-400">Spacing & Sizing</a></li>
+        <li><a href="typography.html" class="block px-3 py-2 rounded text-gray-400">Typography</a></li>
+        <li><a href="backgrounds-effects.html" class="block px-3 py-2 rounded bg-primary-500/20 text-white font-medium">Backgrounds & Effects</a></li>
+        <li><a href="transitions-animation.html" class="block px-3 py-2 rounded text-gray-400">Transitions & Animation</a></li>
+        <li><a href="interactivity-svg.html" class="block px-3 py-2 rounded text-gray-400">Interactivity & SVG</a></li>
+        <li><a href="accessibility.html" class="block px-3 py-2 rounded text-gray-400">Accessibility</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="lg:ml-72">
+    <header class="sticky top-0 z-30 bg-gray-900/90 backdrop-blur border-b border-gray-800 px-6 py-4">
+      <nav class="text-sm text-gray-400"><a href="index.html" class="hover:text-white">Home</a> / <span class="text-white">Backgrounds & Effects</span></nav>
+    </header>
+
+    <div class="max-w-4xl mx-auto px-6 py-12">
+      <div class="mb-10">
+        <span class="px-3 py-1 rounded-full bg-primary-500/20 text-primary-500 text-sm">Materi 7/10</span>
+        <h1 class="text-4xl font-bold mt-4 mb-3">Backgrounds, Borders, Effects & Filters</h1>
+        <p class="text-lg text-gray-400">Background colors, gradients, borders, shadows, dan efek visual lainnya.</p>
+      </div>
+
+      <!-- Daftar Isi -->
+      <div class="mb-10 p-4 rounded-xl bg-gray-800/50 border border-gray-700">
+        <h3 class="font-semibold mb-3">📋 Daftar Isi</h3>
+        <div class="grid md:grid-cols-2 gap-2 text-sm text-gray-300">
+          <div>
+            <p class="font-semibold text-primary-400 mb-1">Backgrounds</p>
+            <a href="#bg-color" class="block hover:text-primary-500">1. Background Color</a>
+            <a href="#bg-gradient" class="block hover:text-primary-500">2. Background Gradient</a>
+            <a href="#bg-image" class="block hover:text-primary-500">3. Background Image</a>
+            <a href="#bg-size" class="block hover:text-primary-500">4. Background Size & Position</a>
+          </div>
+          <div>
+            <p class="font-semibold text-green-400 mb-1">Borders</p>
+            <a href="#border" class="block hover:text-primary-500">5. Border Width & Color</a>
+            <a href="#border-radius" class="block hover:text-primary-500">6. Border Radius</a>
+            <a href="#border-style" class="block hover:text-primary-500">7. Border Style</a>
+            <a href="#outline" class="block hover:text-primary-500">8. Outline & Ring</a>
+          </div>
+          <div>
+            <p class="font-semibold text-purple-400 mb-1">Effects</p>
+            <a href="#shadow" class="block hover:text-primary-500">9. Box Shadow</a>
+            <a href="#opacity" class="block hover:text-primary-500">10. Opacity</a>
+            <a href="#blend" class="block hover:text-primary-500">11. Mix Blend Mode</a>
+          </div>
+          <div>
+            <p class="font-semibold text-pink-400 mb-1">Filters</p>
+            <a href="#filter" class="block hover:text-primary-500">12. Filter (blur, brightness, etc)</a>
+            <a href="#backdrop" class="block hover:text-primary-500">13. Backdrop Filter</a>
+          </div>
+        </div>
+      </div>
+
+      <article class="space-y-14">
+        
+        <!-- BACKGROUNDS SECTION -->
+        <div class="p-4 rounded-xl bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/30">
+          <h2 class="text-2xl font-bold text-center">🎨 BACKGROUNDS</h2>
+        </div>
+
+        <!-- 1. Background Color -->
+        <section id="bg-color">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">1</span>
+            Background Color
+          </h2>
+          <p class="text-gray-300 mb-4">Format: <code class="px-1 rounded bg-gray-800">bg-{color}-{shade}</code></p>
+          
+          <div class="grid grid-cols-4 md:grid-cols-8 gap-2 mb-4">
+            <div class="h-12 rounded bg-red-500" title="bg-red-500"></div>
+            <div class="h-12 rounded bg-orange-500" title="bg-orange-500"></div>
+            <div class="h-12 rounded bg-yellow-500" title="bg-yellow-500"></div>
+            <div class="h-12 rounded bg-green-500" title="bg-green-500"></div>
+            <div class="h-12 rounded bg-blue-500" title="bg-blue-500"></div>
+            <div class="h-12 rounded bg-indigo-500" title="bg-indigo-500"></div>
+            <div class="h-12 rounded bg-purple-500" title="bg-purple-500"></div>
+            <div class="h-12 rounded bg-pink-500" title="bg-pink-500"></div>
+          </div>
+
+          <!-- Color shades -->
+          <h4 class="font-semibold mb-2">Shades (contoh blue)</h4>
+          <div class="flex gap-1 mb-4">
+            <div class="flex-1 h-10 rounded bg-blue-50 flex items-center justify-center text-xs text-gray-900">50</div>
+            <div class="flex-1 h-10 rounded bg-blue-100 flex items-center justify-center text-xs text-gray-900">100</div>
+            <div class="flex-1 h-10 rounded bg-blue-200 flex items-center justify-center text-xs text-gray-900">200</div>
+            <div class="flex-1 h-10 rounded bg-blue-300 flex items-center justify-center text-xs text-gray-900">300</div>
+            <div class="flex-1 h-10 rounded bg-blue-400 flex items-center justify-center text-xs">400</div>
+            <div class="flex-1 h-10 rounded bg-blue-500 flex items-center justify-center text-xs">500</div>
+            <div class="flex-1 h-10 rounded bg-blue-600 flex items-center justify-center text-xs">600</div>
+            <div class="flex-1 h-10 rounded bg-blue-700 flex items-center justify-center text-xs">700</div>
+            <div class="flex-1 h-10 rounded bg-blue-800 flex items-center justify-center text-xs">800</div>
+            <div class="flex-1 h-10 rounded bg-blue-900 flex items-center justify-center text-xs">900</div>
+            <div class="flex-1 h-10 rounded bg-blue-950 flex items-center justify-center text-xs">950</div>
+          </div>
+
+          <!-- Opacity -->
+          <h4 class="font-semibold mb-2">Background Opacity</h4>
+          <div class="flex gap-2">
+            <div class="px-4 py-2 rounded bg-blue-500/100 text-sm">bg-blue-500/100</div>
+            <div class="px-4 py-2 rounded bg-blue-500/75 text-sm">bg-blue-500/75</div>
+            <div class="px-4 py-2 rounded bg-blue-500/50 text-sm">bg-blue-500/50</div>
+            <div class="px-4 py-2 rounded bg-blue-500/25 text-sm">bg-blue-500/25</div>
+          </div>
+        </section>
+
+        <!-- 2. Background Gradient -->
+        <section id="bg-gradient">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">2</span>
+            Background Gradient
+          </h2>
+          <p class="text-gray-300 mb-4">Format: <code class="px-1 rounded bg-gray-800">bg-gradient-to-{direction} from-{color} via-{color} to-{color}</code></p>
+          
+          <!-- Directions -->
+          <h4 class="font-semibold mb-2">Gradient Direction</h4>
+          <div class="grid grid-cols-4 gap-2 mb-4 text-xs">
+            <div class="h-16 rounded bg-gradient-to-t from-blue-500 to-transparent flex items-end justify-center pb-1">to-t</div>
+            <div class="h-16 rounded bg-gradient-to-r from-blue-500 to-transparent flex items-center justify-end pr-1">to-r</div>
+            <div class="h-16 rounded bg-gradient-to-b from-blue-500 to-transparent flex items-start justify-center pt-1">to-b</div>
+            <div class="h-16 rounded bg-gradient-to-l from-blue-500 to-transparent flex items-center justify-start pl-1">to-l</div>
+            <div class="h-16 rounded bg-gradient-to-tr from-blue-500 to-transparent flex items-end justify-start pl-1 pb-1">to-tr</div>
+            <div class="h-16 rounded bg-gradient-to-br from-blue-500 to-transparent flex items-start justify-start pl-1 pt-1">to-br</div>
+            <div class="h-16 rounded bg-gradient-to-bl from-blue-500 to-transparent flex items-start justify-end pr-1 pt-1">to-bl</div>
+            <div class="h-16 rounded bg-gradient-to-tl from-blue-500 to-transparent flex items-end justify-end pr-1 pb-1">to-tl</div>
+          </div>
+
+          <!-- Gradient Examples -->
+          <h4 class="font-semibold mb-2">Contoh Gradient</h4>
+          <div class="grid md:grid-cols-2 gap-3">
+            <div class="h-20 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-sm">from-purple-500 to-pink-500</div>
+            <div class="h-20 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 flex items-center justify-center text-sm">from-cyan-500 to-blue-500</div>
+            <div class="h-20 rounded-lg bg-gradient-to-r from-green-400 via-cyan-500 to-blue-500 flex items-center justify-center text-sm">from-green via-cyan to-blue</div>
+            <div class="h-20 rounded-lg bg-gradient-to-br from-orange-500 via-red-500 to-pink-500 flex items-center justify-center text-sm">Multi-color gradient</div>
+          </div>
+        </section>
+
+        <!-- 3. Background Image -->
+        <section id="bg-image">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">3</span>
+            Background Image
+          </h2>
+          
+          <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <div class="space-y-2">
+              <div class="p-2 rounded bg-gray-800"><code>bg-none</code> - No background</div>
+              <div class="p-2 rounded bg-gray-800"><code>bg-[url('...')]</code> - Custom image</div>
+            </div>
+            <div class="space-y-2">
+              <div class="p-2 rounded bg-gray-800"><code>bg-repeat</code> - Repeat</div>
+              <div class="p-2 rounded bg-gray-800"><code>bg-no-repeat</code> - No repeat</div>
+              <div class="p-2 rounded bg-gray-800"><code>bg-repeat-x</code> - Repeat X</div>
+              <div class="p-2 rounded bg-gray-800"><code>bg-repeat-y</code> - Repeat Y</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. Background Size & Position -->
+        <section id="bg-size">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">4</span>
+            Background Size & Position
+          </h2>
+          
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <h4 class="font-semibold mb-2">Size</h4>
+              <div class="space-y-2 text-sm">
+                <div class="p-2 rounded bg-gray-800"><code>bg-auto</code> - Default size</div>
+                <div class="p-2 rounded bg-gray-800"><code>bg-cover</code> - Cover container</div>
+                <div class="p-2 rounded bg-gray-800"><code>bg-contain</code> - Fit inside</div>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">Position</h4>
+              <div class="space-y-2 text-sm">
+                <div class="p-2 rounded bg-gray-800"><code>bg-center</code></div>
+                <div class="p-2 rounded bg-gray-800"><code>bg-top</code> / <code>bg-bottom</code></div>
+                <div class="p-2 rounded bg-gray-800"><code>bg-left</code> / <code>bg-right</code></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-3 gap-2 text-xs">
+            <div class="h-16 rounded bg-gray-700 flex items-center justify-center">bg-left-top</div>
+            <div class="h-16 rounded bg-gray-700 flex items-center justify-center">bg-top</div>
+            <div class="h-16 rounded bg-gray-700 flex items-center justify-center">bg-right-top</div>
+            <div class="h-16 rounded bg-gray-700 flex items-center justify-center">bg-left</div>
+            <div class="h-16 rounded bg-gray-600 flex items-center justify-center font-bold">bg-center</div>
+            <div class="h-16 rounded bg-gray-700 flex items-center justify-center">bg-right</div>
+            <div class="h-16 rounded bg-gray-700 flex items-center justify-center">bg-left-bottom</div>
+            <div class="h-16 rounded bg-gray-700 flex items-center justify-center">bg-bottom</div>
+            <div class="h-16 rounded bg-gray-700 flex items-center justify-center">bg-right-bottom</div>
+          </div>
+        </section>
+
+        <!-- BORDERS SECTION -->
+        <div class="p-4 rounded-xl bg-gradient-to-r from-green-500/10 to-teal-500/10 border border-green-500/30">
+          <h2 class="text-2xl font-bold text-center">🔲 BORDERS & OUTLINE</h2>
+        </div>
+
+        <!-- 5. Border Width & Color -->
+        <section id="border">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-green-500/20 text-green-500 flex items-center justify-center text-sm">5</span>
+            Border Width & Color
+          </h2>
+          
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <h4 class="font-semibold mb-2">Width</h4>
+              <div class="space-y-2">
+                <div class="p-3 border border-white rounded text-center text-sm">border (1px)</div>
+                <div class="p-3 border-2 border-white rounded text-center text-sm">border-2 (2px)</div>
+                <div class="p-3 border-4 border-white rounded text-center text-sm">border-4 (4px)</div>
+                <div class="p-3 border-8 border-white rounded text-center text-sm">border-8 (8px)</div>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">Directional</h4>
+              <div class="space-y-2">
+                <div class="p-3 border-t-4 border-blue-500 bg-gray-800 rounded text-center text-sm">border-t-4</div>
+                <div class="p-3 border-r-4 border-green-500 bg-gray-800 rounded text-center text-sm">border-r-4</div>
+                <div class="p-3 border-b-4 border-purple-500 bg-gray-800 rounded text-center text-sm">border-b-4</div>
+                <div class="p-3 border-l-4 border-pink-500 bg-gray-800 rounded text-center text-sm">border-l-4</div>
+              </div>
+            </div>
+          </div>
+
+          <h4 class="font-semibold mb-2">Border Color</h4>
+          <div class="flex flex-wrap gap-2">
+            <div class="px-4 py-2 border-2 border-red-500 rounded text-sm">border-red-500</div>
+            <div class="px-4 py-2 border-2 border-green-500 rounded text-sm">border-green-500</div>
+            <div class="px-4 py-2 border-2 border-blue-500 rounded text-sm">border-blue-500</div>
+            <div class="px-4 py-2 border-2 border-white/50 rounded text-sm">border-white/50</div>
+          </div>
+        </section>
+
+        <!-- 6. Border Radius -->
+        <section id="border-radius">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-green-500/20 text-green-500 flex items-center justify-center text-sm">6</span>
+            Border Radius
+          </h2>
+          
+          <div class="flex flex-wrap gap-4 mb-4">
+            <div class="w-16 h-16 bg-blue-500 rounded-none flex items-center justify-center text-xs">none</div>
+            <div class="w-16 h-16 bg-blue-500 rounded-sm flex items-center justify-center text-xs">sm</div>
+            <div class="w-16 h-16 bg-blue-500 rounded flex items-center justify-center text-xs">default</div>
+            <div class="w-16 h-16 bg-blue-500 rounded-md flex items-center justify-center text-xs">md</div>
+            <div class="w-16 h-16 bg-blue-500 rounded-lg flex items-center justify-center text-xs">lg</div>
+            <div class="w-16 h-16 bg-blue-500 rounded-xl flex items-center justify-center text-xs">xl</div>
+            <div class="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center text-xs">2xl</div>
+            <div class="w-16 h-16 bg-blue-500 rounded-3xl flex items-center justify-center text-xs">3xl</div>
+            <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-xs">full</div>
+          </div>
+
+          <h4 class="font-semibold mb-2">Per Corner</h4>
+          <div class="flex gap-2 text-sm">
+            <div class="px-3 py-2 bg-gray-800 rounded-tl-xl">rounded-tl-xl</div>
+            <div class="px-3 py-2 bg-gray-800 rounded-tr-xl">rounded-tr-xl</div>
+            <div class="px-3 py-2 bg-gray-800 rounded-bl-xl">rounded-bl-xl</div>
+            <div class="px-3 py-2 bg-gray-800 rounded-br-xl">rounded-br-xl</div>
+          </div>
+        </section>
+
+        <!-- 7. Border Style -->
+        <section id="border-style">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-green-500/20 text-green-500 flex items-center justify-center text-sm">7</span>
+            Border Style
+          </h2>
+          
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <div class="p-4 border-2 border-solid border-white rounded text-center text-sm">border-solid</div>
+            <div class="p-4 border-2 border-dashed border-white rounded text-center text-sm">border-dashed</div>
+            <div class="p-4 border-2 border-dotted border-white rounded text-center text-sm">border-dotted</div>
+            <div class="p-4 border-2 border-double border-white rounded text-center text-sm">border-double</div>
+          </div>
+        </section>
+
+        <!-- 8. Outline & Ring -->
+        <section id="outline">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-green-500/20 text-green-500 flex items-center justify-center text-sm">8</span>
+            Outline & Ring
+          </h2>
+          
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-semibold mb-2">Outline</h4>
+              <div class="space-y-3">
+                <div class="p-3 bg-gray-800 rounded outline outline-2 outline-blue-500 text-center text-sm">outline-2 outline-blue-500</div>
+                <div class="p-3 bg-gray-800 rounded outline outline-4 outline-offset-2 outline-green-500 text-center text-sm">outline-offset-2</div>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">Ring (untuk focus states)</h4>
+              <div class="space-y-3">
+                <div class="p-3 bg-gray-800 rounded ring-2 ring-blue-500 text-center text-sm">ring-2 ring-blue-500</div>
+                <div class="p-3 bg-gray-800 rounded ring-4 ring-purple-500 ring-offset-2 ring-offset-gray-900 text-center text-sm">ring-offset-2</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 p-4 rounded-lg bg-blue-500/10 border border-blue-500/30">
+            <p class="text-blue-300 text-sm">💡 <strong>Tip:</strong> Gunakan <code class="px-1 bg-gray-800 rounded">ring</code> untuk focus states pada button/input karena tidak mengubah layout.</p>
+          </div>
+        </section>
+
+        <!-- EFFECTS SECTION -->
+        <div class="p-4 rounded-xl bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/30">
+          <h2 class="text-2xl font-bold text-center">✨ EFFECTS</h2>
+        </div>
+
+        <!-- 9. Box Shadow -->
+        <section id="shadow">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-purple-500/20 text-purple-500 flex items-center justify-center text-sm">9</span>
+            Box Shadow
+          </h2>
+          
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+            <div class="p-4 bg-gray-800 rounded-lg shadow-sm text-center text-sm">shadow-sm</div>
+            <div class="p-4 bg-gray-800 rounded-lg shadow text-center text-sm">shadow</div>
+            <div class="p-4 bg-gray-800 rounded-lg shadow-md text-center text-sm">shadow-md</div>
+            <div class="p-4 bg-gray-800 rounded-lg shadow-lg text-center text-sm">shadow-lg</div>
+            <div class="p-4 bg-gray-800 rounded-lg shadow-xl text-center text-sm">shadow-xl</div>
+            <div class="p-4 bg-gray-800 rounded-lg shadow-2xl text-center text-sm">shadow-2xl</div>
+            <div class="p-4 bg-gray-800 rounded-lg shadow-inner text-center text-sm">shadow-inner</div>
+            <div class="p-4 bg-gray-800 rounded-lg shadow-none text-center text-sm">shadow-none</div>
+          </div>
+
+          <h4 class="font-semibold mb-2">Colored Shadow</h4>
+          <div class="flex flex-wrap gap-4">
+            <div class="p-4 bg-white rounded-lg shadow-lg shadow-blue-500/50 text-gray-900 text-sm">shadow-blue-500/50</div>
+            <div class="p-4 bg-white rounded-lg shadow-lg shadow-green-500/50 text-gray-900 text-sm">shadow-green-500/50</div>
+            <div class="p-4 bg-white rounded-lg shadow-lg shadow-purple-500/50 text-gray-900 text-sm">shadow-purple-500/50</div>
+          </div>
+        </section>
+
+        <!-- 10. Opacity -->
+        <section id="opacity">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-purple-500/20 text-purple-500 flex items-center justify-center text-sm">10</span>
+            Opacity
+          </h2>
+          
+          <div class="flex flex-wrap gap-2">
+            <div class="w-16 h-16 bg-blue-500 opacity-100 rounded flex items-center justify-center text-xs">100</div>
+            <div class="w-16 h-16 bg-blue-500 opacity-90 rounded flex items-center justify-center text-xs">90</div>
+            <div class="w-16 h-16 bg-blue-500 opacity-75 rounded flex items-center justify-center text-xs">75</div>
+            <div class="w-16 h-16 bg-blue-500 opacity-50 rounded flex items-center justify-center text-xs">50</div>
+            <div class="w-16 h-16 bg-blue-500 opacity-25 rounded flex items-center justify-center text-xs">25</div>
+            <div class="w-16 h-16 bg-blue-500 opacity-10 rounded flex items-center justify-center text-xs">10</div>
+            <div class="w-16 h-16 bg-blue-500 opacity-0 rounded flex items-center justify-center text-xs border border-dashed border-gray-600">0</div>
+          </div>
+        </section>
+
+        <!-- 11. Mix Blend Mode -->
+        <section id="blend">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-purple-500/20 text-purple-500 flex items-center justify-center text-sm">11</span>
+            Mix Blend Mode
+          </h2>
+          
+          <div class="grid grid-cols-3 md:grid-cols-6 gap-2 text-xs">
+            <div class="p-2 bg-gray-800 rounded"><code>mix-blend-normal</code></div>
+            <div class="p-2 bg-gray-800 rounded"><code>mix-blend-multiply</code></div>
+            <div class="p-2 bg-gray-800 rounded"><code>mix-blend-screen</code></div>
+            <div class="p-2 bg-gray-800 rounded"><code>mix-blend-overlay</code></div>
+            <div class="p-2 bg-gray-800 rounded"><code>mix-blend-darken</code></div>
+            <div class="p-2 bg-gray-800 rounded"><code>mix-blend-lighten</code></div>
+          </div>
+        </section>
+
+        <!-- FILTERS SECTION -->
+        <div class="p-4 rounded-xl bg-gradient-to-r from-pink-500/10 to-rose-500/10 border border-pink-500/30">
+          <h2 class="text-2xl font-bold text-center">🔬 FILTERS</h2>
+        </div>
+
+        <!-- 12. Filter -->
+        <section id="filter">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-pink-500/20 text-pink-500 flex items-center justify-center text-sm">12</span>
+            Filter
+          </h2>
+          
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <h4 class="font-semibold mb-2">Blur</h4>
+              <div class="flex gap-2">
+                <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded blur-none" title="blur-none"></div>
+                <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded blur-sm" title="blur-sm"></div>
+                <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded blur" title="blur"></div>
+                <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded blur-md" title="blur-md"></div>
+                <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded blur-lg" title="blur-lg"></div>
+              </div>
+              <p class="text-xs text-gray-500 mt-1">blur-none → blur-lg</p>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">Brightness</h4>
+              <div class="flex gap-2">
+                <div class="w-16 h-16 bg-blue-500 rounded brightness-50 flex items-center justify-center text-xs">50</div>
+                <div class="w-16 h-16 bg-blue-500 rounded brightness-75 flex items-center justify-center text-xs">75</div>
+                <div class="w-16 h-16 bg-blue-500 rounded brightness-100 flex items-center justify-center text-xs">100</div>
+                <div class="w-16 h-16 bg-blue-500 rounded brightness-125 flex items-center justify-center text-xs">125</div>
+                <div class="w-16 h-16 bg-blue-500 rounded brightness-150 flex items-center justify-center text-xs">150</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+            <div class="p-2 rounded bg-gray-800"><code>grayscale</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>sepia</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>invert</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>saturate-{amount}</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>contrast-{amount}</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>hue-rotate-{deg}</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>drop-shadow-{size}</code></div>
+          </div>
+        </section>
+
+        <!-- 13. Backdrop Filter -->
+        <section id="backdrop">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-pink-500/20 text-pink-500 flex items-center justify-center text-sm">13</span>
+            Backdrop Filter (Glassmorphism)
+          </h2>
+          
+          <div class="relative p-8 rounded-xl bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 overflow-hidden">
+            <div class="absolute inset-0 flex items-center justify-center gap-4">
+              <div class="p-6 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white text-center">
+                <p class="font-semibold">backdrop-blur-sm</p>
+              </div>
+              <div class="p-6 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 text-white text-center">
+                <p class="font-semibold">backdrop-blur-md</p>
+              </div>
+              <div class="p-6 rounded-xl bg-white/10 backdrop-blur-xl border border-white/20 text-white text-center">
+                <p class="font-semibold">backdrop-blur-xl</p>
+              </div>
+            </div>
+            <div class="h-24"></div>
+          </div>
+
+          <div class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+            <div class="p-2 rounded bg-gray-800"><code>backdrop-blur-{size}</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>backdrop-brightness-{n}</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>backdrop-contrast-{n}</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>backdrop-saturate-{n}</code></div>
+          </div>
+        </section>
+
+        <!-- Common Mistakes -->
+        <section class="p-4 rounded-lg bg-red-500/10 border border-red-500/30">
+          <h3 class="font-bold text-red-400 mb-3">⚠️ Kesalahan Umum Pemula</h3>
+          <ul class="text-gray-300 space-y-2 text-sm">
+            <li>• Lupa bahwa shadow tidak terlihat di dark background (gunakan <code class="px-1 rounded bg-gray-800">shadow-{color}</code>)</li>
+            <li>• <code class="px-1 rounded bg-gray-800">backdrop-blur</code> butuh background semi-transparan <code class="px-1 rounded bg-gray-800">bg-white/10</code></li>
+            <li>• Menggunakan terlalu banyak efek sekaligus (keep it simple!)</li>
+            <li>• Tidak menggunakan <code class="px-1 rounded bg-gray-800">overflow-hidden</code> saat rounded dengan child elements</li>
+          </ul>
+        </section>
+
+      </article>
+
+      <!-- Reading Checkbox -->
+      <div class="my-10 p-6 rounded-xl bg-gray-800/50 border border-gray-700">
+        <label class="flex items-center gap-4 cursor-pointer">
+          <input type="checkbox" id="reading-checkbox" class="w-5 h-5 rounded">
+          <span class="font-semibold">Saya sudah membaca dan memahami materi ini</span>
+        </label>
+      </div>
+
+      <!-- Challenge -->
+      <section class="challenge-section p-6 rounded-xl mb-10">
+        <h2 class="text-xl font-bold mb-4">🎯 Challenge: UI Card Modern dengan Efek</h2>
+        <p class="text-gray-300 mb-6">Buat UI card modern dengan gradient, shadow, hover effects, dan border. Berikut contohnya:</p>
+        
+        <!-- Card Preview -->
+        <div class="mb-8 p-6 rounded-xl bg-gray-950 border border-gray-700">
+          <p class="text-xs text-gray-500 mb-4 uppercase tracking-wide">📱 Live Preview - Modern Cards</p>
+          
+          <div class="grid md:grid-cols-3 gap-4">
+            <!-- Card 1: Gradient -->
+            <div class="group relative p-6 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 text-white overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/25">
+              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors"></div>
+              <div class="relative">
+                <div class="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center text-2xl mb-4">🚀</div>
+                <h3 class="font-bold text-lg mb-2">Gradient Card</h3>
+                <p class="text-sm text-white/80">Dengan hover scale & shadow effect</p>
+              </div>
+            </div>
+
+            <!-- Card 2: Glass -->
+            <div class="group p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-2xl mb-4">💎</div>
+              <h3 class="font-bold text-lg mb-2">Glass Card</h3>
+              <p class="text-sm text-gray-400">Glassmorphism dengan backdrop-blur</p>
+            </div>
+
+            <!-- Card 3: Bordered -->
+            <div class="group p-6 rounded-2xl bg-gray-800 border-2 border-gray-700 hover:border-primary-500 hover:shadow-lg hover:shadow-primary-500/10 transition-all duration-300">
+              <div class="w-12 h-12 rounded-xl bg-primary-500/20 flex items-center justify-center text-2xl mb-4">⚡</div>
+              <h3 class="font-bold text-lg mb-2">Bordered Card</h3>
+              <p class="text-sm text-gray-400">Border color change on hover</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Classes Used -->
+        <div class="mb-6 p-4 rounded-lg bg-gray-800/50 border border-gray-700">
+          <h3 class="font-semibold mb-3">📝 Classes yang Digunakan:</h3>
+          <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <div>
+              <p class="text-gray-400 mb-2">Background & Gradient:</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 rounded bg-purple-500/20 text-purple-400"><code>bg-gradient-to-br</code></span>
+                <span class="px-2 py-1 rounded bg-purple-500/20 text-purple-400"><code>from-purple-500</code></span>
+                <span class="px-2 py-1 rounded bg-purple-500/20 text-purple-400"><code>to-pink-500</code></span>
+              </div>
+            </div>
+            <div>
+              <p class="text-gray-400 mb-2">Effects:</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 rounded bg-blue-500/20 text-blue-400"><code>backdrop-blur-sm</code></span>
+                <span class="px-2 py-1 rounded bg-blue-500/20 text-blue-400"><code>shadow-xl</code></span>
+                <span class="px-2 py-1 rounded bg-blue-500/20 text-blue-400"><code>shadow-purple-500/25</code></span>
+              </div>
+            </div>
+            <div>
+              <p class="text-gray-400 mb-2">Hover:</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 rounded bg-green-500/20 text-green-400"><code>hover:scale-105</code></span>
+                <span class="px-2 py-1 rounded bg-green-500/20 text-green-400"><code>hover:border-primary-500</code></span>
+                <span class="px-2 py-1 rounded bg-green-500/20 text-green-400"><code>transition-all</code></span>
+              </div>
+            </div>
+            <div>
+              <p class="text-gray-400 mb-2">Border & Radius:</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2 py-1 rounded bg-yellow-500/20 text-yellow-400"><code>rounded-2xl</code></span>
+                <span class="px-2 py-1 rounded bg-yellow-500/20 text-yellow-400"><code>border-white/10</code></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Code Example -->
+        <div class="mb-6">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-semibold">💻 Kode Card</h3>
+            <button onclick="navigator.clipboard.writeText(document.getElementById('card-code').textContent).then(()=>alert('Copied!'))" class="text-xs px-3 py-1 rounded bg-gray-700 hover:bg-gray-600 transition-colors">📋 Copy</button>
+          </div>
+          <div class="p-4 rounded-lg bg-gray-950 border border-gray-700 overflow-x-auto">
+            <pre id="card-code" class="text-xs text-gray-300"><code>&lt;!-- Gradient Card --&gt;
+&lt;div class="group p-6 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 
+     text-white overflow-hidden transition-transform duration-300 
+     hover:scale-105 hover:shadow-xl hover:shadow-purple-500/25"&gt;
+  &lt;div class="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center"&gt;
+    🚀
+  &lt;/div&gt;
+  &lt;h3 class="font-bold text-lg mt-4"&gt;Card Title&lt;/h3&gt;
+  &lt;p class="text-sm text-white/80"&gt;Card description&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- Glass Card --&gt;
+&lt;div class="p-6 rounded-2xl bg-white/5 backdrop-blur-sm 
+     border border-white/10 hover:bg-white/10 transition-all"&gt;
+  ...
+&lt;/div&gt;
+
+&lt;!-- Bordered Card --&gt;
+&lt;div class="p-6 rounded-2xl bg-gray-800 border-2 border-gray-700 
+     hover:border-primary-500 hover:shadow-lg transition-all"&gt;
+  ...
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <!-- Additional Tasks -->
+        <div class="mb-6 p-4 rounded-lg bg-yellow-500/10 border border-yellow-500/30">
+          <h3 class="font-semibold text-yellow-400 mb-3">✨ Tantangan Tambahan:</h3>
+          <ul class="text-sm text-gray-300 space-y-2">
+            <li>□ Tambahkan <code class="px-1 rounded bg-gray-700">group-hover:</code> untuk animate child elements</li>
+            <li>□ Buat card dengan <code class="px-1 rounded bg-gray-700">ring</code> effect saat focus</li>
+            <li>□ Coba gradient 3 warna dengan <code class="px-1 rounded bg-gray-700">via-{color}</code></li>
+            <li>□ Buat card dengan <code class="px-1 rounded bg-gray-700">rotate-3 hover:rotate-0</code> effect</li>
+          </ul>
+        </div>
+
+        <button id="submit-challenge" class="w-full py-3 rounded-lg bg-green-500 text-white font-semibold hover:bg-green-600 transition-colors">✅ Challenge Selesai</button>
+      </section>
+
+      <!-- Navigation -->
+      <div class="flex justify-between">
+        <a href="typography.html" class="px-6 py-3 rounded-lg bg-gray-800 hover:bg-gray-700">← Typography</a>
+        <a id="next-lesson" href="transitions-animation.html" class="px-6 py-3 rounded-lg bg-primary-500 text-white opacity-50 pointer-events-none">Transitions & Animation →</a>
+      </div>
+    </div>
+  </main>
+  <script src="assets/js/progress.js"></script>
+</body>
+</html>

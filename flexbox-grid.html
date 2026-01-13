@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox & Grid | Belajar Tailwind CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui']},colors:{primary:{500:'#667eea',600:'#5a67d8'}}}}}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+  <aside class="sidebar fixed left-0 top-0 bottom-0 w-72 bg-gray-900 border-r border-gray-800 z-50 overflow-y-auto hidden lg:block">
+    <div class="p-4 border-b border-gray-800">
+      <a href="index.html" class="flex items-center gap-3"><div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-purple-600"></div><span class="font-bold">TailwindMaster</span></a>
+    </div>
+    <nav class="p-4">
+      <ul class="space-y-1 text-sm">
+        <li><a href="getting-started.html" class="block px-3 py-2 rounded text-gray-400">Getting Started</a></li>
+        <li><a href="core-concepts.html" class="block px-3 py-2 rounded text-gray-400">Core Concepts</a></li>
+        <li><a href="layout.html" class="block px-3 py-2 rounded text-gray-400">Layout</a></li>
+        <li><a href="flexbox-grid.html" class="block px-3 py-2 rounded bg-primary-500/20 text-white font-medium">Flexbox & Grid</a></li>
+        <li><a href="spacing-sizing.html" class="block px-3 py-2 rounded text-gray-400">Spacing & Sizing</a></li>
+        <li><a href="typography.html" class="block px-3 py-2 rounded text-gray-400">Typography</a></li>
+        <li><a href="backgrounds-effects.html" class="block px-3 py-2 rounded text-gray-400">Backgrounds & Effects</a></li>
+        <li><a href="transitions-animation.html" class="block px-3 py-2 rounded text-gray-400">Transitions & Animation</a></li>
+        <li><a href="interactivity-svg.html" class="block px-3 py-2 rounded text-gray-400">Interactivity & SVG</a></li>
+        <li><a href="accessibility.html" class="block px-3 py-2 rounded text-gray-400">Accessibility</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="lg:ml-72">
+    <header class="sticky top-0 z-30 bg-gray-900/95 backdrop-blur border-b border-gray-800 px-6 py-4">
+      <nav class="text-sm text-gray-400"><a href="index.html" class="hover:text-white">Home</a> / <span class="text-white">Flexbox & Grid</span></nav>
+    </header>
+
+    <div class="max-w-4xl mx-auto px-6 py-12">
+      <div class="mb-10">
+        <span class="px-3 py-1 rounded-full bg-primary-500/20 text-primary-500 text-sm">Materi 4/10</span>
+        <h1 class="text-4xl font-bold mt-4 mb-3">Flexbox & Grid</h1>
+        <p class="text-lg text-gray-400">Dua sistem layout modern yang wajib dikuasai untuk membuat layout responsif.</p>
+      </div>
+
+      <!-- Comparison -->
+      <div class="mb-10 p-4 rounded-xl bg-blue-500/10 border border-blue-500/30">
+        <h3 class="font-semibold text-blue-400 mb-3">🔄 Kapan Pakai Flexbox vs Grid?</h3>
+        <div class="grid md:grid-cols-2 gap-4 text-sm">
+          <div>
+            <p class="font-semibold mb-2">Flexbox → 1 Dimensi</p>
+            <ul class="text-gray-300 space-y-1">
+              <li>• Navbar horizontal</li>
+              <li>• Card row</li>
+              <li>• Button group</li>
+              <li>• Centering</li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-semibold mb-2">Grid → 2 Dimensi</p>
+            <ul class="text-gray-300 space-y-1">
+              <li>• Dashboard layout</li>
+              <li>• Photo gallery</li>
+              <li>• Complex page layout</li>
+              <li>• Magazine-style layouts</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Daftar Isi -->
+      <div class="mb-10 p-4 rounded-xl bg-gray-800/50 border border-gray-700">
+        <h3 class="font-semibold mb-3">📋 Daftar Isi</h3>
+        <div class="grid md:grid-cols-2 gap-2 text-sm text-gray-300">
+          <div>
+            <p class="font-semibold text-primary-400 mb-2">Flexbox</p>
+            <a href="#flex-direction" class="block hover:text-primary-500">1. Flex Direction</a>
+            <a href="#flex-wrap" class="block hover:text-primary-500">2. Flex Wrap</a>
+            <a href="#flex-grow-shrink" class="block hover:text-primary-500">3. Flex Grow & Shrink</a>
+            <a href="#flex-basis" class="block hover:text-primary-500">4. Flex Basis</a>
+            <a href="#order" class="block hover:text-primary-500">5. Order</a>
+          </div>
+          <div>
+            <p class="font-semibold text-primary-400 mb-2">Grid</p>
+            <a href="#grid-template" class="block hover:text-primary-500">6. Grid Template Columns/Rows</a>
+            <a href="#grid-span" class="block hover:text-primary-500">7. Grid Column/Row Span</a>
+            <a href="#grid-auto" class="block hover:text-primary-500">8. Grid Auto Flow & Auto Columns/Rows</a>
+            <a href="#gap" class="block hover:text-primary-500">9. Gap</a>
+            <a href="#alignment" class="block hover:text-primary-500">10. Justify, Align, Place</a>
+          </div>
+        </div>
+      </div>
+
+      <article class="space-y-14">
+        
+        <!-- FLEXBOX SECTION -->
+        <div class="p-4 rounded-xl bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/30">
+          <h2 class="text-2xl font-bold text-center">📦 FLEXBOX</h2>
+          <p class="text-center text-gray-400 text-sm">Layout 1 dimensi (horizontal ATAU vertikal)</p>
+        </div>
+
+        <!-- Flexbox Axis Diagram -->
+        <section class="p-4 rounded-xl bg-gray-800/50">
+          <h3 class="font-semibold mb-3">🧭 Memahami Main Axis & Cross Axis</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <!-- Row Direction -->
+            <div class="p-4 rounded-lg bg-gray-800 border border-gray-700">
+              <p class="text-sm text-gray-400 mb-3"><code class="text-primary-500">flex-row</code> (default)</p>
+              <div class="relative">
+                <!-- Container -->
+                <div class="flex gap-2 p-4 border-2 border-dashed border-blue-500 rounded-lg">
+                  <div class="w-12 h-12 bg-blue-500 rounded flex items-center justify-center font-bold">A</div>
+                  <div class="w-12 h-12 bg-green-500 rounded flex items-center justify-center font-bold">B</div>
+                  <div class="w-12 h-12 bg-purple-500 rounded flex items-center justify-center font-bold">C</div>
+                </div>
+                <!-- Main Axis Arrow -->
+                <div class="flex items-center gap-1 mt-2 text-blue-400 text-xs">
+                  <span>←</span>
+                  <span class="flex-1 border-t-2 border-blue-400 border-dashed"></span>
+                  <span>→</span>
+                  <span class="ml-1">Main Axis (justify)</span>
+                </div>
+                <!-- Cross Axis Arrow -->
+                <div class="absolute -right-6 top-4 flex flex-col items-center gap-1 text-green-400 text-xs">
+                  <span>↑</span>
+                  <span class="h-12 border-l-2 border-green-400 border-dashed"></span>
+                  <span>↓</span>
+                </div>
+              </div>
+              <p class="text-xs text-gray-500 mt-2 mr-8">Cross Axis (items)</p>
+            </div>
+            <!-- Column Direction -->
+            <div class="p-4 rounded-lg bg-gray-800 border border-gray-700">
+              <p class="text-sm text-gray-400 mb-3"><code class="text-primary-500">flex-col</code></p>
+              <div class="relative">
+                <!-- Container -->
+                <div class="flex flex-col gap-2 p-4 border-2 border-dashed border-blue-500 rounded-lg w-fit">
+                  <div class="w-24 h-10 bg-blue-500 rounded flex items-center justify-center font-bold">A</div>
+                  <div class="w-24 h-10 bg-green-500 rounded flex items-center justify-center font-bold">B</div>
+                  <div class="w-24 h-10 bg-purple-500 rounded flex items-center justify-center font-bold">C</div>
+                </div>
+                <!-- Main Axis Arrow (vertical) -->
+                <div class="absolute -right-6 top-4 flex flex-col items-center gap-1 text-blue-400 text-xs">
+                  <span>↑</span>
+                  <span class="h-24 border-l-2 border-blue-400 border-dashed"></span>
+                  <span>↓</span>
+                </div>
+                <!-- Cross Axis Arrow (horizontal) -->
+                <div class="flex items-center gap-1 mt-2 text-green-400 text-xs">
+                  <span>←</span>
+                  <span class="flex-1 border-t-2 border-green-400 border-dashed max-w-24"></span>
+                  <span>→</span>
+                  <span class="ml-1">Cross Axis</span>
+                </div>
+              </div>
+              <p class="text-xs text-gray-500 mt-2">Main Axis (pada flex-col)</p>
+            </div>
+          </div>
+          <div class="mt-4 p-3 rounded-lg bg-blue-500/10 border border-blue-500/30 text-sm">
+            <p class="text-blue-300">💡 <strong>Tips:</strong> <code class="px-1 bg-gray-800 rounded">justify-*</code> mengatur posisi di Main Axis, <code class="px-1 bg-gray-800 rounded">items-*</code> mengatur posisi di Cross Axis</p>
+          </div>
+        </section>
+
+        <!-- 1. Flex Direction -->
+        <section id="flex-direction">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">1</span>
+            Flex Direction
+          </h2>
+          <p class="text-gray-300 mb-4">Mengatur arah susunan flex items.</p>
+          
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div class="p-4 rounded-lg bg-gray-800/50">
+              <code class="text-primary-500">flex-row</code> (default)
+              <div class="flex flex-row gap-2 mt-2">
+                <div class="w-12 h-12 bg-blue-500 rounded flex items-center justify-center">1</div>
+                <div class="w-12 h-12 bg-green-500 rounded flex items-center justify-center">2</div>
+                <div class="w-12 h-12 bg-purple-500 rounded flex items-center justify-center">3</div>
+              </div>
+            </div>
+            <div class="p-4 rounded-lg bg-gray-800/50">
+              <code class="text-primary-500">flex-row-reverse</code>
+              <div class="flex flex-row-reverse gap-2 mt-2">
+                <div class="w-12 h-12 bg-blue-500 rounded flex items-center justify-center">1</div>
+                <div class="w-12 h-12 bg-green-500 rounded flex items-center justify-center">2</div>
+                <div class="w-12 h-12 bg-purple-500 rounded flex items-center justify-center">3</div>
+              </div>
+            </div>
+            <div class="p-4 rounded-lg bg-gray-800/50">
+              <code class="text-primary-500">flex-col</code>
+              <div class="flex flex-col gap-2 mt-2">
+                <div class="w-full h-10 bg-blue-500 rounded flex items-center justify-center">1</div>
+                <div class="w-full h-10 bg-green-500 rounded flex items-center justify-center">2</div>
+              </div>
+            </div>
+            <div class="p-4 rounded-lg bg-gray-800/50">
+              <code class="text-primary-500">flex-col-reverse</code>
+              <div class="flex flex-col-reverse gap-2 mt-2">
+                <div class="w-full h-10 bg-blue-500 rounded flex items-center justify-center">1</div>
+                <div class="w-full h-10 bg-green-500 rounded flex items-center justify-center">2</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. Flex Wrap -->
+        <section id="flex-wrap">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">2</span>
+            Flex Wrap
+          </h2>
+          <p class="text-gray-300 mb-4">Mengatur apakah items membungkus ke baris baru saat tidak muat.</p>
+          
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="p-4 rounded-lg bg-gray-800/50">
+              <code class="text-primary-500">flex-nowrap</code> (default)
+              <div class="flex flex-nowrap gap-2 mt-2 overflow-x-auto">
+                <div class="w-20 h-12 flex-shrink-0 bg-blue-500 rounded flex items-center justify-center text-xs">Item 1</div>
+                <div class="w-20 h-12 flex-shrink-0 bg-green-500 rounded flex items-center justify-center text-xs">Item 2</div>
+                <div class="w-20 h-12 flex-shrink-0 bg-purple-500 rounded flex items-center justify-center text-xs">Item 3</div>
+                <div class="w-20 h-12 flex-shrink-0 bg-pink-500 rounded flex items-center justify-center text-xs">Item 4</div>
+              </div>
+            </div>
+            <div class="p-4 rounded-lg bg-gray-800/50">
+              <code class="text-primary-500">flex-wrap</code>
+              <div class="flex flex-wrap gap-2 mt-2">
+                <div class="w-20 h-12 bg-blue-500 rounded flex items-center justify-center text-xs">Item 1</div>
+                <div class="w-20 h-12 bg-green-500 rounded flex items-center justify-center text-xs">Item 2</div>
+                <div class="w-20 h-12 bg-purple-500 rounded flex items-center justify-center text-xs">Item 3</div>
+                <div class="w-20 h-12 bg-pink-500 rounded flex items-center justify-center text-xs">Item 4</div>
+              </div>
+            </div>
+            <div class="p-4 rounded-lg bg-gray-800/50">
+              <code class="text-primary-500">flex-wrap-reverse</code>
+              <div class="flex flex-wrap-reverse gap-2 mt-2">
+                <div class="w-20 h-12 bg-blue-500 rounded flex items-center justify-center text-xs">Item 1</div>
+                <div class="w-20 h-12 bg-green-500 rounded flex items-center justify-center text-xs">Item 2</div>
+                <div class="w-20 h-12 bg-purple-500 rounded flex items-center justify-center text-xs">Item 3</div>
+                <div class="w-20 h-12 bg-pink-500 rounded flex items-center justify-center text-xs">Item 4</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. Flex Grow & Shrink -->
+        <section id="flex-grow-shrink">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">3</span>
+            Flex Grow & Shrink
+          </h2>
+          
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <h4 class="font-semibold mb-2">Flex Grow</h4>
+              <p class="text-sm text-gray-400 mb-3">Mengatur seberapa besar item bisa berkembang.</p>
+              <div class="space-y-2 text-sm">
+                <div class="p-2 rounded bg-gray-800"><code>flex-grow-0</code> - Tidak berkembang</div>
+                <div class="p-2 rounded bg-gray-800"><code>flex-grow</code> / <code>grow</code> - Berkembang mengisi ruang</div>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">Flex Shrink</h4>
+              <p class="text-sm text-gray-400 mb-3">Mengatur seberapa kecil item bisa menyusut.</p>
+              <div class="space-y-2 text-sm">
+                <div class="p-2 rounded bg-gray-800"><code>flex-shrink-0</code> / <code>shrink-0</code> - Tidak menyusut</div>
+                <div class="p-2 rounded bg-gray-800"><code>flex-shrink</code> / <code>shrink</code> - Bisa menyusut</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-lg bg-gray-800/50 mb-4">
+            <p class="text-sm text-gray-400 mb-2">Preview flex-grow:</p>
+            <div class="flex gap-2">
+              <div class="flex-grow-0 w-20 h-12 bg-blue-500 rounded flex items-center justify-center text-xs">grow-0</div>
+              <div class="flex-grow h-12 bg-green-500 rounded flex items-center justify-center text-xs">grow</div>
+              <div class="flex-grow h-12 bg-purple-500 rounded flex items-center justify-center text-xs">grow</div>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-lg bg-gray-800">
+            <p class="text-sm text-gray-400 mb-2">Shorthand <code class="px-1 rounded bg-gray-700">flex-1</code>:</p>
+            <pre class="text-sm overflow-x-auto"><code>flex-1    = flex: 1 1 0%     (grow, shrink, basis 0)
+flex-auto = flex: 1 1 auto   (grow, shrink, basis auto)
+flex-none = flex: none       (tidak grow/shrink)</code></pre>
+          </div>
+        </section>
+
+        <!-- 4. Flex Basis -->
+        <section id="flex-basis">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">4</span>
+            Flex Basis
+          </h2>
+          <p class="text-gray-300 mb-4">Mengatur ukuran awal item sebelum grow/shrink diterapkan.</p>
+          
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm mb-4">
+            <div class="p-2 rounded bg-gray-800"><code>basis-0</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>basis-1/4</code> (25%)</div>
+            <div class="p-2 rounded bg-gray-800"><code>basis-1/2</code> (50%)</div>
+            <div class="p-2 rounded bg-gray-800"><code>basis-full</code> (100%)</div>
+            <div class="p-2 rounded bg-gray-800"><code>basis-auto</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>basis-32</code> (8rem)</div>
+            <div class="p-2 rounded bg-gray-800"><code>basis-64</code> (16rem)</div>
+            <div class="p-2 rounded bg-gray-800"><code>basis-[200px]</code></div>
+          </div>
+
+          <div class="p-4 rounded-lg bg-gray-800/50">
+            <p class="text-sm text-gray-400 mb-2">Preview basis:</p>
+            <div class="flex gap-2">
+              <div class="basis-1/4 h-12 bg-blue-500 rounded flex items-center justify-center text-xs">basis-1/4</div>
+              <div class="basis-1/2 h-12 bg-green-500 rounded flex items-center justify-center text-xs">basis-1/2</div>
+              <div class="basis-1/4 h-12 bg-purple-500 rounded flex items-center justify-center text-xs">basis-1/4</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. Order -->
+        <section id="order">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">5</span>
+            Order
+          </h2>
+          <p class="text-gray-300 mb-4">Mengubah urutan visual item tanpa mengubah HTML.</p>
+          
+          <div class="flex flex-wrap gap-2 mb-4 text-sm">
+            <span class="px-2 py-1 rounded bg-gray-800"><code>order-first</code> (-9999)</span>
+            <span class="px-2 py-1 rounded bg-gray-800"><code>order-last</code> (9999)</span>
+            <span class="px-2 py-1 rounded bg-gray-800"><code>order-none</code> (0)</span>
+            <span class="px-2 py-1 rounded bg-gray-800"><code>order-1</code> ... <code>order-12</code></span>
+            <span class="px-2 py-1 rounded bg-gray-800"><code>-order-1</code> (negatif)</span>
+          </div>
+
+          <div class="p-4 rounded-lg bg-gray-800/50">
+            <p class="text-sm text-gray-400 mb-2">Preview order (HTML: 1, 2, 3):</p>
+            <div class="flex gap-2">
+              <div class="order-3 w-16 h-12 bg-blue-500 rounded flex items-center justify-center">1<br><span class="text-xs">order-3</span></div>
+              <div class="order-1 w-16 h-12 bg-green-500 rounded flex items-center justify-center">2<br><span class="text-xs">order-1</span></div>
+              <div class="order-2 w-16 h-12 bg-purple-500 rounded flex items-center justify-center">3<br><span class="text-xs">order-2</span></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-2">Hasil visual: 2, 3, 1</p>
+          </div>
+        </section>
+
+        <!-- GRID SECTION -->
+        <div class="p-4 rounded-xl bg-gradient-to-r from-green-500/10 to-teal-500/10 border border-green-500/30">
+          <h2 class="text-2xl font-bold text-center">🔲 CSS GRID</h2>
+          <p class="text-center text-gray-400 text-sm">Layout 2 dimensi (rows DAN columns sekaligus)</p>
+        </div>
+
+        <!-- 6. Grid Template -->
+        <section id="grid-template">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-green-500/20 text-green-500 flex items-center justify-center text-sm">6</span>
+            Grid Template Columns & Rows
+          </h2>
+          
+          <h4 class="font-semibold mb-2">Grid Template Columns</h4>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm mb-4">
+            <div class="p-2 rounded bg-gray-800"><code>grid-cols-1</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>grid-cols-2</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>grid-cols-3</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>grid-cols-4</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>grid-cols-6</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>grid-cols-12</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>grid-cols-none</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>grid-cols-subgrid</code></div>
+          </div>
+
+          <div class="p-4 rounded-lg bg-gray-800/50 mb-6">
+            <p class="text-sm text-gray-400 mb-2">Preview grid-cols-3:</p>
+            <div class="grid grid-cols-3 gap-2">
+              <div class="h-12 bg-blue-500 rounded flex items-center justify-center">1</div>
+              <div class="h-12 bg-green-500 rounded flex items-center justify-center">2</div>
+              <div class="h-12 bg-purple-500 rounded flex items-center justify-center">3</div>
+              <div class="h-12 bg-pink-500 rounded flex items-center justify-center">4</div>
+              <div class="h-12 bg-yellow-500 rounded flex items-center justify-center text-gray-900">5</div>
+              <div class="h-12 bg-red-500 rounded flex items-center justify-center">6</div>
+            </div>
+          </div>
+
+          <h4 class="font-semibold mb-2">Grid Template Rows</h4>
+          <div class="grid grid-cols-3 md:grid-cols-6 gap-2 text-sm">
+            <div class="p-2 rounded bg-gray-800"><code>grid-rows-1</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>grid-rows-2</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>grid-rows-3</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>grid-rows-4</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>grid-rows-5</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>grid-rows-6</code></div>
+          </div>
+        </section>
+
+        <!-- 7. Grid Column/Row Span -->
+        <section id="grid-span">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-green-500/20 text-green-500 flex items-center justify-center text-sm">7</span>
+            Grid Column & Row Span
+          </h2>
+          
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <h4 class="font-semibold mb-2">Column Span</h4>
+              <div class="space-y-1 text-sm">
+                <div class="p-2 rounded bg-gray-800"><code>col-span-1</code> ... <code>col-span-12</code></div>
+                <div class="p-2 rounded bg-gray-800"><code>col-span-full</code> (semua kolom)</div>
+                <div class="p-2 rounded bg-gray-800"><code>col-start-2</code> (mulai kolom 2)</div>
+                <div class="p-2 rounded bg-gray-800"><code>col-end-4</code> (akhir kolom 4)</div>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">Row Span</h4>
+              <div class="space-y-1 text-sm">
+                <div class="p-2 rounded bg-gray-800"><code>row-span-1</code> ... <code>row-span-6</code></div>
+                <div class="p-2 rounded bg-gray-800"><code>row-span-full</code> (semua baris)</div>
+                <div class="p-2 rounded bg-gray-800"><code>row-start-2</code> (mulai baris 2)</div>
+                <div class="p-2 rounded bg-gray-800"><code>row-end-4</code> (akhir baris 4)</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-lg bg-gray-800/50">
+            <p class="text-sm text-gray-400 mb-2">Preview grid span:</p>
+            <div class="grid grid-cols-4 gap-2">
+              <div class="col-span-2 h-12 bg-blue-500 rounded flex items-center justify-center text-xs">col-span-2</div>
+              <div class="h-12 bg-green-500 rounded flex items-center justify-center text-xs">1</div>
+              <div class="row-span-2 bg-purple-500 rounded flex items-center justify-center text-xs">row-span-2</div>
+              <div class="h-12 bg-pink-500 rounded flex items-center justify-center text-xs">2</div>
+              <div class="col-span-2 h-12 bg-yellow-500 rounded flex items-center justify-center text-xs text-gray-900">col-span-2</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 8. Grid Auto -->
+        <section id="grid-auto">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-green-500/20 text-green-500 flex items-center justify-center text-sm">8</span>
+            Grid Auto Flow & Auto Columns/Rows
+          </h2>
+          
+          <h4 class="font-semibold mb-2">Grid Auto Flow</h4>
+          <p class="text-sm text-gray-400 mb-3">Mengatur bagaimana item otomatis ditempatkan.</p>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm mb-4">
+            <div class="p-2 rounded bg-gray-800"><code>grid-flow-row</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>grid-flow-col</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>grid-flow-dense</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>grid-flow-row-dense</code></div>
+          </div>
+
+          <h4 class="font-semibold mb-2">Auto Columns & Rows</h4>
+          <p class="text-sm text-gray-400 mb-3">Mengatur ukuran kolom/baris yang otomatis dibuat.</p>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
+            <div class="p-2 rounded bg-gray-800"><code>auto-cols-auto</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>auto-cols-min</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>auto-cols-max</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>auto-cols-fr</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>auto-rows-auto</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>auto-rows-min</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>auto-rows-max</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>auto-rows-fr</code></div>
+          </div>
+        </section>
+
+        <!-- 9. Gap -->
+        <section id="gap">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-green-500/20 text-green-500 flex items-center justify-center text-sm">9</span>
+            Gap
+          </h2>
+          <p class="text-gray-300 mb-4">Mengatur jarak antar items di Flex atau Grid. Lebih mudah dari margin!</p>
+          
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm mb-4">
+            <div class="p-2 rounded bg-gray-800"><code>gap-0</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>gap-2</code> (0.5rem)</div>
+            <div class="p-2 rounded bg-gray-800"><code>gap-4</code> (1rem)</div>
+            <div class="p-2 rounded bg-gray-800"><code>gap-8</code> (2rem)</div>
+            <div class="p-2 rounded bg-gray-800"><code>gap-x-4</code> (horizontal)</div>
+            <div class="p-2 rounded bg-gray-800"><code>gap-y-4</code> (vertical)</div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="p-4 rounded-lg bg-gray-800/50">
+              <p class="text-sm text-gray-400 mb-2">gap-2:</p>
+              <div class="grid grid-cols-3 gap-2">
+                <div class="h-10 bg-blue-500 rounded"></div>
+                <div class="h-10 bg-green-500 rounded"></div>
+                <div class="h-10 bg-purple-500 rounded"></div>
+              </div>
+            </div>
+            <div class="p-4 rounded-lg bg-gray-800/50">
+              <p class="text-sm text-gray-400 mb-2">gap-6:</p>
+              <div class="grid grid-cols-3 gap-6">
+                <div class="h-10 bg-blue-500 rounded"></div>
+                <div class="h-10 bg-green-500 rounded"></div>
+                <div class="h-10 bg-purple-500 rounded"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 10. Alignment -->
+        <section id="alignment">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-green-500/20 text-green-500 flex items-center justify-center text-sm">10</span>
+            Justify, Align, Place
+          </h2>
+          <p class="text-gray-300 mb-4">Mengatur posisi items dalam container.</p>
+          
+          <div class="overflow-x-auto mb-6">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b border-gray-700">
+                  <th class="py-2 text-left">Property</th>
+                  <th class="py-2 text-left">Axis</th>
+                  <th class="py-2 text-left">Target</th>
+                  <th class="py-2 text-left">Values</th>
+                </tr>
+              </thead>
+              <tbody class="text-gray-300">
+                <tr class="border-b border-gray-800">
+                  <td class="py-2"><code>justify-content</code></td>
+                  <td>Main (horizontal)</td>
+                  <td>Semua items</td>
+                  <td><code>justify-start/center/end/between/around/evenly</code></td>
+                </tr>
+                <tr class="border-b border-gray-800">
+                  <td class="py-2"><code>justify-items</code></td>
+                  <td>Inline (horizontal)</td>
+                  <td>Setiap item</td>
+                  <td><code>justify-items-start/center/end/stretch</code></td>
+                </tr>
+                <tr class="border-b border-gray-800">
+                  <td class="py-2"><code>justify-self</code></td>
+                  <td>Inline (horizontal)</td>
+                  <td>Satu item</td>
+                  <td><code>justify-self-start/center/end/stretch</code></td>
+                </tr>
+                <tr class="border-b border-gray-800">
+                  <td class="py-2"><code>align-content</code></td>
+                  <td>Cross (vertical)</td>
+                  <td>Semua rows</td>
+                  <td><code>content-start/center/end/between/around/evenly</code></td>
+                </tr>
+                <tr class="border-b border-gray-800">
+                  <td class="py-2"><code>align-items</code></td>
+                  <td>Cross (vertical)</td>
+                  <td>Setiap item</td>
+                  <td><code>items-start/center/end/baseline/stretch</code></td>
+                </tr>
+                <tr class="border-b border-gray-800">
+                  <td class="py-2"><code>align-self</code></td>
+                  <td>Cross (vertical)</td>
+                  <td>Satu item</td>
+                  <td><code>self-start/center/end/stretch</code></td>
+                </tr>
+                <tr>
+                  <td class="py-2"><code>place-*</code></td>
+                  <td>Both</td>
+                  <td>Shorthand</td>
+                  <td><code>place-content-center</code>, <code>place-items-center</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="p-4 rounded-lg bg-gray-800/50">
+              <p class="text-sm text-gray-400 mb-2">justify-center + items-center:</p>
+              <div class="flex justify-center items-center h-24 bg-gray-800 rounded">
+                <div class="w-12 h-12 bg-blue-500 rounded"></div>
+              </div>
+            </div>
+            <div class="p-4 rounded-lg bg-gray-800/50">
+              <p class="text-sm text-gray-400 mb-2">justify-between:</p>
+              <div class="flex justify-between items-center h-24 bg-gray-800 rounded px-2">
+                <div class="w-10 h-10 bg-green-500 rounded"></div>
+                <div class="w-10 h-10 bg-green-500 rounded"></div>
+                <div class="w-10 h-10 bg-green-500 rounded"></div>
+              </div>
+            </div>
+            <div class="p-4 rounded-lg bg-gray-800/50">
+              <p class="text-sm text-gray-400 mb-2">place-items-center (Grid):</p>
+              <div class="grid place-items-center h-24 bg-gray-800 rounded">
+                <div class="w-12 h-12 bg-purple-500 rounded"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Common Mistakes -->
+        <section class="p-4 rounded-lg bg-red-500/10 border border-red-500/30">
+          <h3 class="font-bold text-red-400 mb-3">⚠️ Kesalahan Umum Pemula</h3>
+          <ul class="text-gray-300 space-y-2 text-sm">
+            <li>• Menggunakan <code class="px-1 rounded bg-gray-800">flex</code> tapi lupa tambahkan properti alignment</li>
+            <li>• Bingung antara <code class="px-1 rounded bg-gray-800">justify</code> (main axis) dan <code class="px-1 rounded bg-gray-800">items</code> (cross axis)</li>
+            <li>• Grid items tidak muncul karena lupa <code class="px-1 rounded bg-gray-800">grid-cols-*</code></li>
+            <li>• Menggunakan margin antar items (gunakan <code class="px-1 rounded bg-gray-800">gap</code> sebagai gantinya)</li>
+          </ul>
+        </section>
+
+      </article>
+
+      <!-- Reading Checkbox -->
+      <div class="my-10 p-6 rounded-xl bg-gray-800/50 border border-gray-700">
+        <label class="flex items-center gap-4 cursor-pointer">
+          <input type="checkbox" id="reading-checkbox" class="w-5 h-5 rounded">
+          <span class="font-semibold">Saya sudah membaca dan memahami Flexbox & Grid</span>
+        </label>
+      </div>
+
+      <!-- Challenge -->
+      <section class="challenge-section p-6 rounded-xl mb-10">
+        <h2 class="text-xl font-bold mb-4">🎯 Challenge: Dashboard Layout</h2>
+        <p class="text-gray-300 mb-6">Buat layout dashboard menggunakan kombinasi Grid & Flexbox. Berikut adalah contoh hasilnya:</p>
+        
+        <!-- Dashboard Preview -->
+        <div class="mb-8 p-4 rounded-xl bg-gray-950 border border-gray-700 overflow-hidden">
+          <p class="text-xs text-gray-500 mb-3 uppercase tracking-wide">📱 Live Preview - Dashboard Layout</p>
+          
+          <!-- The Dashboard -->
+          <div class="flex h-80 rounded-lg overflow-hidden border border-gray-700 text-sm">
+            <!-- Sidebar (Flexbox) -->
+            <aside class="w-16 md:w-48 bg-gray-800 flex-shrink-0 flex flex-col">
+              <div class="p-3 border-b border-gray-700">
+                <div class="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-gradient-to-br from-primary-500 to-purple-600 mx-auto md:mx-0"></div>
+              </div>
+              <nav class="flex-1 p-2 space-y-1">
+                <div class="flex items-center gap-2 px-2 py-2 rounded bg-primary-500/20 text-primary-400">
+                  <span>📊</span><span class="hidden md:inline">Dashboard</span>
+                </div>
+                <div class="flex items-center gap-2 px-2 py-2 rounded text-gray-400 hover:bg-gray-700">
+                  <span>👥</span><span class="hidden md:inline">Users</span>
+                </div>
+                <div class="flex items-center gap-2 px-2 py-2 rounded text-gray-400 hover:bg-gray-700">
+                  <span>📦</span><span class="hidden md:inline">Products</span>
+                </div>
+                <div class="flex items-center gap-2 px-2 py-2 rounded text-gray-400 hover:bg-gray-700">
+                  <span>⚙️</span><span class="hidden md:inline">Settings</span>
+                </div>
+              </nav>
+            </aside>
+            
+            <!-- Main Content (Flexbox + Grid) -->
+            <div class="flex-1 flex flex-col bg-gray-900 overflow-hidden">
+              <!-- Header (Flexbox) -->
+              <header class="flex items-center justify-between px-4 py-3 border-b border-gray-700">
+                <h1 class="font-semibold hidden sm:block">Dashboard</h1>
+                <div class="flex items-center gap-3">
+                  <span class="text-gray-400 text-xs">🔔</span>
+                  <div class="w-7 h-7 rounded-full bg-gradient-to-br from-green-400 to-blue-500"></div>
+                </div>
+              </header>
+              
+              <!-- Stats Cards (Grid) -->
+              <div class="p-4 overflow-y-auto flex-1">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-4">
+                  <div class="p-3 rounded-lg bg-gradient-to-br from-blue-500/20 to-blue-600/10 border border-blue-500/30">
+                    <p class="text-xs text-gray-400">Total Users</p>
+                    <p class="text-xl font-bold text-blue-400">12,543</p>
+                  </div>
+                  <div class="p-3 rounded-lg bg-gradient-to-br from-green-500/20 to-green-600/10 border border-green-500/30">
+                    <p class="text-xs text-gray-400">Revenue</p>
+                    <p class="text-xl font-bold text-green-400">$45.2K</p>
+                  </div>
+                  <div class="p-3 rounded-lg bg-gradient-to-br from-purple-500/20 to-purple-600/10 border border-purple-500/30">
+                    <p class="text-xs text-gray-400">Orders</p>
+                    <p class="text-xl font-bold text-purple-400">1,234</p>
+                  </div>
+                </div>
+                
+                <!-- Charts Area (Grid) -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-3">
+                  <div class="lg:col-span-2 p-3 rounded-lg bg-gray-800 border border-gray-700">
+                    <p class="text-xs text-gray-400 mb-2">Sales Chart</p>
+                    <div class="h-16 flex items-end gap-1">
+                      <div class="flex-1 bg-primary-500/50 rounded-t" style="height:40%"></div>
+                      <div class="flex-1 bg-primary-500/50 rounded-t" style="height:60%"></div>
+                      <div class="flex-1 bg-primary-500/50 rounded-t" style="height:45%"></div>
+                      <div class="flex-1 bg-primary-500/50 rounded-t" style="height:80%"></div>
+                      <div class="flex-1 bg-primary-500/50 rounded-t" style="height:55%"></div>
+                      <div class="flex-1 bg-primary-500 rounded-t" style="height:100%"></div>
+                      <div class="flex-1 bg-primary-500/50 rounded-t" style="height:75%"></div>
+                    </div>
+                  </div>
+                  <div class="p-3 rounded-lg bg-gray-800 border border-gray-700">
+                    <p class="text-xs text-gray-400 mb-2">Recent Activity</p>
+                    <div class="space-y-2 text-xs">
+                      <div class="flex items-center gap-2"><span class="w-2 h-2 bg-green-500 rounded-full"></span><span class="text-gray-300">New user signup</span></div>
+                      <div class="flex items-center gap-2"><span class="w-2 h-2 bg-blue-500 rounded-full"></span><span class="text-gray-300">Order #1234</span></div>
+                      <div class="flex items-center gap-2"><span class="w-2 h-2 bg-purple-500 rounded-full"></span><span class="text-gray-300">Payment received</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Layout Structure Breakdown -->
+        <div class="mb-6 p-4 rounded-lg bg-gray-800/50 border border-gray-700">
+          <h3 class="font-semibold mb-3">🏗️ Struktur Layout</h3>
+          <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <div>
+              <p class="text-primary-400 font-medium mb-2">Flexbox digunakan untuk:</p>
+              <ul class="space-y-1 text-gray-300">
+                <li>• <code class="px-1 rounded bg-gray-700">flex</code> - Container utama (sidebar + content)</li>
+                <li>• <code class="px-1 rounded bg-gray-700">flex flex-col</code> - Sidebar & main content area</li>
+                <li>• <code class="px-1 rounded bg-gray-700">justify-between</code> - Header layout</li>
+                <li>• <code class="px-1 rounded bg-gray-700">flex-shrink-0</code> - Sidebar tidak menyusut</li>
+                <li>• <code class="px-1 rounded bg-gray-700">flex-1</code> - Konten mengisi sisa ruang</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-green-400 font-medium mb-2">Grid digunakan untuk:</p>
+              <ul class="space-y-1 text-gray-300">
+                <li>• <code class="px-1 rounded bg-gray-700">grid grid-cols-3</code> - Stats cards</li>
+                <li>• <code class="px-1 rounded bg-gray-700">lg:col-span-2</code> - Chart lebih lebar</li>
+                <li>• <code class="px-1 rounded bg-gray-700">gap-3</code> - Spacing konsisten</li>
+                <li>• <code class="px-1 rounded bg-gray-700">grid-cols-1 md:grid-cols-2 lg:grid-cols-3</code> - Responsif</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Code Example -->
+        <div class="mb-6">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-semibold">📝 Kode HTML + Tailwind</h3>
+            <button onclick="navigator.clipboard.writeText(document.getElementById('dashboard-code').textContent).then(()=>alert('Copied!'))" class="text-xs px-3 py-1 rounded bg-gray-700 hover:bg-gray-600 transition-colors">📋 Copy Code</button>
+          </div>
+          <div class="p-4 rounded-lg bg-gray-950 border border-gray-700 overflow-x-auto">
+            <pre id="dashboard-code" class="text-xs text-gray-300"><code>&lt;!-- Dashboard Container --&gt;
+&lt;div class="flex h-screen"&gt;
+  
+  &lt;!-- Sidebar (Flexbox) --&gt;
+  &lt;aside class="w-64 bg-gray-800 flex-shrink-0 flex flex-col"&gt;
+    &lt;div class="p-4 border-b border-gray-700"&gt;Logo&lt;/div&gt;
+    &lt;nav class="flex-1 p-4"&gt;Menu items&lt;/nav&gt;
+  &lt;/aside&gt;
+  
+  &lt;!-- Main Area (Flex column) --&gt;
+  &lt;div class="flex-1 flex flex-col"&gt;
+    
+    &lt;!-- Header (Flexbox) --&gt;
+    &lt;header class="flex items-center justify-between px-6 py-4 border-b"&gt;
+      &lt;h1&gt;Dashboard&lt;/h1&gt;
+      &lt;div class="flex items-center gap-4"&gt;Profile&lt;/div&gt;
+    &lt;/header&gt;
+    
+    &lt;!-- Content (Grid) --&gt;
+    &lt;main class="flex-1 p-6 overflow-y-auto"&gt;
+      &lt;!-- Stats Cards --&gt;
+      &lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6"&gt;
+        &lt;div class="p-4 rounded-lg bg-gray-800"&gt;Card 1&lt;/div&gt;
+        &lt;div class="p-4 rounded-lg bg-gray-800"&gt;Card 2&lt;/div&gt;
+        &lt;div class="p-4 rounded-lg bg-gray-800"&gt;Card 3&lt;/div&gt;
+      &lt;/div&gt;
+      
+      &lt;!-- Charts Area --&gt;
+      &lt;div class="grid grid-cols-1 lg:grid-cols-3 gap-4"&gt;
+        &lt;div class="lg:col-span-2 p-4 rounded-lg bg-gray-800"&gt;Main Chart&lt;/div&gt;
+        &lt;div class="p-4 rounded-lg bg-gray-800"&gt;Side Widget&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/main&gt;
+    
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <!-- Challenge Tasks -->
+        <div class="mb-6 p-4 rounded-lg bg-yellow-500/10 border border-yellow-500/30">
+          <h3 class="font-semibold text-yellow-400 mb-3">✨ Tantangan Tambahan:</h3>
+          <ul class="text-sm text-gray-300 space-y-2">
+            <li>□ Tambahkan sidebar yang bisa collapse dengan <code class="px-1 rounded bg-gray-700">w-16</code> → <code class="px-1 rounded bg-gray-700">w-64</code></li>
+            <li>□ Buat responsive: hide sidebar di mobile dengan <code class="px-1 rounded bg-gray-700">hidden lg:flex</code></li>
+            <li>□ Tambahkan grid <code class="px-1 rounded bg-gray-700">grid-rows-[auto_1fr_auto]</code> untuk header-content-footer</li>
+            <li>□ Coba gunakan <code class="px-1 rounded bg-gray-700">order</code> untuk swap posisi di mobile</li>
+          </ul>
+        </div>
+
+        <button id="submit-challenge" class="w-full py-3 rounded-lg bg-green-500 text-white font-semibold hover:bg-green-600 transition-colors">✅ Challenge Selesai</button>
+      </section>
+
+      <!-- Navigation -->
+      <div class="flex justify-between">
+        <a href="layout.html" class="px-6 py-3 rounded-lg bg-gray-800 hover:bg-gray-700">← Layout</a>
+        <a id="next-lesson" href="spacing-sizing.html" class="px-6 py-3 rounded-lg bg-primary-500 text-white opacity-50 pointer-events-none">Spacing & Sizing →</a>
+      </div>
+    </div>
+  </main>
+  <script src="assets/js/progress.js"></script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step 6: Footer - Tutorial E-Commerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="tutorial-layout">
+        <aside class="sidebar" id="sidebar">
+            <a href="index.html" class="sidebar-logo">
+                <div class="icon">T</div>
+                <span>Tutorial</span>
+            </a>
+            <nav>
+                <div class="nav-section">
+                    <div class="nav-section-title">Pendahuluan</div>
+                    <ul class="nav-links">
+                        <li><a href="index.html"><span class="step-number">🏠</span> Overview</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">Step by Step</div>
+                    <ul class="nav-links">
+                        <li><a href="step-1-setup.html"><span class="step-number">1</span> Setup Project</a></li>
+                        <li><a href="step-2-navbar.html"><span class="step-number">2</span> Membuat Navbar</a></li>
+                        <li><a href="step-3-hero.html"><span class="step-number">3</span> Hero Section</a></li>
+                        <li><a href="step-4-products.html"><span class="step-number">4</span> Product Cards</a></li>
+                        <li><a href="step-5-sections.html"><span class="step-number">5</span> Section Lainnya</a></li>
+                        <li><a href="step-6-footer.html" class="active"><span class="step-number">6</span> Footer</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <h1>🦶 Step 6: Footer</h1>
+            <p>Footer adalah bagian penutup website. Biasanya berisi navigasi tambahan, kontak, social links, dan copyright.</p>
+
+            <!-- Section 1 -->
+            <h2>6.1 Struktur Footer Multi-Column</h2>
+
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="filename"><span class="dot html"></span> footer.html</span>
+                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                </div>
+                <div class="code-content"><pre><span class="comment">&lt;!-- Footer --&gt;</span>
+<span class="tag">&lt;footer</span> <span class="attr">class</span>=<span class="string">"footer py-12 lg:py-16"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"</span><span class="tag">&gt;</span>
+        
+        <span class="comment">&lt;!-- Footer Grid: 4 columns --&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12"</span><span class="tag">&gt;</span>
+            
+            <span class="comment">&lt;!-- Column 1: About (spans 2 cols on mobile) --&gt;</span>
+            <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"col-span-2 lg:col-span-1"</span><span class="tag">&gt;</span>
+                <span class="comment">&lt;!-- Logo --&gt;</span>
+                <span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"index.html"</span> <span class="attr">class</span>=<span class="string">"flex items-center gap-2 mb-6"</span><span class="tag">&gt;</span>
+                    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"w-10 h-10 bg-primary rounded-full flex items-center justify-center"</span><span class="tag">&gt;</span>
+                        <span class="tag">&lt;span</span> <span class="attr">class</span>=<span class="string">"text-white font-playfair font-bold text-lg"</span><span class="tag">&gt;</span>B<span class="tag">&lt;/span&gt;</span>
+                    <span class="tag">&lt;/div&gt;</span>
+                    <span class="tag">&lt;span</span> <span class="attr">class</span>=<span class="string">"font-playfair text-xl font-bold text-white"</span><span class="tag">&gt;</span>Busana Muslim<span class="tag">&lt;/span&gt;</span>
+                <span class="tag">&lt;/a&gt;</span>
+                
+                <span class="comment">&lt;!-- Description --&gt;</span>
+                <span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="string">"text-white/70 text-sm mb-6"</span><span class="tag">&gt;</span>
+                    Menyediakan busana muslim berkualitas dengan desain modern.
+                <span class="tag">&lt;/p&gt;</span>
+                
+                <span class="comment">&lt;!-- Social Links --&gt;</span>
+                <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"flex gap-4"</span><span class="tag">&gt;</span>
+                    <span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"w-10 h-10 bg-white/10 rounded-full 
+                              flex items-center justify-center hover:bg-primary transition"</span><span class="tag">&gt;</span>
+                        <span class="tag">&lt;svg</span> <span class="attr">class</span>=<span class="string">"w-5 h-5"</span><span class="tag">&gt;</span>...<span class="tag">&lt;/svg&gt;</span> <span class="comment">&lt;!-- Facebook --&gt;</span>
+                    <span class="tag">&lt;/a&gt;</span>
+                    <span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"w-10 h-10 bg-white/10 rounded-full 
+                              flex items-center justify-center hover:bg-primary transition"</span><span class="tag">&gt;</span>
+                        <span class="tag">&lt;svg</span> <span class="attr">class</span>=<span class="string">"w-5 h-5"</span><span class="tag">&gt;</span>...<span class="tag">&lt;/svg&gt;</span> <span class="comment">&lt;!-- Instagram --&gt;</span>
+                    <span class="tag">&lt;/a&gt;</span>
+                <span class="tag">&lt;/div&gt;</span>
+            <span class="tag">&lt;/div&gt;</span>
+
+            <span class="comment">&lt;!-- Column 2: Quick Links --&gt;</span>
+            <span class="tag">&lt;div&gt;</span>
+                <span class="tag">&lt;h4</span> <span class="attr">class</span>=<span class="string">"font-medium text-white mb-4"</span><span class="tag">&gt;</span>Menu<span class="tag">&lt;/h4&gt;</span>
+                <span class="tag">&lt;ul</span> <span class="attr">class</span>=<span class="string">"space-y-3 text-sm"</span><span class="tag">&gt;</span>
+                    <span class="tag">&lt;li&gt;&lt;a</span> <span class="attr">href</span>=<span class="string">"index.html"</span><span class="tag">&gt;</span>Beranda<span class="tag">&lt;/a&gt;&lt;/li&gt;</span>
+                    <span class="tag">&lt;li&gt;&lt;a</span> <span class="attr">href</span>=<span class="string">"products.html"</span><span class="tag">&gt;</span>Produk<span class="tag">&lt;/a&gt;&lt;/li&gt;</span>
+                    <span class="tag">&lt;li&gt;&lt;a</span> <span class="attr">href</span>=<span class="string">"about.html"</span><span class="tag">&gt;</span>Tentang Kami<span class="tag">&lt;/a&gt;&lt;/li&gt;</span>
+                    <span class="tag">&lt;li&gt;&lt;a</span> <span class="attr">href</span>=<span class="string">"cart.html"</span><span class="tag">&gt;</span>Keranjang<span class="tag">&lt;/a&gt;&lt;/li&gt;</span>
+                <span class="tag">&lt;/ul&gt;</span>
+            <span class="tag">&lt;/div&gt;</span>
+
+            <span class="comment">&lt;!-- Column 3: Categories --&gt;</span>
+            <span class="tag">&lt;div&gt;</span>
+                <span class="tag">&lt;h4</span> <span class="attr">class</span>=<span class="string">"font-medium text-white mb-4"</span><span class="tag">&gt;</span>Kategori<span class="tag">&lt;/h4&gt;</span>
+                <span class="tag">&lt;ul</span> <span class="attr">class</span>=<span class="string">"space-y-3 text-sm"</span><span class="tag">&gt;</span>
+                    <span class="tag">&lt;li&gt;&lt;a</span> <span class="attr">href</span>=<span class="string">"products.html?category=gamis"</span><span class="tag">&gt;</span>Gamis<span class="tag">&lt;/a&gt;&lt;/li&gt;</span>
+                    <span class="tag">&lt;li&gt;&lt;a</span> <span class="attr">href</span>=<span class="string">"products.html?category=koko"</span><span class="tag">&gt;</span>Koko<span class="tag">&lt;/a&gt;&lt;/li&gt;</span>
+                    <span class="tag">&lt;li&gt;&lt;a</span> <span class="attr">href</span>=<span class="string">"products.html?category=hijab"</span><span class="tag">&gt;</span>Hijab<span class="tag">&lt;/a&gt;&lt;/li&gt;</span>
+                <span class="tag">&lt;/ul&gt;</span>
+            <span class="tag">&lt;/div&gt;</span>
+
+            <span class="comment">&lt;!-- Column 4: Contact --&gt;</span>
+            <span class="tag">&lt;div&gt;</span>
+                <span class="tag">&lt;h4</span> <span class="attr">class</span>=<span class="string">"font-medium text-white mb-4"</span><span class="tag">&gt;</span>Hubungi Kami<span class="tag">&lt;/h4&gt;</span>
+                <span class="tag">&lt;ul</span> <span class="attr">class</span>=<span class="string">"space-y-3 text-sm"</span><span class="tag">&gt;</span>
+                    <span class="tag">&lt;li</span> <span class="attr">class</span>=<span class="string">"flex items-start gap-2"</span><span class="tag">&gt;</span>
+                        <span class="tag">&lt;svg</span> <span class="attr">class</span>=<span class="string">"w-5 h-5 mt-0.5 shrink-0"</span><span class="tag">&gt;</span>...<span class="tag">&lt;/svg&gt;</span>
+                        <span class="tag">&lt;span&gt;</span>Jl. Pahlawan No. 123, Jakarta<span class="tag">&lt;/span&gt;</span>
+                    <span class="tag">&lt;/li&gt;</span>
+                    <span class="tag">&lt;li</span> <span class="attr">class</span>=<span class="string">"flex items-center gap-2"</span><span class="tag">&gt;</span>
+                        <span class="tag">&lt;svg</span> <span class="attr">class</span>=<span class="string">"w-5 h-5 shrink-0"</span><span class="tag">&gt;</span>...<span class="tag">&lt;/svg&gt;</span>
+                        <span class="tag">&lt;span&gt;</span>+62 812 3456 7890<span class="tag">&lt;/span&gt;</span>
+                    <span class="tag">&lt;/li&gt;</span>
+                <span class="tag">&lt;/ul&gt;</span>
+            <span class="tag">&lt;/div&gt;</span>
+            
+        <span class="tag">&lt;/div&gt;</span>
+
+        <span class="comment">&lt;!-- Copyright --&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"border-t border-white/10 mt-12 pt-8 text-center text-sm text-white/60"</span><span class="tag">&gt;</span>
+            <span class="tag">&lt;p&gt;</span>&copy; 2025 Busana Muslim Nusantara. All rights reserved.<span class="tag">&lt;/p&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+        
+    <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/footer&gt;</span></pre></div>
+            </div>
+
+            <!-- Section 2 -->
+            <h2>6.2 Penjelasan Class</h2>
+
+            <h3>📊 Grid Layout</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Class</th><th>Fungsi</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>grid-cols-2 lg:grid-cols-4</code></td><td>2 kolom mobile, 4 kolom desktop</td></tr>
+                        <tr><td><code>col-span-2 lg:col-span-1</code></td><td>About section: 2 kolom di mobile, 1 di desktop</td></tr>
+                        <tr><td><code>gap-8 lg:gap-12</code></td><td>Gap yang lebih lebar di desktop</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>⚪ Opacity untuk Warna Terang di Dark BG</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Class</th><th>Fungsi</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>text-white/70</code></td><td>Text putih dengan opacity 70%</td></tr>
+                        <tr><td><code>bg-white/10</code></td><td>Background putih dengan opacity 10%</td></tr>
+                        <tr><td><code>border-white/10</code></td><td>Border putih dengan opacity 10%</td></tr>
+                        <tr><td><code>text-white/60</code></td><td>Copyright text lebih subtle</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>📐 Utility Classes</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Class</th><th>Fungsi</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>space-y-3</code></td><td>Vertical spacing 0.75rem antar list item</td></tr>
+                        <tr><td><code>shrink-0</code></td><td>Icon tidak menyusut dalam flex</td></tr>
+                        <tr><td><code>mt-0.5</code></td><td>Margin top 2px (align icon dengan text)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Section 3 -->
+            <h2>6.3 CSS untuk Footer</h2>
+
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="filename"><span class="dot css"></span> style.css</span>
+                </div>
+                <div class="code-content"><pre><span class="property">.footer</span> {
+    background-color: #3D3D3D; <span class="comment">/* Dark background */</span>
+    color: white;
+}
+
+<span class="property">.footer a</span> {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+<span class="property">.footer a:hover</span> {
+    color: white;
+}</pre></div>
+            </div>
+
+            <!-- Section 4: Completion -->
+            <h2>🎉 Selamat!</h2>
+            <p>Kamu sudah menyelesaikan tutorial membuat tampilan E-Commerce dengan Tailwind CSS!</p>
+
+            <div class="info-box tip">
+                <div class="info-box-title">🚀 Langkah Selanjutnya</div>
+                <p>
+                    1. Praktekkan dengan membuat project serupa sendiri<br>
+                    2. Eksplorasi halaman lain: products.html, cart.html, checkout.html<br>
+                    3. Tambahkan JavaScript untuk interaktivitas<br>
+                    4. Deploy ke hosting (Netlify, Vercel, dll)
+                </p>
+            </div>
+
+            <!-- Summary -->
+            <h2>📋 Ringkasan Seluruh Tutorial</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Step</th><th>Yang Dipelajari</th></tr></thead>
+                    <tbody>
+                        <tr><td>1️⃣ Setup</td><td>Tailwind CDN, custom config, fonts</td></tr>
+                        <tr><td>2️⃣ Navbar</td><td>Fixed position, flexbox, glassmorphism, responsive</td></tr>
+                        <tr><td>3️⃣ Hero</td><td>Grid layout, floating badges, animations</td></tr>
+                        <tr><td>4️⃣ Products</td><td>Grid system, card styling, hover effects</td></tr>
+                        <tr><td>5️⃣ Sections</td><td>Categories, promo banner, newsletter forms</td></tr>
+                        <tr><td>6️⃣ Footer</td><td>Multi-column grid, opacity utilities, links</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Navigation -->
+            <div class="step-nav">
+                <a href="step-5-sections.html">← Step 5: Sections</a>
+                <a href="../ecommerce-analysis/index.html" target="_blank" class="next">Lihat Hasil Final →</a>
+            </div>
+        </main>
+    </div>
+
+    <button class="mobile-menu-btn" onclick="document.getElementById('sidebar').classList.toggle('active')">☰</button>
+    <script>
+        function copyCode(btn) {
+            const codeBlock = btn.closest('.code-block').querySelector('pre');
+            navigator.clipboard.writeText(codeBlock.innerText);
+            btn.textContent = 'Copied!';
+            setTimeout(() => btn.textContent = 'Copy', 2000);
+        }
+    </script>
+</body>
+</html>

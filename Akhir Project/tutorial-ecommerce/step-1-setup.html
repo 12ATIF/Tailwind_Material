@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step 1: Setup Project - Tutorial E-Commerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="tutorial-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <a href="index.html" class="sidebar-logo">
+                <div class="icon">T</div>
+                <span>Tutorial</span>
+            </a>
+            <nav>
+                <div class="nav-section">
+                    <div class="nav-section-title">Pendahuluan</div>
+                    <ul class="nav-links">
+                        <li><a href="index.html"><span class="step-number">🏠</span> Overview</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">Step by Step</div>
+                    <ul class="nav-links">
+                        <li><a href="step-1-setup.html" class="active"><span class="step-number">1</span> Setup Project</a></li>
+                        <li><a href="step-2-navbar.html"><span class="step-number">2</span> Membuat Navbar</a></li>
+                        <li><a href="step-3-hero.html"><span class="step-number">3</span> Hero Section</a></li>
+                        <li><a href="step-4-products.html"><span class="step-number">4</span> Product Cards</a></li>
+                        <li><a href="step-5-sections.html"><span class="step-number">5</span> Section Lainnya</a></li>
+                        <li><a href="step-6-footer.html"><span class="step-number">6</span> Footer</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <h1>📦 Step 1: Setup Project</h1>
+            <p>Langkah pertama adalah menyiapkan environment untuk membangun tampilan E-Commerce kita menggunakan Tailwind CSS.</p>
+
+            <!-- Section 1: Struktur File -->
+            <h2>1.1 Struktur File Project</h2>
+            <p>Berikut adalah struktur folder yang akan kita buat:</p>
+
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="filename"><span class="dot" style="background: #6b7280;"></span> folder-structure</span>
+                </div>
+                <div class="code-content"><pre>
+ecommerce/
+├── index.html          ← Halaman utama
+├── products.html       ← Halaman daftar produk
+├── product-detail.html ← Halaman detail produk
+├── cart.html           ← Halaman keranjang
+├── checkout.html       ← Halaman checkout
+├── about.html          ← Halaman tentang kami
+└── assets/
+    ├── css/
+    │   └── style.css   ← Custom CSS tambahan
+    └── js/
+        └── main.js     ← JavaScript
+                </pre></div>
+            </div>
+
+            <!-- Section 2: HTML Dasar -->
+            <h2>1.2 Boilerplate HTML dengan Tailwind CDN</h2>
+            <p>Kita akan menggunakan Tailwind CSS via CDN karena ini cara tercepat untuk prototyping. Berikut template dasar yang digunakan:</p>
+
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="filename"><span class="dot html"></span> index.html</span>
+                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                </div>
+                <div class="code-content"><pre><span class="tag">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html</span> <span class="attr">lang</span>=<span class="string">"id"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;head&gt;</span>
+    <span class="tag">&lt;meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;title&gt;</span>Busana Muslim Nusantara<span class="tag">&lt;/title&gt;</span>
+    
+    <span class="comment">&lt;!-- Tailwind CSS CDN --&gt;</span>
+    <span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="string">"https://cdn.tailwindcss.com"</span><span class="tag">&gt;&lt;/script&gt;</span>
+    
+    <span class="comment">&lt;!-- Google Fonts --&gt;</span>
+    <span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="string">"preconnect"</span> <span class="attr">href</span>=<span class="string">"https://fonts.googleapis.com"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="string">"preconnect"</span> <span class="attr">href</span>=<span class="string">"https://fonts.gstatic.com"</span> <span class="attr">crossorigin</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;link</span> <span class="attr">href</span>=<span class="string">"https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span><span class="tag">&gt;</span>
+    
+    <span class="comment">&lt;!-- Custom CSS --&gt;</span>
+    <span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"assets/css/style.css"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body</span> <span class="attr">class</span>=<span class="string">"font-inter bg-background"</span><span class="tag">&gt;</span>
+
+    <span class="comment">&lt;!-- Konten website akan di sini --&gt;</span>
+
+    <span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="string">"assets/js/main.js"</span><span class="tag">&gt;&lt;/script&gt;</span>
+<span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></pre></div>
+            </div>
+
+            <div class="info-box info">
+                <div class="info-box-title">ℹ️ Info</div>
+                <p><code>&lt;script src="https://cdn.tailwindcss.com"&gt;</code> adalah cara tercepat untuk menggunakan Tailwind. Untuk production, disarankan install via npm untuk optimasi file size.</p>
+            </div>
+
+            <!-- Section 3: Tailwind Config -->
+            <h2>1.3 Custom Tailwind Configuration</h2>
+            <p>Project ini menggunakan custom colors dan fonts. Konfigurasi dilakukan langsung di HTML dengan script:</p>
+
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="filename"><span class="dot js"></span> Tailwind Config (dalam &lt;head&gt;)</span>
+                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                </div>
+                <div class="code-content"><pre><span class="tag">&lt;script&gt;</span>
+    tailwind.config = {
+        theme: {
+            extend: {
+                <span class="comment">// Custom Colors - Nuansa Olive/Sage</span>
+                colors: {
+                    <span class="property">primary</span>: <span class="string">'#5C6E4E'</span>,        <span class="comment">// Olive hijau utama</span>
+                    <span class="property">'primary-dark'</span>: <span class="string">'#4A5A3E'</span>, <span class="comment">// Untuk hover state</span>
+                    <span class="property">'primary-light'</span>: <span class="string">'#7A8F6A'</span>,
+                    <span class="property">secondary</span>: <span class="string">'#F5F0E6'</span>,      <span class="comment">// Krem lembut</span>
+                    <span class="property">accent</span>: <span class="string">'#8B7355'</span>,         <span class="comment">// Cokelat hangat</span>
+                    <span class="property">'accent-dark'</span>: <span class="string">'#6B5A45'</span>,
+                    <span class="property">background</span>: <span class="string">'#FAFAF7'</span>,     <span class="comment">// Off-white</span>
+                    <span class="property">'custom-text'</span>: <span class="string">'#3D3D3D'</span>,  <span class="comment">// Abu gelap</span>
+                    <span class="property">'text-light'</span>: <span class="string">'#6B6B6B'</span>,
+                    <span class="property">'custom-border'</span>: <span class="string">'#E5E0D5'</span>,
+                    <span class="property">gold</span>: <span class="string">'#C4A962'</span>,           <span class="comment">// Untuk rating</span>
+                },
+                <span class="comment">// Custom Fonts</span>
+                fontFamily: {
+                    <span class="property">'playfair'</span>: [<span class="string">'Playfair Display'</span>, <span class="string">'serif'</span>],
+                    <span class="property">'inter'</span>: [<span class="string">'Inter'</span>, <span class="string">'sans-serif'</span>],
+                }
+            }
+        }
+    }
+<span class="tag">&lt;/script&gt;</span></pre></div>
+            </div>
+
+            <div class="info-box tip">
+                <div class="info-box-title">💡 Penjelasan Warna</div>
+                <p>Warna <strong>Olive/Sage green</strong> dipilih karena memberikan kesan natural, elegan, dan syar'i - sangat cocok untuk brand busana muslim!</p>
+            </div>
+
+            <!-- Section 4: Font Pairing -->
+            <h2>1.4 Typography: Font Pairing</h2>
+            <p>Project ini menggunakan kombinasi 2 font yang saling melengkapi:</p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Font</th>
+                            <th>Tipe</th>
+                            <th>Penggunaan</th>
+                            <th>Class Tailwind</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong style="font-family: 'Playfair Display', serif;">Playfair Display</strong></td>
+                            <td>Serif</td>
+                            <td>Heading, Logo, Judul</td>
+                            <td><code>font-playfair</code></td>
+                        </tr>
+                        <tr>
+                            <td><strong style="font-family: 'Inter', sans-serif;">Inter</strong></td>
+                            <td>Sans-serif</td>
+                            <td>Body text, Deskripsi</td>
+                            <td><code>font-inter</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Section 5: Body Class -->
+            <h2>1.5 Menggunakan Class pada Body</h2>
+            <p>Perhatikan class yang digunakan pada <code>&lt;body&gt;</code>:</p>
+
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="filename"><span class="dot html"></span> Body Tag</span>
+                </div>
+                <div class="code-content"><pre><span class="tag">&lt;body</span> <span class="attr">class</span>=<span class="string">"font-inter bg-background"</span><span class="tag">&gt;</span></pre></div>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Class</th>
+                            <th>Fungsi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>font-inter</code></td>
+                            <td>Set default font seluruh halaman ke Inter (dari custom config)</td>
+                        </tr>
+                        <tr>
+                            <td><code>bg-background</code></td>
+                            <td>Background off-white #FAFAF7 (dari custom config)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Summary -->
+            <h2>✅ Checklist Step 1</h2>
+            <ul style="list-style: none; padding-left: 0;">
+                <li>☑️ Buat file index.html dengan struktur dasar</li>
+                <li>☑️ Tambahkan Tailwind CDN</li>
+                <li>☑️ Import Google Fonts (Playfair Display + Inter)</li>
+                <li>☑️ Konfigurasi custom colors dan fonts</li>
+                <li>☑️ Set class pada body</li>
+            </ul>
+
+            <!-- Navigation -->
+            <div class="step-nav">
+                <a href="index.html">← Overview</a>
+                <a href="step-2-navbar.html" class="next">Step 2: Navbar →</a>
+            </div>
+        </main>
+    </div>
+
+    <button class="mobile-menu-btn" onclick="document.getElementById('sidebar').classList.toggle('active')">☰</button>
+
+    <script>
+        function copyCode(btn) {
+            const codeBlock = btn.closest('.code-block').querySelector('pre');
+            navigator.clipboard.writeText(codeBlock.innerText);
+            btn.textContent = 'Copied!';
+            setTimeout(() => btn.textContent = 'Copy', 2000);
+        }
+    </script>
+</body>
+</html>

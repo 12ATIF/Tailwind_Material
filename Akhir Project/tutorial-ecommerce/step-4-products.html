@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step 4: Product Cards - Tutorial E-Commerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="tutorial-layout">
+        <aside class="sidebar" id="sidebar">
+            <a href="index.html" class="sidebar-logo">
+                <div class="icon">T</div>
+                <span>Tutorial</span>
+            </a>
+            <nav>
+                <div class="nav-section">
+                    <div class="nav-section-title">Pendahuluan</div>
+                    <ul class="nav-links">
+                        <li><a href="index.html"><span class="step-number">🏠</span> Overview</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">Step by Step</div>
+                    <ul class="nav-links">
+                        <li><a href="step-1-setup.html"><span class="step-number">1</span> Setup Project</a></li>
+                        <li><a href="step-2-navbar.html"><span class="step-number">2</span> Membuat Navbar</a></li>
+                        <li><a href="step-3-hero.html"><span class="step-number">3</span> Hero Section</a></li>
+                        <li><a href="step-4-products.html" class="active"><span class="step-number">4</span> Product Cards</a></li>
+                        <li><a href="step-5-sections.html"><span class="step-number">5</span> Section Lainnya</a></li>
+                        <li><a href="step-6-footer.html"><span class="step-number">6</span> Footer</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <h1>🛍️ Step 4: Product Cards</h1>
+            <p>Ini adalah bagian paling penting dari e-commerce! Kita akan membuat grid produk yang responsif dengan card styling yang menarik.</p>
+
+            <!-- Section 1 -->
+            <h2>4.1 Struktur Section Produk</h2>
+
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="filename"><span class="dot html"></span> products-section.html</span>
+                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                </div>
+                <div class="code-content"><pre><span class="comment">&lt;!-- Featured Products Section --&gt;</span>
+<span class="tag">&lt;section</span> <span class="attr">class</span>=<span class="string">"py-12 lg:py-16 bg-background"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"</span><span class="tag">&gt;</span>
+        
+        <span class="comment">&lt;!-- Section Header --&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"flex flex-col sm:flex-row justify-between items-center mb-12"</span><span class="tag">&gt;</span>
+            <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"text-center sm:text-left mb-6 sm:mb-0"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;h2</span> <span class="attr">class</span>=<span class="string">"font-playfair text-2xl lg:text-3xl font-bold text-custom-text mb-2"</span><span class="tag">&gt;</span>
+                    Produk Unggulan
+                <span class="tag">&lt;/h2&gt;</span>
+                <span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="string">"text-text-light"</span><span class="tag">&gt;</span>Pilihan terbaik untuk Anda<span class="tag">&lt;/p&gt;</span>
+            <span class="tag">&lt;/div&gt;</span>
+            <span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"products.html"</span> <span class="attr">class</span>=<span class="string">"btn-secondary"</span><span class="tag">&gt;</span>Lihat Semua<span class="tag">&lt;/a&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+
+        <span class="comment">&lt;!-- Products Grid --&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6"</span><span class="tag">&gt;</span>
+            <span class="comment">&lt;!-- Product Cards go here --&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+        
+    <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/section&gt;</span></pre></div>
+            </div>
+
+            <h3>🔲 Grid System Explained</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Class</th><th>Screen</th><th>Columns</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>grid-cols-2</code></td><td>Mobile (default)</td><td>2 kolom</td></tr>
+                        <tr><td><code>lg:grid-cols-4</code></td><td>Desktop (≥1024px)</td><td>4 kolom</td></tr>
+                        <tr><td><code>gap-4 lg:gap-6</code></td><td>Responsive</td><td>1rem → 1.5rem gap</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Section 2 -->
+            <h2>4.2 Kode Satu Product Card</h2>
+
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="filename"><span class="dot html"></span> product-card.html</span>
+                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                </div>
+                <div class="code-content"><pre><span class="comment">&lt;!-- Single Product Card --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"product-card"</span><span class="tag">&gt;</span>
+    <span class="comment">&lt;!-- Image Container --&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"relative overflow-hidden"</span><span class="tag">&gt;</span>
+        <span class="comment">&lt;!-- Badge (Optional) --&gt;</span>
+        <span class="tag">&lt;span</span> <span class="attr">class</span>=<span class="string">"badge badge-bestseller absolute top-3 left-3 z-10"</span><span class="tag">&gt;</span>
+            Best Seller
+        <span class="tag">&lt;/span&gt;</span>
+        
+        <span class="comment">&lt;!-- Product Image with Aspect Ratio --&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"w-full aspect-[3/4] img-placeholder placeholder-sage"</span><span class="tag">&gt;</span>
+            <span class="comment">&lt;!-- Atau gunakan &lt;img&gt; --&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+        
+        <span class="comment">&lt;!-- Hover Overlay --&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"absolute inset-0 bg-black/0 hover:bg-black/20 transition-all 
+                    flex items-center justify-center opacity-0 hover:opacity-100"</span><span class="tag">&gt;</span>
+            <span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"product-detail.html"</span> <span class="attr">class</span>=<span class="string">"btn-primary"</span><span class="tag">&gt;</span>Lihat Detail<span class="tag">&lt;/a&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+    
+    <span class="comment">&lt;!-- Product Info --&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"p-4"</span><span class="tag">&gt;</span>
+        <span class="comment">&lt;!-- Product Name --&gt;</span>
+        <span class="tag">&lt;h3</span> <span class="attr">class</span>=<span class="string">"font-medium text-custom-text mb-1 truncate"</span><span class="tag">&gt;</span>
+            Gamis Azalea Premium
+        <span class="tag">&lt;/h3&gt;</span>
+        
+        <span class="comment">&lt;!-- Star Rating --&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"star-rating mb-2"</span><span class="tag">&gt;</span>
+            <span class="tag">&lt;span&gt;</span>★★★★★<span class="tag">&lt;/span&gt;</span>
+            <span class="tag">&lt;span</span> <span class="attr">class</span>=<span class="string">"text-text-light text-sm ml-1"</span><span class="tag">&gt;</span>(128)<span class="tag">&lt;/span&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+        
+        <span class="comment">&lt;!-- Price --&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"flex items-center gap-2"</span><span class="tag">&gt;</span>
+            <span class="tag">&lt;span</span> <span class="attr">class</span>=<span class="string">"font-bold text-primary"</span><span class="tag">&gt;</span>Rp 299.000<span class="tag">&lt;/span&gt;</span>
+            <span class="tag">&lt;span</span> <span class="attr">class</span>=<span class="string">"text-sm text-text-light line-through"</span><span class="tag">&gt;</span>Rp 450.000<span class="tag">&lt;/span&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span></pre></div>
+            </div>
+
+            <!-- Section 3 -->
+            <h2>4.3 Penjelasan Class Card</h2>
+
+            <h3>🖼️ Image Styling</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Class</th><th>Fungsi</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>aspect-[3/4]</code></td><td>Aspect ratio 3:4 (portrait, cocok untuk fashion)</td></tr>
+                        <tr><td><code>w-full</code></td><td>Width 100%</td></tr>
+                        <tr><td><code>overflow-hidden</code></td><td>Crop konten yang keluar batas</td></tr>
+                        <tr><td><code>object-cover</code></td><td>Image fill container tanpa distorsi (untuk &lt;img&gt;)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>✨ Hover Effects</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Class</th><th>Fungsi</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>bg-black/0</code></td><td>Background hitam dengan opacity 0% (default)</td></tr>
+                        <tr><td><code>hover:bg-black/20</code></td><td>Saat hover, opacity jadi 20%</td></tr>
+                        <tr><td><code>opacity-0</code></td><td>Elemen tidak terlihat (default)</td></tr>
+                        <tr><td><code>hover:opacity-100</code></td><td>Saat hover, muncul penuh</td></tr>
+                        <tr><td><code>transition-all</code></td><td>Animasi smooth untuk semua properti</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>📝 Typography</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Class</th><th>Fungsi</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>truncate</code></td><td>Potong teks panjang dengan "..."</td></tr>
+                        <tr><td><code>font-bold text-primary</code></td><td>Harga utama: tebal + warna brand</td></tr>
+                        <tr><td><code>line-through</code></td><td>Coret harga lama</td></tr>
+                        <tr><td><code>text-sm text-text-light</code></td><td>Secondary text: kecil + abu</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Section 4 -->
+            <h2>4.4 Custom CSS untuk Card</h2>
+
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="filename"><span class="dot css"></span> style.css</span>
+                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                </div>
+                <div class="code-content"><pre><span class="comment">/* Product Card Container */</span>
+<span class="property">.product-card</span> {
+    background-color: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+<span class="comment">/* Hover: Float + Shadow */</span>
+<span class="property">.product-card:hover</span> {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+<span class="comment">/* Image Zoom on Hover */</span>
+<span class="property">.product-card img</span> {
+    transition: transform 0.5s ease;
+}
+
+<span class="property">.product-card:hover img</span> {
+    transform: scale(1.05);
+}
+
+<span class="comment">/* Badge Styles */</span>
+<span class="property">.badge</span> {
+    display: inline-flex;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+<span class="property">.badge-sale</span> { background: #DC2626; color: white; }
+<span class="property">.badge-new</span> { background: #C4A962; color: white; }
+<span class="property">.badge-bestseller</span> { background: #5C6E4E; color: white; }
+
+<span class="comment">/* Star Rating */</span>
+<span class="property">.star-rating</span> {
+    color: #C4A962; <span class="comment">/* Gold color */</span>
+}</pre></div>
+            </div>
+
+            <div class="info-box tip">
+                <div class="info-box-title">💡 Transform + Shadow = Premium Feel</div>
+                <p>Kombinasi <code>translateY(-8px)</code> + <code>box-shadow</code> yang lebih besar saat hover menciptakan efek "floating" yang terasa premium. User akan merasa card "terangkat" saat di-hover!</p>
+            </div>
+
+            <!-- Section 5 -->
+            <h2>4.5 Variasi Badge</h2>
+            <p>Ada 3 tipe badge yang bisa digunakan:</p>
+            
+            <div class="preview-box">
+                <div class="preview-header">👁️ Preview Badges</div>
+                <div class="preview-content" style="display: flex; gap: 1rem;">
+                    <span style="background: #5C6E4E; color: white; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600;">BEST SELLER</span>
+                    <span style="background: #C4A962; color: white; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600;">NEW</span>
+                    <span style="background: #DC2626; color: white; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600;">SALE 30%</span>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="step-nav">
+                <a href="step-3-hero.html">← Step 3: Hero</a>
+                <a href="step-5-sections.html" class="next">Step 5: Sections →</a>
+            </div>
+        </main>
+    </div>
+
+    <button class="mobile-menu-btn" onclick="document.getElementById('sidebar').classList.toggle('active')">☰</button>
+    <script>
+        function copyCode(btn) {
+            const codeBlock = btn.closest('.code-block').querySelector('pre');
+            navigator.clipboard.writeText(codeBlock.innerText);
+            btn.textContent = 'Copied!';
+            setTimeout(() => btn.textContent = 'Copy', 2000);
+        }
+    </script>
+</body>
+</html>

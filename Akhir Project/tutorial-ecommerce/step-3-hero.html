@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step 3: Hero Section - Tutorial E-Commerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="tutorial-layout">
+        <aside class="sidebar" id="sidebar">
+            <a href="index.html" class="sidebar-logo">
+                <div class="icon">T</div>
+                <span>Tutorial</span>
+            </a>
+            <nav>
+                <div class="nav-section">
+                    <div class="nav-section-title">Pendahuluan</div>
+                    <ul class="nav-links">
+                        <li><a href="index.html"><span class="step-number">🏠</span> Overview</a></li>
+                    </ul>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">Step by Step</div>
+                    <ul class="nav-links">
+                        <li><a href="step-1-setup.html"><span class="step-number">1</span> Setup Project</a></li>
+                        <li><a href="step-2-navbar.html"><span class="step-number">2</span> Membuat Navbar</a></li>
+                        <li><a href="step-3-hero.html" class="active"><span class="step-number">3</span> Hero Section</a></li>
+                        <li><a href="step-4-products.html"><span class="step-number">4</span> Product Cards</a></li>
+                        <li><a href="step-5-sections.html"><span class="step-number">5</span> Section Lainnya</a></li>
+                        <li><a href="step-6-footer.html"><span class="step-number">6</span> Footer</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <h1>🦸 Step 3: Hero Section</h1>
+            <p>Hero section adalah area banner utama yang pertama dilihat pengunjung. Ini adalah kesempatan untuk membuat first impression yang kuat!</p>
+
+            <!-- Section 1 -->
+            <h2>3.1 Struktur Hero Section</h2>
+            <p>Hero section menggunakan grid 2 kolom: konten teks di kiri, gambar di kanan.</p>
+
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="filename"><span class="dot html"></span> hero-section.html</span>
+                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                </div>
+                <div class="code-content"><pre><span class="comment">&lt;!-- Hero Section --&gt;</span>
+<span class="tag">&lt;section</span> <span class="attr">class</span>=<span class="string">"hero-gradient hero-pattern pt-20 lg:pt-24 pb-12 lg:pb-16"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"grid lg:grid-cols-2 gap-8 lg:gap-12 items-center"</span><span class="tag">&gt;</span>
+            
+            <span class="comment">&lt;!-- Hero Content (Kiri) --&gt;</span>
+            <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"text-center lg:text-left animate-fade-in-up"</span><span class="tag">&gt;</span>
+                <span class="comment">&lt;!-- Badge --&gt;</span>
+                <span class="tag">&lt;span</span> <span class="attr">class</span>=<span class="string">"inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4"</span><span class="tag">&gt;</span>
+                    ✨ Koleksi Terbaru 2025
+                <span class="tag">&lt;/span&gt;</span>
+                
+                <span class="comment">&lt;!-- Heading --&gt;</span>
+                <span class="tag">&lt;h1</span> <span class="attr">class</span>=<span class="string">"font-playfair text-3xl lg:text-4xl xl:text-5xl font-bold text-custom-text mb-4 leading-tight"</span><span class="tag">&gt;</span>
+                    Tampil Anggun dengan <span class="tag">&lt;span</span> <span class="attr">class</span>=<span class="string">"text-primary"</span><span class="tag">&gt;</span>Busana Muslim<span class="tag">&lt;/span&gt;</span> Berkelas
+                <span class="tag">&lt;/h1&gt;</span>
+                
+                <span class="comment">&lt;!-- Description --&gt;</span>
+                <span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="string">"text-text-light text-base mb-6 max-w-lg mx-auto lg:mx-0"</span><span class="tag">&gt;</span>
+                    Temukan koleksi busana muslim terlengkap dengan desain modern dan bahan berkualitas.
+                <span class="tag">&lt;/p&gt;</span>
+                
+                <span class="comment">&lt;!-- CTA Buttons --&gt;</span>
+                <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"</span><span class="tag">&gt;</span>
+                    <span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"products.html"</span> <span class="attr">class</span>=<span class="string">"btn-primary text-center"</span><span class="tag">&gt;</span>Lihat Koleksi<span class="tag">&lt;/a&gt;</span>
+                    <span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"about.html"</span> <span class="attr">class</span>=<span class="string">"btn-secondary text-center"</span><span class="tag">&gt;</span>Tentang Kami<span class="tag">&lt;/a&gt;</span>
+                <span class="tag">&lt;/div&gt;</span>
+            <span class="tag">&lt;/div&gt;</span>
+
+            <span class="comment">&lt;!-- Hero Image (Kanan) --&gt;</span>
+            <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"relative animate-fade-in delay-200"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"aspect-[4/5] max-h-[450px] rounded-2xl overflow-hidden shadow-xl img-placeholder placeholder-olive"</span><span class="tag">&gt;</span>
+                <span class="tag">&lt;/div&gt;</span>
+                
+                <span class="comment">&lt;!-- Floating Badge: Review --&gt;</span>
+                <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"absolute -bottom-4 -left-4 bg-white p-4 rounded-2xl shadow-lg hidden sm:block"</span><span class="tag">&gt;</span>
+                    <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"flex items-center gap-3"</span><span class="tag">&gt;</span>
+                        <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center"</span><span class="tag">&gt;</span>
+                            <span class="tag">&lt;span</span> <span class="attr">class</span>=<span class="string">"text-2xl"</span><span class="tag">&gt;</span>⭐<span class="tag">&lt;/span&gt;</span>
+                        <span class="tag">&lt;/div&gt;</span>
+                        <span class="tag">&lt;div&gt;</span>
+                            <span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="string">"font-bold text-custom-text"</span><span class="tag">&gt;</span>1000+<span class="tag">&lt;/p&gt;</span>
+                            <span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="string">"text-sm text-text-light"</span><span class="tag">&gt;</span>Review Positif<span class="tag">&lt;/p&gt;</span>
+                        <span class="tag">&lt;/div&gt;</span>
+                    <span class="tag">&lt;/div&gt;</span>
+                <span class="tag">&lt;/div&gt;</span>
+                
+                <span class="comment">&lt;!-- Floating Badge: Gratis Ongkir --&gt;</span>
+                <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"absolute -top-4 -right-4 bg-primary text-white p-3 rounded-2xl shadow-lg hidden sm:block"</span><span class="tag">&gt;</span>
+                    <span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="string">"font-bold"</span><span class="tag">&gt;</span>GRATIS<span class="tag">&lt;/p&gt;</span>
+                    <span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="string">"text-sm opacity-90"</span><span class="tag">&gt;</span>Ongkir*<span class="tag">&lt;/p&gt;</span>
+                <span class="tag">&lt;/div&gt;</span>
+            <span class="tag">&lt;/div&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/section&gt;</span></pre></div>
+            </div>
+
+            <!-- Section 2 -->
+            <h2>3.2 Penjelasan Class Penting</h2>
+
+            <h3>📐 Grid Layout</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Class</th><th>Fungsi</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>grid</code></td><td>Mengaktifkan CSS Grid</td></tr>
+                        <tr><td><code>lg:grid-cols-2</code></td><td>2 kolom di layar besar (≥1024px)</td></tr>
+                        <tr><td><code>gap-8 lg:gap-12</code></td><td>Gap antara kolom (2rem → 3rem)</td></tr>
+                        <tr><td><code>items-center</code></td><td>Vertical alignment center</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>📏 Sizing & Spacing</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Class</th><th>Fungsi</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>pt-20 lg:pt-24</code></td><td>Padding top untuk navbar fixed (5rem → 6rem)</td></tr>
+                        <tr><td><code>aspect-[4/5]</code></td><td>Custom aspect ratio 4:5 (portrait)</td></tr>
+                        <tr><td><code>max-h-[450px]</code></td><td>Maximum height 450px</td></tr>
+                        <tr><td><code>max-w-lg</code></td><td>Max-width untuk paragraf agar mudah dibaca</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>🎨 Styling Classes</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Class</th><th>Fungsi</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>bg-primary/10</code></td><td>Background primary dengan opacity 10%</td></tr>
+                        <tr><td><code>rounded-full</code></td><td>Border radius pill (badge)</td></tr>
+                        <tr><td><code>rounded-2xl</code></td><td>Border radius 1rem</td></tr>
+                        <tr><td><code>shadow-xl</code></td><td>Box shadow extra large</td></tr>
+                        <tr><td><code>leading-tight</code></td><td>Line-height 1.25 (untuk heading)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>🎯 Positioning Floating Elements</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Class</th><th>Fungsi</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>relative</code></td><td>Parent container untuk absolute children</td></tr>
+                        <tr><td><code>absolute</code></td><td>Position absolute untuk badge</td></tr>
+                        <tr><td><code>-bottom-4 -left-4</code></td><td>Posisi negatif (keluar dari container)</td></tr>
+                        <tr><td><code>-top-4 -right-4</code></td><td>Posisi negatif di pojok kanan atas</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="info-box tip">
+                <div class="info-box-title">💡 Pro Tip: Negative Positioning</div>
+                <p>Class seperti <code>-bottom-4</code> menggunakan nilai negatif untuk membuat elemen "keluar" dari parent container, menciptakan efek floating yang menarik!</p>
+            </div>
+
+            <!-- Section 3 -->
+            <h2>3.3 Custom CSS untuk Hero</h2>
+
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="filename"><span class="dot css"></span> style.css</span>
+                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                </div>
+                <div class="code-content"><pre><span class="comment">/* Gradient Background */</span>
+<span class="property">.hero-gradient</span> {
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-white) 100%);
+}
+
+<span class="comment">/* Subtle Pattern Overlay */</span>
+<span class="property">.hero-pattern</span> {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' ...");
+}
+
+<span class="comment">/* Button Primary */</span>
+<span class="property">.btn-primary</span> {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+<span class="property">.btn-primary:hover</span> {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(92, 110, 78, 0.3);
+}
+
+<span class="comment">/* Button Secondary (Outline) */</span>
+<span class="property">.btn-secondary</span> {
+    background: transparent;
+    color: var(--color-primary);
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--color-primary);
+    border-radius: 0.5rem;
+}
+
+<span class="property">.btn-secondary:hover</span> {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+<span class="comment">/* Fade In Up Animation */</span>
+<span class="keyword">@keyframes</span> fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+<span class="property">.animate-fade-in-up</span> {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+<span class="property">.delay-200</span> {
+    animation-delay: 0.2s;
+}</pre></div>
+            </div>
+
+            <!-- Section 4 -->
+            <h2>3.4 Responsive Behavior</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Screen</th><th>Behavior</th></tr></thead>
+                    <tbody>
+                        <tr><td>Mobile (default)</td><td>1 kolom, text center, buttons stack vertical</td></tr>
+                        <tr><td>Tablet (sm)</td><td>Floating badges muncul, buttons side-by-side</td></tr>
+                        <tr><td>Desktop (lg)</td><td>2 kolom, text left-aligned</td></tr>
+                        <tr><td>Large (xl)</td><td>Font size lebih besar</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Navigation -->
+            <div class="step-nav">
+                <a href="step-2-navbar.html">← Step 2: Navbar</a>
+                <a href="step-4-products.html" class="next">Step 4: Product Cards →</a>
+            </div>
+        </main>
+    </div>
+
+    <button class="mobile-menu-btn" onclick="document.getElementById('sidebar').classList.toggle('active')">☰</button>
+    <script>
+        function copyCode(btn) {
+            const codeBlock = btn.closest('.code-block').querySelector('pre');
+            navigator.clipboard.writeText(codeBlock.innerText);
+            btn.textContent = 'Copied!';
+            setTimeout(() => btn.textContent = 'Copy', 2000);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tables, Transitions & Animation | Belajar Tailwind CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:{500:'#667eea',600:'#5a67d8'}}}}}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+  <aside class="sidebar fixed left-0 top-0 bottom-0 w-72 bg-gray-900 border-r border-gray-800 z-50 overflow-y-auto hidden lg:block">
+    <div class="p-4 border-b border-gray-800"><a href="index.html" class="flex items-center gap-3"><div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-purple-600"></div><span class="font-bold">TailwindMaster</span></a></div>
+    <nav class="p-4">
+      <ul class="space-y-1 text-sm">
+        <li><a href="getting-started.html" class="block px-3 py-2 rounded text-gray-400">Getting Started</a></li>
+        <li><a href="core-concepts.html" class="block px-3 py-2 rounded text-gray-400">Core Concepts</a></li>
+        <li><a href="layout.html" class="block px-3 py-2 rounded text-gray-400">Layout</a></li>
+        <li><a href="flexbox-grid.html" class="block px-3 py-2 rounded text-gray-400">Flexbox & Grid</a></li>
+        <li><a href="spacing-sizing.html" class="block px-3 py-2 rounded text-gray-400">Spacing & Sizing</a></li>
+        <li><a href="typography.html" class="block px-3 py-2 rounded text-gray-400">Typography</a></li>
+        <li><a href="backgrounds-effects.html" class="block px-3 py-2 rounded text-gray-400">Backgrounds & Effects</a></li>
+        <li><a href="transitions-animation.html" class="block px-3 py-2 rounded bg-primary-500/20 text-white font-medium">Transitions & Animation</a></li>
+        <li><a href="interactivity-svg.html" class="block px-3 py-2 rounded text-gray-400">Interactivity & SVG</a></li>
+        <li><a href="accessibility.html" class="block px-3 py-2 rounded text-gray-400">Accessibility</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="lg:ml-72">
+    <header class="sticky top-0 z-30 bg-gray-900/90 backdrop-blur border-b border-gray-800 px-6 py-4">
+      <nav class="text-sm text-gray-400"><a href="index.html" class="hover:text-white">Home</a> / <span class="text-white">Tables, Transitions & Animation</span></nav>
+    </header>
+
+    <div class="max-w-4xl mx-auto px-6 py-12">
+      <div class="mb-10">
+        <span class="px-3 py-1 rounded-full bg-primary-500/20 text-primary-500 text-sm">Materi 8/10</span>
+        <h1 class="text-4xl font-bold mt-4 mb-3">Tables, Transitions, Animation & Transform</h1>
+        <p class="text-lg text-gray-400">Membuat table yang rapi dan UI yang hidup dengan transitions, animations, dan transforms.</p>
+      </div>
+
+      <!-- Daftar Isi -->
+      <div class="mb-10 p-4 rounded-xl bg-gray-800/50 border border-gray-700">
+        <h3 class="font-semibold mb-3">📋 Daftar Isi</h3>
+        <div class="grid md:grid-cols-2 gap-2 text-sm text-gray-300">
+          <div>
+            <p class="font-semibold text-blue-400 mb-1">Tables</p>
+            <a href="#table-layout" class="block hover:text-primary-500">1. Table Layout</a>
+            <a href="#table-borders" class="block hover:text-primary-500">2. Border Collapse & Spacing</a>
+            <a href="#table-caption" class="block hover:text-primary-500">3. Caption Side</a>
+          </div>
+          <div>
+            <p class="font-semibold text-green-400 mb-1">Transitions</p>
+            <a href="#transition-property" class="block hover:text-primary-500">4. Transition Property</a>
+            <a href="#transition-duration" class="block hover:text-primary-500">5. Duration & Delay</a>
+            <a href="#transition-timing" class="block hover:text-primary-500">6. Timing Function</a>
+          </div>
+          <div>
+            <p class="font-semibold text-purple-400 mb-1">Animation</p>
+            <a href="#animate" class="block hover:text-primary-500">7. Built-in Animations</a>
+          </div>
+          <div>
+            <p class="font-semibold text-pink-400 mb-1">Transform</p>
+            <a href="#scale" class="block hover:text-primary-500">8. Scale</a>
+            <a href="#rotate" class="block hover:text-primary-500">9. Rotate</a>
+            <a href="#translate" class="block hover:text-primary-500">10. Translate</a>
+            <a href="#skew" class="block hover:text-primary-500">11. Skew</a>
+            <a href="#transform-origin" class="block hover:text-primary-500">12. Transform Origin</a>
+          </div>
+        </div>
+      </div>
+
+      <article class="space-y-14">
+        
+        <!-- TABLES SECTION -->
+        <div class="p-4 rounded-xl bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/30">
+          <h2 class="text-2xl font-bold text-center">📊 TABLES</h2>
+        </div>
+
+        <!-- 1. Table Layout -->
+        <section id="table-layout">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-500 flex items-center justify-center text-sm">1</span>
+            Table Layout
+          </h2>
+          
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div class="p-3 rounded bg-gray-800">
+              <code class="text-primary-500">table-auto</code>
+              <p class="text-xs text-gray-400 mt-1">Kolom menyesuaikan konten (default)</p>
+            </div>
+            <div class="p-3 rounded bg-gray-800">
+              <code class="text-primary-500">table-fixed</code>
+              <p class="text-xs text-gray-400 mt-1">Kolom lebar sama</p>
+            </div>
+          </div>
+
+          <!-- Table Example -->
+          <div class="p-4 rounded-lg bg-gray-800/50 overflow-x-auto">
+            <p class="text-sm text-gray-400 mb-3">Contoh Table dengan Tailwind:</p>
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b border-gray-700 text-left">
+                  <th class="py-3 px-4 font-semibold">Nama</th>
+                  <th class="py-3 px-4 font-semibold">Email</th>
+                  <th class="py-3 px-4 font-semibold">Role</th>
+                  <th class="py-3 px-4 font-semibold">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition-colors">
+                  <td class="py-3 px-4">John Doe</td>
+                  <td class="py-3 px-4 text-gray-400">john@example.com</td>
+                  <td class="py-3 px-4">Admin</td>
+                  <td class="py-3 px-4"><span class="px-2 py-1 text-xs rounded-full bg-green-500/20 text-green-400">Active</span></td>
+                </tr>
+                <tr class="border-b border-gray-800 hover:bg-gray-800/50 transition-colors">
+                  <td class="py-3 px-4">Jane Smith</td>
+                  <td class="py-3 px-4 text-gray-400">jane@example.com</td>
+                  <td class="py-3 px-4">User</td>
+                  <td class="py-3 px-4"><span class="px-2 py-1 text-xs rounded-full bg-yellow-500/20 text-yellow-400">Pending</span></td>
+                </tr>
+                <tr class="hover:bg-gray-800/50 transition-colors">
+                  <td class="py-3 px-4">Bob Wilson</td>
+                  <td class="py-3 px-4 text-gray-400">bob@example.com</td>
+                  <td class="py-3 px-4">Editor</td>
+                  <td class="py-3 px-4"><span class="px-2 py-1 text-xs rounded-full bg-red-500/20 text-red-400">Inactive</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- 2. Border Collapse -->
+        <section id="table-borders">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-500 flex items-center justify-center text-sm">2</span>
+            Border Collapse & Spacing
+          </h2>
+          
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="p-3 rounded bg-gray-800">
+              <code class="text-primary-500">border-collapse</code>
+              <p class="text-xs text-gray-400 mt-1">Gabungkan border cells</p>
+            </div>
+            <div class="p-3 rounded bg-gray-800">
+              <code class="text-primary-500">border-separate</code>
+              <p class="text-xs text-gray-400 mt-1">Pisahkan border cells</p>
+            </div>
+            <div class="p-3 rounded bg-gray-800">
+              <code class="text-primary-500">border-spacing-2</code>
+              <p class="text-xs text-gray-400 mt-1">Jarak antar cells (0.5rem)</p>
+            </div>
+            <div class="p-3 rounded bg-gray-800">
+              <code class="text-primary-500">border-spacing-x-4</code>
+              <p class="text-xs text-gray-400 mt-1">Horizontal spacing</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. Caption Side -->
+        <section id="table-caption">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-500 flex items-center justify-center text-sm">3</span>
+            Caption Side
+          </h2>
+          
+          <div class="flex gap-4 text-sm">
+            <div class="p-3 rounded bg-gray-800"><code>caption-top</code></div>
+            <div class="p-3 rounded bg-gray-800"><code>caption-bottom</code></div>
+          </div>
+        </section>
+
+        <!-- TRANSITIONS SECTION -->
+        <div class="p-4 rounded-xl bg-gradient-to-r from-green-500/10 to-teal-500/10 border border-green-500/30">
+          <h2 class="text-2xl font-bold text-center">🔄 TRANSITIONS</h2>
+        </div>
+
+        <!-- 4. Transition Property -->
+        <section id="transition-property">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-green-500/20 text-green-500 flex items-center justify-center text-sm">4</span>
+            Transition Property
+          </h2>
+          <p class="text-gray-300 mb-4">Menentukan properti mana yang akan di-transition.</p>
+          
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mb-4">
+            <div class="p-3 rounded bg-gray-800">
+              <code class="text-primary-500">transition-none</code>
+              <p class="text-xs text-gray-400 mt-1">Tidak ada transition</p>
+            </div>
+            <div class="p-3 rounded bg-gray-800">
+              <code class="text-primary-500">transition-all</code>
+              <p class="text-xs text-gray-400 mt-1">Semua properti</p>
+            </div>
+            <div class="p-3 rounded bg-gray-800">
+              <code class="text-primary-500">transition</code>
+              <p class="text-xs text-gray-400 mt-1">Default props</p>
+            </div>
+            <div class="p-3 rounded bg-gray-800">
+              <code class="text-primary-500">transition-colors</code>
+              <p class="text-xs text-gray-400 mt-1">Color only</p>
+            </div>
+            <div class="p-3 rounded bg-gray-800">
+              <code class="text-primary-500">transition-opacity</code>
+              <p class="text-xs text-gray-400 mt-1">Opacity only</p>
+            </div>
+            <div class="p-3 rounded bg-gray-800">
+              <code class="text-primary-500">transition-shadow</code>
+              <p class="text-xs text-gray-400 mt-1">Shadow only</p>
+            </div>
+            <div class="p-3 rounded bg-gray-800">
+              <code class="text-primary-500">transition-transform</code>
+              <p class="text-xs text-gray-400 mt-1">Transform only</p>
+            </div>
+          </div>
+
+          <!-- Live Examples -->
+          <div class="p-4 rounded-lg bg-gray-800/50">
+            <p class="text-sm text-gray-400 mb-3">Hover untuk melihat perbedaan:</p>
+            <div class="flex flex-wrap gap-3">
+              <button class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded transition-colors duration-300">transition-colors</button>
+              <button class="px-4 py-2 bg-green-500 hover:opacity-70 text-white rounded transition-opacity duration-300">transition-opacity</button>
+              <button class="px-4 py-2 bg-purple-500 hover:shadow-lg hover:shadow-purple-500/50 text-white rounded transition-shadow duration-300">transition-shadow</button>
+              <button class="px-4 py-2 bg-pink-500 hover:scale-110 text-white rounded transition-transform duration-300">transition-transform</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. Duration & Delay -->
+        <section id="transition-duration">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-green-500/20 text-green-500 flex items-center justify-center text-sm">5</span>
+            Duration & Delay
+          </h2>
+          
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <h4 class="font-semibold mb-2">Duration</h4>
+              <div class="space-y-2 text-sm">
+                <div class="p-2 rounded bg-gray-800"><code>duration-75</code> = 75ms</div>
+                <div class="p-2 rounded bg-gray-800"><code>duration-100</code> = 100ms</div>
+                <div class="p-2 rounded bg-gray-800"><code>duration-150</code> = 150ms</div>
+                <div class="p-2 rounded bg-gray-800"><code>duration-200</code> = 200ms</div>
+                <div class="p-2 rounded bg-gray-800"><code>duration-300</code> = 300ms ⭐</div>
+                <div class="p-2 rounded bg-gray-800"><code>duration-500</code> = 500ms</div>
+                <div class="p-2 rounded bg-gray-800"><code>duration-700</code> = 700ms</div>
+                <div class="p-2 rounded bg-gray-800"><code>duration-1000</code> = 1000ms</div>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">Delay</h4>
+              <div class="space-y-2 text-sm">
+                <div class="p-2 rounded bg-gray-800"><code>delay-75</code> = 75ms</div>
+                <div class="p-2 rounded bg-gray-800"><code>delay-100</code> = 100ms</div>
+                <div class="p-2 rounded bg-gray-800"><code>delay-150</code> = 150ms</div>
+                <div class="p-2 rounded bg-gray-800"><code>delay-200</code> = 200ms</div>
+                <div class="p-2 rounded bg-gray-800"><code>delay-300</code> = 300ms</div>
+                <div class="p-2 rounded bg-gray-800"><code>delay-500</code> = 500ms</div>
+                <div class="p-2 rounded bg-gray-800"><code>delay-700</code> = 700ms</div>
+                <div class="p-2 rounded bg-gray-800"><code>delay-1000</code> = 1000ms</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-lg bg-gray-800/50">
+            <p class="text-sm text-gray-400 mb-3">Perbedaan duration:</p>
+            <div class="flex gap-3">
+              <button class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded transition-colors duration-150 text-sm">150ms</button>
+              <button class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded transition-colors duration-300 text-sm">300ms</button>
+              <button class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded transition-colors duration-700 text-sm">700ms</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. Timing Function -->
+        <section id="transition-timing">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-green-500/20 text-green-500 flex items-center justify-center text-sm">6</span>
+            Timing Function (Easing)
+          </h2>
+          
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+            <div class="p-3 rounded bg-gray-800">
+              <code class="text-primary-500">ease-linear</code>
+              <p class="text-xs text-gray-400 mt-1">Kecepatan konstan</p>
+            </div>
+            <div class="p-3 rounded bg-gray-800">
+              <code class="text-primary-500">ease-in</code>
+              <p class="text-xs text-gray-400 mt-1">Mulai lambat</p>
+            </div>
+            <div class="p-3 rounded bg-gray-800">
+              <code class="text-primary-500">ease-out</code>
+              <p class="text-xs text-gray-400 mt-1">Akhir lambat</p>
+            </div>
+            <div class="p-3 rounded bg-gray-800">
+              <code class="text-primary-500">ease-in-out</code>
+              <p class="text-xs text-gray-400 mt-1">Keduanya ⭐</p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-lg bg-gray-800/50">
+            <p class="text-sm text-gray-400 mb-3">Hover untuk melihat perbedaan easing (perhatikan translate):</p>
+            <div class="flex gap-3">
+              <button class="px-4 py-2 bg-blue-500 hover:-translate-y-2 text-white rounded transition-transform duration-500 ease-linear text-sm">linear</button>
+              <button class="px-4 py-2 bg-green-500 hover:-translate-y-2 text-white rounded transition-transform duration-500 ease-in text-sm">ease-in</button>
+              <button class="px-4 py-2 bg-purple-500 hover:-translate-y-2 text-white rounded transition-transform duration-500 ease-out text-sm">ease-out</button>
+              <button class="px-4 py-2 bg-pink-500 hover:-translate-y-2 text-white rounded transition-transform duration-500 ease-in-out text-sm">ease-in-out</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ANIMATION SECTION -->
+        <div class="p-4 rounded-xl bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/30">
+          <h2 class="text-2xl font-bold text-center">✨ ANIMATION</h2>
+        </div>
+
+        <!-- 7. Built-in Animations -->
+        <section id="animate">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-purple-500/20 text-purple-500 flex items-center justify-center text-sm">7</span>
+            Built-in Animations
+          </h2>
+          
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+            <div class="p-4 rounded-lg bg-gray-800 text-center">
+              <div class="w-12 h-12 bg-blue-500 rounded-full mx-auto mb-3 animate-spin"></div>
+              <code class="text-xs">animate-spin</code>
+              <p class="text-xs text-gray-500 mt-1">Loading spinner</p>
+            </div>
+            <div class="p-4 rounded-lg bg-gray-800 text-center">
+              <div class="relative w-12 h-12 mx-auto mb-3">
+                <div class="absolute inset-0 bg-green-500 rounded-full animate-ping"></div>
+                <div class="absolute inset-0 bg-green-500 rounded-full"></div>
+              </div>
+              <code class="text-xs">animate-ping</code>
+              <p class="text-xs text-gray-500 mt-1">Notification</p>
+            </div>
+            <div class="p-4 rounded-lg bg-gray-800 text-center">
+              <div class="w-12 h-12 bg-purple-500 rounded-lg mx-auto mb-3 animate-pulse"></div>
+              <code class="text-xs">animate-pulse</code>
+              <p class="text-xs text-gray-500 mt-1">Skeleton loading</p>
+            </div>
+            <div class="p-4 rounded-lg bg-gray-800 text-center">
+              <div class="w-12 h-12 bg-pink-500 rounded-lg mx-auto mb-3 animate-bounce"></div>
+              <code class="text-xs">animate-bounce</code>
+              <p class="text-xs text-gray-500 mt-1">Scroll indicator</p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-lg bg-yellow-500/10 border border-yellow-500/30">
+            <p class="text-yellow-400 text-sm">💡 <strong>Use Case:</strong></p>
+            <ul class="text-sm text-gray-300 mt-2 space-y-1">
+              <li>• <code class="px-1 bg-gray-800 rounded">animate-spin</code> - Loading button, refresh icon</li>
+              <li>• <code class="px-1 bg-gray-800 rounded">animate-ping</code> - Notification badge, online indicator</li>
+              <li>• <code class="px-1 bg-gray-800 rounded">animate-pulse</code> - Skeleton loader, placeholder</li>
+              <li>• <code class="px-1 bg-gray-800 rounded">animate-bounce</code> - Scroll down arrow, attention</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- TRANSFORM SECTION -->
+        <div class="p-4 rounded-xl bg-gradient-to-r from-pink-500/10 to-rose-500/10 border border-pink-500/30">
+          <h2 class="text-2xl font-bold text-center">🔄 TRANSFORM</h2>
+        </div>
+
+        <!-- 8. Scale -->
+        <section id="scale">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-pink-500/20 text-pink-500 flex items-center justify-center text-sm">8</span>
+            Scale
+          </h2>
+          
+          <div class="grid grid-cols-3 md:grid-cols-6 gap-2 text-sm mb-4">
+            <div class="p-2 rounded bg-gray-800 text-center"><code>scale-0</code></div>
+            <div class="p-2 rounded bg-gray-800 text-center"><code>scale-50</code></div>
+            <div class="p-2 rounded bg-gray-800 text-center"><code>scale-75</code></div>
+            <div class="p-2 rounded bg-gray-800 text-center"><code>scale-100</code></div>
+            <div class="p-2 rounded bg-gray-800 text-center"><code>scale-110</code></div>
+            <div class="p-2 rounded bg-gray-800 text-center"><code>scale-125</code></div>
+          </div>
+
+          <div class="p-4 rounded-lg bg-gray-800/50">
+            <p class="text-sm text-gray-400 mb-3">Hover untuk scale:</p>
+            <div class="flex items-center justify-center gap-8">
+              <div class="w-16 h-16 bg-blue-500 rounded-lg hover:scale-110 transition-transform duration-300 flex items-center justify-center text-xs">scale-110</div>
+              <div class="w-16 h-16 bg-green-500 rounded-lg hover:scale-125 transition-transform duration-300 flex items-center justify-center text-xs">scale-125</div>
+              <div class="w-16 h-16 bg-purple-500 rounded-lg hover:scale-150 transition-transform duration-300 flex items-center justify-center text-xs">scale-150</div>
+            </div>
+          </div>
+          
+          <p class="text-sm text-gray-400 mt-2">Juga tersedia: <code class="px-1 bg-gray-800 rounded">scale-x-*</code> dan <code class="px-1 bg-gray-800 rounded">scale-y-*</code></p>
+        </section>
+
+        <!-- 9. Rotate -->
+        <section id="rotate">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-pink-500/20 text-pink-500 flex items-center justify-center text-sm">9</span>
+            Rotate
+          </h2>
+          
+          <div class="flex flex-wrap gap-2 text-sm mb-4">
+            <div class="p-2 rounded bg-gray-800"><code>rotate-0</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>rotate-1</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>rotate-3</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>rotate-6</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>rotate-12</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>rotate-45</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>rotate-90</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>rotate-180</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>-rotate-45</code> (negatif)</div>
+          </div>
+
+          <div class="p-4 rounded-lg bg-gray-800/50">
+            <p class="text-sm text-gray-400 mb-3">Hover untuk rotate:</p>
+            <div class="flex items-center justify-center gap-8">
+              <div class="w-16 h-16 bg-blue-500 rounded-lg hover:rotate-12 transition-transform duration-300 flex items-center justify-center text-xs">rotate-12</div>
+              <div class="w-16 h-16 bg-green-500 rounded-lg hover:rotate-45 transition-transform duration-300 flex items-center justify-center text-xs">rotate-45</div>
+              <div class="w-16 h-16 bg-purple-500 rounded-lg hover:rotate-180 transition-transform duration-500 flex items-center justify-center text-xs">rotate-180</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 10. Translate -->
+        <section id="translate">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-pink-500/20 text-pink-500 flex items-center justify-center text-sm">10</span>
+            Translate
+          </h2>
+          
+          <div class="flex flex-wrap gap-2 text-sm mb-4">
+            <div class="p-2 rounded bg-gray-800"><code>translate-x-4</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>translate-y-4</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>-translate-x-4</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>-translate-y-4</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>translate-x-1/2</code> (50%)</div>
+            <div class="p-2 rounded bg-gray-800"><code>-translate-x-1/2</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>translate-x-full</code> (100%)</div>
+          </div>
+
+          <div class="p-4 rounded-lg bg-gray-800/50">
+            <p class="text-sm text-gray-400 mb-3">Hover untuk translate (lift effect):</p>
+            <div class="flex items-center justify-center gap-8">
+              <div class="w-16 h-16 bg-blue-500 rounded-lg hover:-translate-y-2 transition-transform duration-300 flex items-center justify-center text-xs">-y-2</div>
+              <div class="w-16 h-16 bg-green-500 rounded-lg hover:-translate-y-4 transition-transform duration-300 flex items-center justify-center text-xs">-y-4</div>
+              <div class="w-16 h-16 bg-purple-500 rounded-lg hover:translate-x-4 transition-transform duration-300 flex items-center justify-center text-xs">x-4</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 11. Skew -->
+        <section id="skew">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-pink-500/20 text-pink-500 flex items-center justify-center text-sm">11</span>
+            Skew
+          </h2>
+          
+          <div class="flex flex-wrap gap-2 text-sm mb-4">
+            <div class="p-2 rounded bg-gray-800"><code>skew-x-3</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>skew-x-6</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>skew-x-12</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>skew-y-3</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>skew-y-6</code></div>
+            <div class="p-2 rounded bg-gray-800"><code>-skew-x-6</code></div>
+          </div>
+
+          <div class="p-4 rounded-lg bg-gray-800/50">
+            <div class="flex items-center justify-center gap-8">
+              <div class="w-20 h-16 bg-blue-500 rounded skew-x-6 flex items-center justify-center text-xs">skew-x-6</div>
+              <div class="w-20 h-16 bg-green-500 rounded skew-x-12 flex items-center justify-center text-xs">skew-x-12</div>
+              <div class="w-20 h-16 bg-purple-500 rounded -skew-x-6 flex items-center justify-center text-xs">-skew-x-6</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 12. Transform Origin -->
+        <section id="transform-origin">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="w-8 h-8 rounded-lg bg-pink-500/20 text-pink-500 flex items-center justify-center text-sm">12</span>
+            Transform Origin
+          </h2>
+          <p class="text-gray-300 mb-4">Titik referensi untuk transformasi (scale, rotate).</p>
+          
+          <div class="grid grid-cols-3 gap-2 text-xs mb-4">
+            <div class="p-2 rounded bg-gray-800 text-center">origin-top-left</div>
+            <div class="p-2 rounded bg-gray-800 text-center">origin-top</div>
+            <div class="p-2 rounded bg-gray-800 text-center">origin-top-right</div>
+            <div class="p-2 rounded bg-gray-800 text-center">origin-left</div>
+            <div class="p-2 rounded bg-gray-800 text-center font-bold">origin-center</div>
+            <div class="p-2 rounded bg-gray-800 text-center">origin-right</div>
+            <div class="p-2 rounded bg-gray-800 text-center">origin-bottom-left</div>
+            <div class="p-2 rounded bg-gray-800 text-center">origin-bottom</div>
+            <div class="p-2 rounded bg-gray-800 text-center">origin-bottom-right</div>
+          </div>
+
+          <div class="p-4 rounded-lg bg-gray-800/50">
+            <p class="text-sm text-gray-400 mb-3">Hover rotate dengan origin berbeda:</p>
+            <div class="flex items-center justify-center gap-8">
+              <div class="w-16 h-16 bg-blue-500 rounded origin-center hover:rotate-45 transition-transform duration-300 flex items-center justify-center text-xs">center</div>
+              <div class="w-16 h-16 bg-green-500 rounded origin-top-left hover:rotate-45 transition-transform duration-300 flex items-center justify-center text-xs">top-left</div>
+              <div class="w-16 h-16 bg-purple-500 rounded origin-bottom-right hover:rotate-45 transition-transform duration-300 flex items-center justify-center text-xs">btm-right</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Common Mistakes -->
+        <section class="p-4 rounded-lg bg-red-500/10 border border-red-500/30">
+          <h3 class="font-bold text-red-400 mb-3">⚠️ Kesalahan Umum Pemula</h3>
+          <ul class="text-gray-300 space-y-2 text-sm">
+            <li>• Lupa menambahkan <code class="px-1 rounded bg-gray-800">transition-*</code> sebelum hover transform</li>
+            <li>• Menggunakan <code class="px-1 rounded bg-gray-800">duration</code> terlalu lama (gunakan 150-300ms untuk UI)</li>
+            <li>• Terlalu banyak animasi sekaligus (distracting)</li>
+            <li>• Tidak menggunakan <code class="px-1 rounded bg-gray-800">will-change</code> untuk animasi kompleks</li>
+          </ul>
+        </section>
+
+      </article>
+
+      <!-- Reading Checkbox -->
+      <div class="my-10 p-6 rounded-xl bg-gray-800/50 border border-gray-700">
+        <label class="flex items-center gap-4 cursor-pointer">
+          <input type="checkbox" id="reading-checkbox" class="w-5 h-5 rounded">
+          <span class="font-semibold">Saya sudah membaca dan memahami materi ini</span>
+        </label>
+      </div>
+
+      <!-- Challenge -->
+      <section class="challenge-section p-6 rounded-xl mb-10">
+        <h2 class="text-xl font-bold mb-4">🎯 Challenge: Animasi Hover Button & Card</h2>
+        <p class="text-gray-300 mb-6">Tambahkan animasi hover ke button dan card. Berikut contoh interaktif:</p>
+        
+        <!-- Preview -->
+        <div class="mb-8 p-6 rounded-xl bg-gray-950 border border-gray-700">
+          <p class="text-xs text-gray-500 mb-4 uppercase tracking-wide">📱 Interactive Preview - Hover Me!</p>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <!-- Buttons -->
+            <div>
+              <p class="text-sm text-gray-400 mb-3">Buttons:</p>
+              <div class="space-y-3">
+                <button class="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:-translate-y-1">
+                  🚀 Lift & Shadow
+                </button>
+                <button class="w-full px-6 py-3 bg-green-500 text-white rounded-lg font-medium transition-all duration-300 hover:bg-green-600 hover:scale-105">
+                  📈 Scale Up
+                </button>
+                <button class="group w-full px-6 py-3 bg-gray-800 border-2 border-pink-500 text-pink-500 rounded-lg font-medium transition-all duration-300 hover:bg-pink-500 hover:text-white">
+                  <span class="inline-block transition-transform group-hover:translate-x-2">→ Slide Icon</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Cards -->
+            <div>
+              <p class="text-sm text-gray-400 mb-3">Cards:</p>
+              <div class="space-y-3">
+                <div class="p-4 rounded-xl bg-gray-800 border border-gray-700 transition-all duration-300 hover:border-primary-500 hover:-translate-y-1 hover:shadow-lg cursor-pointer">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-primary-500/20 flex items-center justify-center">📦</div>
+                    <div>
+                      <p class="font-medium">Border & Lift Card</p>
+                      <p class="text-xs text-gray-400">hover:border-primary hover:-translate-y-1</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="group p-4 rounded-xl bg-gradient-to-r from-orange-500 to-red-500 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl cursor-pointer overflow-hidden">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center transition-transform group-hover:rotate-12">🔥</div>
+                    <div>
+                      <p class="font-medium text-white">Scale & Icon Rotate</p>
+                      <p class="text-xs text-white/70">group-hover:rotate-12</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Classes Used -->
+        <div class="mb-6 p-4 rounded-lg bg-gray-800/50 border border-gray-700">
+          <h3 class="font-semibold mb-3">📝 Pattern Classes yang Digunakan:</h3>
+          <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <div>
+              <p class="text-gray-400 mb-2">Lift Effect:</p>
+              <code class="text-xs text-primary-400">hover:-translate-y-1 hover:shadow-lg transition-all duration-300</code>
+            </div>
+            <div>
+              <p class="text-gray-400 mb-2">Scale Effect:</p>
+              <code class="text-xs text-green-400">hover:scale-105 transition-transform duration-300</code>
+            </div>
+            <div>
+              <p class="text-gray-400 mb-2">Group Hover:</p>
+              <code class="text-xs text-purple-400">group + group-hover:rotate-12</code>
+            </div>
+            <div>
+              <p class="text-gray-400 mb-2">Border Change:</p>
+              <code class="text-xs text-pink-400">border-gray-700 hover:border-primary-500</code>
+            </div>
+          </div>
+        </div>
+
+        <!-- Code Example -->
+        <div class="mb-6">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-semibold">💻 Kode Button & Card</h3>
+            <button onclick="navigator.clipboard.writeText(document.getElementById('anim-code').textContent).then(()=>alert('Copied!'))" class="text-xs px-3 py-1 rounded bg-gray-700 hover:bg-gray-600 transition-colors">📋 Copy</button>
+          </div>
+          <div class="p-4 rounded-lg bg-gray-950 border border-gray-700 overflow-x-auto">
+            <pre id="anim-code" class="text-xs text-gray-300"><code>&lt;!-- Lift & Shadow Button --&gt;
+&lt;button class="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 
+        text-white rounded-lg transition-all duration-300
+        hover:shadow-lg hover:shadow-blue-500/25 hover:-translate-y-1"&gt;
+  🚀 Button Text
+&lt;/button&gt;
+
+&lt;!-- Card with Group Hover --&gt;
+&lt;div class="group p-4 rounded-xl bg-gray-800 
+     transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"&gt;
+  &lt;div class="w-10 h-10 bg-primary-500/20 rounded-lg 
+       transition-transform group-hover:rotate-12"&gt;
+    📦
+  &lt;/div&gt;
+  &lt;p&gt;Card Title&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <!-- Additional Tasks -->
+        <div class="mb-6 p-4 rounded-lg bg-yellow-500/10 border border-yellow-500/30">
+          <h3 class="font-semibold text-yellow-400 mb-3">✨ Tantangan Tambahan:</h3>
+          <ul class="text-sm text-gray-300 space-y-2">
+            <li>□ Buat button dengan <code class="px-1 rounded bg-gray-700">animate-pulse</code> untuk "Saving..." state</li>
+            <li>□ Tambahkan <code class="px-1 rounded bg-gray-700">group-hover:scale-110</code> pada icon dalam card</li>
+            <li>□ Coba <code class="px-1 rounded bg-gray-700">hover:rotate-3</code> untuk card yang sedikit miring</li>
+            <li>□ Buat loading button dengan <code class="px-1 rounded bg-gray-700">animate-spin</code> pada icon</li>
+          </ul>
+        </div>
+
+        <button id="submit-challenge" class="w-full py-3 rounded-lg bg-green-500 text-white font-semibold hover:bg-green-600 transition-colors">✅ Challenge Selesai</button>
+      </section>
+
+      <!-- Navigation -->
+      <div class="flex justify-between">
+        <a href="backgrounds-effects.html" class="px-6 py-3 rounded-lg bg-gray-800 hover:bg-gray-700">← Backgrounds & Effects</a>
+        <a id="next-lesson" href="interactivity-svg.html" class="px-6 py-3 rounded-lg bg-primary-500 text-white opacity-50 pointer-events-none">Interactivity & SVG →</a>
+      </div>
+    </div>
+  </main>
+  <script src="assets/js/progress.js"></script>
+</body>
+</html>

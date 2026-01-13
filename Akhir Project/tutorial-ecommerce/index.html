@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial E-Commerce dengan Tailwind CSS</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="tutorial-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <a href="index.html" class="sidebar-logo">
+                <div class="icon">T</div>
+                <span>Tutorial</span>
+            </a>
+
+            <nav>
+                <div class="nav-section">
+                    <div class="nav-section-title">Pendahuluan</div>
+                    <ul class="nav-links">
+                        <li><a href="index.html" class="active">
+                            <span class="step-number">🏠</span> Overview
+                        </a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Step by Step</div>
+                    <ul class="nav-links">
+                        <li><a href="step-1-setup.html">
+                            <span class="step-number">1</span> Setup Project
+                        </a></li>
+                        <li><a href="step-2-navbar.html">
+                            <span class="step-number">2</span> Membuat Navbar
+                        </a></li>
+                        <li><a href="step-3-hero.html">
+                            <span class="step-number">3</span> Hero Section
+                        </a></li>
+                        <li><a href="step-4-products.html">
+                            <span class="step-number">4</span> Product Cards
+                        </a></li>
+                        <li><a href="step-5-sections.html">
+                            <span class="step-number">5</span> Section Lainnya
+                        </a></li>
+                        <li><a href="step-6-footer.html">
+                            <span class="step-number">6</span> Footer
+                        </a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Preview</div>
+                    <ul class="nav-links">
+                        <li><a href="../ecommerce-analysis/index.html" target="_blank">
+                            <span class="step-number">👁️</span> Lihat Hasil
+                        </a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Hero Banner -->
+            <div class="tutorial-hero">
+                <h1>🛍️ Belajar Membuat E-Commerce UI</h1>
+                <p>Tutorial langkah demi langkah membuat tampilan website Busana Muslim menggunakan Tailwind CSS</p>
+                <div class="badge-row">
+                    <span class="badge">📚 6 Lessons</span>
+                    <span class="badge">⏱️ ~2 Jam</span>
+                    <span class="badge">💻 Tailwind CSS</span>
+                </div>
+            </div>
+
+            <!-- Introduction -->
+            <h2>Apa yang Akan Kamu Pelajari?</h2>
+            <p>
+                Di tutorial ini, kamu akan belajar membuat tampilan website E-Commerce dari nol menggunakan 
+                <strong>Tailwind CSS</strong>. Kita akan membedah kode dari project nyata dan memahami 
+                setiap class Tailwind yang digunakan.
+            </p>
+
+            <div class="info-box tip">
+                <div class="info-box-title">💡 Tips</div>
+                <p>Tutorial ini cocok untuk pemula yang sudah mengenal dasar HTML dan CSS. Tidak perlu pengalaman Tailwind sebelumnya!</p>
+            </div>
+
+            <!-- Lesson Cards -->
+            <h2>Daftar Materi</h2>
+            <div class="cards-grid">
+                <a href="step-1-setup.html" class="lesson-card">
+                    <div class="number">1</div>
+                    <h3>Setup Project</h3>
+                    <p>Cara setup Tailwind CSS dengan CDN, konfigurasi custom colors dan fonts</p>
+                </a>
+
+                <a href="step-2-navbar.html" class="lesson-card">
+                    <div class="number">2</div>
+                    <h3>Membuat Navbar</h3>
+                    <p>Navbar fixed dengan glassmorphism effect, logo, navigation links, dan mobile menu</p>
+                </a>
+
+                <a href="step-3-hero.html" class="lesson-card">
+                    <div class="number">3</div>
+                    <h3>Hero Section</h3>
+                    <p>Banner utama dengan grid layout, CTA buttons, dan floating badges</p>
+                </a>
+
+                <a href="step-4-products.html" class="lesson-card">
+                    <div class="number">4</div>
+                    <h3>Product Cards</h3>
+                    <p>Grid system untuk produk, card styling, hover effects, dan badges</p>
+                </a>
+
+                <a href="step-5-sections.html" class="lesson-card">
+                    <div class="number">5</div>
+                    <h3>Section Lainnya</h3>
+                    <p>Kategori, promo banner, benefits, dan newsletter section</p>
+                </a>
+
+                <a href="step-6-footer.html" class="lesson-card">
+                    <div class="number">6</div>
+                    <h3>Footer</h3>
+                    <p>Footer multi-column dengan social links dan informasi kontak</p>
+                </a>
+            </div>
+
+            <!-- Tech Stack -->
+            <h2>Teknologi yang Digunakan</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Teknologi</th>
+                            <th>Kegunaan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>HTML5</code></td>
+                            <td>Struktur halaman web</td>
+                        </tr>
+                        <tr>
+                            <td><code>Tailwind CSS (CDN)</code></td>
+                            <td>Utility-first CSS framework</td>
+                        </tr>
+                        <tr>
+                            <td><code>Custom CSS</code></td>
+                            <td>Styling tambahan (animasi, pattern)</td>
+                        </tr>
+                        <tr>
+                            <td><code>Google Fonts</code></td>
+                            <td>Inter + Playfair Display</td>
+                        </tr>
+                        <tr>
+                            <td><code>Heroicons</code></td>
+                            <td>SVG icons</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Color Palette -->
+            <h2>Color Palette yang Digunakan</h2>
+            <div class="preview-box">
+                <div class="preview-header">🎨 Preview Warna</div>
+                <div class="preview-content">
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <div style="text-align: center;">
+                            <div style="width: 60px; height: 60px; background: #5C6E4E; border-radius: 0.5rem;"></div>
+                            <small>Primary<br>#5C6E4E</small>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 60px; height: 60px; background: #4A5A3E; border-radius: 0.5rem;"></div>
+                            <small>Primary Dark<br>#4A5A3E</small>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 60px; height: 60px; background: #F5F0E6; border-radius: 0.5rem; border: 1px solid #ddd;"></div>
+                            <small>Secondary<br>#F5F0E6</small>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 60px; height: 60px; background: #8B7355; border-radius: 0.5rem;"></div>
+                            <small>Accent<br>#8B7355</small>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 60px; height: 60px; background: #C4A962; border-radius: 0.5rem;"></div>
+                            <small>Gold<br>#C4A962</small>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 60px; height: 60px; background: #3D3D3D; border-radius: 0.5rem;"></div>
+                            <small>Text<br>#3D3D3D</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="step-nav">
+                <div></div>
+                <a href="step-1-setup.html" class="next">
+                    Mulai Belajar →
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" onclick="document.getElementById('sidebar').classList.toggle('active')">
+        ☰
+    </button>
+</body>
+</html>
