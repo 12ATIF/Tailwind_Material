@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="id" class="dark">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Getting Started dengan Tailwind CSS - Pelajari dasar-dasar Tailwind CSS dari instalasi hingga penggunaan pertama">
+  <meta name="description"
+    content="Getting Started dengan Tailwind CSS - Pelajari dasar-dasar Tailwind CSS dari instalasi hingga penggunaan pertama">
   <title>Getting Started | Belajar Tailwind CSS</title>
-  
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -27,37 +29,41 @@
       }
     }
   </script>
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body class="bg-gray-900 text-gray-100 font-sans antialiased">
-  
+
   <!-- Mobile Sidebar Overlay -->
   <div class="sidebar-overlay fixed inset-0 bg-black/50 z-40 hidden lg:hidden"></div>
-  
+
   <!-- Sidebar -->
   <aside class="sidebar fixed left-0 top-0 bottom-0 w-72 bg-gray-900 border-r border-gray-800 z-50 overflow-y-auto">
     <!-- Sidebar Header -->
     <div class="sticky top-0 bg-gray-900 p-4 border-b border-gray-800">
       <div class="flex items-center justify-between">
         <a href="index.html" class="flex items-center gap-3">
-          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-purple-600 flex items-center justify-center">
+          <div
+            class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-purple-600 flex items-center justify-center">
             <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
           </div>
           <span class="font-bold gradient-text">TailwindMaster</span>
         </a>
         <button class="sidebar-close lg:hidden p-2 hover:bg-gray-800 rounded-lg">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
       </div>
-      
+
       <!-- Progress -->
       <div class="mt-4">
         <div class="flex items-center justify-between text-sm mb-2">
@@ -69,67 +75,87 @@
         </div>
       </div>
     </div>
-    
+
     <!-- Navigation -->
     <nav class="p-4">
       <ul class="space-y-1">
         <li>
-          <a href="getting-started.html" data-lesson="getting-started" class="sidebar-link active flex items-center gap-3 px-3 py-2.5 rounded-lg">
-            <span class="status-icon w-6 h-6 rounded-full bg-primary-500/20 text-primary-400 flex items-center justify-center text-xs">1</span>
+          <a href="getting-started.html" data-lesson="getting-started"
+            class="sidebar-link active flex items-center gap-3 px-3 py-2.5 rounded-lg">
+            <span
+              class="status-icon w-6 h-6 rounded-full bg-primary-500/20 text-primary-400 flex items-center justify-center text-xs">1</span>
             <span class="font-medium">Getting Started</span>
           </a>
         </li>
         <li>
-          <a href="core-concepts.html" data-lesson="core-concepts" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 locked">
-            <span class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">🔒</span>
+          <a href="core-concepts.html" data-lesson="core-concepts"
+            class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 locked">
+            <span
+              class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">🔒</span>
             <span>Core Concepts</span>
           </a>
         </li>
         <li>
-          <a href="layout.html" data-lesson="layout" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 locked">
-            <span class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">🔒</span>
+          <a href="layout.html" data-lesson="layout"
+            class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 locked">
+            <span
+              class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">🔒</span>
             <span>Layout</span>
           </a>
         </li>
         <li>
-          <a href="flexbox-grid.html" data-lesson="flexbox-grid" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 locked">
-            <span class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">🔒</span>
+          <a href="flexbox-grid.html" data-lesson="flexbox-grid"
+            class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 locked">
+            <span
+              class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">🔒</span>
             <span>Flexbox & Grid</span>
           </a>
         </li>
         <li>
-          <a href="spacing-sizing.html" data-lesson="spacing-sizing" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 locked">
-            <span class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">🔒</span>
+          <a href="spacing-sizing.html" data-lesson="spacing-sizing"
+            class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 locked">
+            <span
+              class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">🔒</span>
             <span>Spacing & Sizing</span>
           </a>
         </li>
         <li>
-          <a href="typography.html" data-lesson="typography" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 locked">
-            <span class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">🔒</span>
+          <a href="typography.html" data-lesson="typography"
+            class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 locked">
+            <span
+              class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">🔒</span>
             <span>Typography</span>
           </a>
         </li>
         <li>
-          <a href="backgrounds-effects.html" data-lesson="backgrounds-effects" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 locked">
-            <span class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">🔒</span>
+          <a href="backgrounds-effects.html" data-lesson="backgrounds-effects"
+            class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 locked">
+            <span
+              class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">🔒</span>
             <span>Backgrounds & Effects</span>
           </a>
         </li>
         <li>
-          <a href="transitions-animation.html" data-lesson="transitions-animation" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 locked">
-            <span class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">🔒</span>
+          <a href="transitions-animation.html" data-lesson="transitions-animation"
+            class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 locked">
+            <span
+              class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">🔒</span>
             <span>Transitions & Animation</span>
           </a>
         </li>
         <li>
-          <a href="interactivity-svg.html" data-lesson="interactivity-svg" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 locked">
-            <span class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">🔒</span>
+          <a href="interactivity-svg.html" data-lesson="interactivity-svg"
+            class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 locked">
+            <span
+              class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">🔒</span>
             <span>Interactivity & SVG</span>
           </a>
         </li>
         <li>
-          <a href="accessibility.html" data-lesson="accessibility" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 locked">
-            <span class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">🔒</span>
+          <a href="accessibility.html" data-lesson="accessibility"
+            class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 locked">
+            <span
+              class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">🔒</span>
             <span>Accessibility</span>
           </a>
         </li>
@@ -145,7 +171,7 @@
         <div class="flex items-center gap-4">
           <button class="sidebar-open lg:hidden p-2 hover:bg-gray-800 rounded-lg">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
           <nav class="text-sm text-gray-400">
@@ -174,14 +200,17 @@
       <div class="mb-12 p-6 rounded-2xl bg-gray-800/50 border border-gray-700/50">
         <h2 class="text-lg font-semibold mb-4 flex items-center gap-2">
           <svg class="w-5 h-5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
           </svg>
           Daftar Isi
         </h2>
         <ul class="space-y-2 text-gray-300">
-          <li><a href="#apa-itu-tailwind" class="hover:text-primary-400 transition-colors">1. Apa itu Tailwind CSS?</a></li>
-          <li><a href="#kelebihan-kekurangan" class="hover:text-primary-400 transition-colors">2. Kelebihan & Kekurangan</a></li>
-          <li><a href="#kapan-menggunakan" class="hover:text-primary-400 transition-colors">3. Kapan Cocok Menggunakan Tailwind?</a></li>
+          <li><a href="#apa-itu-tailwind" class="hover:text-primary-400 transition-colors">1. Apa itu Tailwind CSS?</a>
+          </li>
+          <li><a href="#kelebihan-kekurangan" class="hover:text-primary-400 transition-colors">2. Kelebihan &
+              Kekurangan</a></li>
+          <li><a href="#kapan-menggunakan" class="hover:text-primary-400 transition-colors">3. Kapan Cocok Menggunakan
+              Tailwind?</a></li>
           <li><a href="#installation" class="hover:text-primary-400 transition-colors">4. Installation</a></li>
           <li><a href="#editor-setup" class="hover:text-primary-400 transition-colors">5. Editor Setup</a></li>
           <li><a href="#challenge" class="hover:text-primary-400 transition-colors">🎯 Challenge</a></li>
@@ -190,30 +219,31 @@
 
       <!-- Content Sections -->
       <article class="prose prose-invert prose-lg max-w-none">
-        
+
         <!-- Section 1 -->
         <section id="apa-itu-tailwind" class="mb-16">
           <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-            <span class="w-10 h-10 rounded-xl bg-primary-500/20 text-primary-400 flex items-center justify-center">1</span>
+            <span
+              class="w-10 h-10 rounded-xl bg-primary-500/20 text-primary-400 flex items-center justify-center">1</span>
             Apa itu Tailwind CSS?
           </h2>
-          
+
           <div class="p-6 rounded-xl bg-gray-800/50 border border-gray-700/50 mb-6">
             <p class="text-lg mb-4">
-              <strong>Tailwind CSS</strong> adalah framework CSS yang menggunakan pendekatan <em>utility-first</em>. 
+              <strong>Tailwind CSS</strong> adalah framework CSS yang menggunakan pendekatan <em>utility-first</em>.
               Artinya, kamu membangun desain langsung di HTML menggunakan class-class kecil yang sudah tersedia.
             </p>
-            
+
             <div class="p-4 rounded-lg bg-blue-500/10 border border-blue-500/30">
               <p class="text-blue-300 text-sm">
-                <strong>💡 Analogi:</strong> Bayangkan kamu punya kotak LEGO dengan banyak potongan kecil. 
+                <strong>💡 Analogi:</strong> Bayangkan kamu punya kotak LEGO dengan banyak potongan kecil.
                 Tailwind CSS seperti LEGO - kamu menggabungkan class-class kecil untuk membuat desain yang besar.
               </p>
             </div>
           </div>
 
           <h3 class="text-xl font-semibold mb-4">Perbandingan: CSS Tradisional vs Tailwind</h3>
-          
+
           <div class="grid md:grid-cols-2 gap-4 mb-6">
             <!-- Traditional CSS -->
             <div class="rounded-xl overflow-hidden">
@@ -231,7 +261,7 @@
   background-color: #2563EB;
 }</code></pre>
             </div>
-            
+
             <!-- Tailwind -->
             <div class="rounded-xl overflow-hidden">
               <div class="px-4 py-2 bg-green-500/20 text-green-400 font-medium text-sm">Tailwind CSS ✅</div>
@@ -251,10 +281,11 @@
         <!-- Section 2 -->
         <section id="kelebihan-kekurangan" class="mb-16">
           <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-            <span class="w-10 h-10 rounded-xl bg-primary-500/20 text-primary-400 flex items-center justify-center">2</span>
+            <span
+              class="w-10 h-10 rounded-xl bg-primary-500/20 text-primary-400 flex items-center justify-center">2</span>
             Kelebihan & Kekurangan
           </h2>
-          
+
           <div class="grid md:grid-cols-2 gap-6">
             <!-- Kelebihan -->
             <div class="p-6 rounded-xl bg-green-500/10 border border-green-500/30">
@@ -262,50 +293,64 @@
               <ul class="space-y-3 text-gray-300">
                 <li class="flex items-start gap-2">
                   <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd" />
                   </svg>
                   <span><strong>Cepat:</strong> Tidak perlu berpindah-pindah file CSS</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd" />
                   </svg>
                   <span><strong>Konsisten:</strong> Design system bawaan yang rapi</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd" />
                   </svg>
                   <span><strong>Responsive:</strong> Mudah membuat layout responsive</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd" />
                   </svg>
                   <span><strong>File kecil:</strong> Production build sangat optimal</span>
                 </li>
               </ul>
             </div>
-            
+
             <!-- Kekurangan -->
             <div class="p-6 rounded-xl bg-red-500/10 border border-red-500/30">
               <h3 class="text-lg font-semibold text-red-400 mb-4">❌ Kekurangan</h3>
               <ul class="space-y-3 text-gray-300">
                 <li class="flex items-start gap-2">
                   <svg class="w-5 h-5 text-red-400 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                    <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                      clip-rule="evenodd" />
                   </svg>
                   <span><strong>HTML panjang:</strong> Banyak class di elemen</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <svg class="w-5 h-5 text-red-400 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                    <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                      clip-rule="evenodd" />
                   </svg>
                   <span><strong>Learning curve:</strong> Perlu hafal class-class</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <svg class="w-5 h-5 text-red-400 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                    <path fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                      clip-rule="evenodd" />
                   </svg>
                   <span><strong>Setup:</strong> Butuh build process untuk production</span>
                 </li>
@@ -317,10 +362,11 @@
         <!-- Section 3 -->
         <section id="kapan-menggunakan" class="mb-16">
           <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-            <span class="w-10 h-10 rounded-xl bg-primary-500/20 text-primary-400 flex items-center justify-center">3</span>
+            <span
+              class="w-10 h-10 rounded-xl bg-primary-500/20 text-primary-400 flex items-center justify-center">3</span>
             Kapan Cocok Menggunakan Tailwind?
           </h2>
-          
+
           <div class="p-6 rounded-xl bg-gray-800/50 border border-gray-700/50">
             <h3 class="font-semibold text-green-400 mb-3">✅ Cocok untuk:</h3>
             <ul class="list-disc list-inside text-gray-300 mb-6 space-y-2">
@@ -329,7 +375,7 @@
               <li>Tim yang ingin design system konsisten</li>
               <li>Prototype dan MVP</li>
             </ul>
-            
+
             <h3 class="font-semibold text-red-400 mb-3">❌ Mungkin kurang cocok untuk:</h3>
             <ul class="list-disc list-inside text-gray-300 space-y-2">
               <li>Proyek yang sudah punya CSS besar dan established</li>
@@ -342,65 +388,127 @@
         <!-- Section 4 -->
         <section id="installation" class="mb-16">
           <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-            <span class="w-10 h-10 rounded-xl bg-primary-500/20 text-primary-400 flex items-center justify-center">4</span>
+            <span
+              class="w-10 h-10 rounded-xl bg-primary-500/20 text-primary-400 flex items-center justify-center">4</span>
             Installation
           </h2>
-          
-          <p class="text-gray-300 mb-6">Ada beberapa cara menginstall Tailwind CSS. Untuk belajar, kita pakai cara paling mudah: <strong>CDN</strong>.</p>
-          
+
+          <p class="text-gray-300 mb-6">Ada beberapa cara menginstall Tailwind CSS. Untuk belajar, kita pakai cara
+            paling mudah: <strong>CDN</strong>.</p>
+
           <!-- CDN Method -->
           <div class="mb-8">
             <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
               <span class="px-2 py-1 rounded bg-green-500/20 text-green-400 text-xs">RECOMMENDED</span>
               Cara 1: Menggunakan CDN (Paling Mudah)
             </h3>
-            
-            <p class="text-gray-400 mb-4">Tambahkan script ini di dalam tag <code class="px-1.5 py-0.5 rounded bg-gray-800 text-primary-400">&lt;head&gt;</code>:</p>
-            
-            <div class="rounded-xl overflow-hidden mb-4">
-              <div class="px-4 py-2 bg-gray-800 text-gray-400 text-sm flex items-center justify-between">
-                <span>HTML</span>
-                <button onclick="navigator.clipboard.writeText('<script src=&quot;https://cdn.tailwindcss.com&quot;></script>')" class="px-3 py-1 rounded bg-gray-700 hover:bg-gray-600 text-xs">Copy</button>
+
+            <p class="text-gray-400 mb-4">Tambahkan script ini di dalam tag <code
+                class="px-1.5 py-0.5 rounded bg-gray-800 text-primary-400">&lt;head&gt;</code>:</p>
+
+            <div class="code-block">
+              <div class="code-header">
+                <span class="filename"><span class="dot html"></span> index.html</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
               </div>
-              <pre class="code-block p-4 text-sm overflow-x-auto"><code class="text-gray-300">&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</code></pre>
+              <div class="code-content">
+                <pre><span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="string">"https://cdn.tailwindcss.com"</span><span class="tag">&gt;&lt;/script&gt;</span></pre>
+              </div>
             </div>
-            
-            <div class="p-4 rounded-lg bg-yellow-500/10 border border-yellow-500/30">
-              <p class="text-yellow-300 text-sm">
-                <strong>⚠️ Catatan:</strong> CDN cocok untuk belajar dan prototyping. 
-                Untuk production, gunakan build process dengan npm/yarn.
-              </p>
+
+            <div class="info-box warning">
+              <div class="info-box-title">⚠️ Catatan</div>
+              <p>CDN cocok untuk belajar dan prototyping. Untuk production, gunakan build process dengan npm/yarn.</p>
             </div>
           </div>
-          
+
           <!-- Full Example -->
           <div class="mb-8">
-            <h3 class="text-lg font-semibold mb-4">Contoh File HTML Lengkap</h3>
-            
-            <div class="rounded-xl overflow-hidden">
-              <div class="px-4 py-2 bg-gray-800 text-gray-400 text-sm">index.html</div>
-              <pre class="code-block p-4 text-sm overflow-x-auto"><code class="text-gray-300">&lt;!DOCTYPE html&gt;
-&lt;html lang="id"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-  &lt;title&gt;Belajar Tailwind CSS&lt;/title&gt;
-  &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body class="bg-gray-100 min-h-screen"&gt;
-  &lt;div class="container mx-auto p-8"&gt;
-    &lt;h1 class="text-4xl font-bold text-blue-600"&gt;
+            <h3 class="text-lg font-semibold mb-4">📄 Contoh File HTML Lengkap</h3>
+
+            <div class="code-block">
+              <div class="code-header">
+                <span class="filename"><span class="dot html"></span> index.html</span>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+              </div>
+              <div class="code-content">
+                <pre><span class="tag">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html</span> <span class="attr">lang</span>=<span class="string">"id"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;head&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;title&gt;</span>Belajar Tailwind CSS<span class="tag">&lt;/title&gt;</span>
+  <span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="string">"https://cdn.tailwindcss.com"</span><span class="tag">&gt;&lt;/script&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body</span> <span class="attr">class</span>=<span class="string">"bg-gray-100 min-h-screen"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"container mx-auto p-8"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;h1</span> <span class="attr">class</span>=<span class="string">"text-4xl font-bold text-blue-600"</span><span class="tag">&gt;</span>
       Hello Tailwind! 👋
-    &lt;/h1&gt;
-    &lt;p class="mt-4 text-gray-600"&gt;
+    <span class="tag">&lt;/h1&gt;</span>
+    <span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="string">"mt-4 text-gray-600"</span><span class="tag">&gt;</span>
       Ini adalah halaman pertama saya dengan Tailwind CSS.
-    &lt;/p&gt;
-    &lt;button class="mt-6 px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600"&gt;
+    <span class="tag">&lt;/p&gt;</span>
+    <span class="tag">&lt;button</span> <span class="attr">class</span>=<span class="string">"mt-6 px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600"</span><span class="tag">&gt;</span>
       Klik Saya
-    &lt;/button&gt;
-  &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+    <span class="tag">&lt;/button&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></pre>
+              </div>
+            </div>
+
+            <!-- Penjelasan Class -->
+            <h4 class="font-semibold mt-6 mb-3">📋 Penjelasan Class yang Digunakan:</h4>
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Class</th>
+                    <th>Fungsi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>bg-gray-100</code></td>
+                    <td>Background warna abu-abu terang</td>
+                  </tr>
+                  <tr>
+                    <td><code>min-h-screen</code></td>
+                    <td>Minimum height 100% viewport</td>
+                  </tr>
+                  <tr>
+                    <td><code>container mx-auto</code></td>
+                    <td>Container centered dengan max-width</td>
+                  </tr>
+                  <tr>
+                    <td><code>p-8</code></td>
+                    <td>Padding 2rem (32px) semua sisi</td>
+                  </tr>
+                  <tr>
+                    <td><code>text-4xl font-bold</code></td>
+                    <td>Teks besar (2.25rem) dan tebal</td>
+                  </tr>
+                  <tr>
+                    <td><code>text-blue-600</code></td>
+                    <td>Warna teks biru</td>
+                  </tr>
+                  <tr>
+                    <td><code>mt-4</code></td>
+                    <td>Margin top 1rem (16px)</td>
+                  </tr>
+                  <tr>
+                    <td><code>hover:bg-blue-600</code></td>
+                    <td>Background biru lebih gelap saat hover</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="info-box tip">
+              <div class="info-box-title">💡 Tips</div>
+              <p>Coba ubah nilai class seperti <code>text-4xl</code> menjadi <code>text-6xl</code> atau
+                <code>bg-blue-500</code> menjadi <code>bg-green-500</code> untuk melihat perubahannya!
+              </p>
             </div>
           </div>
         </section>
@@ -408,18 +516,21 @@
         <!-- Section 5 -->
         <section id="editor-setup" class="mb-16">
           <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-            <span class="w-10 h-10 rounded-xl bg-primary-500/20 text-primary-400 flex items-center justify-center">5</span>
+            <span
+              class="w-10 h-10 rounded-xl bg-primary-500/20 text-primary-400 flex items-center justify-center">5</span>
             Editor Setup
           </h2>
-          
-          <p class="text-gray-300 mb-6">Untuk pengalaman coding yang lebih baik, install extension berikut di VS Code:</p>
-          
+
+          <p class="text-gray-300 mb-6">Untuk pengalaman coding yang lebih baik, install extension berikut di VS Code:
+          </p>
+
           <div class="grid md:grid-cols-2 gap-4">
             <div class="p-4 rounded-xl bg-gray-800/50 border border-gray-700/50">
               <div class="flex items-center gap-3 mb-2">
                 <div class="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center">
                   <svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M23.15 2.587L18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 0 0-1.276.057L.327 7.261A1 1 0 0 0 .326 8.74L3.899 12 .326 15.26a1 1 0 0 0 .001 1.479L1.65 17.94a.999.999 0 0 0 1.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 0 0 1.704.29l4.942-2.377A1.5 1.5 0 0 0 24 20.06V3.939a1.5 1.5 0 0 0-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448v10.896z"/>
+                    <path
+                      d="M23.15 2.587L18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 0 0-1.276.057L.327 7.261A1 1 0 0 0 .326 8.74L3.899 12 .326 15.26a1 1 0 0 0 .001 1.479L1.65 17.94a.999.999 0 0 0 1.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 0 0 1.704.29l4.942-2.377A1.5 1.5 0 0 0 24 20.06V3.939a1.5 1.5 0 0 0-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448v10.896z" />
                   </svg>
                 </div>
                 <div>
@@ -428,12 +539,13 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="p-4 rounded-xl bg-gray-800/50 border border-gray-700/50">
               <div class="flex items-center gap-3 mb-2">
                 <div class="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center">
                   <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                   </svg>
                 </div>
                 <div>
@@ -451,7 +563,8 @@
           <ul class="space-y-3 text-gray-300">
             <li class="flex items-start gap-2">
               <span class="text-red-400">•</span>
-              <span><strong>Lupa tambahkan CDN script</strong> - Pastikan script ada di <code class="px-1 py-0.5 rounded bg-gray-800">&lt;head&gt;</code></span>
+              <span><strong>Lupa tambahkan CDN script</strong> - Pastikan script ada di <code
+                  class="px-1 py-0.5 rounded bg-gray-800">&lt;head&gt;</code></span>
             </li>
             <li class="flex items-start gap-2">
               <span class="text-red-400">•</span>
@@ -483,7 +596,7 @@
           <span class="text-3xl">🎯</span>
           <h2 class="text-2xl font-bold">Challenge: Halaman Pertamamu</h2>
         </div>
-        
+
         <div class="mb-6">
           <p class="text-gray-300 mb-4">
             <strong>Tugas:</strong> Buat halaman HTML sederhana menggunakan Tailwind CDN dengan ketentuan:
@@ -495,34 +608,40 @@
             <li>Background berwarna</li>
           </ul>
         </div>
-        
+
         <div class="p-4 rounded-lg bg-gray-800/50 mb-6">
           <h3 class="font-semibold mb-3">💡 Tips:</h3>
           <ul class="text-sm text-gray-400 space-y-1">
-            <li>• Coba class seperti <code class="px-1 rounded bg-gray-700">bg-blue-500</code>, <code class="px-1 rounded bg-gray-700">text-white</code>, <code class="px-1 rounded bg-gray-700">p-4</code></li>
-            <li>• Untuk hover, tambahkan prefix <code class="px-1 rounded bg-gray-700">hover:</code> contoh: <code class="px-1 rounded bg-gray-700">hover:bg-blue-600</code></li>
+            <li>• Coba class seperti <code class="px-1 rounded bg-gray-700">bg-blue-500</code>, <code
+                class="px-1 rounded bg-gray-700">text-white</code>, <code class="px-1 rounded bg-gray-700">p-4</code>
+            </li>
+            <li>• Untuk hover, tambahkan prefix <code class="px-1 rounded bg-gray-700">hover:</code> contoh: <code
+                class="px-1 rounded bg-gray-700">hover:bg-blue-600</code></li>
             <li>• Buka file di browser untuk melihat hasilnya</li>
           </ul>
         </div>
-        
-        <button id="submit-challenge" class="w-full py-4 rounded-xl bg-gradient-to-r from-green-500 to-emerald-500 text-white font-semibold hover:opacity-90 transition-opacity">
+
+        <button id="submit-challenge"
+          class="w-full py-4 rounded-xl bg-gradient-to-r from-green-500 to-emerald-500 text-white font-semibold hover:opacity-90 transition-opacity">
           ✅ Saya Sudah Menyelesaikan Challenge Ini
         </button>
       </section>
 
       <!-- Navigation -->
       <div class="flex items-center justify-between">
-        <a href="index.html" class="flex items-center gap-2 px-6 py-3 rounded-xl bg-gray-800 hover:bg-gray-700 transition-colors">
+        <a href="index.html"
+          class="flex items-center gap-2 px-6 py-3 rounded-xl bg-gray-800 hover:bg-gray-700 transition-colors">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
           Kembali
         </a>
-        
-        <a id="next-lesson" href="core-concepts.html" class="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-primary-500 to-purple-600 text-white font-medium opacity-50 cursor-not-allowed pointer-events-none transition-all">
+
+        <a id="next-lesson" href="core-concepts.html"
+          class="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-primary-500 to-purple-600 text-white font-medium opacity-50 cursor-not-allowed pointer-events-none transition-all">
           Lanjut: Core Concepts
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
           </svg>
         </a>
       </div>
@@ -534,6 +653,15 @@
     </footer>
   </main>
 
+  <script>
+    function copyCode(btn) {
+      const codeBlock = btn.closest('.code-block').querySelector('pre');
+      navigator.clipboard.writeText(codeBlock.innerText);
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy', 2000);
+    }
+  </script>
   <script src="assets/js/progress.js"></script>
 </body>
+
 </html>

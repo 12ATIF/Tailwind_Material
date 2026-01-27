@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="id" class="dark">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Typography | Belajar Tailwind CSS</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:{500:'#667eea',600:'#5a67d8'}}}}}</script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+  <script>tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: { 500: '#667eea', 600: '#5a67d8' } } } } }</script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700&family=Roboto+Mono&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body class="bg-gray-900 text-gray-100 font-sans">
-  <aside class="sidebar fixed left-0 top-0 bottom-0 w-72 bg-gray-900 border-r border-gray-800 z-50 overflow-y-auto hidden lg:block">
-    <div class="p-4 border-b border-gray-800"><a href="index.html" class="flex items-center gap-3"><div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-purple-600"></div><span class="font-bold">TailwindMaster</span></a></div>
+  <aside
+    class="sidebar fixed left-0 top-0 bottom-0 w-72 bg-gray-900 border-r border-gray-800 z-50 overflow-y-auto hidden lg:block">
+    <div class="p-4 border-b border-gray-800"><a href="index.html" class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-purple-600"></div><span
+          class="font-bold">TailwindMaster</span>
+      </a></div>
     <nav class="p-4">
       <ul class="space-y-1 text-sm">
         <li><a href="getting-started.html" class="block px-3 py-2 rounded text-gray-400">Getting Started</a></li>
@@ -19,9 +27,12 @@
         <li><a href="layout.html" class="block px-3 py-2 rounded text-gray-400">Layout</a></li>
         <li><a href="flexbox-grid.html" class="block px-3 py-2 rounded text-gray-400">Flexbox & Grid</a></li>
         <li><a href="spacing-sizing.html" class="block px-3 py-2 rounded text-gray-400">Spacing & Sizing</a></li>
-        <li><a href="typography.html" class="block px-3 py-2 rounded bg-primary-500/20 text-white font-medium">Typography</a></li>
-        <li><a href="backgrounds-effects.html" class="block px-3 py-2 rounded text-gray-400">Backgrounds & Effects</a></li>
-        <li><a href="transitions-animation.html" class="block px-3 py-2 rounded text-gray-400">Transitions & Animation</a></li>
+        <li><a href="typography.html"
+            class="block px-3 py-2 rounded bg-primary-500/20 text-white font-medium">Typography</a></li>
+        <li><a href="backgrounds-effects.html" class="block px-3 py-2 rounded text-gray-400">Backgrounds & Effects</a>
+        </li>
+        <li><a href="transitions-animation.html" class="block px-3 py-2 rounded text-gray-400">Transitions &
+            Animation</a></li>
         <li><a href="interactivity-svg.html" class="block px-3 py-2 rounded text-gray-400">Interactivity & SVG</a></li>
         <li><a href="accessibility.html" class="block px-3 py-2 rounded text-gray-400">Accessibility</a></li>
       </ul>
@@ -30,7 +41,8 @@
 
   <main class="lg:ml-72">
     <header class="sticky top-0 z-30 bg-gray-900/90 backdrop-blur border-b border-gray-800 px-6 py-4">
-      <nav class="text-sm text-gray-400"><a href="index.html" class="hover:text-white">Home</a> / <span class="text-white">Typography</span></nav>
+      <nav class="text-sm text-gray-400"><a href="index.html" class="hover:text-white">Home</a> / <span
+          class="text-white">Typography</span></nav>
     </header>
 
     <div class="max-w-4xl mx-auto px-6 py-12">
@@ -60,15 +72,16 @@
       </div>
 
       <article class="space-y-14">
-        
+
         <!-- 1. Font Family -->
         <section id="font-family">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">1</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">1</span>
             Font Family
           </h2>
           <p class="text-gray-300 mb-4">Mengatur jenis font yang digunakan.</p>
-          
+
           <div class="grid md:grid-cols-3 gap-4 mb-4">
             <div class="p-4 rounded-lg bg-gray-800 border border-gray-700">
               <p class="text-xs text-gray-400 mb-2"><code class="text-primary-500">font-sans</code></p>
@@ -85,18 +98,23 @@
           </div>
 
           <div class="p-4 rounded-lg bg-blue-500/10 border border-blue-500/30">
-            <p class="text-blue-300 text-sm">💡 <strong>Tip:</strong> Gunakan <code class="px-1 bg-gray-800 rounded">font-sans</code> untuk UI, <code class="px-1 bg-gray-800 rounded">font-serif</code> untuk artikel/heading, dan <code class="px-1 bg-gray-800 rounded">font-mono</code> untuk kode.</p>
+            <p class="text-blue-300 text-sm">💡 <strong>Tip:</strong> Gunakan <code
+                class="px-1 bg-gray-800 rounded">font-sans</code> untuk UI, <code
+                class="px-1 bg-gray-800 rounded">font-serif</code> untuk artikel/heading, dan <code
+                class="px-1 bg-gray-800 rounded">font-mono</code> untuk kode.</p>
           </div>
         </section>
 
         <!-- 2. Font Size -->
         <section id="font-size">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">2</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">2</span>
             Font Size
           </h2>
-          <p class="text-gray-300 mb-4">Mengatur ukuran font. Format: <code class="px-1 rounded bg-gray-800">text-{size}</code></p>
-          
+          <p class="text-gray-300 mb-4">Mengatur ukuran font. Format: <code
+              class="px-1 rounded bg-gray-800">text-{size}</code></p>
+
           <div class="space-y-3 mb-4 p-4 rounded-lg bg-gray-800/50">
             <p class="text-xs"><code class="px-1 bg-gray-700 rounded mr-2">text-xs</code> 0.75rem (12px)</p>
             <p class="text-sm"><code class="px-1 bg-gray-700 rounded mr-2">text-sm</code> 0.875rem (14px)</p>
@@ -121,11 +139,12 @@
         <!-- 3. Font Weight -->
         <section id="font-weight">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">3</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">3</span>
             Font Weight
           </h2>
           <p class="text-gray-300 mb-4">Mengatur ketebalan font.</p>
-          
+
           <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
             <div class="p-3 rounded-lg bg-gray-800">
               <p class="font-thin text-lg">Thin</p>
@@ -165,10 +184,11 @@
         <!-- 4. Font Style -->
         <section id="font-style">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">4</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">4</span>
             Font Style
           </h2>
-          
+
           <div class="grid md:grid-cols-2 gap-4">
             <div class="p-4 rounded-lg bg-gray-800">
               <code class="text-primary-500">italic</code>
@@ -184,34 +204,42 @@
         <!-- 5. Letter Spacing -->
         <section id="letter-spacing">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">5</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">5</span>
             Letter Spacing (Tracking)
           </h2>
-          <p class="text-gray-300 mb-4">Mengatur jarak antar huruf. Format: <code class="px-1 rounded bg-gray-800">tracking-{size}</code></p>
-          
+          <p class="text-gray-300 mb-4">Mengatur jarak antar huruf. Format: <code
+              class="px-1 rounded bg-gray-800">tracking-{size}</code></p>
+
           <div class="space-y-3 p-4 rounded-lg bg-gray-800/50">
             <div class="p-3 rounded bg-gray-800">
-              <code class="text-primary-500 text-sm">tracking-tighter</code> <span class="text-gray-500 text-xs">(-0.05em)</span>
+              <code class="text-primary-500 text-sm">tracking-tighter</code> <span
+                class="text-gray-500 text-xs">(-0.05em)</span>
               <p class="tracking-tighter text-xl mt-1">The quick brown fox jumps over the lazy dog</p>
             </div>
             <div class="p-3 rounded bg-gray-800">
-              <code class="text-primary-500 text-sm">tracking-tight</code> <span class="text-gray-500 text-xs">(-0.025em)</span>
+              <code class="text-primary-500 text-sm">tracking-tight</code> <span
+                class="text-gray-500 text-xs">(-0.025em)</span>
               <p class="tracking-tight text-xl mt-1">The quick brown fox jumps over the lazy dog</p>
             </div>
             <div class="p-3 rounded bg-gray-800">
-              <code class="text-primary-500 text-sm">tracking-normal</code> <span class="text-gray-500 text-xs">(0)</span>
+              <code class="text-primary-500 text-sm">tracking-normal</code> <span
+                class="text-gray-500 text-xs">(0)</span>
               <p class="tracking-normal text-xl mt-1">The quick brown fox jumps over the lazy dog</p>
             </div>
             <div class="p-3 rounded bg-gray-800">
-              <code class="text-primary-500 text-sm">tracking-wide</code> <span class="text-gray-500 text-xs">(0.025em)</span>
+              <code class="text-primary-500 text-sm">tracking-wide</code> <span
+                class="text-gray-500 text-xs">(0.025em)</span>
               <p class="tracking-wide text-xl mt-1">The quick brown fox jumps over the lazy dog</p>
             </div>
             <div class="p-3 rounded bg-gray-800">
-              <code class="text-primary-500 text-sm">tracking-wider</code> <span class="text-gray-500 text-xs">(0.05em)</span>
+              <code class="text-primary-500 text-sm">tracking-wider</code> <span
+                class="text-gray-500 text-xs">(0.05em)</span>
               <p class="tracking-wider text-xl mt-1">The quick brown fox jumps over the lazy dog</p>
             </div>
             <div class="p-3 rounded bg-gray-800">
-              <code class="text-primary-500 text-sm">tracking-widest</code> <span class="text-gray-500 text-xs">(0.1em)</span>
+              <code class="text-primary-500 text-sm">tracking-widest</code> <span
+                class="text-gray-500 text-xs">(0.1em)</span>
               <p class="tracking-widest text-xl mt-1">The quick brown fox jumps over the lazy dog</p>
             </div>
           </div>
@@ -220,50 +248,61 @@
         <!-- 6. Line Height -->
         <section id="line-height">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">6</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">6</span>
             Line Height (Leading)
           </h2>
-          <p class="text-gray-300 mb-4">Mengatur jarak antar baris. Format: <code class="px-1 rounded bg-gray-800">leading-{size}</code></p>
-          
+          <p class="text-gray-300 mb-4">Mengatur jarak antar baris. Format: <code
+              class="px-1 rounded bg-gray-800">leading-{size}</code></p>
+
           <div class="grid md:grid-cols-3 gap-4 mb-4">
             <div class="p-4 rounded-lg bg-gray-800 border border-gray-700">
               <code class="text-primary-500 text-sm block mb-2">leading-none</code>
-              <p class="leading-none text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+              <p class="leading-none text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                tempor incididunt ut labore.</p>
             </div>
             <div class="p-4 rounded-lg bg-gray-800 border border-gray-700">
               <code class="text-primary-500 text-sm block mb-2">leading-tight</code>
-              <p class="leading-tight text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+              <p class="leading-tight text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                tempor incididunt ut labore.</p>
             </div>
             <div class="p-4 rounded-lg bg-gray-800 border border-gray-700">
               <code class="text-primary-500 text-sm block mb-2">leading-snug</code>
-              <p class="leading-snug text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+              <p class="leading-snug text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                tempor incididunt ut labore.</p>
             </div>
             <div class="p-4 rounded-lg bg-gray-800 border border-gray-700">
               <code class="text-primary-500 text-sm block mb-2">leading-normal</code>
-              <p class="leading-normal text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+              <p class="leading-normal text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                tempor incididunt ut labore.</p>
             </div>
             <div class="p-4 rounded-lg bg-gray-800 border border-gray-700">
               <code class="text-primary-500 text-sm block mb-2">leading-relaxed</code>
-              <p class="leading-relaxed text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+              <p class="leading-relaxed text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                tempor incididunt ut labore.</p>
             </div>
             <div class="p-4 rounded-lg bg-gray-800 border border-gray-700">
               <code class="text-primary-500 text-sm block mb-2">leading-loose</code>
-              <p class="leading-loose text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+              <p class="leading-loose text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                tempor incididunt ut labore.</p>
             </div>
           </div>
 
           <div class="p-4 rounded-lg bg-yellow-500/10 border border-yellow-500/30">
-            <p class="text-yellow-400 text-sm">💡 <strong>Best Practice:</strong> Gunakan <code class="px-1 bg-gray-800 rounded">leading-relaxed</code> atau <code class="px-1 bg-gray-800 rounded">leading-7</code> untuk artikel agar mudah dibaca!</p>
+            <p class="text-yellow-400 text-sm">💡 <strong>Best Practice:</strong> Gunakan <code
+                class="px-1 bg-gray-800 rounded">leading-relaxed</code> atau <code
+                class="px-1 bg-gray-800 rounded">leading-7</code> untuk artikel agar mudah dibaca!</p>
           </div>
         </section>
 
         <!-- 7. Text Align -->
         <section id="text-align">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">7</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">7</span>
             Text Align
           </h2>
-          
+
           <div class="space-y-3">
             <div class="p-4 rounded-lg bg-gray-800">
               <code class="text-primary-500 text-sm">text-left</code>
@@ -279,7 +318,8 @@
             </div>
             <div class="p-4 rounded-lg bg-gray-800">
               <code class="text-primary-500 text-sm">text-justify</code>
-              <p class="text-justify mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+              <p class="text-justify mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
             </div>
           </div>
         </section>
@@ -287,11 +327,12 @@
         <!-- 8. Text Color -->
         <section id="text-color">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">8</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">8</span>
             Text Color
           </h2>
           <p class="text-gray-300 mb-4">Format: <code class="px-1 rounded bg-gray-800">text-{color}-{shade}</code></p>
-          
+
           <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
             <p class="p-3 rounded bg-gray-800 text-gray-500">text-gray-500</p>
             <p class="p-3 rounded bg-gray-800 text-red-500">text-red-500</p>
@@ -302,19 +343,21 @@
             <p class="p-3 rounded bg-gray-800 text-indigo-500">text-indigo-500</p>
             <p class="p-3 rounded bg-gray-800 text-purple-500">text-purple-500</p>
           </div>
-          
+
           <div class="mt-4 flex flex-wrap gap-2 text-xs">
-            <span class="px-2 py-1 rounded bg-gray-800">Shades: <code>50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950</code></span>
+            <span class="px-2 py-1 rounded bg-gray-800">Shades:
+              <code>50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950</code></span>
           </div>
         </section>
 
         <!-- 9. Text Decoration -->
         <section id="text-decoration">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">9</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">9</span>
             Text Decoration
           </h2>
-          
+
           <div class="grid md:grid-cols-2 gap-4 mb-4">
             <div>
               <h4 class="font-semibold mb-2">Decoration Line</h4>
@@ -360,10 +403,11 @@
         <!-- 10. Text Transform -->
         <section id="text-transform">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">10</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">10</span>
             Text Transform
           </h2>
-          
+
           <div class="grid md:grid-cols-2 gap-4">
             <div class="p-4 rounded-lg bg-gray-800">
               <code class="text-primary-500 text-sm">uppercase</code>
@@ -387,26 +431,32 @@
         <!-- 11. Text Overflow -->
         <section id="text-overflow">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">11</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">11</span>
             Text Overflow
           </h2>
-          
+
           <div class="space-y-4">
             <div class="p-4 rounded-lg bg-gray-800">
               <code class="text-primary-500 text-sm block mb-2">truncate</code>
-              <p class="truncate">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p class="truncate">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua.</p>
             </div>
             <div class="p-4 rounded-lg bg-gray-800">
               <code class="text-primary-500 text-sm block mb-2">text-ellipsis + overflow-hidden</code>
-              <p class="text-ellipsis overflow-hidden whitespace-nowrap">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p class="text-ellipsis overflow-hidden whitespace-nowrap">Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
             <div class="p-4 rounded-lg bg-gray-800">
               <code class="text-primary-500 text-sm block mb-2">text-clip + overflow-hidden</code>
-              <p class="text-clip overflow-hidden whitespace-nowrap">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p class="text-clip overflow-hidden whitespace-nowrap">Lorem ipsum dolor sit amet, consectetur adipiscing
+                elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
             <div class="p-4 rounded-lg bg-gray-800">
               <code class="text-primary-500 text-sm block mb-2">line-clamp-2</code>
-              <p class="line-clamp-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p class="line-clamp-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>
           </div>
         </section>
@@ -414,10 +464,11 @@
         <!-- 12. Whitespace & Word Break -->
         <section id="whitespace">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">12</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">12</span>
             Whitespace & Word Break
           </h2>
-          
+
           <div class="grid md:grid-cols-2 gap-4 mb-4">
             <div>
               <h4 class="font-semibold mb-2">Whitespace</h4>
@@ -441,8 +492,10 @@
           </div>
 
           <div class="p-4 rounded-lg bg-gray-800">
-            <p class="text-sm text-gray-400 mb-2">Contoh <code class="px-1 bg-gray-700 rounded">break-all</code> untuk URL panjang:</p>
-            <p class="break-all text-blue-400">https://example.com/this-is-a-very-long-url-that-would-normally-overflow-the-container</p>
+            <p class="text-sm text-gray-400 mb-2">Contoh <code class="px-1 bg-gray-700 rounded">break-all</code> untuk
+              URL panjang:</p>
+            <p class="break-all text-blue-400">
+              https://example.com/this-is-a-very-long-url-that-would-normally-overflow-the-container</p>
           </div>
         </section>
 
@@ -450,10 +503,13 @@
         <section class="p-4 rounded-lg bg-red-500/10 border border-red-500/30">
           <h3 class="font-bold text-red-400 mb-3">⚠️ Kesalahan Umum Pemula</h3>
           <ul class="text-gray-300 space-y-2 text-sm">
-            <li>• Tidak menggunakan <code class="px-1 rounded bg-gray-800">leading-relaxed</code> untuk paragraf panjang</li>
+            <li>• Tidak menggunakan <code class="px-1 rounded bg-gray-800">leading-relaxed</code> untuk paragraf panjang
+            </li>
             <li>• Lupa menambahkan font-weight yang didukung di font yang digunakan</li>
-            <li>• Menggunakan <code class="px-1 rounded bg-gray-800">text-justify</code> tanpa <code class="px-1 rounded bg-gray-800">hyphens-auto</code></li>
-            <li>• Tidak mempertimbangkan <code class="px-1 rounded bg-gray-800">max-w-prose</code> untuk readability</li>
+            <li>• Menggunakan <code class="px-1 rounded bg-gray-800">text-justify</code> tanpa <code
+                class="px-1 rounded bg-gray-800">hyphens-auto</code></li>
+            <li>• Tidak mempertimbangkan <code class="px-1 rounded bg-gray-800">max-w-prose</code> untuk readability
+            </li>
           </ul>
         </section>
 
@@ -471,36 +527,39 @@
       <section class="challenge-section p-6 rounded-xl mb-10">
         <h2 class="text-xl font-bold mb-4">🎯 Challenge: Halaman Artikel Blog</h2>
         <p class="text-gray-300 mb-6">Buat halaman artikel blog yang nyaman dibaca. Berikut contoh hasilnya:</p>
-        
+
         <!-- Blog Preview -->
         <div class="mb-8 p-4 rounded-xl bg-gray-950 border border-gray-700">
           <p class="text-xs text-gray-500 mb-3 uppercase tracking-wide">📱 Live Preview - Blog Article</p>
-          
+
           <article class="max-w-prose mx-auto py-6">
             <div class="mb-6">
               <span class="text-xs text-primary-500 uppercase tracking-wider font-medium">Tutorial</span>
-              <h1 class="text-3xl font-bold mt-2 mb-3 leading-tight">Cara Membuat Website yang Responsif dengan Tailwind CSS</h1>
+              <h1 class="text-3xl font-bold mt-2 mb-3 leading-tight">Cara Membuat Website yang Responsif dengan Tailwind
+                CSS</h1>
               <div class="flex items-center gap-4 text-sm text-gray-400">
                 <span>12 Jan 2026</span>
                 <span>•</span>
                 <span>5 min read</span>
               </div>
             </div>
-            
+
             <p class="text-gray-300 leading-relaxed mb-4">
-              Lorem ipsum dolor sit amet, <strong>consectetur adipiscing</strong> elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Lorem ipsum dolor sit amet, <strong>consectetur adipiscing</strong> elit. Sed do eiusmod tempor incididunt
+              ut labore et dolore magna aliqua.
             </p>
-            
+
             <h2 class="text-xl font-semibold mt-6 mb-3">Langkah Pertama</h2>
             <p class="text-gray-300 leading-relaxed mb-4">
-              Ut enim ad minim veniam, quis nostrud <em>exercitation ullamco</em> laboris nisi ut aliquip ex ea commodo consequat.
+              Ut enim ad minim veniam, quis nostrud <em>exercitation ullamco</em> laboris nisi ut aliquip ex ea commodo
+              consequat.
             </p>
-            
+
             <blockquote class="border-l-4 border-primary-500 pl-4 my-6 italic text-gray-400">
               "Good typography is invisible. Bad typography is everywhere."
               <cite class="block text-sm mt-2 not-italic">— Oliver Reichenstein</cite>
             </blockquote>
-            
+
             <p class="text-gray-300 leading-relaxed">
               Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
             </p>
@@ -548,43 +607,47 @@
 
         <!-- Code Example -->
         <div class="mb-6">
-          <div class="flex items-center justify-between mb-2">
-            <h3 class="font-semibold">💻 Kode HTML</h3>
-            <button onclick="navigator.clipboard.writeText(document.getElementById('blog-code').textContent).then(()=>alert('Copied!'))" class="text-xs px-3 py-1 rounded bg-gray-700 hover:bg-gray-600 transition-colors">📋 Copy</button>
-          </div>
-          <div class="p-4 rounded-lg bg-gray-950 border border-gray-700 overflow-x-auto">
-            <pre id="blog-code" class="text-xs text-gray-300"><code>&lt;article class="max-w-prose mx-auto py-8 px-4"&gt;
-  &lt;!-- Category --&gt;
-  &lt;span class="text-xs text-primary-500 uppercase tracking-wider font-medium"&gt;
+          <h3 class="font-semibold mb-3">💻 Kode HTML</h3>
+
+          <div class="code-block">
+            <div class="code-header">
+              <span class="filename"><span class="dot html"></span> blog-article.html</span>
+              <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <div class="code-content">
+              <pre><span class="tag">&lt;article</span> <span class="attr">class</span>=<span class="string">"max-w-prose mx-auto py-8 px-4"</span><span class="tag">&gt;</span>
+  <span class="comment">&lt;!-- Category --&gt;</span>
+  <span class="tag">&lt;span</span> <span class="attr">class</span>=<span class="string">"text-xs text-primary-500 uppercase tracking-wider font-medium"</span><span class="tag">&gt;</span>
     Tutorial
-  &lt;/span&gt;
+  <span class="tag">&lt;/span&gt;</span>
   
-  &lt;!-- Title --&gt;
-  &lt;h1 class="text-3xl font-bold mt-2 mb-3 leading-tight"&gt;
+  <span class="comment">&lt;!-- Title --&gt;</span>
+  <span class="tag">&lt;h1</span> <span class="attr">class</span>=<span class="string">"text-3xl font-bold mt-2 mb-3 leading-tight"</span><span class="tag">&gt;</span>
     Judul Artikel Blog Anda
-  &lt;/h1&gt;
+  <span class="tag">&lt;/h1&gt;</span>
   
-  &lt;!-- Meta --&gt;
-  &lt;div class="flex items-center gap-4 text-sm text-gray-400 mb-8"&gt;
-    &lt;span&gt;12 Jan 2026&lt;/span&gt;
-    &lt;span&gt;•&lt;/span&gt;
-    &lt;span&gt;5 min read&lt;/span&gt;
-  &lt;/div&gt;
+  <span class="comment">&lt;!-- Meta --&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"flex items-center gap-4 text-sm text-gray-400 mb-8"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;span&gt;</span>12 Jan 2026<span class="tag">&lt;/span&gt;</span>
+    <span class="tag">&lt;span&gt;</span>•<span class="tag">&lt;/span&gt;</span>
+    <span class="tag">&lt;span&gt;</span>5 min read<span class="tag">&lt;/span&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
   
-  &lt;!-- Body --&gt;
-  &lt;p class="text-gray-300 leading-relaxed mb-4"&gt;
+  <span class="comment">&lt;!-- Body --&gt;</span>
+  <span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="string">"text-gray-300 leading-relaxed mb-4"</span><span class="tag">&gt;</span>
     Paragraf pertama artikel...
-  &lt;/p&gt;
+  <span class="tag">&lt;/p&gt;</span>
   
-  &lt;!-- Subheading --&gt;
-  &lt;h2 class="text-xl font-semibold mt-6 mb-3"&gt;Subheading&lt;/h2&gt;
+  <span class="comment">&lt;!-- Subheading --&gt;</span>
+  <span class="tag">&lt;h2</span> <span class="attr">class</span>=<span class="string">"text-xl font-semibold mt-6 mb-3"</span><span class="tag">&gt;</span>Subheading<span class="tag">&lt;/h2&gt;</span>
   
-  &lt;!-- Blockquote --&gt;
-  &lt;blockquote class="border-l-4 border-primary-500 pl-4 my-6 italic text-gray-400"&gt;
+  <span class="comment">&lt;!-- Blockquote --&gt;</span>
+  <span class="tag">&lt;blockquote</span> <span class="attr">class</span>=<span class="string">"border-l-4 border-primary-500 pl-4 my-6 italic text-gray-400"</span><span class="tag">&gt;</span>
     "Quote yang inspiratif..."
-    &lt;cite class="block text-sm mt-2 not-italic"&gt;— Author&lt;/cite&gt;
-  &lt;/blockquote&gt;
-&lt;/article&gt;</code></pre>
+    <span class="tag">&lt;cite</span> <span class="attr">class</span>=<span class="string">"block text-sm mt-2 not-italic"</span><span class="tag">&gt;</span>— Author<span class="tag">&lt;/cite&gt;</span>
+  <span class="tag">&lt;/blockquote&gt;</span>
+<span class="tag">&lt;/article&gt;</span></pre>
+            </div>
           </div>
         </div>
 
@@ -592,23 +655,39 @@
         <div class="mb-6 p-4 rounded-lg bg-yellow-500/10 border border-yellow-500/30">
           <h3 class="font-semibold text-yellow-400 mb-3">✨ Tantangan Tambahan:</h3>
           <ul class="text-sm text-gray-300 space-y-2">
-            <li>□ Tambahkan <code class="px-1 rounded bg-gray-700">prose</code> class dari @tailwindcss/typography plugin</li>
-            <li>□ Buat responsive font size dengan <code class="px-1 rounded bg-gray-700">text-2xl md:text-3xl lg:text-4xl</code></li>
-            <li>□ Tambahkan <code class="px-1 rounded bg-gray-700">first-letter:text-5xl first-letter:font-bold</code> untuk drop cap</li>
+            <li>□ Tambahkan <code class="px-1 rounded bg-gray-700">prose</code> class dari @tailwindcss/typography
+              plugin</li>
+            <li>□ Buat responsive font size dengan <code
+                class="px-1 rounded bg-gray-700">text-2xl md:text-3xl lg:text-4xl</code></li>
+            <li>□ Tambahkan <code class="px-1 rounded bg-gray-700">first-letter:text-5xl first-letter:font-bold</code>
+              untuk drop cap</li>
             <li>□ Style link dengan <code class="px-1 rounded bg-gray-700">hover:underline decoration-2</code></li>
           </ul>
         </div>
 
-        <button id="submit-challenge" class="w-full py-3 rounded-lg bg-green-500 text-white font-semibold hover:bg-green-600 transition-colors">✅ Challenge Selesai</button>
+        <button id="submit-challenge"
+          class="w-full py-3 rounded-lg bg-green-500 text-white font-semibold hover:bg-green-600 transition-colors">✅
+          Challenge Selesai</button>
       </section>
 
       <!-- Navigation -->
       <div class="flex justify-between">
         <a href="spacing-sizing.html" class="px-6 py-3 rounded-lg bg-gray-800 hover:bg-gray-700">← Spacing & Sizing</a>
-        <a id="next-lesson" href="backgrounds-effects.html" class="px-6 py-3 rounded-lg bg-primary-500 text-white opacity-50 pointer-events-none">Backgrounds & Effects →</a>
+        <a id="next-lesson" href="backgrounds-effects.html"
+          class="px-6 py-3 rounded-lg bg-primary-500 text-white opacity-50 pointer-events-none">Backgrounds & Effects
+          →</a>
       </div>
     </div>
   </main>
+  <script>
+    function copyCode(btn) {
+      const codeBlock = btn.closest('.code-block').querySelector('pre');
+      navigator.clipboard.writeText(codeBlock.innerText);
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy', 2000);
+    }
+  </script>
   <script src="assets/js/progress.js"></script>
 </body>
+
 </html>

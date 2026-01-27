@@ -1,30 +1,43 @@
 <!DOCTYPE html>
 <html lang="id" class="dark">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Layout | Belajar Tailwind CSS</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{primary:{500:'#667eea',600:'#5a67d8'}}}}}</script>
+  <script>tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }, colors: { primary: { 500: '#667eea', 600: '#5a67d8' } } } } }</script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body class="bg-gray-900 text-gray-100 font-sans">
-  <aside class="sidebar fixed left-0 top-0 bottom-0 w-72 bg-gray-900 border-r border-gray-800 z-50 overflow-y-auto hidden lg:block">
+  <aside
+    class="sidebar fixed left-0 top-0 bottom-0 w-72 bg-gray-900 border-r border-gray-800 z-50 overflow-y-auto hidden lg:block">
     <div class="p-4 border-b border-gray-800">
-      <a href="index.html" class="flex items-center gap-3"><div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-purple-600"></div><span class="font-bold">TailwindMaster</span></a>
-      <div class="mt-4"><div class="h-2 bg-gray-800 rounded-full"><div class="progress-bar h-full rounded-full" style="width:0%"></div></div></div>
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-purple-600"></div><span
+          class="font-bold">TailwindMaster</span>
+      </a>
+      <div class="mt-4">
+        <div class="h-2 bg-gray-800 rounded-full">
+          <div class="progress-bar h-full rounded-full" style="width:0%"></div>
+        </div>
+      </div>
     </div>
     <nav class="p-4">
       <ul class="space-y-1 text-sm">
         <li><a href="getting-started.html" class="block px-3 py-2 rounded text-gray-400">Getting Started</a></li>
         <li><a href="core-concepts.html" class="block px-3 py-2 rounded text-gray-400">Core Concepts</a></li>
-        <li><a href="layout.html" class="block px-3 py-2 rounded bg-primary-500/20 text-white font-medium">Layout</a></li>
+        <li><a href="layout.html" class="block px-3 py-2 rounded bg-primary-500/20 text-white font-medium">Layout</a>
+        </li>
         <li><a href="flexbox-grid.html" class="block px-3 py-2 rounded text-gray-400">Flexbox & Grid</a></li>
         <li><a href="spacing-sizing.html" class="block px-3 py-2 rounded text-gray-400">Spacing & Sizing</a></li>
         <li><a href="typography.html" class="block px-3 py-2 rounded text-gray-400">Typography</a></li>
-        <li><a href="backgrounds-effects.html" class="block px-3 py-2 rounded text-gray-400">Backgrounds & Effects</a></li>
-        <li><a href="transitions-animation.html" class="block px-3 py-2 rounded text-gray-400">Transitions & Animation</a></li>
+        <li><a href="backgrounds-effects.html" class="block px-3 py-2 rounded text-gray-400">Backgrounds & Effects</a>
+        </li>
+        <li><a href="transitions-animation.html" class="block px-3 py-2 rounded text-gray-400">Transitions &
+            Animation</a></li>
         <li><a href="interactivity-svg.html" class="block px-3 py-2 rounded text-gray-400">Interactivity & SVG</a></li>
         <li><a href="accessibility.html" class="block px-3 py-2 rounded text-gray-400">Accessibility</a></li>
       </ul>
@@ -33,14 +46,16 @@
 
   <main class="lg:ml-72">
     <header class="sticky top-0 z-30 bg-gray-900/95 backdrop-blur border-b border-gray-800 px-6 py-4">
-      <nav class="text-sm text-gray-400"><a href="index.html" class="hover:text-white">Home</a> / <span class="text-white">Layout</span></nav>
+      <nav class="text-sm text-gray-400"><a href="index.html" class="hover:text-white">Home</a> / <span
+          class="text-white">Layout</span></nav>
     </header>
 
     <div class="max-w-4xl mx-auto px-6 py-12">
       <div class="mb-10">
         <span class="px-3 py-1 rounded-full bg-primary-500/20 text-primary-500 text-sm">Materi 3/10</span>
         <h1 class="text-4xl font-bold mt-4 mb-3">Layout</h1>
-        <p class="text-lg text-gray-400">Semua properti layout di Tailwind CSS: position, display, overflow, z-index, dan lebih banyak lagi.</p>
+        <p class="text-lg text-gray-400">Semua properti layout di Tailwind CSS: position, display, overflow, z-index,
+          dan lebih banyak lagi.</p>
       </div>
 
       <!-- Daftar Isi -->
@@ -64,35 +79,104 @@
       </div>
 
       <article class="space-y-12">
-        
+
         <!-- 1. Aspect Ratio -->
         <section id="aspect-ratio">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">1</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">1</span>
             Aspect Ratio
           </h2>
           <p class="text-gray-300 mb-4">Mengatur rasio aspek elemen (lebar:tinggi).</p>
           <div class="grid grid-cols-3 gap-4 mb-4">
-            <div class="aspect-video bg-blue-500 rounded-lg flex items-center justify-center text-sm">aspect-video<br>(16:9)</div>
-            <div class="aspect-square bg-green-500 rounded-lg flex items-center justify-center text-sm">aspect-square<br>(1:1)</div>
-            <div class="aspect-[4/3] bg-purple-500 rounded-lg flex items-center justify-center text-sm">aspect-[4/3]</div>
+            <div class="aspect-video bg-blue-500 rounded-lg flex items-center justify-center text-sm">
+              aspect-video<br>(16:9)</div>
+            <div class="aspect-square bg-green-500 rounded-lg flex items-center justify-center text-sm">
+              aspect-square<br>(1:1)</div>
+            <div class="aspect-[4/3] bg-purple-500 rounded-lg flex items-center justify-center text-sm">aspect-[4/3]
+            </div>
           </div>
-          <div class="p-4 rounded-lg bg-gray-800">
-            <pre class="text-sm overflow-x-auto"><code>&lt;div class="aspect-video"&gt;Video 16:9&lt;/div&gt;
-&lt;div class="aspect-square"&gt;Kotak 1:1&lt;/div&gt;
-&lt;div class="aspect-[4/3]"&gt;Custom 4:3&lt;/div&gt;</code></pre>
+
+          <div class="code-block">
+            <div class="code-header">
+              <span class="filename"><span class="dot html"></span> aspect-ratio.html</span>
+              <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <div class="code-content">
+              <pre><span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"aspect-video"</span><span class="tag">&gt;</span>Video 16:9<span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"aspect-square"</span><span class="tag">&gt;</span>Kotak 1:1<span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"aspect-[4/3]"</span><span class="tag">&gt;</span>Custom 4:3<span class="tag">&lt;/div&gt;</span></pre>
+            </div>
+          </div>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Class</th>
+                  <th>Fungsi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>aspect-video</code></td>
+                  <td>Rasio 16:9 (video)</td>
+                </tr>
+                <tr>
+                  <td><code>aspect-square</code></td>
+                  <td>Rasio 1:1 (kotak)</td>
+                </tr>
+                <tr>
+                  <td><code>aspect-[W/H]</code></td>
+                  <td>Rasio custom (contoh: 4/3)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Mini Playground -->
+          <div class="mt-4 playground">
+            <div class="playground-header">
+              <div class="playground-title">
+                <span class="icon">🎮</span> Coba Aspect Ratio
+              </div>
+              <div class="playground-actions">
+                <button class="playground-btn reset-btn">🔄 Reset</button>
+                <button class="playground-btn copy-playground-btn">📋 Copy</button>
+              </div>
+            </div>
+            <div class="playground-body" style="min-height: 200px;">
+              <div class="playground-editor-container">
+                <div class="playground-section-header">HTML</div>
+                <textarea class="playground-editor" spellcheck="false" style="min-height: 150px;"><!-- Coba ubah aspect-video menjadi aspect-square -->
+<div class="aspect-video bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
+  <span class="text-xl font-bold">16:9</span>
+</div>
+
+<!-- Coba aspect-[4/3] atau aspect-[21/9] -->
+<div class="aspect-square bg-green-500 rounded-lg flex items-center justify-center mt-4 max-w-[150px]">
+  <span class="text-xl font-bold">1:1</span>
+</div></textarea>
+              </div>
+              <div class="playground-preview">
+                <div class="playground-section-header">Preview</div>
+                <iframe title="Preview"></iframe>
+              </div>
+            </div>
           </div>
         </section>
 
         <!-- 2. Columns -->
         <section id="columns">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">2</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">2</span>
             Columns
           </h2>
           <p class="text-gray-300 mb-4">Membuat layout multi-kolom seperti koran/majalah.</p>
           <div class="columns-2 gap-4 mb-4 p-4 rounded-lg bg-gray-800/50">
-            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+              labore.</p>
             <p class="mb-4">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
             <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
           </div>
@@ -109,7 +193,8 @@
         <!-- 3. Break -->
         <section id="break">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">3</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">3</span>
             Break (after/before/inside)
           </h2>
           <p class="text-gray-300 mb-4">Mengontrol page/column breaks untuk print atau multi-column.</p>
@@ -147,22 +232,31 @@
         <!-- 4. Box -->
         <section id="box">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">4</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">4</span>
             Box Sizing & Decoration Break
           </h2>
           <div class="grid md:grid-cols-2 gap-4">
             <div>
               <h4 class="font-semibold mb-2">Box Sizing</h4>
               <div class="space-y-2 text-sm">
-                <div class="p-3 rounded bg-gray-800"><code class="text-primary-500">box-border</code><p class="text-gray-400 mt-1">Padding & border termasuk dalam width (default)</p></div>
-                <div class="p-3 rounded bg-gray-800"><code class="text-primary-500">box-content</code><p class="text-gray-400 mt-1">Width hanya untuk konten</p></div>
+                <div class="p-3 rounded bg-gray-800"><code class="text-primary-500">box-border</code>
+                  <p class="text-gray-400 mt-1">Padding & border termasuk dalam width (default)</p>
+                </div>
+                <div class="p-3 rounded bg-gray-800"><code class="text-primary-500">box-content</code>
+                  <p class="text-gray-400 mt-1">Width hanya untuk konten</p>
+                </div>
               </div>
             </div>
             <div>
               <h4 class="font-semibold mb-2">Box Decoration Break</h4>
               <div class="space-y-2 text-sm">
-                <div class="p-3 rounded bg-gray-800"><code class="text-primary-500">box-decoration-clone</code><p class="text-gray-400 mt-1">Dekorasi di-clone di setiap fragment</p></div>
-                <div class="p-3 rounded bg-gray-800"><code class="text-primary-500">box-decoration-slice</code><p class="text-gray-400 mt-1">Dekorasi di-slice (default)</p></div>
+                <div class="p-3 rounded bg-gray-800"><code class="text-primary-500">box-decoration-clone</code>
+                  <p class="text-gray-400 mt-1">Dekorasi di-clone di setiap fragment</p>
+                </div>
+                <div class="p-3 rounded bg-gray-800"><code class="text-primary-500">box-decoration-slice</code>
+                  <p class="text-gray-400 mt-1">Dekorasi di-slice (default)</p>
+                </div>
               </div>
             </div>
           </div>
@@ -171,7 +265,8 @@
         <!-- 5. Display -->
         <section id="display">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">5</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">5</span>
             Display
           </h2>
           <p class="text-gray-300 mb-4">Mengatur bagaimana elemen ditampilkan di halaman.</p>
@@ -193,8 +288,45 @@
             <p class="text-sm text-gray-400 mb-2">Preview:</p>
             <div class="space-y-2">
               <div><span class="block bg-blue-500/30 p-2 rounded">block - lebar penuh</span></div>
-              <div><span class="inline bg-green-500/30 p-2 rounded">inline</span> <span class="inline bg-green-500/30 p-2 rounded">inline</span></div>
-              <div><span class="inline-block bg-purple-500/30 p-2 rounded w-24">inline-block</span> <span class="inline-block bg-purple-500/30 p-2 rounded w-24">inline-block</span></div>
+              <div><span class="inline bg-green-500/30 p-2 rounded">inline</span> <span
+                  class="inline bg-green-500/30 p-2 rounded">inline</span></div>
+              <div><span class="inline-block bg-purple-500/30 p-2 rounded w-24">inline-block</span> <span
+                  class="inline-block bg-purple-500/30 p-2 rounded w-24">inline-block</span></div>
+            </div>
+          </div>
+
+          <!-- Mini Playground -->
+          <div class="mt-4 playground">
+            <div class="playground-header">
+              <div class="playground-title">
+                <span class="icon">🎮</span> Coba Display
+              </div>
+              <div class="playground-actions">
+                <button class="playground-btn reset-btn">🔄 Reset</button>
+                <button class="playground-btn copy-playground-btn">📋 Copy</button>
+              </div>
+            </div>
+            <div class="playground-body" style="min-height: 200px;">
+              <div class="playground-editor-container">
+                <div class="playground-section-header">HTML</div>
+                <textarea class="playground-editor" spellcheck="false" style="min-height: 150px;"><!-- Coba ubah block menjadi inline atau hidden -->
+<span class="block bg-blue-500 p-2 rounded mb-2">
+  Block - lebar penuh
+</span>
+
+<span class="inline bg-green-500 p-2 rounded">Inline</span>
+<span class="inline bg-green-500 p-2 rounded">Inline</span>
+
+<!-- Coba ubah block menjadi flex -->
+<div class="block bg-purple-500 p-4 rounded mt-4">
+  <span>Item 1</span>
+  <span>Item 2</span>
+</div></textarea>
+              </div>
+              <div class="playground-preview">
+                <div class="playground-section-header">Preview</div>
+                <iframe title="Preview"></iframe>
+              </div>
             </div>
           </div>
         </section>
@@ -202,7 +334,8 @@
         <!-- 6. Float & Clear -->
         <section id="float">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">6</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">6</span>
             Float & Clear
           </h2>
           <div class="grid md:grid-cols-2 gap-4">
@@ -225,8 +358,11 @@
             </div>
           </div>
           <div class="mt-4 p-4 rounded-lg bg-gray-800/50">
-            <div class="float-left w-20 h-20 bg-blue-500 rounded mr-4 flex items-center justify-center text-xs">float-left</div>
-            <p class="text-sm text-gray-300">Teks ini akan mengalir di sekitar elemen yang di-float. Float sudah jarang digunakan sejak ada Flexbox dan Grid, tapi masih berguna untuk beberapa kasus seperti membungkus teks di sekitar gambar.</p>
+            <div class="float-left w-20 h-20 bg-blue-500 rounded mr-4 flex items-center justify-center text-xs">
+              float-left</div>
+            <p class="text-sm text-gray-300">Teks ini akan mengalir di sekitar elemen yang di-float. Float sudah jarang
+              digunakan sejak ada Flexbox dan Grid, tapi masih berguna untuk beberapa kasus seperti membungkus teks di
+              sekitar gambar.</p>
             <div class="clear-both"></div>
           </div>
         </section>
@@ -234,32 +370,40 @@
         <!-- 7. Isolation -->
         <section id="isolation">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">7</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">7</span>
             Isolation
           </h2>
           <p class="text-gray-300 mb-4">Membuat stacking context baru untuk mengontrol z-index.</p>
           <div class="grid md:grid-cols-2 gap-3 text-sm">
-            <div class="p-3 rounded bg-gray-800"><code class="text-primary-500">isolate</code><p class="text-gray-400 mt-1">Buat stacking context baru</p></div>
-            <div class="p-3 rounded bg-gray-800"><code class="text-primary-500">isolation-auto</code><p class="text-gray-400 mt-1">Default behavior</p></div>
+            <div class="p-3 rounded bg-gray-800"><code class="text-primary-500">isolate</code>
+              <p class="text-gray-400 mt-1">Buat stacking context baru</p>
+            </div>
+            <div class="p-3 rounded bg-gray-800"><code class="text-primary-500">isolation-auto</code>
+              <p class="text-gray-400 mt-1">Default behavior</p>
+            </div>
           </div>
           <div class="mt-4 p-4 rounded-lg bg-blue-500/10 border border-blue-500/30">
-            <p class="text-blue-300 text-sm">💡 <strong>Kapan gunakan isolation?</strong> Saat kamu punya komponen dengan z-index internal dan tidak ingin mempengaruhi elemen di luar komponen tersebut.</p>
+            <p class="text-blue-300 text-sm">💡 <strong>Kapan gunakan isolation?</strong> Saat kamu punya komponen
+              dengan z-index internal dan tidak ingin mempengaruhi elemen di luar komponen tersebut.</p>
           </div>
         </section>
 
         <!-- 8. Object Fit & Position -->
         <section id="object">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">8</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">8</span>
             Object Fit & Position
           </h2>
           <p class="text-gray-300 mb-4">Mengatur bagaimana konten (gambar/video) mengisi container-nya.</p>
-          
+
           <h4 class="font-semibold mb-2">Object Fit</h4>
           <div class="grid grid-cols-2 md:grid-cols-5 gap-2 mb-4">
             <div class="text-center">
               <div class="w-full h-20 bg-gray-800 rounded overflow-hidden mb-1">
-                <div class="w-full h-full bg-gradient-to-br from-blue-500 to-purple-500 object-contain" style="object-fit: contain"></div>
+                <div class="w-full h-full bg-gradient-to-br from-blue-500 to-purple-500 object-contain"
+                  style="object-fit: contain"></div>
               </div>
               <code class="text-xs">object-contain</code>
             </div>
@@ -302,10 +446,11 @@
         <!-- 9. Overflow -->
         <section id="overflow">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">9</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">9</span>
             Overflow & Overscroll Behavior
           </h2>
-          
+
           <h4 class="font-semibold mb-2">Overflow</h4>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm mb-4">
             <div class="p-2 rounded bg-gray-800"><code>overflow-auto</code></div>
@@ -317,15 +462,17 @@
             <div class="p-2 rounded bg-gray-800"><code>overflow-x-hidden</code></div>
             <div class="p-2 rounded bg-gray-800"><code>overflow-y-scroll</code></div>
           </div>
-          
+
           <div class="grid md:grid-cols-2 gap-4 mb-4">
             <div class="h-24 p-3 rounded-lg bg-gray-800 overflow-auto text-sm">
               <p class="font-semibold mb-2">overflow-auto:</p>
-              <p>Konten panjang ini akan menampilkan scrollbar jika diperlukan. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
+              <p>Konten panjang ini akan menampilkan scrollbar jika diperlukan. Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Sed do eiusmod tempor.</p>
             </div>
             <div class="h-24 p-3 rounded-lg bg-gray-800 overflow-hidden text-sm">
               <p class="font-semibold mb-2">overflow-hidden:</p>
-              <p>Konten panjang ini akan terpotong jika meluap. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
+              <p>Konten panjang ini akan terpotong jika meluap. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Sed do eiusmod tempor.</p>
             </div>
           </div>
 
@@ -335,39 +482,168 @@
             <div class="p-2 rounded bg-gray-800"><code>overscroll-contain</code></div>
             <div class="p-2 rounded bg-gray-800"><code>overscroll-none</code></div>
           </div>
-          <p class="text-sm text-gray-400 mt-2">Gunakan <code class="px-1 rounded bg-gray-800">overscroll-contain</code> pada modal agar scroll tidak "bocor" ke body.</p>
+          <p class="text-sm text-gray-400 mt-2">Gunakan <code class="px-1 rounded bg-gray-800">overscroll-contain</code>
+            pada modal agar scroll tidak "bocor" ke body.</p>
+
+          <!-- Mini Playground -->
+          <div class="mt-4 playground">
+            <div class="playground-header">
+              <div class="playground-title">
+                <span class="icon">🎮</span> Coba Overflow
+              </div>
+              <div class="playground-actions">
+                <button class="playground-btn reset-btn">🔄 Reset</button>
+                <button class="playground-btn copy-playground-btn">📋 Copy</button>
+              </div>
+            </div>
+            <div class="playground-body" style="min-height: 200px;">
+              <div class="playground-editor-container">
+                <div class="playground-section-header">HTML</div>
+                <textarea class="playground-editor" spellcheck="false" style="min-height: 150px;"><!-- Coba ubah overflow-auto menjadi overflow-hidden -->
+<div class="h-24 p-3 rounded-lg bg-gray-700 overflow-auto">
+  <p class="font-semibold mb-2">overflow-auto:</p>
+  <p>Ini adalah konten yang sangat panjang. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+  <p class="mt-2">Konten terus berlanjut sehingga membutuhkan scroll...</p>
+</div>
+
+<!-- Coba ubah overflow-x-auto menjadi overflow-x-hidden -->
+<div class="mt-4 overflow-x-auto bg-gray-700 rounded-lg p-2">
+  <div class="w-[600px] h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded flex items-center justify-center">
+    Konten lebih lebar dari container (600px)
+  </div>
+</div></textarea>
+              </div>
+              <div class="playground-preview">
+                <div class="playground-section-header">Preview</div>
+                <iframe title="Preview"></iframe>
+              </div>
+            </div>
+          </div>
         </section>
 
         <!-- 10. Position -->
         <section id="position">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">10</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">10</span>
             Position
           </h2>
           <div class="grid md:grid-cols-2 gap-3 mb-4 text-sm">
-            <div class="p-3 rounded bg-gray-800"><code class="text-primary-500">static</code><p class="text-gray-400 mt-1">Default - mengikuti normal flow</p></div>
-            <div class="p-3 rounded bg-gray-800"><code class="text-primary-500">relative</code><p class="text-gray-400 mt-1">Relatif dari posisi normal, jadi anchor untuk absolute</p></div>
-            <div class="p-3 rounded bg-gray-800"><code class="text-primary-500">absolute</code><p class="text-gray-400 mt-1">Relatif dari parent non-static terdekat</p></div>
-            <div class="p-3 rounded bg-gray-800"><code class="text-primary-500">fixed</code><p class="text-gray-400 mt-1">Relatif dari viewport, tetap saat scroll</p></div>
-            <div class="p-3 rounded bg-gray-800 md:col-span-2"><code class="text-primary-500">sticky</code><p class="text-gray-400 mt-1">Kombinasi relative + fixed - menempel di posisi tertentu saat scroll</p></div>
+            <div class="p-3 rounded bg-gray-800"><code class="text-primary-500">static</code>
+              <p class="text-gray-400 mt-1">Default - mengikuti normal flow</p>
+            </div>
+            <div class="p-3 rounded bg-gray-800"><code class="text-primary-500">relative</code>
+              <p class="text-gray-400 mt-1">Relatif dari posisi normal, jadi anchor untuk absolute</p>
+            </div>
+            <div class="p-3 rounded bg-gray-800"><code class="text-primary-500">absolute</code>
+              <p class="text-gray-400 mt-1">Relatif dari parent non-static terdekat</p>
+            </div>
+            <div class="p-3 rounded bg-gray-800"><code class="text-primary-500">fixed</code>
+              <p class="text-gray-400 mt-1">Relatif dari viewport, tetap saat scroll</p>
+            </div>
+            <div class="p-3 rounded bg-gray-800 md:col-span-2"><code class="text-primary-500">sticky</code>
+              <p class="text-gray-400 mt-1">Kombinasi relative + fixed - menempel di posisi tertentu saat scroll</p>
+            </div>
           </div>
-          
-          <div class="p-4 rounded-lg bg-gray-800">
-            <p class="text-sm text-gray-400 mb-2">Contoh Sticky Navbar:</p>
-            <pre class="text-sm overflow-x-auto"><code>&lt;nav class="sticky top-0 bg-white shadow-md z-50"&gt;
-  &lt;!-- Navbar akan menempel di atas saat scroll --&gt;
-&lt;/nav&gt;</code></pre>
+
+          <div class="code-block">
+            <div class="code-header">
+              <span class="filename"><span class="dot html"></span> sticky-navbar.html</span>
+              <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <div class="code-content">
+              <pre><span class="tag">&lt;nav</span> <span class="attr">class</span>=<span class="string">"sticky top-0 bg-white shadow-md z-50"</span><span class="tag">&gt;</span>
+  <span class="comment">&lt;!-- Navbar akan menempel di atas saat scroll --&gt;</span>
+<span class="tag">&lt;/nav&gt;</span></pre>
+            </div>
+          </div>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Class</th>
+                  <th>Fungsi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>static</code></td>
+                  <td>Default - mengikuti normal flow</td>
+                </tr>
+                <tr>
+                  <td><code>relative</code></td>
+                  <td>Relatif dari posisi normal, jadi anchor untuk absolute</td>
+                </tr>
+                <tr>
+                  <td><code>absolute</code></td>
+                  <td>Relatif dari parent non-static terdekat</td>
+                </tr>
+                <tr>
+                  <td><code>fixed</code></td>
+                  <td>Relatif dari viewport, tetap saat scroll</td>
+                </tr>
+                <tr>
+                  <td><code>sticky</code></td>
+                  <td>Kombinasi relative + fixed (menempel saat scroll)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Mini Playground -->
+          <div class="mt-4 playground">
+            <div class="playground-header">
+              <div class="playground-title">
+                <span class="icon">🎮</span> Coba Position
+              </div>
+              <div class="playground-actions">
+                <button class="playground-btn reset-btn">🔄 Reset</button>
+                <button class="playground-btn copy-playground-btn">📋 Copy</button>
+              </div>
+            </div>
+            <div class="playground-body" style="min-height: 250px;">
+              <div class="playground-editor-container">
+                <div class="playground-section-header">HTML</div>
+                <textarea class="playground-editor" spellcheck="false" style="min-height: 200px;"><!-- Parent harus relative agar absolute bekerja -->
+<div class="relative h-40 bg-gray-700 rounded-lg p-4">
+  <p class="text-sm mb-2">Parent (relative)</p>
+  
+  <!-- Coba ubah posisi: top-0 right-0, bottom-0 left-0, dll -->
+  <div class="absolute top-2 right-2 bg-blue-500 px-3 py-1 rounded text-sm">
+    absolute top-2 right-2
+  </div>
+  
+  <div class="absolute bottom-2 left-2 bg-green-500 px-3 py-1 rounded text-sm">
+    absolute bottom-2 left-2
+  </div>
+</div>
+
+<!-- Badge di sudut -->
+<div class="relative inline-block mt-4">
+  <div class="bg-purple-500 rounded-xl p-4 pr-8">Card dengan Badge</div>
+  <span class="absolute -top-2 -right-2 bg-red-500 text-xs px-2 py-1 rounded-full">
+    NEW
+  </span>
+</div></textarea>
+              </div>
+              <div class="playground-preview">
+                <div class="playground-section-header">Preview</div>
+                <iframe title="Preview"></iframe>
+              </div>
+            </div>
           </div>
         </section>
 
         <!-- 11. Top/Right/Bottom/Left -->
         <section id="trbl">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">11</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">11</span>
             Top / Right / Bottom / Left
           </h2>
           <p class="text-gray-300 mb-4">Digunakan bersama position untuk mengatur posisi elemen.</p>
-          
+
           <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm mb-4">
             <div class="p-2 rounded bg-gray-800"><code>top-0</code></div>
             <div class="p-2 rounded bg-gray-800"><code>right-0</code></div>
@@ -381,20 +657,37 @@
 
           <h4 class="font-semibold mb-2">Inset (shorthand)</h4>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm mb-4">
-            <div class="p-2 rounded bg-gray-800"><code>inset-0</code><p class="text-xs text-gray-400">semua sisi</p></div>
-            <div class="p-2 rounded bg-gray-800"><code>inset-x-0</code><p class="text-xs text-gray-400">left + right</p></div>
-            <div class="p-2 rounded bg-gray-800"><code>inset-y-0</code><p class="text-xs text-gray-400">top + bottom</p></div>
-            <div class="p-2 rounded bg-gray-800"><code>inset-4</code><p class="text-xs text-gray-400">semua 1rem</p></div>
+            <div class="p-2 rounded bg-gray-800"><code>inset-0</code>
+              <p class="text-xs text-gray-400">semua sisi</p>
+            </div>
+            <div class="p-2 rounded bg-gray-800"><code>inset-x-0</code>
+              <p class="text-xs text-gray-400">left + right</p>
+            </div>
+            <div class="p-2 rounded bg-gray-800"><code>inset-y-0</code>
+              <p class="text-xs text-gray-400">top + bottom</p>
+            </div>
+            <div class="p-2 rounded bg-gray-800"><code>inset-4</code>
+              <p class="text-xs text-gray-400">semua 1rem</p>
+            </div>
           </div>
 
           <div class="p-4 rounded-lg bg-gray-800/50">
             <p class="text-sm text-gray-400 mb-2">Preview positioning:</p>
             <div class="relative h-32 bg-gray-800 rounded-lg">
-              <div class="absolute top-0 left-0 w-10 h-10 bg-red-500 rounded flex items-center justify-center text-xs">TL</div>
-              <div class="absolute top-0 right-0 w-10 h-10 bg-blue-500 rounded flex items-center justify-center text-xs">TR</div>
-              <div class="absolute bottom-0 left-0 w-10 h-10 bg-green-500 rounded flex items-center justify-center text-xs">BL</div>
-              <div class="absolute bottom-0 right-0 w-10 h-10 bg-purple-500 rounded flex items-center justify-center text-xs">BR</div>
-              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-yellow-500 rounded flex items-center justify-center text-xs text-gray-900">Center</div>
+              <div class="absolute top-0 left-0 w-10 h-10 bg-red-500 rounded flex items-center justify-center text-xs">
+                TL</div>
+              <div
+                class="absolute top-0 right-0 w-10 h-10 bg-blue-500 rounded flex items-center justify-center text-xs">TR
+              </div>
+              <div
+                class="absolute bottom-0 left-0 w-10 h-10 bg-green-500 rounded flex items-center justify-center text-xs">
+                BL</div>
+              <div
+                class="absolute bottom-0 right-0 w-10 h-10 bg-purple-500 rounded flex items-center justify-center text-xs">
+                BR</div>
+              <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-yellow-500 rounded flex items-center justify-center text-xs text-gray-900">
+                Center</div>
             </div>
           </div>
         </section>
@@ -402,20 +695,28 @@
         <!-- 12. Visibility -->
         <section id="visibility">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">12</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">12</span>
             Visibility
           </h2>
           <div class="grid md:grid-cols-2 gap-3 text-sm mb-4">
-            <div class="p-3 rounded bg-gray-800"><code class="text-primary-500">visible</code><p class="text-gray-400 mt-1">Elemen terlihat (default)</p></div>
-            <div class="p-3 rounded bg-gray-800"><code class="text-primary-500">invisible</code><p class="text-gray-400 mt-1">Tersembunyi tapi tetap mengambil ruang</p></div>
-            <div class="p-3 rounded bg-gray-800"><code class="text-primary-500">collapse</code><p class="text-gray-400 mt-1">Untuk table row/column</p></div>
+            <div class="p-3 rounded bg-gray-800"><code class="text-primary-500">visible</code>
+              <p class="text-gray-400 mt-1">Elemen terlihat (default)</p>
+            </div>
+            <div class="p-3 rounded bg-gray-800"><code class="text-primary-500">invisible</code>
+              <p class="text-gray-400 mt-1">Tersembunyi tapi tetap mengambil ruang</p>
+            </div>
+            <div class="p-3 rounded bg-gray-800"><code class="text-primary-500">collapse</code>
+              <p class="text-gray-400 mt-1">Untuk table row/column</p>
+            </div>
           </div>
-          
+
           <div class="p-4 rounded-lg bg-yellow-500/10 border border-yellow-500/30">
             <p class="text-yellow-300 text-sm">
               💡 <strong>Perbedaan hidden vs invisible:</strong><br>
               <code class="px-1 rounded bg-gray-800">hidden</code> = display:none (tidak ada di layout)<br>
-              <code class="px-1 rounded bg-gray-800">invisible</code> = visibility:hidden (masih ada di layout tapi tidak terlihat)
+              <code class="px-1 rounded bg-gray-800">invisible</code> = visibility:hidden (masih ada di layout tapi
+              tidak terlihat)
             </p>
           </div>
         </section>
@@ -423,11 +724,12 @@
         <!-- 13. Z-Index -->
         <section id="z-index">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">13</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">13</span>
             Z-Index
           </h2>
           <p class="text-gray-300 mb-4">Mengatur urutan tumpukan elemen (stack order). Nilai lebih tinggi = di atas.</p>
-          
+
           <div class="flex flex-wrap gap-2 mb-4 text-sm">
             <span class="px-3 py-1 rounded bg-gray-800"><code>z-0</code></span>
             <span class="px-3 py-1 rounded bg-gray-800"><code>z-10</code></span>
@@ -442,9 +744,53 @@
           <div class="p-4 rounded-lg bg-gray-800/50">
             <p class="text-sm text-gray-400 mb-2">Preview Z-Index:</p>
             <div class="relative h-28">
-              <div class="absolute top-0 left-0 w-20 h-20 bg-red-500 rounded-lg z-10 flex items-center justify-center">z-10</div>
-              <div class="absolute top-4 left-8 w-20 h-20 bg-green-500 rounded-lg z-20 flex items-center justify-center">z-20</div>
-              <div class="absolute top-8 left-16 w-20 h-20 bg-blue-500 rounded-lg z-30 flex items-center justify-center">z-30</div>
+              <div class="absolute top-0 left-0 w-20 h-20 bg-red-500 rounded-lg z-10 flex items-center justify-center">
+                z-10</div>
+              <div
+                class="absolute top-4 left-8 w-20 h-20 bg-green-500 rounded-lg z-20 flex items-center justify-center">
+                z-20</div>
+              <div
+                class="absolute top-8 left-16 w-20 h-20 bg-blue-500 rounded-lg z-30 flex items-center justify-center">
+                z-30</div>
+            </div>
+          </div>
+
+          <!-- Mini Playground -->
+          <div class="mt-4 playground">
+            <div class="playground-header">
+              <div class="playground-title">
+                <span class="icon">🎮</span> Coba Z-Index
+              </div>
+              <div class="playground-actions">
+                <button class="playground-btn reset-btn">🔄 Reset</button>
+                <button class="playground-btn copy-playground-btn">📋 Copy</button>
+              </div>
+            </div>
+            <div class="playground-body" style="min-height: 200px;">
+              <div class="playground-editor-container">
+                <div class="playground-section-header">HTML</div>
+                <textarea class="playground-editor" spellcheck="false" style="min-height: 150px;"><!-- Coba ubah z-index untuk lihat layer berubah -->
+<div class="relative h-32">
+  <!-- Merah: z-10 -->
+  <div class="absolute top-0 left-0 w-20 h-20 bg-red-500 rounded-lg z-10 flex items-center justify-center">
+    z-10
+  </div>
+  
+  <!-- Hijau: z-20 - di atas merah -->
+  <div class="absolute top-4 left-8 w-20 h-20 bg-green-500 rounded-lg z-20 flex items-center justify-center">
+    z-20
+  </div>
+  
+  <!-- Biru: z-30 - paling atas -->
+  <div class="absolute top-8 left-16 w-20 h-20 bg-blue-500 rounded-lg z-30 flex items-center justify-center">
+    z-30
+  </div>
+</div></textarea>
+              </div>
+              <div class="playground-preview">
+                <div class="playground-section-header">Preview</div>
+                <iframe title="Preview"></iframe>
+              </div>
             </div>
           </div>
         </section>
@@ -453,10 +799,13 @@
         <section class="p-4 rounded-lg bg-red-500/10 border border-red-500/30">
           <h3 class="font-bold text-red-400 mb-3">⚠️ Kesalahan Umum Pemula</h3>
           <ul class="text-gray-300 space-y-2 text-sm">
-            <li>• <code class="px-1 rounded bg-gray-800">absolute</code> butuh parent dengan position non-static (biasanya <code class="px-1 rounded bg-gray-800">relative</code>)</li>
+            <li>• <code class="px-1 rounded bg-gray-800">absolute</code> butuh parent dengan position non-static
+              (biasanya <code class="px-1 rounded bg-gray-800">relative</code>)</li>
             <li>• Z-index hanya bekerja pada elemen dengan position selain static</li>
-            <li>• <code class="px-1 rounded bg-gray-800">overflow-hidden</code> bisa memotong shadow dan elemen absolute</li>
-            <li>• Lupa <code class="px-1 rounded bg-gray-800">top-0</code> saat menggunakan <code class="px-1 rounded bg-gray-800">sticky</code></li>
+            <li>• <code class="px-1 rounded bg-gray-800">overflow-hidden</code> bisa memotong shadow dan elemen absolute
+            </li>
+            <li>• Lupa <code class="px-1 rounded bg-gray-800">top-0</code> saat menggunakan <code
+                class="px-1 rounded bg-gray-800">sticky</code></li>
             <li>• Menggunakan float untuk layout (gunakan Flexbox/Grid sebagai gantinya)</li>
           </ul>
         </section>
@@ -482,16 +831,30 @@
           <li>Badge atau notification dengan <code class="px-1 rounded bg-gray-700">absolute</code> positioning</li>
           <li>Gunakan <code class="px-1 rounded bg-gray-700">z-index</code> yang tepat</li>
         </ul>
-        <button id="submit-challenge" class="w-full py-3 rounded-lg bg-green-500 text-white font-semibold hover:bg-green-600">✅ Challenge Selesai</button>
+        <button id="submit-challenge"
+          class="w-full py-3 rounded-lg bg-green-500 text-white font-semibold hover:bg-green-600">✅ Challenge
+          Selesai</button>
       </section>
 
       <!-- Navigation -->
       <div class="flex justify-between">
         <a href="core-concepts.html" class="px-6 py-3 rounded-lg bg-gray-800 hover:bg-gray-700">← Core Concepts</a>
-        <a id="next-lesson" href="flexbox-grid.html" class="px-6 py-3 rounded-lg bg-primary-500 text-white opacity-50 pointer-events-none">Flexbox & Grid →</a>
+        <a id="next-lesson" href="flexbox-grid.html"
+          class="px-6 py-3 rounded-lg bg-primary-500 text-white opacity-50 pointer-events-none">Flexbox & Grid →</a>
       </div>
     </div>
   </main>
+
+  <script>
+    function copyCode(btn) {
+      const codeBlock = btn.closest('.code-block').querySelector('pre');
+      navigator.clipboard.writeText(codeBlock.innerText);
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy', 2000);
+    }
+  </script>
+  <script src="assets/js/playground.js"></script>
   <script src="assets/js/progress.js"></script>
 </body>
+
 </html>

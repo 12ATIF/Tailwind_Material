@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="id" class="dark">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Core Concepts Tailwind CSS - Utility-first CSS, responsive design, dark mode, dan states">
+  <meta name="description"
+    content="Core Concepts Tailwind CSS - Utility-first CSS, responsive design, dark mode, dan states">
   <title>Core Concepts | Belajar Tailwind CSS</title>
-  
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -20,27 +22,33 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body class="bg-gray-900 text-gray-100 font-sans antialiased">
-  
+
   <div class="sidebar-overlay fixed inset-0 bg-black/50 z-40 hidden lg:hidden"></div>
-  
+
   <!-- Sidebar -->
   <aside class="sidebar fixed left-0 top-0 bottom-0 w-72 bg-gray-900 border-r border-gray-800 z-50 overflow-y-auto">
     <div class="sticky top-0 bg-gray-900 p-4 border-b border-gray-800">
       <div class="flex items-center justify-between">
         <a href="index.html" class="flex items-center gap-3">
-          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-purple-600 flex items-center justify-center">
+          <div
+            class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-purple-600 flex items-center justify-center">
             <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
           </div>
           <span class="font-bold gradient-text">TailwindMaster</span>
         </a>
         <button class="sidebar-close lg:hidden p-2 hover:bg-gray-800 rounded-lg">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
         </button>
       </div>
       <div class="mt-4">
@@ -48,21 +56,53 @@
           <span class="text-gray-400">Progress</span>
           <span class="font-semibold progress-text text-primary-400">0%</span>
         </div>
-        <div class="h-2 progress-container rounded-full"><div class="progress-bar h-full rounded-full" style="width: 0%"></div></div>
+        <div class="h-2 progress-container rounded-full">
+          <div class="progress-bar h-full rounded-full" style="width: 0%"></div>
+        </div>
       </div>
     </div>
     <nav class="p-4">
       <ul class="space-y-1">
-        <li><a href="getting-started.html" data-lesson="getting-started" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400"><span class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">1</span><span>Getting Started</span></a></li>
-        <li><a href="core-concepts.html" data-lesson="core-concepts" class="sidebar-link active flex items-center gap-3 px-3 py-2.5 rounded-lg"><span class="status-icon w-6 h-6 rounded-full bg-primary-500/20 text-primary-400 flex items-center justify-center text-xs">2</span><span class="font-medium">Core Concepts</span></a></li>
-        <li><a href="layout.html" data-lesson="layout" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 locked"><span class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">🔒</span><span>Layout</span></a></li>
-        <li><a href="flexbox-grid.html" data-lesson="flexbox-grid" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 locked"><span class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">🔒</span><span>Flexbox & Grid</span></a></li>
-        <li><a href="spacing-sizing.html" data-lesson="spacing-sizing" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 locked"><span class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">🔒</span><span>Spacing & Sizing</span></a></li>
-        <li><a href="typography.html" data-lesson="typography" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 locked"><span class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">🔒</span><span>Typography</span></a></li>
-        <li><a href="backgrounds-effects.html" data-lesson="backgrounds-effects" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 locked"><span class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">🔒</span><span>Backgrounds & Effects</span></a></li>
-        <li><a href="transitions-animation.html" data-lesson="transitions-animation" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 locked"><span class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">🔒</span><span>Transitions & Animation</span></a></li>
-        <li><a href="interactivity-svg.html" data-lesson="interactivity-svg" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 locked"><span class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">🔒</span><span>Interactivity & SVG</span></a></li>
-        <li><a href="accessibility.html" data-lesson="accessibility" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 locked"><span class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">🔒</span><span>Accessibility</span></a></li>
+        <li><a href="getting-started.html" data-lesson="getting-started"
+            class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400"><span
+              class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">1</span><span>Getting
+              Started</span></a></li>
+        <li><a href="core-concepts.html" data-lesson="core-concepts"
+            class="sidebar-link active flex items-center gap-3 px-3 py-2.5 rounded-lg"><span
+              class="status-icon w-6 h-6 rounded-full bg-primary-500/20 text-primary-400 flex items-center justify-center text-xs">2</span><span
+              class="font-medium">Core Concepts</span></a></li>
+        <li><a href="layout.html" data-lesson="layout"
+            class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 locked"><span
+              class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">🔒</span><span>Layout</span></a>
+        </li>
+        <li><a href="flexbox-grid.html" data-lesson="flexbox-grid"
+            class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 locked"><span
+              class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">🔒</span><span>Flexbox
+              & Grid</span></a></li>
+        <li><a href="spacing-sizing.html" data-lesson="spacing-sizing"
+            class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 locked"><span
+              class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">🔒</span><span>Spacing
+              & Sizing</span></a></li>
+        <li><a href="typography.html" data-lesson="typography"
+            class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 locked"><span
+              class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">🔒</span><span>Typography</span></a>
+        </li>
+        <li><a href="backgrounds-effects.html" data-lesson="backgrounds-effects"
+            class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 locked"><span
+              class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">🔒</span><span>Backgrounds
+              & Effects</span></a></li>
+        <li><a href="transitions-animation.html" data-lesson="transitions-animation"
+            class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 locked"><span
+              class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">🔒</span><span>Transitions
+              & Animation</span></a></li>
+        <li><a href="interactivity-svg.html" data-lesson="interactivity-svg"
+            class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 locked"><span
+              class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">🔒</span><span>Interactivity
+              & SVG</span></a></li>
+        <li><a href="accessibility.html" data-lesson="accessibility"
+            class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-400 locked"><span
+              class="status-icon w-6 h-6 rounded-full bg-gray-700 flex items-center justify-center text-xs">🔒</span><span>Accessibility</span></a>
+        </li>
       </ul>
     </nav>
   </aside>
@@ -72,10 +112,13 @@
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-4">
           <button class="sidebar-open lg:hidden p-2 hover:bg-gray-800 rounded-lg">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
           </button>
           <nav class="text-sm text-gray-400">
-            <a href="index.html" class="hover:text-white">Home</a><span class="mx-2">/</span><span class="text-white">Core Concepts</span>
+            <a href="index.html" class="hover:text-white">Home</a><span class="mx-2">/</span><span
+              class="text-white">Core Concepts</span>
           </nav>
         </div>
         <div class="dark-toggle" title="Toggle Dark Mode"></div>
@@ -90,48 +133,56 @@
           <span class="px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-400 text-sm font-medium">Penting</span>
         </div>
         <h1 class="text-4xl md:text-5xl font-bold mb-4">Core Concepts</h1>
-        <p class="text-xl text-gray-400">Memahami konsep utility-first, states, responsive design, dan dark mode di Tailwind CSS.</p>
+        <p class="text-xl text-gray-400">Memahami konsep utility-first, states, responsive design, dan dark mode di
+          Tailwind CSS.</p>
       </div>
 
       <!-- Table of Contents -->
       <div class="mb-12 p-6 rounded-2xl bg-gray-800/50 border border-gray-700/50">
         <h2 class="text-lg font-semibold mb-4 flex items-center gap-2">
-          <svg class="w-5 h-5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
+          <svg class="w-5 h-5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+          </svg>
           Daftar Isi
         </h2>
         <ul class="space-y-2 text-gray-300">
           <li><a href="#utility-first" class="hover:text-primary-400 transition-colors">1. Utility-First CSS</a></li>
-          <li><a href="#states" class="hover:text-primary-400 transition-colors">2. Hover, Focus, dan States Lainnya</a></li>
+          <li><a href="#states" class="hover:text-primary-400 transition-colors">2. Hover, Focus, dan States Lainnya</a>
+          </li>
           <li><a href="#responsive" class="hover:text-primary-400 transition-colors">3. Responsive Design</a></li>
           <li><a href="#dark-mode" class="hover:text-primary-400 transition-colors">4. Dark Mode</a></li>
           <li><a href="#colors" class="hover:text-primary-400 transition-colors">5. Sistem Warna</a></li>
-          <li><a href="#custom-styles" class="hover:text-primary-400 transition-colors">6. Menambahkan Custom Styles</a></li>
+          <li><a href="#custom-styles" class="hover:text-primary-400 transition-colors">6. Menambahkan Custom Styles</a>
+          </li>
           <li><a href="#challenge" class="hover:text-primary-400 transition-colors">🎯 Challenge</a></li>
         </ul>
       </div>
 
       <article class="prose prose-invert prose-lg max-w-none">
-        
+
         <!-- Section 1: Utility-First -->
         <section id="utility-first" class="mb-16">
           <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-            <span class="w-10 h-10 rounded-xl bg-primary-500/20 text-primary-400 flex items-center justify-center">1</span>
+            <span
+              class="w-10 h-10 rounded-xl bg-primary-500/20 text-primary-400 flex items-center justify-center">1</span>
             Utility-First CSS
           </h2>
-          
+
           <div class="p-6 rounded-xl bg-gray-800/50 border border-gray-700/50 mb-6">
             <p class="text-lg mb-4">
-              <strong>Utility-first</strong> artinya kita membangun desain dengan menggabungkan class-class kecil yang masing-masing melakukan satu hal spesifik.
+              <strong>Utility-first</strong> artinya kita membangun desain dengan menggabungkan class-class kecil yang
+              masing-masing melakukan satu hal spesifik.
             </p>
             <div class="p-4 rounded-lg bg-blue-500/10 border border-blue-500/30">
               <p class="text-blue-300 text-sm">
-                <strong>💡 Analogi:</strong> Seperti memasak dengan bumbu-bumbu terpisah. Garam, merica, bawang - masing-masing punya tugas. Tailwind memberikan "bumbu" CSS yang bisa kamu kombinasikan sesukamu.
+                <strong>💡 Analogi:</strong> Seperti memasak dengan bumbu-bumbu terpisah. Garam, merica, bawang -
+                masing-masing punya tugas. Tailwind memberikan "bumbu" CSS yang bisa kamu kombinasikan sesukamu.
               </p>
             </div>
           </div>
 
           <h3 class="text-xl font-semibold mb-4">Cara Membaca Class Tailwind</h3>
-          
+
           <div class="grid gap-4 mb-6">
             <div class="p-4 rounded-xl bg-gray-800/50 border border-gray-700/50">
               <code class="text-primary-400 text-lg">bg-blue-500</code>
@@ -152,38 +203,122 @@
           </div>
 
           <h3 class="text-xl font-semibold mb-4">Contoh Praktis</h3>
-          <div class="rounded-xl overflow-hidden mb-6">
-            <div class="px-4 py-2 bg-gray-800 text-gray-400 text-sm">Button dengan Tailwind</div>
-            <pre class="code-block p-4 text-sm overflow-x-auto"><code class="text-gray-300">&lt;button class="bg-blue-500 text-white px-4 py-2 rounded-lg font-medium"&gt;
-  Klik Saya
-&lt;/button&gt;
 
-&lt;!-- Penjelasan setiap class:
-  bg-blue-500  → background warna biru
-  text-white   → teks warna putih
-  px-4         → padding horizontal 1rem
-  py-2         → padding vertical 0.5rem
-  rounded-lg   → sudut membulat
-  font-medium  → font weight 500
---&gt;</code></pre>
+          <!-- Preview Box -->
+          <div class="preview-box mb-6">
+            <div class="preview-header">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                </path>
+              </svg>
+              Preview
+            </div>
+            <div class="preview-content">
+              <button class="bg-blue-500 text-white px-4 py-2 rounded-lg font-medium">Klik Saya</button>
+            </div>
           </div>
-          
-          <!-- Live Preview -->
-          <div class="p-6 rounded-xl bg-gray-800/30 border border-gray-700/50 mb-6">
-            <p class="text-sm text-gray-400 mb-4">Preview:</p>
-            <button class="bg-blue-500 text-white px-4 py-2 rounded-lg font-medium">Klik Saya</button>
+
+          <div class="code-block">
+            <div class="code-header">
+              <span class="filename"><span class="dot html"></span> button.html</span>
+              <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <div class="code-content">
+              <pre><span class="tag">&lt;button</span> <span class="attr">class</span>=<span class="string">"bg-blue-500 text-white px-4 py-2 rounded-lg font-medium"</span><span class="tag">&gt;</span>
+  Klik Saya
+<span class="tag">&lt;/button&gt;</span></pre>
+            </div>
+          </div>
+
+          <!-- Class Explanation Table -->
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Class</th>
+                  <th>Fungsi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>bg-blue-500</code></td>
+                  <td>Background warna biru</td>
+                </tr>
+                <tr>
+                  <td><code>text-white</code></td>
+                  <td>Teks warna putih</td>
+                </tr>
+                <tr>
+                  <td><code>px-4</code></td>
+                  <td>Padding horizontal 1rem (16px)</td>
+                </tr>
+                <tr>
+                  <td><code>py-2</code></td>
+                  <td>Padding vertical 0.5rem (8px)</td>
+                </tr>
+                <tr>
+                  <td><code>rounded-lg</code></td>
+                  <td>Sudut membulat (border-radius: 0.5rem)</td>
+                </tr>
+                <tr>
+                  <td><code>font-medium</code></td>
+                  <td>Font weight 500</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Mini Playground -->
+          <div class="mt-4 playground">
+            <div class="playground-header">
+              <div class="playground-title">
+                <span class="icon">🎮</span> Coba Utility Classes
+              </div>
+              <div class="playground-actions">
+                <button class="playground-btn reset-btn">🔄 Reset</button>
+                <button class="playground-btn copy-playground-btn">📋 Copy</button>
+              </div>
+            </div>
+            <div class="playground-body" style="min-height: 200px;">
+              <div class="playground-editor-container">
+                <div class="playground-section-header">HTML</div>
+                <textarea class="playground-editor" spellcheck="false" style="min-height: 150px;"><!-- Coba ubah warna: bg-blue-500 → bg-green-500 atau bg-red-500 -->
+<button class="bg-blue-500 text-white px-4 py-2 rounded-lg font-medium">
+  Button Biru
+</button>
+
+<!-- Coba ubah padding: px-4 py-2 → px-8 py-4 -->
+<button class="bg-purple-500 text-white px-4 py-2 rounded-lg font-medium mt-2 block">
+  Button Ungu
+</button>
+
+<!-- Coba ubah rounded-lg → rounded-full -->
+<button class="bg-green-500 text-white px-6 py-3 rounded-lg font-medium mt-2 block">
+  Button Hijau
+</button></textarea>
+              </div>
+              <div class="playground-preview">
+                <div class="playground-section-header">Preview</div>
+                <iframe title="Preview"></iframe>
+              </div>
+            </div>
           </div>
         </section>
 
         <!-- Section 2: States -->
         <section id="states" class="mb-16">
           <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-            <span class="w-10 h-10 rounded-xl bg-primary-500/20 text-primary-400 flex items-center justify-center">2</span>
+            <span
+              class="w-10 h-10 rounded-xl bg-primary-500/20 text-primary-400 flex items-center justify-center">2</span>
             Hover, Focus, dan States Lainnya
           </h2>
-          
-          <p class="text-gray-300 mb-6">Tailwind memungkinkan kita menambahkan style untuk berbagai state dengan mudah menggunakan <strong>prefix</strong>.</p>
-          
+
+          <p class="text-gray-300 mb-6">Tailwind memungkinkan kita menambahkan style untuk berbagai state dengan mudah
+            menggunakan <strong>prefix</strong>.</p>
+
           <div class="grid md:grid-cols-2 gap-4 mb-6">
             <div class="p-4 rounded-xl bg-gray-800/50 border border-gray-700/50">
               <code class="text-green-400">hover:</code>
@@ -203,30 +338,93 @@
             </div>
           </div>
 
-          <div class="rounded-xl overflow-hidden mb-6">
-            <div class="px-4 py-2 bg-gray-800 text-gray-400 text-sm">Contoh Hover Effect</div>
-            <pre class="code-block p-4 text-sm overflow-x-auto"><code class="text-gray-300">&lt;button class="bg-blue-500 hover:bg-blue-600 
-  text-white px-4 py-2 rounded-lg
-  transition-colors duration-200"&gt;
-  Hover Saya
-&lt;/button&gt;</code></pre>
+          <!-- Preview Box -->
+          <div class="preview-box mb-6">
+            <div class="preview-header">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                </path>
+              </svg>
+              Preview (arahkan mouse ke button)
+            </div>
+            <div class="preview-content">
+              <button
+                class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition-colors duration-200">Hover
+                Saya</button>
+            </div>
           </div>
-          
-          <div class="p-6 rounded-xl bg-gray-800/30 border border-gray-700/50 mb-6">
-            <p class="text-sm text-gray-400 mb-4">Preview (arahkan mouse ke button):</p>
-            <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition-colors duration-200">Hover Saya</button>
+
+          <div class="code-block">
+            <div class="code-header">
+              <span class="filename"><span class="dot html"></span> hover-button.html</span>
+              <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <div class="code-content">
+              <pre><span class="tag">&lt;button</span> <span class="attr">class</span>=<span class="string">"bg-blue-500 hover:bg-blue-600 
+  text-white px-4 py-2 rounded-lg
+  transition-colors duration-200"</span><span class="tag">&gt;</span>
+  Hover Saya
+<span class="tag">&lt;/button&gt;</span></pre>
+            </div>
+          </div>
+
+          <div class="info-box tip">
+            <div class="info-box-title">💡 Tips</div>
+            <p>Gunakan <code>transition-colors</code> dan <code>duration-200</code> untuk membuat perubahan warna terasa
+              smooth.</p>
+          </div>
+
+          <!-- Mini Playground -->
+          <div class="mt-4 playground">
+            <div class="playground-header">
+              <div class="playground-title">
+                <span class="icon">🎮</span> Coba Hover & States
+              </div>
+              <div class="playground-actions">
+                <button class="playground-btn reset-btn">🔄 Reset</button>
+                <button class="playground-btn copy-playground-btn">📋 Copy</button>
+              </div>
+            </div>
+            <div class="playground-body" style="min-height: 200px;">
+              <div class="playground-editor-container">
+                <div class="playground-section-header">HTML</div>
+                <textarea class="playground-editor" spellcheck="false" style="min-height: 150px;"><!-- Hover button - arahkan mouse ke button -->
+<button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition-colors duration-200">
+  Hover Me!
+</button>
+
+<!-- Coba tambahkan hover:scale-110 -->
+<button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition-all duration-200 mt-2 block">
+  Hover + Scale
+</button>
+
+<!-- Focus state - klik button lalu tekan Tab -->
+<button class="bg-purple-500 text-white px-4 py-2 rounded-lg focus:ring-2 focus:ring-purple-300 mt-2 block">
+  Focus Ring
+</button></textarea>
+              </div>
+              <div class="playground-preview">
+                <div class="playground-section-header">Preview</div>
+                <iframe title="Preview"></iframe>
+              </div>
+            </div>
           </div>
         </section>
 
         <!-- Section 3: Responsive -->
         <section id="responsive" class="mb-16">
           <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-            <span class="w-10 h-10 rounded-xl bg-primary-500/20 text-primary-400 flex items-center justify-center">3</span>
+            <span
+              class="w-10 h-10 rounded-xl bg-primary-500/20 text-primary-400 flex items-center justify-center">3</span>
             Responsive Design
           </h2>
-          
-          <p class="text-gray-300 mb-6">Tailwind menggunakan pendekatan <strong>mobile-first</strong>. Class tanpa prefix berlaku untuk semua ukuran, lalu kita tambahkan prefix untuk layar yang lebih besar.</p>
-          
+
+          <p class="text-gray-300 mb-6">Tailwind menggunakan pendekatan <strong>mobile-first</strong>. Class tanpa
+            prefix berlaku untuk semua ukuran, lalu kita tambahkan prefix untuk layar yang lebih besar.</p>
+
           <div class="overflow-x-auto mb-6">
             <table class="w-full text-sm">
               <thead>
@@ -237,77 +435,214 @@
                 </tr>
               </thead>
               <tbody class="text-gray-300">
-                <tr class="border-b border-gray-800"><td class="py-3 px-4 font-mono text-primary-400">sm:</td><td class="py-3 px-4">640px</td><td class="py-3 px-4 text-gray-500">@media (min-width: 640px)</td></tr>
-                <tr class="border-b border-gray-800"><td class="py-3 px-4 font-mono text-primary-400">md:</td><td class="py-3 px-4">768px</td><td class="py-3 px-4 text-gray-500">@media (min-width: 768px)</td></tr>
-                <tr class="border-b border-gray-800"><td class="py-3 px-4 font-mono text-primary-400">lg:</td><td class="py-3 px-4">1024px</td><td class="py-3 px-4 text-gray-500">@media (min-width: 1024px)</td></tr>
-                <tr class="border-b border-gray-800"><td class="py-3 px-4 font-mono text-primary-400">xl:</td><td class="py-3 px-4">1280px</td><td class="py-3 px-4 text-gray-500">@media (min-width: 1280px)</td></tr>
-                <tr><td class="py-3 px-4 font-mono text-primary-400">2xl:</td><td class="py-3 px-4">1536px</td><td class="py-3 px-4 text-gray-500">@media (min-width: 1536px)</td></tr>
+                <tr class="border-b border-gray-800">
+                  <td class="py-3 px-4 font-mono text-primary-400">sm:</td>
+                  <td class="py-3 px-4">640px</td>
+                  <td class="py-3 px-4 text-gray-500">@media (min-width: 640px)</td>
+                </tr>
+                <tr class="border-b border-gray-800">
+                  <td class="py-3 px-4 font-mono text-primary-400">md:</td>
+                  <td class="py-3 px-4">768px</td>
+                  <td class="py-3 px-4 text-gray-500">@media (min-width: 768px)</td>
+                </tr>
+                <tr class="border-b border-gray-800">
+                  <td class="py-3 px-4 font-mono text-primary-400">lg:</td>
+                  <td class="py-3 px-4">1024px</td>
+                  <td class="py-3 px-4 text-gray-500">@media (min-width: 1024px)</td>
+                </tr>
+                <tr class="border-b border-gray-800">
+                  <td class="py-3 px-4 font-mono text-primary-400">xl:</td>
+                  <td class="py-3 px-4">1280px</td>
+                  <td class="py-3 px-4 text-gray-500">@media (min-width: 1280px)</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4 font-mono text-primary-400">2xl:</td>
+                  <td class="py-3 px-4">1536px</td>
+                  <td class="py-3 px-4 text-gray-500">@media (min-width: 1536px)</td>
+                </tr>
               </tbody>
             </table>
           </div>
 
-          <div class="rounded-xl overflow-hidden mb-6">
-            <div class="px-4 py-2 bg-gray-800 text-gray-400 text-sm">Contoh Responsive Grid</div>
-            <pre class="code-block p-4 text-sm overflow-x-auto"><code class="text-gray-300">&lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"&gt;
-  &lt;div&gt;Item 1&lt;/div&gt;
-  &lt;div&gt;Item 2&lt;/div&gt;
-  &lt;div&gt;Item 3&lt;/div&gt;
-&lt;/div&gt;
+          <div class="code-block">
+            <div class="code-header">
+              <span class="filename"><span class="dot html"></span> responsive-grid.html</span>
+              <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <div class="code-content">
+              <pre><span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;div&gt;</span>Item 1<span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;div&gt;</span>Item 2<span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;div&gt;</span>Item 3<span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span></pre>
+            </div>
+          </div>
 
-&lt;!-- Penjelasan:
-  grid-cols-1     → 1 kolom di mobile
-  md:grid-cols-2  → 2 kolom di tablet ke atas
-  lg:grid-cols-3  → 3 kolom di desktop ke atas
---&gt;</code></pre>
+          <!-- Class Explanation Table -->
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Class</th>
+                  <th>Fungsi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>grid-cols-1</code></td>
+                  <td>1 kolom (default di mobile)</td>
+                </tr>
+                <tr>
+                  <td><code>md:grid-cols-2</code></td>
+                  <td>2 kolom di tablet (≥768px)</td>
+                </tr>
+                <tr>
+                  <td><code>lg:grid-cols-3</code></td>
+                  <td>3 kolom di desktop (≥1024px)</td>
+                </tr>
+                <tr>
+                  <td><code>gap-4</code></td>
+                  <td>Jarak antar item 1rem</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Mini Playground -->
+          <div class="mt-4 playground">
+            <div class="playground-header">
+              <div class="playground-title">
+                <span class="icon">🎮</span> Coba Responsive
+              </div>
+              <div class="playground-actions">
+                <button class="playground-btn reset-btn">🔄 Reset</button>
+                <button class="playground-btn copy-playground-btn">📋 Copy</button>
+              </div>
+            </div>
+            <div class="playground-body" style="min-height: 220px;">
+              <div class="playground-editor-container">
+                <div class="playground-section-header">HTML</div>
+                <textarea class="playground-editor" spellcheck="false" style="min-height: 170px;"><!-- Resize preview untuk lihat perubahan layout -->
+<!-- Mobile: 1 kolom, Tablet (md): 2 kolom, Desktop (lg): 3 kolom -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  <div class="p-4 bg-blue-500 rounded-lg text-center">Item 1</div>
+  <div class="p-4 bg-green-500 rounded-lg text-center">Item 2</div>
+  <div class="p-4 bg-purple-500 rounded-lg text-center">Item 3</div>
+</div>
+
+<!-- Teks yang berubah size berdasarkan layar -->
+<p class="mt-4 text-sm md:text-lg lg:text-2xl text-center bg-gray-700 p-4 rounded-lg">
+  Teks ini berubah ukuran: text-sm → md:text-lg → lg:text-2xl
+</p></textarea>
+              </div>
+              <div class="playground-preview">
+                <div class="playground-section-header">Preview</div>
+                <iframe title="Preview"></iframe>
+              </div>
+            </div>
           </div>
         </section>
 
         <!-- Section 4: Dark Mode -->
         <section id="dark-mode" class="mb-16">
           <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-            <span class="w-10 h-10 rounded-xl bg-primary-500/20 text-primary-400 flex items-center justify-center">4</span>
+            <span
+              class="w-10 h-10 rounded-xl bg-primary-500/20 text-primary-400 flex items-center justify-center">4</span>
             Dark Mode
           </h2>
-          
-          <p class="text-gray-300 mb-6">Tailwind menyediakan prefix <code class="px-1.5 py-0.5 rounded bg-gray-800 text-primary-400">dark:</code> untuk styling dark mode.</p>
 
-          <div class="rounded-xl overflow-hidden mb-6">
-            <div class="px-4 py-2 bg-gray-800 text-gray-400 text-sm">Contoh Dark Mode</div>
-            <pre class="code-block p-4 text-sm overflow-x-auto"><code class="text-gray-300">&lt;div class="bg-white dark:bg-gray-800 
-  text-gray-900 dark:text-white p-6"&gt;
+          <p class="text-gray-300 mb-6">Tailwind menyediakan prefix <code
+              class="px-1.5 py-0.5 rounded bg-gray-800 text-primary-400">dark:</code> untuk styling dark mode.</p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <span class="filename"><span class="dot html"></span> dark-mode.html</span>
+              <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <div class="code-content">
+              <pre><span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"bg-white dark:bg-gray-800 
+  text-gray-900 dark:text-white p-6"</span><span class="tag">&gt;</span>
   Konten yang berubah warna di dark mode
-&lt;/div&gt;</code></pre>
+<span class="tag">&lt;/div&gt;</span></pre>
+            </div>
           </div>
-          
+
           <div class="p-4 rounded-lg bg-yellow-500/10 border border-yellow-500/30 mb-6">
             <p class="text-yellow-300 text-sm">
-              <strong>⚙️ Setup:</strong> Untuk mengaktifkan dark mode berbasis class, tambahkan <code class="px-1 rounded bg-gray-800">darkMode: 'class'</code> di konfigurasi Tailwind, lalu tambahkan class <code class="px-1 rounded bg-gray-800">dark</code> ke elemen &lt;html&gt;.
+              <strong>⚙️ Setup:</strong> Untuk mengaktifkan dark mode berbasis class, tambahkan <code
+                class="px-1 rounded bg-gray-800">darkMode: 'class'</code> di konfigurasi Tailwind, lalu tambahkan class
+              <code class="px-1 rounded bg-gray-800">dark</code> ke elemen &lt;html&gt;.
             </p>
+          </div>
+
+          <!-- Mini Playground -->
+          <div class="mt-4 playground">
+            <div class="playground-header">
+              <div class="playground-title">
+                <span class="icon">🎮</span> Coba Dark Mode
+              </div>
+              <div class="playground-actions">
+                <button class="playground-btn reset-btn">🔄 Reset</button>
+                <button class="playground-btn copy-playground-btn">📋 Copy</button>
+              </div>
+            </div>
+            <div class="playground-body" style="min-height: 200px;">
+              <div class="playground-editor-container">
+                <div class="playground-section-header">HTML</div>
+                <textarea class="playground-editor" spellcheck="false" style="min-height: 150px;"><!-- Preview sudah dalam dark mode -->
+<!-- Card dengan warna berbeda untuk light/dark -->
+<div class="bg-white dark:bg-gray-800 text-gray-900 dark:text-white p-6 rounded-lg">
+  <h3 class="text-lg font-bold">Dark Mode Card</h3>
+  <p class="text-gray-600 dark:text-gray-300 mt-2">
+    Teks ini berubah warna di dark mode
+  </p>
+  <button class="mt-4 bg-blue-500 dark:bg-blue-600 text-white px-4 py-2 rounded-lg">
+    Button
+  </button>
+</div></textarea>
+              </div>
+              <div class="playground-preview">
+                <div class="playground-section-header">Preview</div>
+                <iframe title="Preview"></iframe>
+              </div>
+            </div>
           </div>
         </section>
 
         <!-- Section 5: Colors -->
         <section id="colors" class="mb-16">
           <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-            <span class="w-10 h-10 rounded-xl bg-primary-500/20 text-primary-400 flex items-center justify-center">5</span>
+            <span
+              class="w-10 h-10 rounded-xl bg-primary-500/20 text-primary-400 flex items-center justify-center">5</span>
             Sistem Warna
           </h2>
-          
-          <p class="text-gray-300 mb-6">Tailwind menyediakan palette warna lengkap dengan 11 tingkat kegelapan (50-950).</p>
-          
+
+          <p class="text-gray-300 mb-6">Tailwind menyediakan palette warna lengkap dengan 11 tingkat kegelapan (50-950).
+          </p>
+
           <div class="mb-6">
             <h3 class="text-lg font-semibold mb-4">Contoh Palette Blue:</h3>
             <div class="flex flex-wrap gap-2">
-              <div class="w-16 h-16 rounded-lg bg-blue-50 flex items-center justify-center text-xs text-gray-800">50</div>
-              <div class="w-16 h-16 rounded-lg bg-blue-100 flex items-center justify-center text-xs text-gray-800">100</div>
-              <div class="w-16 h-16 rounded-lg bg-blue-200 flex items-center justify-center text-xs text-gray-800">200</div>
-              <div class="w-16 h-16 rounded-lg bg-blue-300 flex items-center justify-center text-xs text-gray-800">300</div>
-              <div class="w-16 h-16 rounded-lg bg-blue-400 flex items-center justify-center text-xs text-white">400</div>
-              <div class="w-16 h-16 rounded-lg bg-blue-500 flex items-center justify-center text-xs text-white">500</div>
-              <div class="w-16 h-16 rounded-lg bg-blue-600 flex items-center justify-center text-xs text-white">600</div>
-              <div class="w-16 h-16 rounded-lg bg-blue-700 flex items-center justify-center text-xs text-white">700</div>
-              <div class="w-16 h-16 rounded-lg bg-blue-800 flex items-center justify-center text-xs text-white">800</div>
-              <div class="w-16 h-16 rounded-lg bg-blue-900 flex items-center justify-center text-xs text-white">900</div>
+              <div class="w-16 h-16 rounded-lg bg-blue-50 flex items-center justify-center text-xs text-gray-800">50
+              </div>
+              <div class="w-16 h-16 rounded-lg bg-blue-100 flex items-center justify-center text-xs text-gray-800">100
+              </div>
+              <div class="w-16 h-16 rounded-lg bg-blue-200 flex items-center justify-center text-xs text-gray-800">200
+              </div>
+              <div class="w-16 h-16 rounded-lg bg-blue-300 flex items-center justify-center text-xs text-gray-800">300
+              </div>
+              <div class="w-16 h-16 rounded-lg bg-blue-400 flex items-center justify-center text-xs text-white">400
+              </div>
+              <div class="w-16 h-16 rounded-lg bg-blue-500 flex items-center justify-center text-xs text-white">500
+              </div>
+              <div class="w-16 h-16 rounded-lg bg-blue-600 flex items-center justify-center text-xs text-white">600
+              </div>
+              <div class="w-16 h-16 rounded-lg bg-blue-700 flex items-center justify-center text-xs text-white">700
+              </div>
+              <div class="w-16 h-16 rounded-lg bg-blue-800 flex items-center justify-center text-xs text-white">800
+              </div>
+              <div class="w-16 h-16 rounded-lg bg-blue-900 flex items-center justify-center text-xs text-white">900
+              </div>
             </div>
           </div>
         </section>
@@ -315,22 +650,35 @@
         <!-- Section 6: Custom Styles -->
         <section id="custom-styles" class="mb-16">
           <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-            <span class="w-10 h-10 rounded-xl bg-primary-500/20 text-primary-400 flex items-center justify-center">6</span>
+            <span
+              class="w-10 h-10 rounded-xl bg-primary-500/20 text-primary-400 flex items-center justify-center">6</span>
             Menambahkan Custom Styles
           </h2>
-          
-          <p class="text-gray-300 mb-6">Ketika class bawaan tidak cukup, kamu bisa menggunakan <strong>arbitrary values</strong> dengan tanda kurung siku.</p>
 
-          <div class="rounded-xl overflow-hidden mb-6">
-            <div class="px-4 py-2 bg-gray-800 text-gray-400 text-sm">Arbitrary Values</div>
-            <pre class="code-block p-4 text-sm overflow-x-auto"><code class="text-gray-300">&lt;!-- Ukuran custom --&gt;
-&lt;div class="w-[137px] h-[68px]"&gt;&lt;/div&gt;
+          <p class="text-gray-300 mb-6">Ketika class bawaan tidak cukup, kamu bisa menggunakan <strong>arbitrary
+              values</strong> dengan tanda kurung siku.</p>
 
-&lt;!-- Warna custom --&gt;
-&lt;div class="bg-[#1da1f2] text-[rgb(255,255,255)]"&gt;&lt;/div&gt;
+          <div class="code-block">
+            <div class="code-header">
+              <span class="filename"><span class="dot html"></span> arbitrary-values.html</span>
+              <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <div class="code-content">
+              <pre><span class="comment">&lt;!-- Ukuran custom --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"w-[137px] h-[68px]"</span><span class="tag">&gt;&lt;/div&gt;</span>
 
-&lt;!-- Font custom --&gt;
-&lt;p class="text-[22px] leading-[32px]"&gt;&lt;/p&gt;</code></pre>
+<span class="comment">&lt;!-- Warna custom --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"bg-[#1da1f2] text-[rgb(255,255,255)]"</span><span class="tag">&gt;&lt;/div&gt;</span>
+
+<span class="comment">&lt;!-- Font custom --&gt;</span>
+<span class="tag">&lt;p</span> <span class="attr">class</span>=<span class="string">"text-[22px] leading-[32px]"</span><span class="tag">&gt;&lt;/p&gt;</span></pre>
+            </div>
+          </div>
+
+          <div class="info-box warning">
+            <div class="info-box-title">⚠️ Catatan</div>
+            <p>Gunakan arbitrary values hanya jika class standar Tailwind tidak cukup. Terlalu banyak arbitrary values
+              bisa membuat kode sulit dipelihara.</p>
           </div>
         </section>
 
@@ -338,9 +686,13 @@
         <section class="mb-16 p-6 rounded-xl bg-red-500/10 border border-red-500/30">
           <h2 class="text-xl font-bold text-red-400 mb-4">⚠️ Kesalahan Umum Pemula</h2>
           <ul class="space-y-3 text-gray-300">
-            <li class="flex items-start gap-2"><span class="text-red-400">•</span><span><strong>Lupa mobile-first:</strong> Class tanpa prefix berlaku untuk SEMUA ukuran layar</span></li>
-            <li class="flex items-start gap-2"><span class="text-red-400">•</span><span><strong>Prefix order salah:</strong> Tulis <code class="px-1 rounded bg-gray-800">hover:bg-blue-600</code> bukan <code class="px-1 rounded bg-gray-800">bg-blue-600:hover</code></span></li>
-            <li class="flex items-start gap-2"><span class="text-red-400">•</span><span><strong>Terlalu banyak arbitrary values:</strong> Gunakan hanya jika benar-benar perlu</span></li>
+            <li class="flex items-start gap-2"><span class="text-red-400">•</span><span><strong>Lupa
+                  mobile-first:</strong> Class tanpa prefix berlaku untuk SEMUA ukuran layar</span></li>
+            <li class="flex items-start gap-2"><span class="text-red-400">•</span><span><strong>Prefix order
+                  salah:</strong> Tulis <code class="px-1 rounded bg-gray-800">hover:bg-blue-600</code> bukan <code
+                  class="px-1 rounded bg-gray-800">bg-blue-600:hover</code></span></li>
+            <li class="flex items-start gap-2"><span class="text-red-400">•</span><span><strong>Terlalu banyak arbitrary
+                  values:</strong> Gunakan hanya jika benar-benar perlu</span></li>
           </ul>
         </section>
 
@@ -363,7 +715,7 @@
           <span class="text-3xl">🎯</span>
           <h2 class="text-2xl font-bold">Challenge: Card Produk Responsive</h2>
         </div>
-        
+
         <div class="mb-6">
           <p class="text-gray-300 mb-4"><strong>Tugas:</strong> Buat card produk dengan ketentuan:</p>
           <ul class="list-disc list-inside text-gray-400 space-y-2 ml-4">
@@ -374,30 +726,38 @@
             <li>Mendukung dark mode (background dan text berubah)</li>
           </ul>
         </div>
-        
+
         <div class="p-4 rounded-lg bg-gray-800/50 mb-6">
           <h3 class="font-semibold mb-3">💡 Tips:</h3>
           <ul class="text-sm text-gray-400 space-y-1">
-            <li>• Gunakan <code class="px-1 rounded bg-gray-700">flex</code> atau <code class="px-1 rounded bg-gray-700">grid</code> untuk layout</li>
+            <li>• Gunakan <code class="px-1 rounded bg-gray-700">flex</code> atau <code
+                class="px-1 rounded bg-gray-700">grid</code> untuk layout</li>
             <li>• Pakai prefix <code class="px-1 rounded bg-gray-700">md:</code> untuk responsive</li>
             <li>• Pakai prefix <code class="px-1 rounded bg-gray-700">dark:</code> untuk dark mode styling</li>
           </ul>
         </div>
-        
-        <button id="submit-challenge" class="w-full py-4 rounded-xl bg-gradient-to-r from-green-500 to-emerald-500 text-white font-semibold hover:opacity-90 transition-opacity">
+
+        <button id="submit-challenge"
+          class="w-full py-4 rounded-xl bg-gradient-to-r from-green-500 to-emerald-500 text-white font-semibold hover:opacity-90 transition-opacity">
           ✅ Saya Sudah Menyelesaikan Challenge Ini
         </button>
       </section>
 
       <!-- Navigation -->
       <div class="flex items-center justify-between">
-        <a href="getting-started.html" class="flex items-center gap-2 px-6 py-3 rounded-xl bg-gray-800 hover:bg-gray-700 transition-colors">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        <a href="getting-started.html"
+          class="flex items-center gap-2 px-6 py-3 rounded-xl bg-gray-800 hover:bg-gray-700 transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
           Getting Started
         </a>
-        <a id="next-lesson" href="layout.html" class="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-primary-500 to-purple-600 text-white font-medium opacity-50 cursor-not-allowed pointer-events-none transition-all">
+        <a id="next-lesson" href="layout.html"
+          class="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-primary-500 to-purple-600 text-white font-medium opacity-50 cursor-not-allowed pointer-events-none transition-all">
           Lanjut: Layout
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
         </a>
       </div>
     </div>
@@ -407,6 +767,16 @@
     </footer>
   </main>
 
+  <script>
+    function copyCode(btn) {
+      const codeBlock = btn.closest('.code-block').querySelector('pre');
+      navigator.clipboard.writeText(codeBlock.innerText);
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy', 2000);
+    }
+  </script>
+  <script src="assets/js/playground.js"></script>
   <script src="assets/js/progress.js"></script>
 </body>
+
 </html>

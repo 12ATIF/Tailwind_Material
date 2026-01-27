@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="id" class="dark">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Interactivity & SVG | Belajar Tailwind CSS</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:{500:'#667eea',600:'#5a67d8'}}}}}</script>
+  <script>tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: { 500: '#667eea', 600: '#5a67d8' } } } } }</script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body class="bg-gray-900 text-gray-100 font-sans">
-  <aside class="sidebar fixed left-0 top-0 bottom-0 w-72 bg-gray-900 border-r border-gray-800 z-50 overflow-y-auto hidden lg:block">
-    <div class="p-4 border-b border-gray-800"><a href="index.html" class="flex items-center gap-3"><div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-purple-600"></div><span class="font-bold">TailwindMaster</span></a></div>
+  <aside
+    class="sidebar fixed left-0 top-0 bottom-0 w-72 bg-gray-900 border-r border-gray-800 z-50 overflow-y-auto hidden lg:block">
+    <div class="p-4 border-b border-gray-800"><a href="index.html" class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-purple-600"></div><span
+          class="font-bold">TailwindMaster</span>
+      </a></div>
     <nav class="p-4">
       <ul class="space-y-1 text-sm">
         <li><a href="getting-started.html" class="block px-3 py-2 rounded text-gray-400">Getting Started</a></li>
@@ -20,9 +26,12 @@
         <li><a href="flexbox-grid.html" class="block px-3 py-2 rounded text-gray-400">Flexbox & Grid</a></li>
         <li><a href="spacing-sizing.html" class="block px-3 py-2 rounded text-gray-400">Spacing & Sizing</a></li>
         <li><a href="typography.html" class="block px-3 py-2 rounded text-gray-400">Typography</a></li>
-        <li><a href="backgrounds-effects.html" class="block px-3 py-2 rounded text-gray-400">Backgrounds & Effects</a></li>
-        <li><a href="transitions-animation.html" class="block px-3 py-2 rounded text-gray-400">Transitions & Animation</a></li>
-        <li><a href="interactivity-svg.html" class="block px-3 py-2 rounded bg-primary-500/20 text-white font-medium">Interactivity & SVG</a></li>
+        <li><a href="backgrounds-effects.html" class="block px-3 py-2 rounded text-gray-400">Backgrounds & Effects</a>
+        </li>
+        <li><a href="transitions-animation.html" class="block px-3 py-2 rounded text-gray-400">Transitions &
+            Animation</a></li>
+        <li><a href="interactivity-svg.html"
+            class="block px-3 py-2 rounded bg-primary-500/20 text-white font-medium">Interactivity & SVG</a></li>
         <li><a href="accessibility.html" class="block px-3 py-2 rounded text-gray-400">Accessibility</a></li>
       </ul>
     </nav>
@@ -30,14 +39,16 @@
 
   <main class="lg:ml-72">
     <header class="sticky top-0 z-30 bg-gray-900/90 backdrop-blur border-b border-gray-800 px-6 py-4">
-      <nav class="text-sm text-gray-400"><a href="index.html" class="hover:text-white">Home</a> / <span class="text-white">Interactivity & SVG</span></nav>
+      <nav class="text-sm text-gray-400"><a href="index.html" class="hover:text-white">Home</a> / <span
+          class="text-white">Interactivity & SVG</span></nav>
     </header>
 
     <div class="max-w-4xl mx-auto px-6 py-12">
       <div class="mb-10">
         <span class="px-3 py-1 rounded-full bg-primary-500/20 text-primary-500 text-sm">Materi 9/10</span>
         <h1 class="text-4xl font-bold mt-4 mb-3">Interactivity & SVG</h1>
-        <p class="text-lg text-gray-400">Cursor, pointer events, scroll behavior, user select, dan styling SVG icons.</p>
+        <p class="text-lg text-gray-400">Cursor, pointer events, scroll behavior, user select, dan styling SVG icons.
+        </p>
       </div>
 
       <!-- Daftar Isi -->
@@ -66,7 +77,7 @@
       </div>
 
       <article class="space-y-14">
-        
+
         <!-- INTERACTIVITY SECTION -->
         <div class="p-4 rounded-xl bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/30">
           <h2 class="text-2xl font-bold text-center">🖱️ INTERACTIVITY</h2>
@@ -75,11 +86,12 @@
         <!-- 1. Cursor -->
         <section id="cursor">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-500 flex items-center justify-center text-sm">1</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-500 flex items-center justify-center text-sm">1</span>
             Cursor
           </h2>
           <p class="text-gray-300 mb-4">Mengubah tampilan cursor saat hover element.</p>
-          
+
           <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
             <div class="p-4 rounded-lg bg-gray-800 text-center cursor-auto hover:bg-gray-700 transition-colors">
               <code class="text-xs">cursor-auto</code>
@@ -125,42 +137,72 @@
             <span class="px-2 py-1 rounded bg-gray-800">cursor-col-resize</span>
             <span class="px-2 py-1 rounded bg-gray-800">cursor-row-resize</span>
           </div>
+
+          <div class="code-block">
+            <div class="code-header">
+              <span class="filename"><span class="dot html"></span> cursor.html</span>
+              <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <div class="code-content">
+              <pre><span class="comment">&lt;!-- Button dengan cursor pointer --&gt;</span>
+<span class="tag">&lt;button</span> <span class="attr">class</span>=<span class="string">"cursor-pointer px-4 py-2 bg-blue-500"</span><span class="tag">&gt;</span>
+  Klik saya
+<span class="tag">&lt;/button&gt;</span>
+
+<span class="comment">&lt;!-- Disabled button --&gt;</span>
+<span class="tag">&lt;button</span> <span class="attr">class</span>=<span class="string">"cursor-not-allowed opacity-50"</span><span class="tag">&gt;</span>
+  Tidak tersedia
+<span class="tag">&lt;/button&gt;</span>
+
+<span class="comment">&lt;!-- Draggable element --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"cursor-grab active:cursor-grabbing"</span><span class="tag">&gt;</span>
+  Drag me
+<span class="tag">&lt;/div&gt;</span></pre>
+            </div>
+          </div>
         </section>
 
         <!-- 2. Pointer Events -->
         <section id="pointer-events">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-500 flex items-center justify-center text-sm">2</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-500 flex items-center justify-center text-sm">2</span>
             Pointer Events
           </h2>
           <p class="text-gray-300 mb-4">Mengontrol apakah elemen dapat menerima mouse/touch events.</p>
-          
+
           <div class="grid md:grid-cols-2 gap-4 mb-4">
             <div class="p-4 rounded-lg bg-gray-800">
               <code class="text-primary-500">pointer-events-auto</code>
               <p class="text-sm text-gray-400 mt-2">Default - dapat diklik dan hover</p>
-              <button class="mt-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 rounded text-sm transition-colors pointer-events-auto">Klik saya</button>
+              <button
+                class="mt-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 rounded text-sm transition-colors pointer-events-auto">Klik
+                saya</button>
             </div>
             <div class="p-4 rounded-lg bg-gray-800">
               <code class="text-primary-500">pointer-events-none</code>
               <p class="text-sm text-gray-400 mt-2">Tidak dapat diklik (click-through)</p>
-              <button class="mt-2 px-4 py-2 bg-gray-500 rounded text-sm pointer-events-none opacity-50">Tidak bisa diklik</button>
+              <button class="mt-2 px-4 py-2 bg-gray-500 rounded text-sm pointer-events-none opacity-50">Tidak bisa
+                diklik</button>
             </div>
           </div>
 
           <div class="p-4 rounded-lg bg-yellow-500/10 border border-yellow-500/30">
-            <p class="text-yellow-400 text-sm">💡 <strong>Use Case:</strong> Gunakan <code class="px-1 bg-gray-800 rounded">pointer-events-none</code> untuk overlay loading, disabled states, atau layer dekoratif.</p>
+            <p class="text-yellow-400 text-sm">💡 <strong>Use Case:</strong> Gunakan <code
+                class="px-1 bg-gray-800 rounded">pointer-events-none</code> untuk overlay loading, disabled states, atau
+              layer dekoratif.</p>
           </div>
         </section>
 
         <!-- 3. User Select -->
         <section id="user-select">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-500 flex items-center justify-center text-sm">3</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-500 flex items-center justify-center text-sm">3</span>
             User Select
           </h2>
           <p class="text-gray-300 mb-4">Mengontrol apakah teks dapat diseleksi user.</p>
-          
+
           <div class="grid md:grid-cols-2 gap-4">
             <div class="p-4 rounded-lg bg-gray-800 select-none">
               <code class="text-primary-500">select-none</code>
@@ -188,10 +230,11 @@
         <!-- 4. Scroll Behavior -->
         <section id="scroll-behavior">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-500 flex items-center justify-center text-sm">4</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-500 flex items-center justify-center text-sm">4</span>
             Scroll Behavior
           </h2>
-          
+
           <div class="grid md:grid-cols-2 gap-4 mb-4">
             <div class="p-3 rounded bg-gray-800">
               <code class="text-primary-500">scroll-smooth</code>
@@ -221,11 +264,12 @@
         <!-- 5. Scroll Snap -->
         <section id="scroll-snap">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-500 flex items-center justify-center text-sm">5</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-500 flex items-center justify-center text-sm">5</span>
             Scroll Snap
           </h2>
           <p class="text-gray-300 mb-4">Membuat scroll berhenti di posisi tertentu (carousel effect).</p>
-          
+
           <div class="grid md:grid-cols-2 gap-4 mb-4">
             <div>
               <h4 class="font-semibold mb-2">Snap Type (Container)</h4>
@@ -250,10 +294,18 @@
           <div class="p-4 rounded-lg bg-gray-800/50">
             <p class="text-sm text-gray-400 mb-2">Demo scroll snap horizontal (geser ke kiri/kanan):</p>
             <div class="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4">
-              <div class="snap-center shrink-0 w-64 h-32 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white font-medium">Card 1</div>
-              <div class="snap-center shrink-0 w-64 h-32 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center text-white font-medium">Card 2</div>
-              <div class="snap-center shrink-0 w-64 h-32 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center text-white font-medium">Card 3</div>
-              <div class="snap-center shrink-0 w-64 h-32 bg-gradient-to-r from-pink-500 to-pink-600 rounded-xl flex items-center justify-center text-white font-medium">Card 4</div>
+              <div
+                class="snap-center shrink-0 w-64 h-32 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white font-medium">
+                Card 1</div>
+              <div
+                class="snap-center shrink-0 w-64 h-32 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center text-white font-medium">
+                Card 2</div>
+              <div
+                class="snap-center shrink-0 w-64 h-32 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center text-white font-medium">
+                Card 3</div>
+              <div
+                class="snap-center shrink-0 w-64 h-32 bg-gradient-to-r from-pink-500 to-pink-600 rounded-xl flex items-center justify-center text-white font-medium">
+                Card 4</div>
             </div>
           </div>
         </section>
@@ -261,11 +313,12 @@
         <!-- 6. Touch Action -->
         <section id="touch-action">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-500 flex items-center justify-center text-sm">6</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-500 flex items-center justify-center text-sm">6</span>
             Touch Action
           </h2>
           <p class="text-gray-300 mb-4">Mengontrol gesture touch pada mobile.</p>
-          
+
           <div class="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm">
             <div class="p-2 rounded bg-gray-800"><code>touch-auto</code></div>
             <div class="p-2 rounded bg-gray-800"><code>touch-none</code></div>
@@ -279,23 +332,28 @@
         <!-- 7. Resize -->
         <section id="resize">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-500 flex items-center justify-center text-sm">7</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-500 flex items-center justify-center text-sm">7</span>
             Resize
           </h2>
           <p class="text-gray-300 mb-4">Mengontrol apakah element bisa di-resize oleh user.</p>
-          
+
           <div class="grid md:grid-cols-2 gap-4">
             <div class="p-4 rounded-lg bg-gray-800">
-              <textarea class="w-full h-20 p-2 bg-gray-700 rounded resize-none text-sm" placeholder="resize-none - tidak bisa resize"></textarea>
+              <textarea class="w-full h-20 p-2 bg-gray-700 rounded resize-none text-sm"
+                placeholder="resize-none - tidak bisa resize"></textarea>
             </div>
             <div class="p-4 rounded-lg bg-gray-800">
-              <textarea class="w-full h-20 p-2 bg-gray-700 rounded resize text-sm" placeholder="resize - bisa resize (tarik pojok kanan bawah)"></textarea>
+              <textarea class="w-full h-20 p-2 bg-gray-700 rounded resize text-sm"
+                placeholder="resize - bisa resize (tarik pojok kanan bawah)"></textarea>
             </div>
             <div class="p-4 rounded-lg bg-gray-800">
-              <textarea class="w-full h-20 p-2 bg-gray-700 rounded resize-x text-sm" placeholder="resize-x - horizontal only"></textarea>
+              <textarea class="w-full h-20 p-2 bg-gray-700 rounded resize-x text-sm"
+                placeholder="resize-x - horizontal only"></textarea>
             </div>
             <div class="p-4 rounded-lg bg-gray-800">
-              <textarea class="w-full h-20 p-2 bg-gray-700 rounded resize-y text-sm" placeholder="resize-y - vertical only"></textarea>
+              <textarea class="w-full h-20 p-2 bg-gray-700 rounded resize-y text-sm"
+                placeholder="resize-y - vertical only"></textarea>
             </div>
           </div>
         </section>
@@ -303,17 +361,21 @@
         <!-- 8. Caret & Accent Color -->
         <section id="caret-accent">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-500 flex items-center justify-center text-sm">8</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-500 flex items-center justify-center text-sm">8</span>
             Caret & Accent Color
           </h2>
-          
+
           <div class="grid md:grid-cols-2 gap-4 mb-4">
             <div>
               <h4 class="font-semibold mb-2">Caret Color (kursor teks)</h4>
               <div class="space-y-2">
-                <input type="text" class="w-full p-2 bg-gray-800 rounded caret-blue-500 text-sm" placeholder="caret-blue-500">
-                <input type="text" class="w-full p-2 bg-gray-800 rounded caret-green-500 text-sm" placeholder="caret-green-500">
-                <input type="text" class="w-full p-2 bg-gray-800 rounded caret-pink-500 text-sm" placeholder="caret-pink-500">
+                <input type="text" class="w-full p-2 bg-gray-800 rounded caret-blue-500 text-sm"
+                  placeholder="caret-blue-500">
+                <input type="text" class="w-full p-2 bg-gray-800 rounded caret-green-500 text-sm"
+                  placeholder="caret-green-500">
+                <input type="text" class="w-full p-2 bg-gray-800 rounded caret-pink-500 text-sm"
+                  placeholder="caret-pink-500">
               </div>
             </div>
             <div>
@@ -344,58 +406,120 @@
         <!-- 9. Fill -->
         <section id="fill">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-green-500/20 text-green-500 flex items-center justify-center text-sm">9</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-green-500/20 text-green-500 flex items-center justify-center text-sm">9</span>
             Fill
           </h2>
-          <p class="text-gray-300 mb-4">Mengisi warna dalam SVG. Format: <code class="px-1 rounded bg-gray-800">fill-{color}</code></p>
-          
+          <p class="text-gray-300 mb-4">Mengisi warna dalam SVG. Format: <code
+              class="px-1 rounded bg-gray-800">fill-{color}</code></p>
+
           <div class="flex flex-wrap gap-4 items-center mb-4">
-            <svg class="w-12 h-12 fill-red-500" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-            <svg class="w-12 h-12 fill-blue-500" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-            <svg class="w-12 h-12 fill-green-500" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-            <svg class="w-12 h-12 fill-purple-500" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-            <svg class="w-12 h-12 fill-current text-pink-500" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            <svg class="w-12 h-12 fill-red-500" viewBox="0 0 24 24">
+              <path
+                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+            </svg>
+            <svg class="w-12 h-12 fill-blue-500" viewBox="0 0 24 24">
+              <path
+                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+            </svg>
+            <svg class="w-12 h-12 fill-green-500" viewBox="0 0 24 24">
+              <path
+                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+            </svg>
+            <svg class="w-12 h-12 fill-purple-500" viewBox="0 0 24 24">
+              <path
+                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+            </svg>
+            <svg class="w-12 h-12 fill-current text-pink-500" viewBox="0 0 24 24">
+              <path
+                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+            </svg>
           </div>
 
           <div class="p-4 rounded-lg bg-blue-500/10 border border-blue-500/30">
-            <p class="text-blue-300 text-sm">💡 <strong>Tip:</strong> Gunakan <code class="px-1 bg-gray-800 rounded">fill-current</code> untuk inherit color dari parent (text-{color})</p>
+            <p class="text-blue-300 text-sm">💡 <strong>Tip:</strong> Gunakan <code
+                class="px-1 bg-gray-800 rounded">fill-current</code> untuk inherit color dari parent (text-{color})</p>
+          </div>
+
+          <div class="code-block mt-4">
+            <div class="code-header">
+              <span class="filename"><span class="dot html"></span> svg-styling.html</span>
+              <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <div class="code-content">
+              <pre><span class="comment">&lt;!-- SVG dengan fill color --&gt;</span>
+<span class="tag">&lt;svg</span> <span class="attr">class</span>=<span class="string">"w-6 h-6 fill-red-500"</span> <span class="attr">viewBox</span>=<span class="string">"0 0 24 24"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;path</span> <span class="attr">d</span>=<span class="string">"M12 21.35l-1.45-1.32..."</span><span class="tag">/&gt;</span>
+<span class="tag">&lt;/svg&gt;</span>
+
+<span class="comment">&lt;!-- SVG dengan stroke (outline) --&gt;</span>
+<span class="tag">&lt;svg</span> <span class="attr">class</span>=<span class="string">"w-6 h-6 stroke-blue-500 fill-none stroke-2"</span> <span class="attr">viewBox</span>=<span class="string">"0 0 24 24"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;path</span> <span class="attr">d</span>=<span class="string">"M4.318 6.318..."</span><span class="tag">/&gt;</span>
+<span class="tag">&lt;/svg&gt;</span>
+
+<span class="comment">&lt;!-- SVG dengan hover effect --&gt;</span>
+<span class="tag">&lt;svg</span> <span class="attr">class</span>=<span class="string">"w-6 h-6 fill-gray-400 hover:fill-red-500 transition-colors"</span><span class="tag">&gt;</span>
+  ...
+<span class="tag">&lt;/svg&gt;</span></pre>
+            </div>
           </div>
         </section>
 
         <!-- 10. Stroke -->
         <section id="stroke">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-green-500/20 text-green-500 flex items-center justify-center text-sm">10</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-green-500/20 text-green-500 flex items-center justify-center text-sm">10</span>
             Stroke
           </h2>
-          <p class="text-gray-300 mb-4">Warna garis outline SVG. Format: <code class="px-1 rounded bg-gray-800">stroke-{color}</code></p>
-          
+          <p class="text-gray-300 mb-4">Warna garis outline SVG. Format: <code
+              class="px-1 rounded bg-gray-800">stroke-{color}</code></p>
+
           <div class="flex flex-wrap gap-4 items-center mb-4">
-            <svg class="w-12 h-12 stroke-red-500 fill-none" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
-            <svg class="w-12 h-12 stroke-blue-500 fill-none" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
-            <svg class="w-12 h-12 stroke-green-500 fill-none" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
-            <svg class="w-12 h-12 stroke-current text-purple-500 fill-none" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+            <svg class="w-12 h-12 stroke-red-500 fill-none" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+            <svg class="w-12 h-12 stroke-blue-500 fill-none" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+            <svg class="w-12 h-12 stroke-green-500 fill-none" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+            <svg class="w-12 h-12 stroke-current text-purple-500 fill-none" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
           </div>
         </section>
 
         <!-- 11. Stroke Width -->
         <section id="stroke-width">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-green-500/20 text-green-500 flex items-center justify-center text-sm">11</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-green-500/20 text-green-500 flex items-center justify-center text-sm">11</span>
             Stroke Width
           </h2>
-          
+
           <div class="flex flex-wrap gap-4 items-center mb-4">
             <div class="text-center">
-              <svg class="w-12 h-12 stroke-blue-500 fill-none stroke-0" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+              <svg class="w-12 h-12 stroke-blue-500 fill-none stroke-0" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+              </svg>
               <p class="text-xs mt-1">stroke-0</p>
             </div>
             <div class="text-center">
-              <svg class="w-12 h-12 stroke-blue-500 fill-none stroke-1" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+              <svg class="w-12 h-12 stroke-blue-500 fill-none stroke-1" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+              </svg>
               <p class="text-xs mt-1">stroke-1</p>
             </div>
             <div class="text-center">
-              <svg class="w-12 h-12 stroke-blue-500 fill-none stroke-2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+              <svg class="w-12 h-12 stroke-blue-500 fill-none stroke-2" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+              </svg>
               <p class="text-xs mt-1">stroke-2</p>
             </div>
           </div>
@@ -404,18 +528,32 @@
         <!-- 12. SVG Sizing -->
         <section id="svg-sizing">
           <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
-            <span class="w-8 h-8 rounded-lg bg-green-500/20 text-green-500 flex items-center justify-center text-sm">12</span>
+            <span
+              class="w-8 h-8 rounded-lg bg-green-500/20 text-green-500 flex items-center justify-center text-sm">12</span>
             SVG Sizing
           </h2>
-          <p class="text-gray-300 mb-4">Gunakan <code class="px-1 rounded bg-gray-800">w-{size} h-{size}</code> untuk ukuran SVG.</p>
-          
+          <p class="text-gray-300 mb-4">Gunakan <code class="px-1 rounded bg-gray-800">w-{size} h-{size}</code> untuk
+            ukuran SVG.</p>
+
           <div class="flex flex-wrap items-center gap-4">
-            <svg class="w-4 h-4 fill-blue-500" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg class="w-6 h-6 fill-blue-500" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg class="w-8 h-8 fill-blue-500" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg class="w-10 h-10 fill-blue-500" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg class="w-12 h-12 fill-blue-500" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg class="w-16 h-16 fill-blue-500" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg class="w-4 h-4 fill-blue-500" viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+            <svg class="w-6 h-6 fill-blue-500" viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+            <svg class="w-8 h-8 fill-blue-500" viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+            <svg class="w-10 h-10 fill-blue-500" viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+            <svg class="w-12 h-12 fill-blue-500" viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+            <svg class="w-16 h-16 fill-blue-500" viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
           </div>
           <p class="text-xs text-gray-500 mt-2">w-4 → w-6 → w-8 → w-10 → w-12 → w-16</p>
         </section>
@@ -426,8 +564,10 @@
           <ul class="text-gray-300 space-y-2 text-sm">
             <li>• Lupa <code class="px-1 rounded bg-gray-800">fill-none</code> saat menggunakan stroke icons</li>
             <li>• Tidak mengatur viewBox pada inline SVG</li>
-            <li>• Menggunakan <code class="px-1 rounded bg-gray-800">select-none</code> pada konten yang seharusnya bisa di-copy</li>
-            <li>• Tidak menggunakan <code class="px-1 rounded bg-gray-800">cursor-pointer</code> pada clickable elements</li>
+            <li>• Menggunakan <code class="px-1 rounded bg-gray-800">select-none</code> pada konten yang seharusnya bisa
+              di-copy</li>
+            <li>• Tidak menggunakan <code class="px-1 rounded bg-gray-800">cursor-pointer</code> pada clickable elements
+            </li>
           </ul>
         </section>
 
@@ -444,29 +584,42 @@
       <!-- Challenge -->
       <section class="challenge-section p-6 rounded-xl mb-10">
         <h2 class="text-xl font-bold mb-4">🎯 Challenge: Interactive Button + Icon SVG</h2>
-        <p class="text-gray-300 mb-6">Buat button interaktif dengan icon SVG yang berubah saat hover. Berikut contohnya:</p>
-        
+        <p class="text-gray-300 mb-6">Buat button interaktif dengan icon SVG yang berubah saat hover. Berikut contohnya:
+        </p>
+
         <!-- Preview -->
         <div class="mb-8 p-6 rounded-xl bg-gray-950 border border-gray-700">
           <p class="text-xs text-gray-500 mb-4 uppercase tracking-wide">📱 Interactive Preview</p>
-          
+
           <div class="grid md:grid-cols-2 gap-4">
             <!-- Icon Buttons -->
             <div class="space-y-4">
               <p class="text-sm text-gray-400 mb-2">Icon Buttons:</p>
-              
-              <button class="group flex items-center gap-2 px-5 py-3 bg-red-500 hover:bg-red-600 text-white rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-red-500/25">
-                <svg class="w-5 h-5 fill-current transition-transform group-hover:scale-125" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+
+              <button
+                class="group flex items-center gap-2 px-5 py-3 bg-red-500 hover:bg-red-600 text-white rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-red-500/25">
+                <svg class="w-5 h-5 fill-current transition-transform group-hover:scale-125" viewBox="0 0 24 24">
+                  <path
+                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg>
                 <span>Like</span>
               </button>
 
-              <button class="group flex items-center gap-2 px-5 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-all duration-300">
-                <svg class="w-5 h-5 stroke-current fill-none transition-transform group-hover:rotate-12" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/></svg>
+              <button
+                class="group flex items-center gap-2 px-5 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-all duration-300">
+                <svg class="w-5 h-5 stroke-current fill-none transition-transform group-hover:rotate-12"
+                  stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                </svg>
                 <span>Share</span>
               </button>
 
-              <button class="group flex items-center gap-2 px-5 py-3 bg-gray-800 border border-gray-600 hover:border-green-500 hover:text-green-500 text-white rounded-lg transition-all duration-300">
-                <svg class="w-5 h-5 stroke-current fill-none transition-colors" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              <button
+                class="group flex items-center gap-2 px-5 py-3 bg-gray-800 border border-gray-600 hover:border-green-500 hover:text-green-500 text-white rounded-lg transition-all duration-300">
+                <svg class="w-5 h-5 stroke-current fill-none transition-colors" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
                 <span>Approve</span>
               </button>
             </div>
@@ -474,22 +627,39 @@
             <!-- Icon Only Buttons -->
             <div class="space-y-4">
               <p class="text-sm text-gray-400 mb-2">Icon Only:</p>
-              
+
               <div class="flex gap-3">
                 <button class="p-3 bg-gray-800 rounded-full hover:bg-red-500 transition-colors group">
-                  <svg class="w-6 h-6 stroke-gray-400 group-hover:stroke-white fill-none transition-colors" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                  <svg class="w-6 h-6 stroke-gray-400 group-hover:stroke-white fill-none transition-colors"
+                    stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
                 </button>
                 <button class="p-3 bg-gray-800 rounded-full hover:bg-blue-500 transition-colors group">
-                  <svg class="w-6 h-6 stroke-gray-400 group-hover:stroke-white fill-none transition-colors" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                  <svg class="w-6 h-6 stroke-gray-400 group-hover:stroke-white fill-none transition-colors"
+                    stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
                 </button>
                 <button class="p-3 bg-gray-800 rounded-full hover:bg-green-500 transition-colors group">
-                  <svg class="w-6 h-6 stroke-gray-400 group-hover:stroke-white fill-none transition-colors" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
+                  <svg class="w-6 h-6 stroke-gray-400 group-hover:stroke-white fill-none transition-colors"
+                    stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                  </svg>
                 </button>
               </div>
 
               <div class="flex gap-3">
-                <button class="group p-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl transition-transform hover:scale-110">
-                  <svg class="w-6 h-6 fill-white transition-transform group-hover:rotate-180 duration-500" viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46A7.93 7.93 0 0020 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74A7.93 7.93 0 004 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>
+                <button
+                  class="group p-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl transition-transform hover:scale-110">
+                  <svg class="w-6 h-6 fill-white transition-transform group-hover:rotate-180 duration-500"
+                    viewBox="0 0 24 24">
+                    <path
+                      d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46A7.93 7.93 0 0020 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74A7.93 7.93 0 004 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z" />
+                  </svg>
                 </button>
               </div>
             </div>
@@ -521,28 +691,31 @@
 
         <!-- Code Example -->
         <div class="mb-6">
-          <div class="flex items-center justify-between mb-2">
-            <h3 class="font-semibold">💻 Kode Button + SVG</h3>
-            <button onclick="navigator.clipboard.writeText(document.getElementById('svg-code').textContent).then(()=>alert('Copied!'))" class="text-xs px-3 py-1 rounded bg-gray-700 hover:bg-gray-600 transition-colors">📋 Copy</button>
-          </div>
-          <div class="p-4 rounded-lg bg-gray-950 border border-gray-700 overflow-x-auto">
-            <pre id="svg-code" class="text-xs text-gray-300"><code>&lt;!-- Button dengan icon yang membesar saat hover --&gt;
-&lt;button class="group flex items-center gap-2 px-5 py-3 
-        bg-red-500 hover:bg-red-600 text-white rounded-lg transition-all"&gt;
-  &lt;svg class="w-5 h-5 fill-current transition-transform group-hover:scale-125" 
-       viewBox="0 0 24 24"&gt;
-    &lt;path d="M12 21.35l-1.45-1.32C5.4 15.36..."/&gt;
-  &lt;/svg&gt;
-  &lt;span&gt;Like&lt;/span&gt;
-&lt;/button&gt;
+          <h3 class="font-semibold mb-3">💻 Kode Button + SVG</h3>
+          <div class="code-block">
+            <div class="code-header">
+              <span class="filename"><span class="dot html"></span> button-svg.html</span>
+              <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            </div>
+            <div class="code-content">
+              <pre><span class="comment">&lt;!-- Button dengan icon yang membesar saat hover --&gt;</span>
+<span class="tag">&lt;button</span> <span class="attr">class</span>=<span class="string">"group flex items-center gap-2 px-5 py-3 
+        bg-red-500 hover:bg-red-600 text-white rounded-lg transition-all"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;svg</span> <span class="attr">class</span>=<span class="string">"w-5 h-5 fill-current transition-transform group-hover:scale-125"</span> 
+       <span class="attr">viewBox</span>=<span class="string">"0 0 24 24"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;path</span> <span class="attr">d</span>=<span class="string">"M12 21.35l-1.45-1.32..."</span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;/svg&gt;</span>
+  <span class="tag">&lt;span&gt;</span>Like<span class="tag">&lt;/span&gt;</span>
+<span class="tag">&lt;/button&gt;</span>
 
-&lt;!-- Icon button yang berputar --&gt;
-&lt;button class="group p-3 bg-purple-500 rounded-xl hover:scale-110 transition-transform"&gt;
-  &lt;svg class="w-6 h-6 fill-white group-hover:rotate-180 transition-transform duration-500" 
-       viewBox="0 0 24 24"&gt;
+<span class="comment">&lt;!-- Icon button yang berputar --&gt;</span>
+<span class="tag">&lt;button</span> <span class="attr">class</span>=<span class="string">"group p-3 bg-purple-500 rounded-xl hover:scale-110 transition-transform"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;svg</span> <span class="attr">class</span>=<span class="string">"w-6 h-6 fill-white group-hover:rotate-180 transition-transform duration-500"</span> 
+       <span class="attr">viewBox</span>=<span class="string">"0 0 24 24"</span><span class="tag">&gt;</span>
     ...
-  &lt;/svg&gt;
-&lt;/button&gt;</code></pre>
+  <span class="tag">&lt;/svg&gt;</span>
+<span class="tag">&lt;/button&gt;</span></pre>
+            </div>
           </div>
         </div>
 
@@ -552,21 +725,92 @@
           <ul class="text-sm text-gray-300 space-y-2">
             <li>□ Buat toggle button (heart fill/stroke saat diklik)</li>
             <li>□ Tambahkan <code class="px-1 rounded bg-gray-700">animate-spin</code> untuk loading state</li>
-            <li>□ Buat icon yang berubah warna dengan <code class="px-1 rounded bg-gray-700">hover:fill-red-500</code></li>
-            <li>□ Coba <code class="px-1 rounded bg-gray-700">group-hover:-translate-y-1</code> untuk lift effect pada icon</li>
+            <li>□ Buat icon yang berubah warna dengan <code class="px-1 rounded bg-gray-700">hover:fill-red-500</code>
+            </li>
+            <li>□ Coba <code class="px-1 rounded bg-gray-700">group-hover:-translate-y-1</code> untuk lift effect pada
+              icon</li>
           </ul>
         </div>
 
-        <button id="submit-challenge" class="w-full py-3 rounded-lg bg-green-500 text-white font-semibold hover:bg-green-600 transition-colors">✅ Challenge Selesai</button>
+        <!-- Interactive Playground -->
+        <div class="mb-6">
+          <h3 class="font-semibold mb-3 flex items-center gap-2">
+            🎮 Coba Langsung
+            <span class="playground-badge">Live</span>
+          </h3>
+          <p class="text-sm text-gray-400 mb-4">Coba hover button dan modifikasi SVG styling!</p>
+
+          <div class="playground">
+            <div class="playground-header">
+              <div class="playground-title">
+                <span class="icon">🎯</span>
+                Interactivity & SVG Playground
+              </div>
+              <div class="playground-actions">
+                <button class="playground-btn reset-btn">🔄 Reset</button>
+                <button class="playground-btn copy-playground-btn">📋 Copy</button>
+              </div>
+            </div>
+            <div class="playground-body">
+              <div class="playground-editor-container">
+                <div class="playground-section-header">HTML</div>
+                <textarea class="playground-editor" spellcheck="false"><!-- Coba ubah cursor-pointer menjadi cursor-not-allowed -->
+<button class="cursor-pointer px-6 py-3 bg-blue-500 
+        hover:bg-blue-600 text-white rounded-lg">
+  Click me (cursor-pointer)
+</button>
+
+<!-- Button dengan SVG icon - hover untuk lihat animasi -->
+<button class="group flex items-center gap-2 px-5 py-3 
+        bg-red-500 hover:bg-red-600 text-white rounded-lg 
+        mt-4 transition-all">
+  <svg class="w-5 h-5 fill-current transition-transform 
+       group-hover:scale-125" viewBox="0 0 24 24">
+    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 
+             2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09
+             C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 
+             22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+  </svg>
+  <span>Like (hover me!)</span>
+</button>
+
+<!-- Select text below -->
+<p class="mt-4 p-3 bg-gray-800 rounded select-all">
+  Select me! (select-all)
+</p></textarea>
+              </div>
+              <div class="playground-preview">
+                <div class="playground-section-header">Preview</div>
+                <iframe title="Preview"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button id="submit-challenge"
+          class="w-full py-3 rounded-lg bg-green-500 text-white font-semibold hover:bg-green-600 transition-colors">✅
+          Challenge Selesai</button>
       </section>
 
       <!-- Navigation -->
       <div class="flex justify-between">
-        <a href="transitions-animation.html" class="px-6 py-3 rounded-lg bg-gray-800 hover:bg-gray-700">← Transitions & Animation</a>
-        <a id="next-lesson" href="accessibility.html" class="px-6 py-3 rounded-lg bg-primary-500 text-white opacity-50 pointer-events-none">Accessibility →</a>
+        <a href="transitions-animation.html" class="px-6 py-3 rounded-lg bg-gray-800 hover:bg-gray-700">← Transitions &
+          Animation</a>
+        <a id="next-lesson" href="accessibility.html"
+          class="px-6 py-3 rounded-lg bg-primary-500 text-white opacity-50 pointer-events-none">Accessibility →</a>
       </div>
     </div>
   </main>
+  <script>
+    function copyCode(btn) {
+      const codeBlock = btn.closest('.code-block').querySelector('pre');
+      navigator.clipboard.writeText(codeBlock.innerText);
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy', 2000);
+    }
+  </script>
+  <script src="assets/js/playground.js"></script>
   <script src="assets/js/progress.js"></script>
 </body>
+
 </html>
