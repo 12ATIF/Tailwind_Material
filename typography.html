@@ -80,7 +80,51 @@
               class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">1</span>
             Font Family
           </h2>
-          <p class="text-gray-300 mb-4">Mengatur jenis font yang digunakan.</p>
+          <p class="text-gray-300 mb-4">Mengatur jenis font yang digunakan pada teks. Tailwind menyediakan 3 font family
+            bawaan yang bisa langsung dipakai.</p>
+
+          <!-- Penjelasan Detail -->
+          <div class="mb-6 p-4 rounded-lg bg-gray-800/50 border border-gray-700">
+            <h4 class="font-semibold text-white mb-3">📚 Penjelasan Font Family</h4>
+            <div class="space-y-3 text-sm text-gray-300">
+              <p><strong class="text-primary-400">Font Family</strong> adalah kumpulan font yang memiliki desain
+                serupa. Di Tailwind CSS,
+                kita bisa mengatur font family dengan class <code class="px-1 bg-gray-700 rounded">font-{family}</code>.
+              </p>
+              <div class="grid md:grid-cols-3 gap-4 mt-4">
+                <div class="p-3 rounded bg-gray-700/50">
+                  <code class="text-primary-400 font-bold">font-sans</code>
+                  <p class="text-xs mt-1 text-gray-400">Font tanpa serif (tanpa garis dekoratif di ujung huruf). Clean,
+                    modern, mudah dibaca di layar. <br><span class="text-green-400">Contoh: Inter, Helvetica,
+                      Arial</span></p>
+                </div>
+                <div class="p-3 rounded bg-gray-700/50">
+                  <code class="text-purple-400 font-bold">font-serif</code>
+                  <p class="text-xs mt-1 text-gray-400">Font dengan serif (ada garis dekoratif). Terlihat klasik dan
+                    formal, bagus untuk artikel. <br><span class="text-green-400">Contoh: Georgia, Times New
+                      Roman</span></p>
+                </div>
+                <div class="p-3 rounded bg-gray-700/50">
+                  <code class="text-cyan-400 font-bold">font-mono</code>
+                  <p class="text-xs mt-1 text-gray-400">Font dengan lebar karakter sama (monospace). Ideal untuk kode
+                    program dan terminal. <br><span class="text-green-400">Contoh: Monaco, Consolas, Courier</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kapan Menggunakan -->
+          <div class="mb-6 p-4 rounded-lg bg-green-500/10 border border-green-500/30">
+            <h4 class="font-semibold text-green-400 mb-2">🎯 Kapan Menggunakan?</h4>
+            <ul class="text-sm text-gray-300 space-y-1">
+              <li>• <code class="px-1 bg-gray-700 rounded">font-sans</code> → UI/Interface, button, label, navigation,
+                body text umum</li>
+              <li>• <code class="px-1 bg-gray-700 rounded">font-serif</code> → Judul artikel, heading yang dramatis,
+                quotes, blog post</li>
+              <li>• <code class="px-1 bg-gray-700 rounded">font-mono</code> → Kode program, terminal output, data
+                teknis, ID/kode transaksi</li>
+            </ul>
+          </div>
 
           <div class="grid md:grid-cols-3 gap-4 mb-4">
             <div class="p-4 rounded-lg bg-gray-800 border border-gray-700">
@@ -138,8 +182,54 @@
               class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">2</span>
             Font Size
           </h2>
-          <p class="text-gray-300 mb-4">Mengatur ukuran font. Format: <code
+          <p class="text-gray-300 mb-4">Mengatur ukuran font/teks. Format: <code
               class="px-1 rounded bg-gray-800">text-{size}</code></p>
+
+          <!-- Penjelasan Detail -->
+          <div class="mb-6 p-4 rounded-lg bg-gray-800/50 border border-gray-700">
+            <h4 class="font-semibold text-white mb-3">📚 Penjelasan Font Size</h4>
+            <div class="space-y-3 text-sm text-gray-300">
+              <p><strong class="text-primary-400">Font Size</strong> mengontrol besar kecilnya teks. Tailwind
+                menggunakan skala yang sudah dioptimalkan untuk keterbacaan dan konsistensi desain.</p>
+              <div class="grid md:grid-cols-2 gap-4 mt-4">
+                <div class="p-3 rounded bg-gray-700/50">
+                  <p class="text-xs text-gray-400 mb-2">📏 <strong>Skala Tailwind:</strong></p>
+                  <ul class="text-xs space-y-1">
+                    <li><code class="text-primary-400">text-xs</code> → 12px (caption, label kecil)</li>
+                    <li><code class="text-primary-400">text-sm</code> → 14px (secondary text)</li>
+                    <li><code class="text-primary-400">text-base</code> → 16px (body text standar)</li>
+                    <li><code class="text-primary-400">text-lg</code> → 18px (slightly larger)</li>
+                    <li><code class="text-primary-400">text-xl ~ text-9xl</code> → headings</li>
+                  </ul>
+                </div>
+                <div class="p-3 rounded bg-gray-700/50">
+                  <p class="text-xs text-gray-400 mb-2">💡 <strong>Tips Penggunaan:</strong></p>
+                  <ul class="text-xs space-y-1">
+                    <li>• Body text: <code class="text-green-400">text-base</code> atau <code
+                        class="text-green-400">text-lg</code></li>
+                    <li>• Caption/label: <code class="text-green-400">text-xs</code> atau <code
+                        class="text-green-400">text-sm</code></li>
+                    <li>• Heading utama: <code class="text-green-400">text-3xl</code> ke atas</li>
+                    <li>• Custom size: <code class="text-green-400">text-[17px]</code></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kapan Menggunakan -->
+          <div class="mb-6 p-4 rounded-lg bg-green-500/10 border border-green-500/30">
+            <h4 class="font-semibold text-green-400 mb-2">🎯 Kapan Menggunakan?</h4>
+            <ul class="text-sm text-gray-300 space-y-1">
+              <li>• <code class="px-1 bg-gray-700 rounded">text-xs/sm</code> → Helper text, copyright, metadata,
+                timestamp</li>
+              <li>• <code class="px-1 bg-gray-700 rounded">text-base/lg</code> → Paragraf, deskripsi, body content</li>
+              <li>• <code class="px-1 bg-gray-700 rounded">text-xl ~ text-4xl</code> → Heading, judul section, nama
+                produk</li>
+              <li>• <code class="px-1 bg-gray-700 rounded">text-5xl ~ text-9xl</code> → Hero heading, landing page title
+              </li>
+            </ul>
+          </div>
 
           <div class="space-y-3 mb-4 p-4 rounded-lg bg-gray-800/50">
             <p class="text-xs"><code class="px-1 bg-gray-700 rounded mr-2">text-xs</code> 0.75rem (12px)</p>
@@ -196,7 +286,48 @@
               class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">3</span>
             Font Weight
           </h2>
-          <p class="text-gray-300 mb-4">Mengatur ketebalan font.</p>
+          <p class="text-gray-300 mb-4">Mengatur ketebalan/tebal-tipis font dengan format <code
+              class="px-1 rounded bg-gray-800">font-{weight}</code>.</p>
+
+          <!-- Penjelasan Detail -->
+          <div class="mb-6 p-4 rounded-lg bg-gray-800/50 border border-gray-700">
+            <h4 class="font-semibold text-white mb-3">📚 Penjelasan Font Weight</h4>
+            <div class="space-y-3 text-sm text-gray-300">
+              <p><strong class="text-primary-400">Font Weight</strong> mengontrol seberapa tebal atau tipis teks
+                ditampilkan. Nilai berkisar dari 100 (sangat tipis) sampai 900 (sangat tebal).</p>
+              <div class="grid md:grid-cols-2 gap-4 mt-4">
+                <div class="p-3 rounded bg-gray-700/50">
+                  <p class="text-xs text-gray-400 mb-2">⚖️ <strong>Skala Weight:</strong></p>
+                  <ul class="text-xs space-y-1">
+                    <li><code class="text-gray-400">100-200</code> → Sangat tipis (thin, extralight)</li>
+                    <li><code class="text-gray-400">300-400</code> → Normal (light, regular)</li>
+                    <li><code class="text-primary-400">500-600</code> → Sedikit tebal (medium, semibold)</li>
+                    <li><code class="text-green-400">700-900</code> → Tebal (bold, extrabold, black)</li>
+                  </ul>
+                </div>
+                <div class="p-3 rounded bg-gray-700/50">
+                  <p class="text-xs text-gray-400 mb-2">⚠️ <strong>Penting:</strong></p>
+                  <ul class="text-xs space-y-1">
+                    <li>• Tidak semua font support semua weight</li>
+                    <li>• Pastikan font yang dipakai punya weight yang dibutuhkan</li>
+                    <li>• Google Fonts: pilih weight saat import</li>
+                    <li>• Variable fonts: support semua weight</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kapan Menggunakan -->
+          <div class="mb-6 p-4 rounded-lg bg-green-500/10 border border-green-500/30">
+            <h4 class="font-semibold text-green-400 mb-2">🎯 Kapan Menggunakan?</h4>
+            <ul class="text-sm text-gray-300 space-y-1">
+              <li>• <code class="px-1 bg-gray-700 rounded">font-normal</code> → Body text, paragraf biasa</li>
+              <li>• <code class="px-1 bg-gray-700 rounded">font-medium</code> → Label, navigation link</li>
+              <li>• <code class="px-1 bg-gray-700 rounded">font-semibold</code> → Sub-heading, emphasis</li>
+              <li>• <code class="px-1 bg-gray-700 rounded">font-bold</code> → Heading, judul, highlight penting</li>
+            </ul>
+          </div>
 
           <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
             <div class="p-3 rounded-lg bg-gray-800">
@@ -313,8 +444,40 @@
               class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">5</span>
             Letter Spacing (Tracking)
           </h2>
-          <p class="text-gray-300 mb-4">Mengatur jarak antar huruf. Format: <code
+          <p class="text-gray-300 mb-4">Mengatur jarak antar huruf dalam kata. Format: <code
               class="px-1 rounded bg-gray-800">tracking-{size}</code></p>
+
+          <!-- Penjelasan Detail -->
+          <div class="mb-6 p-4 rounded-lg bg-gray-800/50 border border-gray-700">
+            <h4 class="font-semibold text-white mb-3">📚 Penjelasan Letter Spacing</h4>
+            <div class="space-y-3 text-sm text-gray-300">
+              <p><strong class="text-primary-400">Letter Spacing</strong> (atau Tracking) mengontrol jarak horizontal
+                antar
+                karakter dalam teks. Nilai negatif membuat huruf lebih rapat, nilai positif membuat lebih renggang.</p>
+              <div class="grid md:grid-cols-2 gap-4 mt-4">
+                <div class="p-3 rounded bg-gray-700/50">
+                  <p class="text-xs text-gray-400 mb-2">📏 <strong>Nilai Tracking:</strong></p>
+                  <ul class="text-xs space-y-1">
+                    <li><code class="text-red-400">tracking-tighter</code> → -0.05em (sangat rapat)</li>
+                    <li><code class="text-red-400">tracking-tight</code> → -0.025em (rapat)</li>
+                    <li><code class="text-gray-400">tracking-normal</code> → 0 (default)</li>
+                    <li><code class="text-green-400">tracking-wide</code> → 0.025em (renggang)</li>
+                    <li><code class="text-green-400">tracking-wider</code> → 0.05em (lebih renggang)</li>
+                    <li><code class="text-green-400">tracking-widest</code> → 0.1em (sangat renggang)</li>
+                  </ul>
+                </div>
+                <div class="p-3 rounded bg-gray-700/50">
+                  <p class="text-xs text-gray-400 mb-2">🎯 <strong>Kapan Menggunakan:</strong></p>
+                  <ul class="text-xs space-y-1">
+                    <li>• <code class="text-red-400">tight/tighter</code> → Heading besar, display font</li>
+                    <li>• <code class="text-gray-400">normal</code> → Body text, paragraf</li>
+                    <li>• <code class="text-green-400">wide/wider</code> → Uppercase text, label</li>
+                    <li>• <code class="text-green-400">widest</code> → Logo text, brand name</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div class="space-y-3 p-4 rounded-lg bg-gray-800/50">
             <div class="p-3 rounded bg-gray-800">
