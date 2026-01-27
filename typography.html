@@ -785,6 +785,113 @@
               class="w-8 h-8 rounded-lg bg-primary-500/20 text-primary-500 flex items-center justify-center text-sm">11</span>
             Text Overflow
           </h2>
+          <p class="text-gray-300 mb-4">Mengontrol bagaimana teks ditampilkan ketika melebihi batas container.</p>
+
+          <!-- Penjelasan Detail -->
+          <div class="mb-6 p-4 rounded-lg bg-gray-800/50 border border-gray-700">
+            <h4 class="font-semibold text-white mb-3">📚 Penjelasan Text Overflow</h4>
+            <div class="space-y-3 text-sm text-gray-300">
+              <p><strong class="text-primary-400">Text Overflow</strong> menentukan bagaimana teks yang terlalu panjang
+                ditangani dalam container dengan ruang terbatas. Sangat berguna untuk menampilkan preview teks,
+                judul produk, atau konten dalam card yang harus tetap rapi.</p>
+              <div class="grid md:grid-cols-2 gap-4 mt-4">
+                <div class="p-3 rounded bg-gray-700/50">
+                  <p class="text-xs text-gray-400 mb-2">✂️ <strong>Jenis Text Overflow:</strong></p>
+                  <ul class="text-xs space-y-2">
+                    <li>
+                      <code class="text-primary-400">truncate</code>
+                      <p class="text-gray-500 mt-1">Shorthand untuk memotong teks dengan "..." di akhir. Sudah termasuk
+                        <code class="text-gray-400">overflow-hidden</code>, <code
+                          class="text-gray-400">text-ellipsis</code>, dan <code
+                          class="text-gray-400">whitespace-nowrap</code>.
+                      </p>
+                    </li>
+                    <li>
+                      <code class="text-green-400">text-ellipsis</code>
+                      <p class="text-gray-500 mt-1">Menampilkan "..." ketika teks terpotong. Perlu dikombinasikan dengan
+                        <code class="text-gray-400">overflow-hidden</code>.
+                      </p>
+                    </li>
+                    <li>
+                      <code class="text-yellow-400">text-clip</code>
+                      <p class="text-gray-500 mt-1">Memotong teks langsung tanpa "..." - teks terputus tiba-tiba.</p>
+                    </li>
+                    <li>
+                      <code class="text-purple-400">line-clamp-{n}</code>
+                      <p class="text-gray-500 mt-1">Membatasi jumlah baris yang ditampilkan (1-6). Teks akan dipotong
+                        dengan "..." setelah baris ke-n.</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="p-3 rounded bg-gray-700/50">
+                  <p class="text-xs text-gray-400 mb-2">⚠️ <strong>Penting untuk Diingat:</strong></p>
+                  <ul class="text-xs space-y-2">
+                    <li>
+                      <p class="text-gray-300"><strong class="text-red-400">truncate</strong> = <code
+                          class="text-xs">overflow-hidden + text-ellipsis + whitespace-nowrap</code></p>
+                      <p class="text-gray-500">Ini class all-in-one, paling mudah dipakai!</p>
+                    </li>
+                    <li>
+                      <p class="text-gray-300"><strong class="text-red-400">line-clamp</strong> untuk multi-line</p>
+                      <p class="text-gray-500">Berbeda dengan truncate yang hanya 1 baris, line-clamp bisa membatasi 2,
+                        3, atau lebih baris.</p>
+                    </li>
+                    <li>
+                      <p class="text-gray-300"><strong class="text-red-400">Container width</strong> harus terbatas</p>
+                      <p class="text-gray-500">Overflow hanya bekerja jika container punya batas lebar (tidak
+                        <code>w-full</code> di parent tak terbatas).
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kapan Menggunakan -->
+          <div class="mb-6 p-4 rounded-lg bg-green-500/10 border border-green-500/30">
+            <h4 class="font-semibold text-green-400 mb-2">🎯 Kapan Menggunakan?</h4>
+            <ul class="text-sm text-gray-300 space-y-1">
+              <li>• <code class="px-1 bg-gray-700 rounded">truncate</code> → Judul produk dalam card, username, nama
+                file, sidebar menu item</li>
+              <li>• <code class="px-1 bg-gray-700 rounded">line-clamp-2</code> → Deskripsi preview di card produk, blog
+                excerpt</li>
+              <li>• <code class="px-1 bg-gray-700 rounded">line-clamp-3</code> → Preview artikel, komentar yang dipotong
+              </li>
+              <li>• <code class="px-1 bg-gray-700 rounded">text-clip</code> → Efek visual khusus, teks yang sengaja
+                dipotong</li>
+            </ul>
+          </div>
+
+          <!-- Contoh Real World -->
+          <div class="mb-6 p-4 rounded-lg bg-purple-500/10 border border-purple-500/30">
+            <h4 class="font-semibold text-purple-400 mb-3">💡 Contoh Real World</h4>
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="p-4 rounded-lg bg-gray-800">
+                <p class="text-xs text-gray-400 mb-2">Card Produk dengan truncate:</p>
+                <div class="bg-gray-900 rounded-lg p-3">
+                  <div class="w-full h-20 bg-gray-700 rounded mb-2"></div>
+                  <p class="font-semibold truncate">iPhone 15 Pro Max 256GB Titanium Blue Edition Limited</p>
+                  <p class="text-sm text-gray-400 line-clamp-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <p class="text-green-400 font-bold mt-2">Rp 24.999.000</p>
+                </div>
+              </div>
+              <div class="p-4 rounded-lg bg-gray-800">
+                <p class="text-xs text-gray-400 mb-2">Notification dengan truncate:</p>
+                <div class="bg-gray-900 rounded-lg p-3 space-y-2">
+                  <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-full bg-blue-500"></div>
+                    <div class="flex-1 min-w-0">
+                      <p class="font-medium truncate">John Doe sent you a very long message about the project deadline
+                      </p>
+                      <p class="text-xs text-gray-400">2 menit yang lalu</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div class="space-y-4">
             <div class="p-4 rounded-lg bg-gray-800">
